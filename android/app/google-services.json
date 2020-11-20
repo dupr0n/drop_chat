@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "319216473943",
+    "firebase_url": "https://drop-chat-a2ca5.firebaseio.com",
+    "project_id": "drop-chat-a2ca5",
+    "storage_bucket": "drop-chat-a2ca5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319216473943:android:01f384eab7e5cc410fd012",
+        "android_client_info": {
+          "package_name": "com.dr0hith.drop_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319216473943-4prk845l08kc7cu999ttkpcvsru868sn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dr0hith.drop_chat",
+            "certificate_hash": "e96367733577ed2fa5b61de2ad48c9d14f5cc224"
+          }
+        },
+        {
+          "client_id": "319216473943-fdpppufoatdbce6uj4jo73os691u68td.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMN4D-quWdUi_ovSdideAYFFF21HGUpmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319216473943-fdpppufoatdbce6uj4jo73os691u68td.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
