@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/collection.dart';
 
@@ -11,6 +9,12 @@ abstract class ChatBase {
 }
 
 class Chat {
+  final UniqueId id;
+  final KtList<Message> messages;
+  final bool isArchived;
+  final bool isMuted;
+  final bool canSend;
+
   const Chat({
     @required this.id,
     @required this.messages,
@@ -22,12 +26,6 @@ class Chat {
         assert(isArchived != null),
         assert(isMuted != null),
         assert(canSend != null);
-
-  final UniqueId id;
-  final KtList<Message> messages;
-  final bool isArchived;
-  final bool isMuted;
-  final bool canSend;
 
   factory Chat.empty() => Chat(
         id: UniqueId(),

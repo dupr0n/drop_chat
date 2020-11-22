@@ -5,12 +5,12 @@ import '../core/value_object.dart';
 import '../core/value_validators.dart';
 
 class GroupName extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
   const GroupName._(this.value);
 
   static const maxLength = 25;
-
-  @override
-  final Either<ValueFailure<String>, String> value;
 
   factory GroupName(String input) {
     assert(input != null);
@@ -19,12 +19,12 @@ class GroupName extends ValueObject<String> {
 }
 
 class GroupDescription extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
   const GroupDescription._(this.value);
 
   static const maxLength = 500;
-
-  @override
-  final Either<ValueFailure<String>, String> value;
 
   factory GroupDescription(String input) {
     assert(input != null);
