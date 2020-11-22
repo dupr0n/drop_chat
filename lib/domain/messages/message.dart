@@ -1,10 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../injection.dart';
-import '../auth/i_auth_facade.dart';
 import '../auth/user.dart';
-import '../auth/value_objects.dart';
 import '../core/failures.dart';
 import '../core/value_object.dart';
 import 'value_objects.dart';
@@ -22,12 +19,9 @@ abstract class Message with _$Message {
     @required bool isStarred,
   }) = _Message;
 
-  factory Message.empty() => Message(
+  factory Message.empty({@required User user}) => Message(
         id: UniqueId(),
-        userId: getIt<IAuthFacade>().getSignedInUser().fold(
-              () => User(id: UniqueId(), displayName: DisplayName('Annonymous')),
-              (user) => user,
-            ),
+        userId: user,
         timestamp: DateTime.now(),
         text: MessageText(''),
         isStarred: false,
