@@ -14,9 +14,19 @@ class _$IndividualChatTearOff {
   const _$IndividualChatTearOff();
 
 // ignore: unused_element
-  _IndividualChat call({@required Chat chat, @required User receiver}) {
+  _IndividualChat call(
+      {@required UniqueId id,
+      @required KtList<Message> messages,
+      @required bool isArchived,
+      @required bool isMuted,
+      @required bool canSend,
+      @required User receiver}) {
     return _IndividualChat(
-      chat: chat,
+      id: id,
+      messages: messages,
+      isArchived: isArchived,
+      isMuted: isMuted,
+      canSend: canSend,
       receiver: receiver,
     );
   }
@@ -28,7 +38,11 @@ const $IndividualChat = _$IndividualChatTearOff();
 
 /// @nodoc
 mixin _$IndividualChat {
-  Chat get chat;
+  UniqueId get id;
+  KtList<Message> get messages;
+  bool get isArchived;
+  bool get isMuted;
+  bool get canSend;
   User get receiver;
 
   $IndividualChatCopyWith<IndividualChat> get copyWith;
@@ -39,7 +53,13 @@ abstract class $IndividualChatCopyWith<$Res> {
   factory $IndividualChatCopyWith(
           IndividualChat value, $Res Function(IndividualChat) then) =
       _$IndividualChatCopyWithImpl<$Res>;
-  $Res call({Chat chat, User receiver});
+  $Res call(
+      {UniqueId id,
+      KtList<Message> messages,
+      bool isArchived,
+      bool isMuted,
+      bool canSend,
+      User receiver});
 
   $UserCopyWith<$Res> get receiver;
 }
@@ -55,11 +75,21 @@ class _$IndividualChatCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object chat = freezed,
+    Object id = freezed,
+    Object messages = freezed,
+    Object isArchived = freezed,
+    Object isMuted = freezed,
+    Object canSend = freezed,
     Object receiver = freezed,
   }) {
     return _then(_value.copyWith(
-      chat: chat == freezed ? _value.chat : chat as Chat,
+      id: id == freezed ? _value.id : id as UniqueId,
+      messages:
+          messages == freezed ? _value.messages : messages as KtList<Message>,
+      isArchived:
+          isArchived == freezed ? _value.isArchived : isArchived as bool,
+      isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
+      canSend: canSend == freezed ? _value.canSend : canSend as bool,
       receiver: receiver == freezed ? _value.receiver : receiver as User,
     ));
   }
@@ -82,7 +112,13 @@ abstract class _$IndividualChatCopyWith<$Res>
           _IndividualChat value, $Res Function(_IndividualChat) then) =
       __$IndividualChatCopyWithImpl<$Res>;
   @override
-  $Res call({Chat chat, User receiver});
+  $Res call(
+      {UniqueId id,
+      KtList<Message> messages,
+      bool isArchived,
+      bool isMuted,
+      bool canSend,
+      User receiver});
 
   @override
   $UserCopyWith<$Res> get receiver;
@@ -101,39 +137,81 @@ class __$IndividualChatCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object chat = freezed,
+    Object id = freezed,
+    Object messages = freezed,
+    Object isArchived = freezed,
+    Object isMuted = freezed,
+    Object canSend = freezed,
     Object receiver = freezed,
   }) {
     return _then(_IndividualChat(
-      chat: chat == freezed ? _value.chat : chat as Chat,
+      id: id == freezed ? _value.id : id as UniqueId,
+      messages:
+          messages == freezed ? _value.messages : messages as KtList<Message>,
+      isArchived:
+          isArchived == freezed ? _value.isArchived : isArchived as bool,
+      isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
+      canSend: canSend == freezed ? _value.canSend : canSend as bool,
       receiver: receiver == freezed ? _value.receiver : receiver as User,
     ));
   }
 }
 
+@Implements(Chat)
+
 /// @nodoc
 class _$_IndividualChat extends _IndividualChat {
-  const _$_IndividualChat({@required this.chat, @required this.receiver})
-      : assert(chat != null),
+  const _$_IndividualChat(
+      {@required this.id,
+      @required this.messages,
+      @required this.isArchived,
+      @required this.isMuted,
+      @required this.canSend,
+      @required this.receiver})
+      : assert(id != null),
+        assert(messages != null),
+        assert(isArchived != null),
+        assert(isMuted != null),
+        assert(canSend != null),
         assert(receiver != null),
         super._();
 
   @override
-  final Chat chat;
+  final UniqueId id;
+  @override
+  final KtList<Message> messages;
+  @override
+  final bool isArchived;
+  @override
+  final bool isMuted;
+  @override
+  final bool canSend;
   @override
   final User receiver;
 
   @override
   String toString() {
-    return 'IndividualChat(chat: $chat, receiver: $receiver)';
+    return 'IndividualChat(id: $id, messages: $messages, isArchived: $isArchived, isMuted: $isMuted, canSend: $canSend, receiver: $receiver)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _IndividualChat &&
-            (identical(other.chat, chat) ||
-                const DeepCollectionEquality().equals(other.chat, chat)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.messages, messages) ||
+                const DeepCollectionEquality()
+                    .equals(other.messages, messages)) &&
+            (identical(other.isArchived, isArchived) ||
+                const DeepCollectionEquality()
+                    .equals(other.isArchived, isArchived)) &&
+            (identical(other.isMuted, isMuted) ||
+                const DeepCollectionEquality()
+                    .equals(other.isMuted, isMuted)) &&
+            (identical(other.canSend, canSend) ||
+                const DeepCollectionEquality()
+                    .equals(other.canSend, canSend)) &&
             (identical(other.receiver, receiver) ||
                 const DeepCollectionEquality()
                     .equals(other.receiver, receiver)));
@@ -142,7 +220,11 @@ class _$_IndividualChat extends _IndividualChat {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(chat) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(messages) ^
+      const DeepCollectionEquality().hash(isArchived) ^
+      const DeepCollectionEquality().hash(isMuted) ^
+      const DeepCollectionEquality().hash(canSend) ^
       const DeepCollectionEquality().hash(receiver);
 
   @override
@@ -150,13 +232,26 @@ class _$_IndividualChat extends _IndividualChat {
       __$IndividualChatCopyWithImpl<_IndividualChat>(this, _$identity);
 }
 
-abstract class _IndividualChat extends IndividualChat {
+abstract class _IndividualChat extends IndividualChat implements Chat {
   const _IndividualChat._() : super._();
   const factory _IndividualChat(
-      {@required Chat chat, @required User receiver}) = _$_IndividualChat;
+      {@required UniqueId id,
+      @required KtList<Message> messages,
+      @required bool isArchived,
+      @required bool isMuted,
+      @required bool canSend,
+      @required User receiver}) = _$_IndividualChat;
 
   @override
-  Chat get chat;
+  UniqueId get id;
+  @override
+  KtList<Message> get messages;
+  @override
+  bool get isArchived;
+  @override
+  bool get isMuted;
+  @override
+  bool get canSend;
   @override
   User get receiver;
   @override

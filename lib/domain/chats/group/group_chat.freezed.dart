@@ -15,14 +15,22 @@ class _$GroupChatTearOff {
 
 // ignore: unused_element
   _GroupChat call(
-      {@required Chat chat,
+      {@required UniqueId id,
+      @required KtList<Message> messages,
+      @required bool isArchived,
+      @required bool isMuted,
+      @required bool canSend,
       @required KtList<User> users,
       @required bool isAdmin,
       @required bool canReceive,
       @required GroupName groupName,
       @required GroupDescription groupDescription}) {
     return _GroupChat(
-      chat: chat,
+      id: id,
+      messages: messages,
+      isArchived: isArchived,
+      isMuted: isMuted,
+      canSend: canSend,
       users: users,
       isAdmin: isAdmin,
       canReceive: canReceive,
@@ -38,7 +46,11 @@ const $GroupChat = _$GroupChatTearOff();
 
 /// @nodoc
 mixin _$GroupChat {
-  Chat get chat;
+  UniqueId get id;
+  KtList<Message> get messages;
+  bool get isArchived;
+  bool get isMuted;
+  bool get canSend;
   KtList<User> get users;
   bool get isAdmin;
   bool get canReceive;
@@ -53,7 +65,11 @@ abstract class $GroupChatCopyWith<$Res> {
   factory $GroupChatCopyWith(GroupChat value, $Res Function(GroupChat) then) =
       _$GroupChatCopyWithImpl<$Res>;
   $Res call(
-      {Chat chat,
+      {UniqueId id,
+      KtList<Message> messages,
+      bool isArchived,
+      bool isMuted,
+      bool canSend,
       KtList<User> users,
       bool isAdmin,
       bool canReceive,
@@ -71,7 +87,11 @@ class _$GroupChatCopyWithImpl<$Res> implements $GroupChatCopyWith<$Res> {
 
   @override
   $Res call({
-    Object chat = freezed,
+    Object id = freezed,
+    Object messages = freezed,
+    Object isArchived = freezed,
+    Object isMuted = freezed,
+    Object canSend = freezed,
     Object users = freezed,
     Object isAdmin = freezed,
     Object canReceive = freezed,
@@ -79,7 +99,13 @@ class _$GroupChatCopyWithImpl<$Res> implements $GroupChatCopyWith<$Res> {
     Object groupDescription = freezed,
   }) {
     return _then(_value.copyWith(
-      chat: chat == freezed ? _value.chat : chat as Chat,
+      id: id == freezed ? _value.id : id as UniqueId,
+      messages:
+          messages == freezed ? _value.messages : messages as KtList<Message>,
+      isArchived:
+          isArchived == freezed ? _value.isArchived : isArchived as bool,
+      isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
+      canSend: canSend == freezed ? _value.canSend : canSend as bool,
       users: users == freezed ? _value.users : users as KtList<User>,
       isAdmin: isAdmin == freezed ? _value.isAdmin : isAdmin as bool,
       canReceive:
@@ -100,7 +126,11 @@ abstract class _$GroupChatCopyWith<$Res> implements $GroupChatCopyWith<$Res> {
       __$GroupChatCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Chat chat,
+      {UniqueId id,
+      KtList<Message> messages,
+      bool isArchived,
+      bool isMuted,
+      bool canSend,
       KtList<User> users,
       bool isAdmin,
       bool canReceive,
@@ -119,7 +149,11 @@ class __$GroupChatCopyWithImpl<$Res> extends _$GroupChatCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object chat = freezed,
+    Object id = freezed,
+    Object messages = freezed,
+    Object isArchived = freezed,
+    Object isMuted = freezed,
+    Object canSend = freezed,
     Object users = freezed,
     Object isAdmin = freezed,
     Object canReceive = freezed,
@@ -127,7 +161,13 @@ class __$GroupChatCopyWithImpl<$Res> extends _$GroupChatCopyWithImpl<$Res>
     Object groupDescription = freezed,
   }) {
     return _then(_GroupChat(
-      chat: chat == freezed ? _value.chat : chat as Chat,
+      id: id == freezed ? _value.id : id as UniqueId,
+      messages:
+          messages == freezed ? _value.messages : messages as KtList<Message>,
+      isArchived:
+          isArchived == freezed ? _value.isArchived : isArchived as bool,
+      isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
+      canSend: canSend == freezed ? _value.canSend : canSend as bool,
       users: users == freezed ? _value.users : users as KtList<User>,
       isAdmin: isAdmin == freezed ? _value.isAdmin : isAdmin as bool,
       canReceive:
@@ -141,16 +181,26 @@ class __$GroupChatCopyWithImpl<$Res> extends _$GroupChatCopyWithImpl<$Res>
   }
 }
 
+@Implements(Chat)
+
 /// @nodoc
 class _$_GroupChat extends _GroupChat {
   const _$_GroupChat(
-      {@required this.chat,
+      {@required this.id,
+      @required this.messages,
+      @required this.isArchived,
+      @required this.isMuted,
+      @required this.canSend,
       @required this.users,
       @required this.isAdmin,
       @required this.canReceive,
       @required this.groupName,
       @required this.groupDescription})
-      : assert(chat != null),
+      : assert(id != null),
+        assert(messages != null),
+        assert(isArchived != null),
+        assert(isMuted != null),
+        assert(canSend != null),
         assert(users != null),
         assert(isAdmin != null),
         assert(canReceive != null),
@@ -159,7 +209,15 @@ class _$_GroupChat extends _GroupChat {
         super._();
 
   @override
-  final Chat chat;
+  final UniqueId id;
+  @override
+  final KtList<Message> messages;
+  @override
+  final bool isArchived;
+  @override
+  final bool isMuted;
+  @override
+  final bool canSend;
   @override
   final KtList<User> users;
   @override
@@ -173,15 +231,27 @@ class _$_GroupChat extends _GroupChat {
 
   @override
   String toString() {
-    return 'GroupChat(chat: $chat, users: $users, isAdmin: $isAdmin, canReceive: $canReceive, groupName: $groupName, groupDescription: $groupDescription)';
+    return 'GroupChat(id: $id, messages: $messages, isArchived: $isArchived, isMuted: $isMuted, canSend: $canSend, users: $users, isAdmin: $isAdmin, canReceive: $canReceive, groupName: $groupName, groupDescription: $groupDescription)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _GroupChat &&
-            (identical(other.chat, chat) ||
-                const DeepCollectionEquality().equals(other.chat, chat)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.messages, messages) ||
+                const DeepCollectionEquality()
+                    .equals(other.messages, messages)) &&
+            (identical(other.isArchived, isArchived) ||
+                const DeepCollectionEquality()
+                    .equals(other.isArchived, isArchived)) &&
+            (identical(other.isMuted, isMuted) ||
+                const DeepCollectionEquality()
+                    .equals(other.isMuted, isMuted)) &&
+            (identical(other.canSend, canSend) ||
+                const DeepCollectionEquality()
+                    .equals(other.canSend, canSend)) &&
             (identical(other.users, users) ||
                 const DeepCollectionEquality().equals(other.users, users)) &&
             (identical(other.isAdmin, isAdmin) ||
@@ -201,7 +271,11 @@ class _$_GroupChat extends _GroupChat {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(chat) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(messages) ^
+      const DeepCollectionEquality().hash(isArchived) ^
+      const DeepCollectionEquality().hash(isMuted) ^
+      const DeepCollectionEquality().hash(canSend) ^
       const DeepCollectionEquality().hash(users) ^
       const DeepCollectionEquality().hash(isAdmin) ^
       const DeepCollectionEquality().hash(canReceive) ^
@@ -213,10 +287,14 @@ class _$_GroupChat extends _GroupChat {
       __$GroupChatCopyWithImpl<_GroupChat>(this, _$identity);
 }
 
-abstract class _GroupChat extends GroupChat {
+abstract class _GroupChat extends GroupChat implements Chat {
   const _GroupChat._() : super._();
   const factory _GroupChat(
-      {@required Chat chat,
+      {@required UniqueId id,
+      @required KtList<Message> messages,
+      @required bool isArchived,
+      @required bool isMuted,
+      @required bool canSend,
       @required KtList<User> users,
       @required bool isAdmin,
       @required bool canReceive,
@@ -224,7 +302,15 @@ abstract class _GroupChat extends GroupChat {
       @required GroupDescription groupDescription}) = _$_GroupChat;
 
   @override
-  Chat get chat;
+  UniqueId get id;
+  @override
+  KtList<Message> get messages;
+  @override
+  bool get isArchived;
+  @override
+  bool get isMuted;
+  @override
+  bool get canSend;
   @override
   KtList<User> get users;
   @override
