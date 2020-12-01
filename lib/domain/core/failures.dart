@@ -17,4 +17,10 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.empty({
     @required T failedValue,
   }) = Empty<T>;
+  const factory ValueFailure.invalidUpdateType({
+    @required T failedValue,
+  }) = _InvalidUpdateType;
+  const factory ValueFailure.invalidChat({
+    @required T failedValue,
+  }) = _InvalidChat;
 }

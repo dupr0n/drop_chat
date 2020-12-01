@@ -20,14 +20,16 @@ class _$IndividualChatTearOff {
       @required bool isArchived,
       @required bool isMuted,
       @required bool canSend,
-      @required User receiver}) {
+      @required UpdateType updateType,
+      @required ChatProperties properties}) {
     return _IndividualChat(
       id: id,
       messages: messages,
       isArchived: isArchived,
       isMuted: isMuted,
       canSend: canSend,
-      receiver: receiver,
+      updateType: updateType,
+      properties: properties,
     );
   }
 }
@@ -43,7 +45,8 @@ mixin _$IndividualChat {
   bool get isArchived;
   bool get isMuted;
   bool get canSend;
-  User get receiver;
+  UpdateType get updateType;
+  ChatProperties get properties;
 
   $IndividualChatCopyWith<IndividualChat> get copyWith;
 }
@@ -59,9 +62,8 @@ abstract class $IndividualChatCopyWith<$Res> {
       bool isArchived,
       bool isMuted,
       bool canSend,
-      User receiver});
-
-  $UserCopyWith<$Res> get receiver;
+      UpdateType updateType,
+      ChatProperties properties});
 }
 
 /// @nodoc
@@ -80,7 +82,8 @@ class _$IndividualChatCopyWithImpl<$Res>
     Object isArchived = freezed,
     Object isMuted = freezed,
     Object canSend = freezed,
-    Object receiver = freezed,
+    Object updateType = freezed,
+    Object properties = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
@@ -90,18 +93,12 @@ class _$IndividualChatCopyWithImpl<$Res>
           isArchived == freezed ? _value.isArchived : isArchived as bool,
       isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
       canSend: canSend == freezed ? _value.canSend : canSend as bool,
-      receiver: receiver == freezed ? _value.receiver : receiver as User,
+      updateType:
+          updateType == freezed ? _value.updateType : updateType as UpdateType,
+      properties: properties == freezed
+          ? _value.properties
+          : properties as ChatProperties,
     ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get receiver {
-    if (_value.receiver == null) {
-      return null;
-    }
-    return $UserCopyWith<$Res>(_value.receiver, (value) {
-      return _then(_value.copyWith(receiver: value));
-    });
   }
 }
 
@@ -118,10 +115,8 @@ abstract class _$IndividualChatCopyWith<$Res>
       bool isArchived,
       bool isMuted,
       bool canSend,
-      User receiver});
-
-  @override
-  $UserCopyWith<$Res> get receiver;
+      UpdateType updateType,
+      ChatProperties properties});
 }
 
 /// @nodoc
@@ -142,7 +137,8 @@ class __$IndividualChatCopyWithImpl<$Res>
     Object isArchived = freezed,
     Object isMuted = freezed,
     Object canSend = freezed,
-    Object receiver = freezed,
+    Object updateType = freezed,
+    Object properties = freezed,
   }) {
     return _then(_IndividualChat(
       id: id == freezed ? _value.id : id as UniqueId,
@@ -152,7 +148,11 @@ class __$IndividualChatCopyWithImpl<$Res>
           isArchived == freezed ? _value.isArchived : isArchived as bool,
       isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
       canSend: canSend == freezed ? _value.canSend : canSend as bool,
-      receiver: receiver == freezed ? _value.receiver : receiver as User,
+      updateType:
+          updateType == freezed ? _value.updateType : updateType as UpdateType,
+      properties: properties == freezed
+          ? _value.properties
+          : properties as ChatProperties,
     ));
   }
 }
@@ -167,13 +167,15 @@ class _$_IndividualChat extends _IndividualChat {
       @required this.isArchived,
       @required this.isMuted,
       @required this.canSend,
-      @required this.receiver})
+      @required this.updateType,
+      @required this.properties})
       : assert(id != null),
         assert(messages != null),
         assert(isArchived != null),
         assert(isMuted != null),
         assert(canSend != null),
-        assert(receiver != null),
+        assert(updateType != null),
+        assert(properties != null),
         super._();
 
   @override
@@ -187,11 +189,13 @@ class _$_IndividualChat extends _IndividualChat {
   @override
   final bool canSend;
   @override
-  final User receiver;
+  final UpdateType updateType;
+  @override
+  final ChatProperties properties;
 
   @override
   String toString() {
-    return 'IndividualChat(id: $id, messages: $messages, isArchived: $isArchived, isMuted: $isMuted, canSend: $canSend, receiver: $receiver)';
+    return 'IndividualChat(id: $id, messages: $messages, isArchived: $isArchived, isMuted: $isMuted, canSend: $canSend, updateType: $updateType, properties: $properties)';
   }
 
   @override
@@ -212,9 +216,12 @@ class _$_IndividualChat extends _IndividualChat {
             (identical(other.canSend, canSend) ||
                 const DeepCollectionEquality()
                     .equals(other.canSend, canSend)) &&
-            (identical(other.receiver, receiver) ||
+            (identical(other.updateType, updateType) ||
                 const DeepCollectionEquality()
-                    .equals(other.receiver, receiver)));
+                    .equals(other.updateType, updateType)) &&
+            (identical(other.properties, properties) ||
+                const DeepCollectionEquality()
+                    .equals(other.properties, properties)));
   }
 
   @override
@@ -225,7 +232,8 @@ class _$_IndividualChat extends _IndividualChat {
       const DeepCollectionEquality().hash(isArchived) ^
       const DeepCollectionEquality().hash(isMuted) ^
       const DeepCollectionEquality().hash(canSend) ^
-      const DeepCollectionEquality().hash(receiver);
+      const DeepCollectionEquality().hash(updateType) ^
+      const DeepCollectionEquality().hash(properties);
 
   @override
   _$IndividualChatCopyWith<_IndividualChat> get copyWith =>
@@ -240,7 +248,8 @@ abstract class _IndividualChat extends IndividualChat implements Chat {
       @required bool isArchived,
       @required bool isMuted,
       @required bool canSend,
-      @required User receiver}) = _$_IndividualChat;
+      @required UpdateType updateType,
+      @required ChatProperties properties}) = _$_IndividualChat;
 
   @override
   UniqueId get id;
@@ -253,7 +262,9 @@ abstract class _IndividualChat extends IndividualChat implements Chat {
   @override
   bool get canSend;
   @override
-  User get receiver;
+  UpdateType get updateType;
+  @override
+  ChatProperties get properties;
   @override
   _$IndividualChatCopyWith<_IndividualChat> get copyWith;
 }

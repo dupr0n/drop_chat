@@ -1,15 +1,18 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/collection.dart';
 
 import '../../auth/user.dart';
-import '../../core/value_object.dart';
+import '../../core/failures.dart';
+import '../../core/value_objects.dart';
 import '../../messages/message.dart';
 import '../chat.dart';
+import '../value_objects.dart';
 
 part 'individual_chat.freezed.dart';
 
 @freezed
-abstract class IndividualChat extends ChatBase implements _$IndividualChat {
+abstract class IndividualChat extends Chat implements _$IndividualChat {
   const IndividualChat._();
 
   @Implements(Chat)
@@ -19,11 +22,17 @@ abstract class IndividualChat extends ChatBase implements _$IndividualChat {
     @required bool isArchived,
     @required bool isMuted,
     @required bool canSend,
-    @required User receiver,
+    @required UpdateType updateType,
+    @required ChatProperties properties,
   }) = _IndividualChat;
 
   @override
-  String get titleDisplay => receiver.displayName.value.fold((f) => f.toString(), (title) => title);
+  String get titleDisplay => properties.value.fold(
+      (f) => f.toString(),
+      (prop) => (prop[ChatProperties.receiver] as User).displayName.value.fold(
+            (f) => f.toString(),
+            (title) => title,
+          ));
 
   factory IndividualChat.newChat({User user}) => IndividualChat(
         id: UniqueId(),
@@ -31,9 +40,12 @@ abstract class IndividualChat extends ChatBase implements _$IndividualChat {
         isArchived: false,
         isMuted: false,
         canSend: true,
-        receiver: user,
+        updateType: UpdateType.add(),
+        properties: ChatProperties({
+          ChatProperties.receiver: user,
+        }, ChatType.individual()),
       );
 
-  // Option<ValueFailure<dynamic>> get failureOption =>
-  //     chat.failureOrUnit.fold((f) => some(f), (_) => none());
+  Option<ValueFailure<dynamic>> get failureOption =>
+      updateType.failureOrUnit.fold((f) => some(f), (_) => none());
 }

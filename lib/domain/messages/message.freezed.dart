@@ -16,15 +16,17 @@ class _$MessageTearOff {
 // ignore: unused_element
   _Message call(
       {@required UniqueId id,
-      @required User userId,
+      @required UniqueId userId,
       @required DateTime timestamp,
       @required MessageText text,
+      @required UpdateType updateType,
       @required bool isStarred}) {
     return _Message(
       id: id,
       userId: userId,
       timestamp: timestamp,
       text: text,
+      updateType: updateType,
       isStarred: isStarred,
     );
   }
@@ -37,9 +39,10 @@ const $Message = _$MessageTearOff();
 /// @nodoc
 mixin _$Message {
   UniqueId get id;
-  User get userId;
+  UniqueId get userId;
   DateTime get timestamp;
   MessageText get text;
+  UpdateType get updateType;
   bool get isStarred;
 
   $MessageCopyWith<Message> get copyWith;
@@ -51,12 +54,11 @@ abstract class $MessageCopyWith<$Res> {
       _$MessageCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
-      User userId,
+      UniqueId userId,
       DateTime timestamp,
       MessageText text,
+      UpdateType updateType,
       bool isStarred});
-
-  $UserCopyWith<$Res> get userId;
 }
 
 /// @nodoc
@@ -73,26 +75,19 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
     Object userId = freezed,
     Object timestamp = freezed,
     Object text = freezed,
+    Object updateType = freezed,
     Object isStarred = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
-      userId: userId == freezed ? _value.userId : userId as User,
+      userId: userId == freezed ? _value.userId : userId as UniqueId,
       timestamp:
           timestamp == freezed ? _value.timestamp : timestamp as DateTime,
       text: text == freezed ? _value.text : text as MessageText,
+      updateType:
+          updateType == freezed ? _value.updateType : updateType as UpdateType,
       isStarred: isStarred == freezed ? _value.isStarred : isStarred as bool,
     ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get userId {
-    if (_value.userId == null) {
-      return null;
-    }
-    return $UserCopyWith<$Res>(_value.userId, (value) {
-      return _then(_value.copyWith(userId: value));
-    });
   }
 }
 
@@ -103,13 +98,11 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
   @override
   $Res call(
       {UniqueId id,
-      User userId,
+      UniqueId userId,
       DateTime timestamp,
       MessageText text,
+      UpdateType updateType,
       bool isStarred});
-
-  @override
-  $UserCopyWith<$Res> get userId;
 }
 
 /// @nodoc
@@ -127,14 +120,17 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
     Object userId = freezed,
     Object timestamp = freezed,
     Object text = freezed,
+    Object updateType = freezed,
     Object isStarred = freezed,
   }) {
     return _then(_Message(
       id: id == freezed ? _value.id : id as UniqueId,
-      userId: userId == freezed ? _value.userId : userId as User,
+      userId: userId == freezed ? _value.userId : userId as UniqueId,
       timestamp:
           timestamp == freezed ? _value.timestamp : timestamp as DateTime,
       text: text == freezed ? _value.text : text as MessageText,
+      updateType:
+          updateType == freezed ? _value.updateType : updateType as UpdateType,
       isStarred: isStarred == freezed ? _value.isStarred : isStarred as bool,
     ));
   }
@@ -147,28 +143,32 @@ class _$_Message extends _Message {
       @required this.userId,
       @required this.timestamp,
       @required this.text,
+      @required this.updateType,
       @required this.isStarred})
       : assert(id != null),
         assert(userId != null),
         assert(timestamp != null),
         assert(text != null),
+        assert(updateType != null),
         assert(isStarred != null),
         super._();
 
   @override
   final UniqueId id;
   @override
-  final User userId;
+  final UniqueId userId;
   @override
   final DateTime timestamp;
   @override
   final MessageText text;
   @override
+  final UpdateType updateType;
+  @override
   final bool isStarred;
 
   @override
   String toString() {
-    return 'Message(id: $id, userId: $userId, timestamp: $timestamp, text: $text, isStarred: $isStarred)';
+    return 'Message(id: $id, userId: $userId, timestamp: $timestamp, text: $text, updateType: $updateType, isStarred: $isStarred)';
   }
 
   @override
@@ -184,6 +184,9 @@ class _$_Message extends _Message {
                     .equals(other.timestamp, timestamp)) &&
             (identical(other.text, text) ||
                 const DeepCollectionEquality().equals(other.text, text)) &&
+            (identical(other.updateType, updateType) ||
+                const DeepCollectionEquality()
+                    .equals(other.updateType, updateType)) &&
             (identical(other.isStarred, isStarred) ||
                 const DeepCollectionEquality()
                     .equals(other.isStarred, isStarred)));
@@ -196,6 +199,7 @@ class _$_Message extends _Message {
       const DeepCollectionEquality().hash(userId) ^
       const DeepCollectionEquality().hash(timestamp) ^
       const DeepCollectionEquality().hash(text) ^
+      const DeepCollectionEquality().hash(updateType) ^
       const DeepCollectionEquality().hash(isStarred);
 
   @override
@@ -207,19 +211,22 @@ abstract class _Message extends Message {
   const _Message._() : super._();
   const factory _Message(
       {@required UniqueId id,
-      @required User userId,
+      @required UniqueId userId,
       @required DateTime timestamp,
       @required MessageText text,
+      @required UpdateType updateType,
       @required bool isStarred}) = _$_Message;
 
   @override
   UniqueId get id;
   @override
-  User get userId;
+  UniqueId get userId;
   @override
   DateTime get timestamp;
   @override
   MessageText get text;
+  @override
+  UpdateType get updateType;
   @override
   bool get isStarred;
   @override

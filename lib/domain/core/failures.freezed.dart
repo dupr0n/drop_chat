@@ -42,6 +42,20 @@ class _$ValueFailureTearOff {
       failedValue: failedValue,
     );
   }
+
+// ignore: unused_element
+  _InvalidUpdateType<T> invalidUpdateType<T>({@required T failedValue}) {
+    return _InvalidUpdateType<T>(
+      failedValue: failedValue,
+    );
+  }
+
+// ignore: unused_element
+  _InvalidChat<T> invalidChat<T>({@required T failedValue}) {
+    return _InvalidChat<T>(
+      failedValue: failedValue,
+    );
+  }
 }
 
 /// @nodoc
@@ -53,34 +67,42 @@ mixin _$ValueFailure<T> {
   T get failedValue;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmail(T failedValue),
-    @required Result shortPassword(T failedValue),
-    @required Result exceedingLength(T failedValue, int max),
-    @required Result empty(T failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmail(T failedValue),
+    @required TResult shortPassword(T failedValue),
+    @required TResult exceedingLength(T failedValue, int max),
+    @required TResult empty(T failedValue),
+    @required TResult invalidUpdateType(T failedValue),
+    @required TResult invalidChat(T failedValue),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmail(T failedValue),
-    Result shortPassword(T failedValue),
-    Result exceedingLength(T failedValue, int max),
-    Result empty(T failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmail(T failedValue),
+    TResult shortPassword(T failedValue),
+    TResult exceedingLength(T failedValue, int max),
+    TResult empty(T failedValue),
+    TResult invalidUpdateType(T failedValue),
+    TResult invalidChat(T failedValue),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result shortPassword(ShortPassword<T> value),
-    @required Result exceedingLength(ExceedingLength<T> value),
-    @required Result empty(Empty<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult shortPassword(ShortPassword<T> value),
+    @required TResult exceedingLength(ExceedingLength<T> value),
+    @required TResult empty(Empty<T> value),
+    @required TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    @required TResult invalidChat(_InvalidChat<T> value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmail(InvalidEmail<T> value),
-    Result shortPassword(ShortPassword<T> value),
-    Result exceedingLength(ExceedingLength<T> value),
-    Result empty(Empty<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult shortPassword(ShortPassword<T> value),
+    TResult exceedingLength(ExceedingLength<T> value),
+    TResult empty(Empty<T> value),
+    TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    TResult invalidChat(_InvalidChat<T> value),
+    @required TResult orElse(),
   });
 
   $ValueFailureCopyWith<T, ValueFailure<T>> get copyWith;
@@ -178,27 +200,33 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmail(T failedValue),
-    @required Result shortPassword(T failedValue),
-    @required Result exceedingLength(T failedValue, int max),
-    @required Result empty(T failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmail(T failedValue),
+    @required TResult shortPassword(T failedValue),
+    @required TResult exceedingLength(T failedValue, int max),
+    @required TResult empty(T failedValue),
+    @required TResult invalidUpdateType(T failedValue),
+    @required TResult invalidChat(T failedValue),
   }) {
     assert(invalidEmail != null);
     assert(shortPassword != null);
     assert(exceedingLength != null);
     assert(empty != null);
+    assert(invalidUpdateType != null);
+    assert(invalidChat != null);
     return invalidEmail(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmail(T failedValue),
-    Result shortPassword(T failedValue),
-    Result exceedingLength(T failedValue, int max),
-    Result empty(T failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmail(T failedValue),
+    TResult shortPassword(T failedValue),
+    TResult exceedingLength(T failedValue, int max),
+    TResult empty(T failedValue),
+    TResult invalidUpdateType(T failedValue),
+    TResult invalidChat(T failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidEmail != null) {
@@ -209,27 +237,33 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result shortPassword(ShortPassword<T> value),
-    @required Result exceedingLength(ExceedingLength<T> value),
-    @required Result empty(Empty<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult shortPassword(ShortPassword<T> value),
+    @required TResult exceedingLength(ExceedingLength<T> value),
+    @required TResult empty(Empty<T> value),
+    @required TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    @required TResult invalidChat(_InvalidChat<T> value),
   }) {
     assert(invalidEmail != null);
     assert(shortPassword != null);
     assert(exceedingLength != null);
     assert(empty != null);
+    assert(invalidUpdateType != null);
+    assert(invalidChat != null);
     return invalidEmail(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmail(InvalidEmail<T> value),
-    Result shortPassword(ShortPassword<T> value),
-    Result exceedingLength(ExceedingLength<T> value),
-    Result empty(Empty<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult shortPassword(ShortPassword<T> value),
+    TResult exceedingLength(ExceedingLength<T> value),
+    TResult empty(Empty<T> value),
+    TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    TResult invalidChat(_InvalidChat<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidEmail != null) {
@@ -312,27 +346,33 @@ class _$ShortPassword<T> implements ShortPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmail(T failedValue),
-    @required Result shortPassword(T failedValue),
-    @required Result exceedingLength(T failedValue, int max),
-    @required Result empty(T failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmail(T failedValue),
+    @required TResult shortPassword(T failedValue),
+    @required TResult exceedingLength(T failedValue, int max),
+    @required TResult empty(T failedValue),
+    @required TResult invalidUpdateType(T failedValue),
+    @required TResult invalidChat(T failedValue),
   }) {
     assert(invalidEmail != null);
     assert(shortPassword != null);
     assert(exceedingLength != null);
     assert(empty != null);
+    assert(invalidUpdateType != null);
+    assert(invalidChat != null);
     return shortPassword(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmail(T failedValue),
-    Result shortPassword(T failedValue),
-    Result exceedingLength(T failedValue, int max),
-    Result empty(T failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmail(T failedValue),
+    TResult shortPassword(T failedValue),
+    TResult exceedingLength(T failedValue, int max),
+    TResult empty(T failedValue),
+    TResult invalidUpdateType(T failedValue),
+    TResult invalidChat(T failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (shortPassword != null) {
@@ -343,27 +383,33 @@ class _$ShortPassword<T> implements ShortPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result shortPassword(ShortPassword<T> value),
-    @required Result exceedingLength(ExceedingLength<T> value),
-    @required Result empty(Empty<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult shortPassword(ShortPassword<T> value),
+    @required TResult exceedingLength(ExceedingLength<T> value),
+    @required TResult empty(Empty<T> value),
+    @required TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    @required TResult invalidChat(_InvalidChat<T> value),
   }) {
     assert(invalidEmail != null);
     assert(shortPassword != null);
     assert(exceedingLength != null);
     assert(empty != null);
+    assert(invalidUpdateType != null);
+    assert(invalidChat != null);
     return shortPassword(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmail(InvalidEmail<T> value),
-    Result shortPassword(ShortPassword<T> value),
-    Result exceedingLength(ExceedingLength<T> value),
-    Result empty(Empty<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult shortPassword(ShortPassword<T> value),
+    TResult exceedingLength(ExceedingLength<T> value),
+    TResult empty(Empty<T> value),
+    TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    TResult invalidChat(_InvalidChat<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (shortPassword != null) {
@@ -455,27 +501,33 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmail(T failedValue),
-    @required Result shortPassword(T failedValue),
-    @required Result exceedingLength(T failedValue, int max),
-    @required Result empty(T failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmail(T failedValue),
+    @required TResult shortPassword(T failedValue),
+    @required TResult exceedingLength(T failedValue, int max),
+    @required TResult empty(T failedValue),
+    @required TResult invalidUpdateType(T failedValue),
+    @required TResult invalidChat(T failedValue),
   }) {
     assert(invalidEmail != null);
     assert(shortPassword != null);
     assert(exceedingLength != null);
     assert(empty != null);
+    assert(invalidUpdateType != null);
+    assert(invalidChat != null);
     return exceedingLength(failedValue, max);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmail(T failedValue),
-    Result shortPassword(T failedValue),
-    Result exceedingLength(T failedValue, int max),
-    Result empty(T failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmail(T failedValue),
+    TResult shortPassword(T failedValue),
+    TResult exceedingLength(T failedValue, int max),
+    TResult empty(T failedValue),
+    TResult invalidUpdateType(T failedValue),
+    TResult invalidChat(T failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (exceedingLength != null) {
@@ -486,27 +538,33 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result shortPassword(ShortPassword<T> value),
-    @required Result exceedingLength(ExceedingLength<T> value),
-    @required Result empty(Empty<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult shortPassword(ShortPassword<T> value),
+    @required TResult exceedingLength(ExceedingLength<T> value),
+    @required TResult empty(Empty<T> value),
+    @required TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    @required TResult invalidChat(_InvalidChat<T> value),
   }) {
     assert(invalidEmail != null);
     assert(shortPassword != null);
     assert(exceedingLength != null);
     assert(empty != null);
+    assert(invalidUpdateType != null);
+    assert(invalidChat != null);
     return exceedingLength(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmail(InvalidEmail<T> value),
-    Result shortPassword(ShortPassword<T> value),
-    Result exceedingLength(ExceedingLength<T> value),
-    Result empty(Empty<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult shortPassword(ShortPassword<T> value),
+    TResult exceedingLength(ExceedingLength<T> value),
+    TResult empty(Empty<T> value),
+    TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    TResult invalidChat(_InvalidChat<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (exceedingLength != null) {
@@ -587,27 +645,33 @@ class _$Empty<T> implements Empty<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmail(T failedValue),
-    @required Result shortPassword(T failedValue),
-    @required Result exceedingLength(T failedValue, int max),
-    @required Result empty(T failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmail(T failedValue),
+    @required TResult shortPassword(T failedValue),
+    @required TResult exceedingLength(T failedValue, int max),
+    @required TResult empty(T failedValue),
+    @required TResult invalidUpdateType(T failedValue),
+    @required TResult invalidChat(T failedValue),
   }) {
     assert(invalidEmail != null);
     assert(shortPassword != null);
     assert(exceedingLength != null);
     assert(empty != null);
+    assert(invalidUpdateType != null);
+    assert(invalidChat != null);
     return empty(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmail(T failedValue),
-    Result shortPassword(T failedValue),
-    Result exceedingLength(T failedValue, int max),
-    Result empty(T failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmail(T failedValue),
+    TResult shortPassword(T failedValue),
+    TResult exceedingLength(T failedValue, int max),
+    TResult empty(T failedValue),
+    TResult invalidUpdateType(T failedValue),
+    TResult invalidChat(T failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (empty != null) {
@@ -618,27 +682,33 @@ class _$Empty<T> implements Empty<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result shortPassword(ShortPassword<T> value),
-    @required Result exceedingLength(ExceedingLength<T> value),
-    @required Result empty(Empty<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult shortPassword(ShortPassword<T> value),
+    @required TResult exceedingLength(ExceedingLength<T> value),
+    @required TResult empty(Empty<T> value),
+    @required TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    @required TResult invalidChat(_InvalidChat<T> value),
   }) {
     assert(invalidEmail != null);
     assert(shortPassword != null);
     assert(exceedingLength != null);
     assert(empty != null);
+    assert(invalidUpdateType != null);
+    assert(invalidChat != null);
     return empty(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmail(InvalidEmail<T> value),
-    Result shortPassword(ShortPassword<T> value),
-    Result exceedingLength(ExceedingLength<T> value),
-    Result empty(Empty<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult shortPassword(ShortPassword<T> value),
+    TResult exceedingLength(ExceedingLength<T> value),
+    TResult empty(Empty<T> value),
+    TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    TResult invalidChat(_InvalidChat<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (empty != null) {
@@ -655,4 +725,298 @@ abstract class Empty<T> implements ValueFailure<T> {
   T get failedValue;
   @override
   $EmptyCopyWith<T, Empty<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class _$InvalidUpdateTypeCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$InvalidUpdateTypeCopyWith(_InvalidUpdateType<T> value,
+          $Res Function(_InvalidUpdateType<T>) then) =
+      __$InvalidUpdateTypeCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$InvalidUpdateTypeCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidUpdateTypeCopyWith<T, $Res> {
+  __$InvalidUpdateTypeCopyWithImpl(
+      _InvalidUpdateType<T> _value, $Res Function(_InvalidUpdateType<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidUpdateType<T>));
+
+  @override
+  _InvalidUpdateType<T> get _value => super._value as _InvalidUpdateType<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(_InvalidUpdateType<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_InvalidUpdateType<T> implements _InvalidUpdateType<T> {
+  const _$_InvalidUpdateType({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidUpdateType(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _InvalidUpdateType<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  _$InvalidUpdateTypeCopyWith<T, _InvalidUpdateType<T>> get copyWith =>
+      __$InvalidUpdateTypeCopyWithImpl<T, _InvalidUpdateType<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmail(T failedValue),
+    @required TResult shortPassword(T failedValue),
+    @required TResult exceedingLength(T failedValue, int max),
+    @required TResult empty(T failedValue),
+    @required TResult invalidUpdateType(T failedValue),
+    @required TResult invalidChat(T failedValue),
+  }) {
+    assert(invalidEmail != null);
+    assert(shortPassword != null);
+    assert(exceedingLength != null);
+    assert(empty != null);
+    assert(invalidUpdateType != null);
+    assert(invalidChat != null);
+    return invalidUpdateType(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmail(T failedValue),
+    TResult shortPassword(T failedValue),
+    TResult exceedingLength(T failedValue, int max),
+    TResult empty(T failedValue),
+    TResult invalidUpdateType(T failedValue),
+    TResult invalidChat(T failedValue),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidUpdateType != null) {
+      return invalidUpdateType(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult shortPassword(ShortPassword<T> value),
+    @required TResult exceedingLength(ExceedingLength<T> value),
+    @required TResult empty(Empty<T> value),
+    @required TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    @required TResult invalidChat(_InvalidChat<T> value),
+  }) {
+    assert(invalidEmail != null);
+    assert(shortPassword != null);
+    assert(exceedingLength != null);
+    assert(empty != null);
+    assert(invalidUpdateType != null);
+    assert(invalidChat != null);
+    return invalidUpdateType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult shortPassword(ShortPassword<T> value),
+    TResult exceedingLength(ExceedingLength<T> value),
+    TResult empty(Empty<T> value),
+    TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    TResult invalidChat(_InvalidChat<T> value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidUpdateType != null) {
+      return invalidUpdateType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidUpdateType<T> implements ValueFailure<T> {
+  const factory _InvalidUpdateType({@required T failedValue}) =
+      _$_InvalidUpdateType<T>;
+
+  @override
+  T get failedValue;
+  @override
+  _$InvalidUpdateTypeCopyWith<T, _InvalidUpdateType<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class _$InvalidChatCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$InvalidChatCopyWith(
+          _InvalidChat<T> value, $Res Function(_InvalidChat<T>) then) =
+      __$InvalidChatCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$InvalidChatCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidChatCopyWith<T, $Res> {
+  __$InvalidChatCopyWithImpl(
+      _InvalidChat<T> _value, $Res Function(_InvalidChat<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidChat<T>));
+
+  @override
+  _InvalidChat<T> get _value => super._value as _InvalidChat<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(_InvalidChat<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_InvalidChat<T> implements _InvalidChat<T> {
+  const _$_InvalidChat({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidChat(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _InvalidChat<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  _$InvalidChatCopyWith<T, _InvalidChat<T>> get copyWith =>
+      __$InvalidChatCopyWithImpl<T, _InvalidChat<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmail(T failedValue),
+    @required TResult shortPassword(T failedValue),
+    @required TResult exceedingLength(T failedValue, int max),
+    @required TResult empty(T failedValue),
+    @required TResult invalidUpdateType(T failedValue),
+    @required TResult invalidChat(T failedValue),
+  }) {
+    assert(invalidEmail != null);
+    assert(shortPassword != null);
+    assert(exceedingLength != null);
+    assert(empty != null);
+    assert(invalidUpdateType != null);
+    assert(invalidChat != null);
+    return invalidChat(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmail(T failedValue),
+    TResult shortPassword(T failedValue),
+    TResult exceedingLength(T failedValue, int max),
+    TResult empty(T failedValue),
+    TResult invalidUpdateType(T failedValue),
+    TResult invalidChat(T failedValue),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidChat != null) {
+      return invalidChat(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult shortPassword(ShortPassword<T> value),
+    @required TResult exceedingLength(ExceedingLength<T> value),
+    @required TResult empty(Empty<T> value),
+    @required TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    @required TResult invalidChat(_InvalidChat<T> value),
+  }) {
+    assert(invalidEmail != null);
+    assert(shortPassword != null);
+    assert(exceedingLength != null);
+    assert(empty != null);
+    assert(invalidUpdateType != null);
+    assert(invalidChat != null);
+    return invalidChat(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult shortPassword(ShortPassword<T> value),
+    TResult exceedingLength(ExceedingLength<T> value),
+    TResult empty(Empty<T> value),
+    TResult invalidUpdateType(_InvalidUpdateType<T> value),
+    TResult invalidChat(_InvalidChat<T> value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidChat != null) {
+      return invalidChat(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidChat<T> implements ValueFailure<T> {
+  const factory _InvalidChat({@required T failedValue}) = _$_InvalidChat<T>;
+
+  @override
+  T get failedValue;
+  @override
+  _$InvalidChatCopyWith<T, _InvalidChat<T>> get copyWith;
 }
