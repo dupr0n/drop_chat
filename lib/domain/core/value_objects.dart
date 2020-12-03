@@ -48,27 +48,6 @@ class UniqueId extends ValueObject<String> {
   }
 }
 
-class ChatType extends ValueObject<String> {
-  @override
-  final Either<ValueFailure<String>, String> value;
-
-  const ChatType._(this.value);
-
-  static const maxLength = 10;
-  static const types = {'group', 'individual', 'nil'};
-
-  factory ChatType(String input) {
-    assert(input != null);
-    return ChatType._(validateMaxStringLength(input, maxLength)
-        .flatMap(validateStringNotEmpty)
-        .andThen(validateType(input, types)));
-  }
-
-  factory ChatType.group() => ChatType._(right('group'));
-  factory ChatType.individual() => ChatType._(right('individual'));
-  factory ChatType.nil() => ChatType._(right('nil'));
-}
-
 class UpdateType extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;

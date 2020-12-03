@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hive/hive.dart';
+import 'package:meta/meta.dart';
 
 import '../../domain/auth/user.dart';
 import '../../domain/auth/value_objects.dart';
@@ -8,13 +10,14 @@ part 'user_dtos.freezed.dart';
 part 'user_dtos.g.dart';
 
 @freezed
+@HiveType(typeId: 2)
 abstract class UserDTO with _$UserDTO {
   const UserDTO._();
 
   const factory UserDTO({
-    @required String id,
-    @required String displayName,
-    @required bool isOnline,
+    @HiveField(0) @required String id,
+    @HiveField(1) @required String displayName,
+    @HiveField(2) @required bool isOnline,
   }) = _UserDTO;
 
   factory UserDTO.fromDomain(User user) => UserDTO(

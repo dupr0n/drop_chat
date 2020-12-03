@@ -38,13 +38,13 @@ abstract class Chat extends ChatBase implements _$Chat {
         canSend: true,
         type: ChatType.group(),
         updateType: UpdateType.add(),
-        properties: ChatProperties({
-          ChatProperties.users: const KtList.empty(),
-          ChatProperties.isAdmin: true,
-          ChatProperties.canReceive: true,
-          ChatProperties.groupName: GroupName(''),
-          ChatProperties.groupDescription: GroupDescription(''),
-        }, ChatType.group()),
+        properties: ChatProperties.group(
+          users: const KtList.empty(),
+          isAdmin: true,
+          canReceive: true,
+          groupName: GroupName(''),
+          groupDescription: GroupDescription(''),
+        ),
       );
 
   factory Chat.individual({@required User user}) => Chat(
@@ -55,13 +55,15 @@ abstract class Chat extends ChatBase implements _$Chat {
         canSend: true,
         type: ChatType.individual(),
         updateType: UpdateType.add(),
-        properties: ChatProperties({
-          ChatProperties.receiver: user,
-        }, ChatType.group()),
+        properties: ChatProperties.individual(receiver: user),
       );
 
   @override
-  String get titleDisplay => throw UnimplementedError();
+  String get titleDisplay => type.fold(
+        group: () => properties.groupName.getOrCrash(),
+        individual: () => properties.receiver.displayName.getOrCrash(),
+        nil: () => id.toString(),
+      );
 
   Option<ValueFailure<dynamic>> get failureOption => properties.failureOrUnit
       .andThen(updateType.failureOrUnit)

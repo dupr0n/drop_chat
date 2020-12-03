@@ -18,9 +18,9 @@ class _$UserDTOTearOff {
 
 // ignore: unused_element
   _UserDTO call(
-      {@required String id,
-      @required String displayName,
-      @required bool isOnline}) {
+      {@required @HiveField(0) String id,
+      @required @HiveField(1) String displayName,
+      @required @HiveField(2) bool isOnline}) {
     return _UserDTO(
       id: id,
       displayName: displayName,
@@ -40,8 +40,11 @@ const $UserDTO = _$UserDTOTearOff();
 
 /// @nodoc
 mixin _$UserDTO {
+  @HiveField(0)
   String get id;
+  @HiveField(1)
   String get displayName;
+  @HiveField(2)
   bool get isOnline;
 
   Map<String, dynamic> toJson();
@@ -52,7 +55,10 @@ mixin _$UserDTO {
 abstract class $UserDTOCopyWith<$Res> {
   factory $UserDTOCopyWith(UserDTO value, $Res Function(UserDTO) then) =
       _$UserDTOCopyWithImpl<$Res>;
-  $Res call({String id, String displayName, bool isOnline});
+  $Res call(
+      {@HiveField(0) String id,
+      @HiveField(1) String displayName,
+      @HiveField(2) bool isOnline});
 }
 
 /// @nodoc
@@ -83,7 +89,10 @@ abstract class _$UserDTOCopyWith<$Res> implements $UserDTOCopyWith<$Res> {
   factory _$UserDTOCopyWith(_UserDTO value, $Res Function(_UserDTO) then) =
       __$UserDTOCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String displayName, bool isOnline});
+  $Res call(
+      {@HiveField(0) String id,
+      @HiveField(1) String displayName,
+      @HiveField(2) bool isOnline});
 }
 
 /// @nodoc
@@ -115,7 +124,9 @@ class __$UserDTOCopyWithImpl<$Res> extends _$UserDTOCopyWithImpl<$Res>
 /// @nodoc
 class _$_UserDTO extends _UserDTO {
   const _$_UserDTO(
-      {@required this.id, @required this.displayName, @required this.isOnline})
+      {@required @HiveField(0) this.id,
+      @required @HiveField(1) this.displayName,
+      @required @HiveField(2) this.isOnline})
       : assert(id != null),
         assert(displayName != null),
         assert(isOnline != null),
@@ -125,10 +136,13 @@ class _$_UserDTO extends _UserDTO {
       _$_$_UserDTOFromJson(json);
 
   @override
+  @HiveField(0)
   final String id;
   @override
+  @HiveField(1)
   final String displayName;
   @override
+  @HiveField(2)
   final bool isOnline;
 
   @override
@@ -170,17 +184,20 @@ class _$_UserDTO extends _UserDTO {
 abstract class _UserDTO extends UserDTO {
   const _UserDTO._() : super._();
   const factory _UserDTO(
-      {@required String id,
-      @required String displayName,
-      @required bool isOnline}) = _$_UserDTO;
+      {@required @HiveField(0) String id,
+      @required @HiveField(1) String displayName,
+      @required @HiveField(2) bool isOnline}) = _$_UserDTO;
 
   factory _UserDTO.fromJson(Map<String, dynamic> json) = _$_UserDTO.fromJson;
 
   @override
+  @HiveField(0)
   String get id;
   @override
+  @HiveField(1)
   String get displayName;
   @override
+  @HiveField(2)
   bool get isOnline;
   @override
   _$UserDTOCopyWith<_UserDTO> get copyWith;

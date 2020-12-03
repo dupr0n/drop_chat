@@ -22,20 +22,15 @@ class ChatDTOAdapter extends TypeAdapter<ChatDTO> {
       isArchived: fields[2] as bool,
       isMuted: fields[3] as bool,
       canSend: fields[4] as bool,
-      chatType: fields[5] as String,
-      receiver: fields[6] as UserDTO,
-      users: (fields[7] as List)?.cast<UserDTO>(),
-      isAdmin: fields[8] as bool,
-      canReceive: fields[9] as bool,
-      groupName: fields[10] as String,
-      groupDescription: fields[11] as String,
+      type: fields[5] as String,
+      properties: (fields[6] as Map)?.cast<String, dynamic>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, ChatDTO obj) {
     writer
-      ..writeByte(12)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -47,19 +42,9 @@ class ChatDTOAdapter extends TypeAdapter<ChatDTO> {
       ..writeByte(4)
       ..write(obj.canSend)
       ..writeByte(5)
-      ..write(obj.chatType)
+      ..write(obj.type)
       ..writeByte(6)
-      ..write(obj.receiver)
-      ..writeByte(7)
-      ..write(obj.users)
-      ..writeByte(8)
-      ..write(obj.isAdmin)
-      ..writeByte(9)
-      ..write(obj.canReceive)
-      ..writeByte(10)
-      ..write(obj.groupName)
-      ..writeByte(11)
-      ..write(obj.groupDescription);
+      ..write(obj.properties);
   }
 
   @override
@@ -87,19 +72,9 @@ _$_ChatDTO _$_$_ChatDTOFromJson(Map<String, dynamic> json) {
     isArchived: json['isArchived'] as bool,
     isMuted: json['isMuted'] as bool,
     canSend: json['canSend'] as bool,
-    chatType: json['chatType'] as String,
+    type: json['type'] as String,
+    properties: json['properties'] as Map<String, dynamic>,
     updateType: json['updateType'] as String ?? 'nil',
-    receiver: json['receiver'] == null
-        ? null
-        : UserDTO.fromJson(json['receiver'] as Map<String, dynamic>),
-    users: (json['users'] as List)
-        ?.map((e) =>
-            e == null ? null : UserDTO.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    isAdmin: json['isAdmin'] as bool,
-    canReceive: json['canReceive'] as bool,
-    groupName: json['groupName'] as String,
-    groupDescription: json['groupDescription'] as String,
   );
 }
 
@@ -110,12 +85,7 @@ Map<String, dynamic> _$_$_ChatDTOToJson(_$_ChatDTO instance) =>
       'isArchived': instance.isArchived,
       'isMuted': instance.isMuted,
       'canSend': instance.canSend,
-      'chatType': instance.chatType,
+      'type': instance.type,
+      'properties': instance.properties,
       'updateType': instance.updateType,
-      'receiver': instance.receiver?.toJson(),
-      'users': instance.users?.map((e) => e?.toJson())?.toList(),
-      'isAdmin': instance.isAdmin,
-      'canReceive': instance.canReceive,
-      'groupName': instance.groupName,
-      'groupDescription': instance.groupDescription,
     };
