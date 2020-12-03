@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
@@ -31,6 +32,9 @@ abstract class UserDTO with _$UserDTO {
         displayName: DisplayName(displayName),
         isOnline: isOnline,
       );
+
+  factory UserDTO.fromFirestore(DocumentSnapshot doc) =>
+      UserDTO.fromJson(doc.data()).copyWith(id: doc.id);
 
   factory UserDTO.fromJson(Map<String, dynamic> json) => _$UserDTOFromJson(json);
 }

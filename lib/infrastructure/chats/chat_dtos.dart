@@ -55,9 +55,6 @@ abstract class ChatDTO with _$ChatDTO {
   ChatProperties propToDomain(Map<String, dynamic> input, ChatType type) => type.fold(
         group: () => ChatProperties.group(
           users: _usersToDomain(input[ChatProperties.usersKey] as Map<int, UserDTO>),
-          // users: (input[ChatProperties.usersKey] as List<UserDTO>).map((user) => user.toDomain()).toImmutableList(),
-          // users: [User(id: UniqueId(), displayName: DisplayName('Some DisplayName'), isOnline: true)]
-          // .toImmutableList(),
           isAdmin: input[ChatProperties.isAdminKey] as bool,
           canReceive: input[ChatProperties.canReceiveKey] as bool,
           groupName: GroupName(input[ChatProperties.groupNameKey] as String),
@@ -86,6 +83,7 @@ KtList<User> _usersToDomain(Map<int, UserDTO> users) =>
 List<UserDTO> _usersFromDomain(KtList<User> users) =>
     users.asList().map((user) => UserDTO.fromDomain(user)).toList();
 
+//$ ChatPropertiesUpdate
 Map<String, dynamic> propFromDomain(ChatProperties chatProp, ChatType type) {
   final Map<String, dynamic> prop = {};
   type.fold(

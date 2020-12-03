@@ -52,11 +52,12 @@ class ChatType extends ValueObject<String> {
 
   const ChatType._(this.value);
 
+  //$ ChatTypeUpdate
   static const maxLength = 10;
-  static const groupString = 'group';
-  static const individualString = 'individual';
-  static const nilString = 'nil';
-  static const types = {groupString, individualString, nilString};
+  static const _groupString = 'group';
+  static const _individualString = 'individual';
+  static const _nilString = 'nil';
+  static const types = {_groupString, _individualString, _nilString};
 
   factory ChatType(String input) {
     assert(input != null);
@@ -65,27 +66,29 @@ class ChatType extends ValueObject<String> {
         .andThen(validateType(input, types)));
   }
 
+  //$ ChatTypeUpdate
   T fold<T>({
     @required T Function() group,
     @required T Function() individual,
     @required T Function() nil,
   }) {
-    final type = value.getOrElse(() => nilString);
+    final type = value.getOrElse(() => _nilString);
     switch (type) {
-      case groupString:
+      case _groupString:
         return group();
-      case individualString:
+      case _individualString:
         return individual();
-      case nilString:
+      case _nilString:
         return nil();
       default:
         return nil();
     }
   }
 
-  factory ChatType.group() => ChatType._(right(groupString));
-  factory ChatType.individual() => ChatType._(right(individualString));
-  factory ChatType.nil() => ChatType._(right(nilString));
+  //$ ChatTypeUpdate
+  factory ChatType.group() => ChatType._(right(_groupString));
+  factory ChatType.individual() => ChatType._(right(_individualString));
+  factory ChatType.nil() => ChatType._(right(_nilString));
 
   @override
   bool operator ==(Object o) {
@@ -122,6 +125,7 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
   static const receiverKey = 'receiver';
   static const individualKeys = {receiverKey};
 
+  //$ ChatPropertiesUpdate
   KtList<User> get users => value.getOrElse(() => null)[usersKey] as KtList<User>;
   bool get isAdmin => value.getOrElse(() => null)[isAdminKey] as bool;
   bool get canReceive => value.getOrElse(() => null)[canReceiveKey] as bool;
@@ -130,6 +134,7 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
       value.getOrElse(() => null)[groupDescriptionKey] as GroupDescription;
   User get receiver => value.getOrElse(() => null)[receiverKey] as User;
 
+  //$ ChatPropertiesUpdate
   factory ChatProperties(Map<String, dynamic> input, ChatType chatType) {
     assert(input != null && chatType != null);
     bool isValid = false;
@@ -149,6 +154,8 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
     return ChatProperties._(validateChatProperties(input, isValid: isValid));
   }
 
+  //$ ChatPropertiesUpdate
+  //$ ChatTypeUpdate
   factory ChatProperties.group({
     @required KtList<User> users,
     @required bool isAdmin,
@@ -176,6 +183,7 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
 
   factory ChatProperties.nil() => ChatProperties(const {}, ChatType.nil());
 
+  //$ ChatPropertiesUpdate
   ChatProperties copyWith({
     KtList<User> users,
     bool isAdmin,

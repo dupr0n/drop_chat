@@ -30,6 +30,7 @@ abstract class Chat extends ChatBase implements _$Chat {
     @required ChatProperties properties,
   }) = _Chat;
 
+  //$ ChatTypeUpdate
   factory Chat.group() => Chat(
         id: UniqueId(),
         messages: const KtList.empty(),

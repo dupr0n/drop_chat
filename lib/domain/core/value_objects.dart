@@ -54,6 +54,7 @@ class UpdateType extends ValueObject<String> {
 
   const UpdateType._(this.value);
 
+  //$ UpdateTypeUpdate
   static const maxLength = 6;
   static const types = {'add', 'edit', 'delete', 'nil'};
 
@@ -64,6 +65,7 @@ class UpdateType extends ValueObject<String> {
         .andThen(validateType(input, types)));
   }
 
+  //$ UpdateTypeUpdate
   factory UpdateType.add() => UpdateType._(right('add'));
   factory UpdateType.edit() => UpdateType._(right('edit'));
   factory UpdateType.delete() => UpdateType._(right('delete'));
