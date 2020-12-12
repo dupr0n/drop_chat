@@ -18,32 +18,29 @@ class ChatDTOAdapter extends TypeAdapter<ChatDTO> {
     };
     return ChatDTO(
       id: fields[0] as String,
-      messages: (fields[1] as List)?.cast<MessageDTO>(),
-      isArchived: fields[2] as bool,
-      isMuted: fields[3] as bool,
-      canSend: fields[4] as bool,
-      type: fields[5] as String,
-      properties: (fields[6] as Map)?.cast<String, dynamic>(),
+      isArchived: fields[1] as bool,
+      isMuted: fields[2] as bool,
+      canSend: fields[3] as bool,
+      type: fields[4] as String,
+      properties: (fields[5] as Map)?.cast<String, dynamic>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, ChatDTO obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.messages)
-      ..writeByte(2)
       ..write(obj.isArchived)
-      ..writeByte(3)
+      ..writeByte(2)
       ..write(obj.isMuted)
-      ..writeByte(4)
+      ..writeByte(3)
       ..write(obj.canSend)
-      ..writeByte(5)
+      ..writeByte(4)
       ..write(obj.type)
-      ..writeByte(6)
+      ..writeByte(5)
       ..write(obj.properties);
   }
 

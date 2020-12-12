@@ -44,7 +44,4 @@ abstract class MessageDTO with _$MessageDTO {
 
   factory MessageDTO.fromFirestore(DocumentSnapshot doc) =>
       MessageDTO.fromJson(doc.data()).copyWith(id: doc.id);
-
-  factory MessageDTO.fromHive({Box chatBox, String messageId}) =>
-      chatBox.get(messageId) as MessageDTO;
 }

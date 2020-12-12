@@ -19,12 +19,12 @@ class _$ChatDTOTearOff {
 // ignore: unused_element
   _ChatDTO call(
       {@required @HiveField(0) String id,
-      @required @HiveField(1) List<MessageDTO> messages,
-      @required @HiveField(2) bool isArchived,
-      @required @HiveField(3) bool isMuted,
-      @required @HiveField(4) bool canSend,
-      @required @HiveField(5) String type,
-      @required @HiveField(6) Map<String, dynamic> properties,
+      List<MessageDTO> messages,
+      @required @HiveField(1) bool isArchived,
+      @required @HiveField(2) bool isMuted,
+      @required @HiveField(3) bool canSend,
+      @required @HiveField(4) String type,
+      @required @HiveField(5) Map<String, dynamic> properties,
       String updateType = 'nil'}) {
     return _ChatDTO(
       id: id,
@@ -52,17 +52,16 @@ const $ChatDTO = _$ChatDTOTearOff();
 mixin _$ChatDTO {
   @HiveField(0)
   String get id;
-  @HiveField(1)
   List<MessageDTO> get messages;
-  @HiveField(2)
+  @HiveField(1)
   bool get isArchived;
-  @HiveField(3)
+  @HiveField(2)
   bool get isMuted;
-  @HiveField(4)
+  @HiveField(3)
   bool get canSend;
-  @HiveField(5)
+  @HiveField(4)
   String get type;
-  @HiveField(6)
+  @HiveField(5)
   Map<String, dynamic> get properties;
   String get updateType;
 
@@ -76,12 +75,12 @@ abstract class $ChatDTOCopyWith<$Res> {
       _$ChatDTOCopyWithImpl<$Res>;
   $Res call(
       {@HiveField(0) String id,
-      @HiveField(1) List<MessageDTO> messages,
-      @HiveField(2) bool isArchived,
-      @HiveField(3) bool isMuted,
-      @HiveField(4) bool canSend,
-      @HiveField(5) String type,
-      @HiveField(6) Map<String, dynamic> properties,
+      List<MessageDTO> messages,
+      @HiveField(1) bool isArchived,
+      @HiveField(2) bool isMuted,
+      @HiveField(3) bool canSend,
+      @HiveField(4) String type,
+      @HiveField(5) Map<String, dynamic> properties,
       String updateType});
 }
 
@@ -129,12 +128,12 @@ abstract class _$ChatDTOCopyWith<$Res> implements $ChatDTOCopyWith<$Res> {
   @override
   $Res call(
       {@HiveField(0) String id,
-      @HiveField(1) List<MessageDTO> messages,
-      @HiveField(2) bool isArchived,
-      @HiveField(3) bool isMuted,
-      @HiveField(4) bool canSend,
-      @HiveField(5) String type,
-      @HiveField(6) Map<String, dynamic> properties,
+      List<MessageDTO> messages,
+      @HiveField(1) bool isArchived,
+      @HiveField(2) bool isMuted,
+      @HiveField(3) bool canSend,
+      @HiveField(4) String type,
+      @HiveField(5) Map<String, dynamic> properties,
       String updateType});
 }
 
@@ -182,15 +181,14 @@ class __$ChatDTOCopyWithImpl<$Res> extends _$ChatDTOCopyWithImpl<$Res>
 class _$_ChatDTO extends _ChatDTO {
   const _$_ChatDTO(
       {@required @HiveField(0) this.id,
-      @required @HiveField(1) this.messages,
-      @required @HiveField(2) this.isArchived,
-      @required @HiveField(3) this.isMuted,
-      @required @HiveField(4) this.canSend,
-      @required @HiveField(5) this.type,
-      @required @HiveField(6) this.properties,
+      this.messages,
+      @required @HiveField(1) this.isArchived,
+      @required @HiveField(2) this.isMuted,
+      @required @HiveField(3) this.canSend,
+      @required @HiveField(4) this.type,
+      @required @HiveField(5) this.properties,
       this.updateType = 'nil'})
       : assert(id != null),
-        assert(messages != null),
         assert(isArchived != null),
         assert(isMuted != null),
         assert(canSend != null),
@@ -206,22 +204,21 @@ class _$_ChatDTO extends _ChatDTO {
   @HiveField(0)
   final String id;
   @override
-  @HiveField(1)
   final List<MessageDTO> messages;
   @override
-  @HiveField(2)
+  @HiveField(1)
   final bool isArchived;
   @override
-  @HiveField(3)
+  @HiveField(2)
   final bool isMuted;
   @override
-  @HiveField(4)
+  @HiveField(3)
   final bool canSend;
   @override
-  @HiveField(5)
+  @HiveField(4)
   final String type;
   @override
-  @HiveField(6)
+  @HiveField(5)
   final Map<String, dynamic> properties;
   @JsonKey(defaultValue: 'nil')
   @override
@@ -286,12 +283,12 @@ abstract class _ChatDTO extends ChatDTO {
   const _ChatDTO._() : super._();
   const factory _ChatDTO(
       {@required @HiveField(0) String id,
-      @required @HiveField(1) List<MessageDTO> messages,
-      @required @HiveField(2) bool isArchived,
-      @required @HiveField(3) bool isMuted,
-      @required @HiveField(4) bool canSend,
-      @required @HiveField(5) String type,
-      @required @HiveField(6) Map<String, dynamic> properties,
+      List<MessageDTO> messages,
+      @required @HiveField(1) bool isArchived,
+      @required @HiveField(2) bool isMuted,
+      @required @HiveField(3) bool canSend,
+      @required @HiveField(4) String type,
+      @required @HiveField(5) Map<String, dynamic> properties,
       String updateType}) = _$_ChatDTO;
 
   factory _ChatDTO.fromJson(Map<String, dynamic> json) = _$_ChatDTO.fromJson;
@@ -300,22 +297,21 @@ abstract class _ChatDTO extends ChatDTO {
   @HiveField(0)
   String get id;
   @override
-  @HiveField(1)
   List<MessageDTO> get messages;
   @override
-  @HiveField(2)
+  @HiveField(1)
   bool get isArchived;
   @override
-  @HiveField(3)
+  @HiveField(2)
   bool get isMuted;
   @override
-  @HiveField(4)
+  @HiveField(3)
   bool get canSend;
   @override
-  @HiveField(5)
+  @HiveField(4)
   String get type;
   @override
-  @HiveField(6)
+  @HiveField(5)
   Map<String, dynamic> get properties;
   @override
   String get updateType;

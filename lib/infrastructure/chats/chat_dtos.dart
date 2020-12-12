@@ -21,12 +21,12 @@ abstract class ChatDTO with _$ChatDTO {
 
   const factory ChatDTO({
     @HiveField(0) @required String id,
-    @HiveField(1) @required List<MessageDTO> messages,
-    @HiveField(2) @required bool isArchived,
-    @HiveField(3) @required bool isMuted,
-    @HiveField(4) @required bool canSend,
-    @HiveField(5) @required String type,
-    @HiveField(6) @required Map<String, dynamic> properties,
+    List<MessageDTO> messages,
+    @HiveField(1) @required bool isArchived,
+    @HiveField(2) @required bool isMuted,
+    @HiveField(3) @required bool canSend,
+    @HiveField(4) @required String type,
+    @HiveField(5) @required Map<String, dynamic> properties,
     @Default('nil') String updateType,
   }) = _ChatDTO;
 
@@ -38,7 +38,7 @@ abstract class ChatDTO with _$ChatDTO {
         canSend: chat.canSend,
         type: chat.type.getOrCrash(),
         updateType: chat.updateType.getOrCrash(),
-        properties: propFromDomain(chat.properties, chat.type),
+        properties: _propFromDomain(chat.properties, chat.type),
       );
 
   Chat toDomain() => Chat(
@@ -49,49 +49,51 @@ abstract class ChatDTO with _$ChatDTO {
         canSend: canSend,
         type: ChatType(type),
         updateType: UpdateType(updateType),
-        properties: propToDomain(properties, ChatType(type)),
-      );
-
-  ChatProperties propToDomain(Map<String, dynamic> input, ChatType type) => type.fold(
-        group: () => ChatProperties.group(
-          users: _usersToDomain(input[ChatProperties.usersKey] as Map<int, UserDTO>),
-          isAdmin: input[ChatProperties.isAdminKey] as bool,
-          canReceive: input[ChatProperties.canReceiveKey] as bool,
-          groupName: GroupName(input[ChatProperties.groupNameKey] as String),
-          groupDescription: GroupDescription(input[ChatProperties.groupDescriptionKey] as String),
-        ),
-        individual: () => ChatProperties.individual(
-            receiver: (input[ChatProperties.receiverKey] as UserDTO).toDomain()),
-        nil: () => ChatProperties.nil(),
+        properties: _propToDomain(properties, ChatType(type)),
       );
 
   factory ChatDTO.fromFirestore(DocumentSnapshot doc) =>
       ChatDTO.fromJson(doc.data()).copyWith(id: doc.id);
 
   factory ChatDTO.fromJson(Map<String, dynamic> json) => _$ChatDTOFromJson(json);
-}
 
-KtList<Message> _messagesToDomain(List<MessageDTO> messages) =>
-    messages.map((message) => message.toDomain()).toImmutableList();
+  factory ChatDTO.toHive(ChatDTO chat) => ChatDTO(
+        id: chat.id,
+        isArchived: chat.isArchived,
+        isMuted: chat.isMuted,
+        canSend: chat.canSend,
+        type: chat.type,
+        properties: chat.properties,
+      );
+
+  Future<void> updateHive(Box<ChatDTO> box) async {
+    assert(box != null);
+    if (box.containsKey(id)) box.delete(id);
+    await box.put(id, ChatDTO.toHive(this));
+  }
+}
 
 List<MessageDTO> _messagesFromDomain(KtList<Message> messages) =>
     messages.asList().map((message) => MessageDTO.fromDomain(message)).toList();
 
-KtList<User> _usersToDomain(Map<int, UserDTO> users) =>
-    users.values.map((user) => user.toDomain()).toImmutableList();
+KtList<Message> _messagesToDomain(List<MessageDTO> messages) =>
+    messages.map((message) => message.toDomain()).toImmutableList();
 
 List<UserDTO> _usersFromDomain(KtList<User> users) =>
     users.asList().map((user) => UserDTO.fromDomain(user)).toList();
 
+KtList<User> _usersToDomain(List<UserDTO> users) =>
+    users.map((user) => user.toDomain()).toImmutableList();
+
 //$ ChatPropertiesUpdate
-Map<String, dynamic> propFromDomain(ChatProperties chatProp, ChatType type) {
+Map<String, dynamic> _propFromDomain(ChatProperties chatProp, ChatType type) {
   final Map<String, dynamic> prop = {};
   type.fold(
     group: () {
       for (final key in ChatProperties.groupKeys) {
         switch (key) {
           case ChatProperties.usersKey:
-            prop.addAll({ChatProperties.usersKey: _usersFromDomain(chatProp.users).asMap()});
+            prop.addAll({ChatProperties.usersKey: _usersFromDomain(chatProp.users)});
             break;
           case ChatProperties.isAdminKey:
             prop.addAll({ChatProperties.isAdminKey: chatProp.isAdmin});
@@ -128,3 +130,17 @@ Map<String, dynamic> propFromDomain(ChatProperties chatProp, ChatType type) {
   );
   return prop;
 }
+
+//! Note to self: Use 'List.from' or 'Map.from' instead of 'as'
+ChatProperties _propToDomain(Map<String, dynamic> input, ChatType type) => type.fold(
+      group: () => ChatProperties.group(
+        users: _usersToDomain(List<UserDTO>.from(input[ChatProperties.usersKey] as List)),
+        isAdmin: input[ChatProperties.isAdminKey] as bool,
+        canReceive: input[ChatProperties.canReceiveKey] as bool,
+        groupName: GroupName(input[ChatProperties.groupNameKey] as String),
+        groupDescription: GroupDescription(input[ChatProperties.groupDescriptionKey] as String),
+      ),
+      individual: () => ChatProperties.individual(
+          receiver: (input[ChatProperties.receiverKey] as UserDTO).toDomain()),
+      nil: () => ChatProperties.nil(),
+    );
