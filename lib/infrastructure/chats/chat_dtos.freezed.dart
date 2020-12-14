@@ -20,9 +20,9 @@ class _$ChatDTOTearOff {
   _ChatDTO call(
       {@required @HiveField(0) String id,
       List<MessageDTO> messages,
-      @required @HiveField(1) bool isArchived,
-      @required @HiveField(2) bool isMuted,
-      @required @HiveField(3) bool canSend,
+      @HiveField(1) bool isArchived = false,
+      @HiveField(2) bool isMuted = false,
+      @HiveField(3) bool canSend = true,
       @required @HiveField(4) String type,
       @required @HiveField(5) Map<String, dynamic> properties,
       String updateType = 'nil'}) {
@@ -182,9 +182,9 @@ class _$_ChatDTO extends _ChatDTO {
   const _$_ChatDTO(
       {@required @HiveField(0) this.id,
       this.messages,
-      @required @HiveField(1) this.isArchived,
-      @required @HiveField(2) this.isMuted,
-      @required @HiveField(3) this.canSend,
+      @HiveField(1) this.isArchived = false,
+      @HiveField(2) this.isMuted = false,
+      @HiveField(3) this.canSend = true,
       @required @HiveField(4) this.type,
       @required @HiveField(5) this.properties,
       this.updateType = 'nil'})
@@ -205,12 +205,15 @@ class _$_ChatDTO extends _ChatDTO {
   final String id;
   @override
   final List<MessageDTO> messages;
+  @JsonKey(defaultValue: false)
   @override
   @HiveField(1)
   final bool isArchived;
+  @JsonKey(defaultValue: false)
   @override
   @HiveField(2)
   final bool isMuted;
+  @JsonKey(defaultValue: true)
   @override
   @HiveField(3)
   final bool canSend;
@@ -284,9 +287,9 @@ abstract class _ChatDTO extends ChatDTO {
   const factory _ChatDTO(
       {@required @HiveField(0) String id,
       List<MessageDTO> messages,
-      @required @HiveField(1) bool isArchived,
-      @required @HiveField(2) bool isMuted,
-      @required @HiveField(3) bool canSend,
+      @HiveField(1) bool isArchived,
+      @HiveField(2) bool isMuted,
+      @HiveField(3) bool canSend,
       @required @HiveField(4) String type,
       @required @HiveField(5) Map<String, dynamic> properties,
       String updateType}) = _$_ChatDTO;

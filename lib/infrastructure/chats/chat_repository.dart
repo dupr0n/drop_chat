@@ -38,7 +38,7 @@ class ChatRepository implements IChatRepository {
   }
 
   @override
-  Future<Either<ChatFailure, Unit>> update(Chat chat) async {
+  Future<Either<ChatFailure, Unit>> edit(Chat chat) async {
     // TODO: implement update
     throw UnimplementedError();
   }

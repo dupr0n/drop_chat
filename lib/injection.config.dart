@@ -36,7 +36,8 @@ GetIt $initGetIt(
       () => FirebaseAuthFacade(get<FirebaseAuth>(), get<GoogleSignIn>()));
   gh.lazySingleton<IChatRepository>(
       () => ChatRepository(get<FirebaseFirestore>()));
-  gh.lazySingleton<IMessageRepository>(() => MessageRepository(get<String>()));
+  gh.lazySingleton<IMessageRepository>(() =>
+      MessageRepository(get<FirebaseFirestore>(), chatBoxId: get<String>()));
   gh.factory<SignInFormBloc>(() => SignInFormBloc(get<IAuthFacade>()));
   gh.factory<AuthBloc>(() => AuthBloc(get<IAuthFacade>()));
   return get;

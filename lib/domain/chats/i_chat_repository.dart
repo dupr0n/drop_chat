@@ -8,6 +8,6 @@ abstract class IChatRepository {
   Stream<Either<ChatFailure, KtList<Chat>>> watchAll();
   Stream<Either<ChatFailure, KtList<Chat>>> watchArchived();
   Future<Either<ChatFailure, Unit>> create(Chat chat);
-  Future<Either<ChatFailure, Unit>> update(Chat chat);
+  Future<Either<ChatFailure, Unit>> edit(Chat chat);
   Future<Either<ChatFailure, Unit>> delete(Chat chat);
 }

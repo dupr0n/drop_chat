@@ -56,7 +56,11 @@ class UpdateType extends ValueObject<String> {
 
   //$ UpdateTypeUpdate
   static const maxLength = 6;
-  static const types = {'add', 'edit', 'delete', 'nil'};
+  static const _addStr = 'add';
+  static const _editStr = 'edit';
+  static const _deleteStr = 'delete';
+  static const _nilStr = 'nil';
+  static const types = {_addStr, _editStr, _deleteStr, _nilStr};
 
   factory UpdateType(String input) {
     assert(input != null);
@@ -66,8 +70,28 @@ class UpdateType extends ValueObject<String> {
   }
 
   //$ UpdateTypeUpdate
-  factory UpdateType.add() => UpdateType._(right('add'));
-  factory UpdateType.edit() => UpdateType._(right('edit'));
-  factory UpdateType.delete() => UpdateType._(right('delete'));
-  factory UpdateType.nil() => UpdateType._(right('nil'));
+  factory UpdateType.add() => UpdateType._(right(_addStr));
+  factory UpdateType.edit() => UpdateType._(right(_editStr));
+  factory UpdateType.delete() => UpdateType._(right(_deleteStr));
+  factory UpdateType.nil() => UpdateType._(right(_nilStr));
+
+  T fold<T>({
+    @required T Function() add,
+    @required T Function() edit,
+    @required T Function() delete,
+    @required T Function() nil,
+  }) {
+    switch (value.getOrElse(() => _nilStr)) {
+      case _addStr:
+        return add();
+      case _editStr:
+        return edit();
+      case _deleteStr:
+        return delete();
+      case _nilStr:
+        return nil();
+      default:
+        return nil();
+    }
+  }
 }

@@ -22,9 +22,9 @@ abstract class ChatDTO with _$ChatDTO {
   const factory ChatDTO({
     @HiveField(0) @required String id,
     List<MessageDTO> messages,
-    @HiveField(1) @required bool isArchived,
-    @HiveField(2) @required bool isMuted,
-    @HiveField(3) @required bool canSend,
+    @HiveField(1) @Default(false) bool isArchived,
+    @HiveField(2) @Default(false) bool isMuted,
+    @HiveField(3) @Default(true) bool canSend,
     @HiveField(4) @required String type,
     @HiveField(5) @required Map<String, dynamic> properties,
     @Default('nil') String updateType,

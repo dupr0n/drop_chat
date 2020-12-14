@@ -1,7 +1,9 @@
 import 'package:dartz/dartz.dart';
+import 'package:drop_chat/domain/auth/i_auth_facade.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:meta/meta.dart';
 
+import '../../injection.dart';
 import '../auth/user.dart';
 import '../core/failures.dart';
 import '../core/value_objects.dart';
@@ -124,6 +126,28 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
   //# Individual properties
   static const receiverKey = 'receiver';
   static const individualKeys = {receiverKey};
+
+  //# Global parameters
+  //$ ChatTypeUpdate
+  ChatType get type {
+    final map = value.getOrElse(() => null);
+    if (map.containsKey(usersKey)) {
+      return ChatType.group();
+    } else if (map.containsKey(receiverKey)) {
+      return ChatType.individual();
+    } else {
+      return ChatType.nil();
+    }
+  }
+
+  Iterable<User> get receivers => type.fold(
+        group: () => users.iter,
+        individual: () => [
+          receiver,
+          getIt<IAuthFacade>().getSignedInUser().getOrElse(() => null),
+        ],
+        nil: () => [],
+      );
 
   //$ ChatPropertiesUpdate
   KtList<User> get users => value.getOrElse(() => null)[usersKey] as KtList<User>;

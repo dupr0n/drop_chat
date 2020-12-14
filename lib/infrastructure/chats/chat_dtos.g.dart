@@ -66,9 +66,9 @@ _$_ChatDTO _$_$_ChatDTOFromJson(Map<String, dynamic> json) {
         ?.map((e) =>
             e == null ? null : MessageDTO.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    isArchived: json['isArchived'] as bool,
-    isMuted: json['isMuted'] as bool,
-    canSend: json['canSend'] as bool,
+    isArchived: json['isArchived'] as bool ?? false,
+    isMuted: json['isMuted'] as bool ?? false,
+    canSend: json['canSend'] as bool ?? true,
     type: json['type'] as String,
     properties: json['properties'] as Map<String, dynamic>,
     updateType: json['updateType'] as String ?? 'nil',
