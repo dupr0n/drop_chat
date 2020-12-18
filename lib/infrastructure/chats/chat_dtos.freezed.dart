@@ -18,20 +18,32 @@ class _$ChatDTOTearOff {
 
 // ignore: unused_element
   _ChatDTO call(
-      {@required @HiveField(0) String id,
-      List<MessageDTO> messages,
-      @HiveField(1) bool isArchived = false,
-      @HiveField(2) bool isMuted = false,
-      @HiveField(3) bool canSend = true,
-      @required @HiveField(4) String type,
-      @required @HiveField(5) Map<String, dynamic> properties,
+      {@required
+      @HiveField(0)
+          String id,
+      @HiveField(1)
+          bool isArchived = false,
+      @HiveField(2)
+          bool isMuted = false,
+      @HiveField(3)
+          bool canSend = true,
+      @required
+      @HiveField(4)
+          String timestamp,
+      @required
+      @HiveField(5)
+          String type,
+      @required
+      @HiveField(6)
+      @ChatPropertiesConverter()
+          Map<String, dynamic> properties,
       String updateType = 'nil'}) {
     return _ChatDTO(
       id: id,
-      messages: messages,
       isArchived: isArchived,
       isMuted: isMuted,
       canSend: canSend,
+      timestamp: timestamp,
       type: type,
       properties: properties,
       updateType: updateType,
@@ -52,7 +64,6 @@ const $ChatDTO = _$ChatDTOTearOff();
 mixin _$ChatDTO {
   @HiveField(0)
   String get id;
-  List<MessageDTO> get messages;
   @HiveField(1)
   bool get isArchived;
   @HiveField(2)
@@ -60,8 +71,11 @@ mixin _$ChatDTO {
   @HiveField(3)
   bool get canSend;
   @HiveField(4)
-  String get type;
+  String get timestamp;
   @HiveField(5)
+  String get type;
+  @HiveField(6)
+  @ChatPropertiesConverter()
   Map<String, dynamic> get properties;
   String get updateType;
 
@@ -75,12 +89,12 @@ abstract class $ChatDTOCopyWith<$Res> {
       _$ChatDTOCopyWithImpl<$Res>;
   $Res call(
       {@HiveField(0) String id,
-      List<MessageDTO> messages,
       @HiveField(1) bool isArchived,
       @HiveField(2) bool isMuted,
       @HiveField(3) bool canSend,
-      @HiveField(4) String type,
-      @HiveField(5) Map<String, dynamic> properties,
+      @HiveField(4) String timestamp,
+      @HiveField(5) String type,
+      @HiveField(6) @ChatPropertiesConverter() Map<String, dynamic> properties,
       String updateType});
 }
 
@@ -95,22 +109,21 @@ class _$ChatDTOCopyWithImpl<$Res> implements $ChatDTOCopyWith<$Res> {
   @override
   $Res call({
     Object id = freezed,
-    Object messages = freezed,
     Object isArchived = freezed,
     Object isMuted = freezed,
     Object canSend = freezed,
+    Object timestamp = freezed,
     Object type = freezed,
     Object properties = freezed,
     Object updateType = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
-      messages:
-          messages == freezed ? _value.messages : messages as List<MessageDTO>,
       isArchived:
           isArchived == freezed ? _value.isArchived : isArchived as bool,
       isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
       canSend: canSend == freezed ? _value.canSend : canSend as bool,
+      timestamp: timestamp == freezed ? _value.timestamp : timestamp as String,
       type: type == freezed ? _value.type : type as String,
       properties: properties == freezed
           ? _value.properties
@@ -128,12 +141,12 @@ abstract class _$ChatDTOCopyWith<$Res> implements $ChatDTOCopyWith<$Res> {
   @override
   $Res call(
       {@HiveField(0) String id,
-      List<MessageDTO> messages,
       @HiveField(1) bool isArchived,
       @HiveField(2) bool isMuted,
       @HiveField(3) bool canSend,
-      @HiveField(4) String type,
-      @HiveField(5) Map<String, dynamic> properties,
+      @HiveField(4) String timestamp,
+      @HiveField(5) String type,
+      @HiveField(6) @ChatPropertiesConverter() Map<String, dynamic> properties,
       String updateType});
 }
 
@@ -149,22 +162,21 @@ class __$ChatDTOCopyWithImpl<$Res> extends _$ChatDTOCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
-    Object messages = freezed,
     Object isArchived = freezed,
     Object isMuted = freezed,
     Object canSend = freezed,
+    Object timestamp = freezed,
     Object type = freezed,
     Object properties = freezed,
     Object updateType = freezed,
   }) {
     return _then(_ChatDTO(
       id: id == freezed ? _value.id : id as String,
-      messages:
-          messages == freezed ? _value.messages : messages as List<MessageDTO>,
       isArchived:
           isArchived == freezed ? _value.isArchived : isArchived as bool,
       isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
       canSend: canSend == freezed ? _value.canSend : canSend as bool,
+      timestamp: timestamp == freezed ? _value.timestamp : timestamp as String,
       type: type == freezed ? _value.type : type as String,
       properties: properties == freezed
           ? _value.properties
@@ -181,17 +193,18 @@ class __$ChatDTOCopyWithImpl<$Res> extends _$ChatDTOCopyWithImpl<$Res>
 class _$_ChatDTO extends _ChatDTO {
   const _$_ChatDTO(
       {@required @HiveField(0) this.id,
-      this.messages,
       @HiveField(1) this.isArchived = false,
       @HiveField(2) this.isMuted = false,
       @HiveField(3) this.canSend = true,
-      @required @HiveField(4) this.type,
-      @required @HiveField(5) this.properties,
+      @required @HiveField(4) this.timestamp,
+      @required @HiveField(5) this.type,
+      @required @HiveField(6) @ChatPropertiesConverter() this.properties,
       this.updateType = 'nil'})
       : assert(id != null),
         assert(isArchived != null),
         assert(isMuted != null),
         assert(canSend != null),
+        assert(timestamp != null),
         assert(type != null),
         assert(properties != null),
         assert(updateType != null),
@@ -203,8 +216,6 @@ class _$_ChatDTO extends _ChatDTO {
   @override
   @HiveField(0)
   final String id;
-  @override
-  final List<MessageDTO> messages;
   @JsonKey(defaultValue: false)
   @override
   @HiveField(1)
@@ -219,9 +230,13 @@ class _$_ChatDTO extends _ChatDTO {
   final bool canSend;
   @override
   @HiveField(4)
-  final String type;
+  final String timestamp;
   @override
   @HiveField(5)
+  final String type;
+  @override
+  @HiveField(6)
+  @ChatPropertiesConverter()
   final Map<String, dynamic> properties;
   @JsonKey(defaultValue: 'nil')
   @override
@@ -229,7 +244,7 @@ class _$_ChatDTO extends _ChatDTO {
 
   @override
   String toString() {
-    return 'ChatDTO(id: $id, messages: $messages, isArchived: $isArchived, isMuted: $isMuted, canSend: $canSend, type: $type, properties: $properties, updateType: $updateType)';
+    return 'ChatDTO(id: $id, isArchived: $isArchived, isMuted: $isMuted, canSend: $canSend, timestamp: $timestamp, type: $type, properties: $properties, updateType: $updateType)';
   }
 
   @override
@@ -238,9 +253,6 @@ class _$_ChatDTO extends _ChatDTO {
         (other is _ChatDTO &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.messages, messages) ||
-                const DeepCollectionEquality()
-                    .equals(other.messages, messages)) &&
             (identical(other.isArchived, isArchived) ||
                 const DeepCollectionEquality()
                     .equals(other.isArchived, isArchived)) &&
@@ -250,6 +262,9 @@ class _$_ChatDTO extends _ChatDTO {
             (identical(other.canSend, canSend) ||
                 const DeepCollectionEquality()
                     .equals(other.canSend, canSend)) &&
+            (identical(other.timestamp, timestamp) ||
+                const DeepCollectionEquality()
+                    .equals(other.timestamp, timestamp)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.properties, properties) ||
@@ -264,10 +279,10 @@ class _$_ChatDTO extends _ChatDTO {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(messages) ^
       const DeepCollectionEquality().hash(isArchived) ^
       const DeepCollectionEquality().hash(isMuted) ^
       const DeepCollectionEquality().hash(canSend) ^
+      const DeepCollectionEquality().hash(timestamp) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(properties) ^
       const DeepCollectionEquality().hash(updateType);
@@ -285,13 +300,25 @@ class _$_ChatDTO extends _ChatDTO {
 abstract class _ChatDTO extends ChatDTO {
   const _ChatDTO._() : super._();
   const factory _ChatDTO(
-      {@required @HiveField(0) String id,
-      List<MessageDTO> messages,
-      @HiveField(1) bool isArchived,
-      @HiveField(2) bool isMuted,
-      @HiveField(3) bool canSend,
-      @required @HiveField(4) String type,
-      @required @HiveField(5) Map<String, dynamic> properties,
+      {@required
+      @HiveField(0)
+          String id,
+      @HiveField(1)
+          bool isArchived,
+      @HiveField(2)
+          bool isMuted,
+      @HiveField(3)
+          bool canSend,
+      @required
+      @HiveField(4)
+          String timestamp,
+      @required
+      @HiveField(5)
+          String type,
+      @required
+      @HiveField(6)
+      @ChatPropertiesConverter()
+          Map<String, dynamic> properties,
       String updateType}) = _$_ChatDTO;
 
   factory _ChatDTO.fromJson(Map<String, dynamic> json) = _$_ChatDTO.fromJson;
@@ -299,8 +326,6 @@ abstract class _ChatDTO extends ChatDTO {
   @override
   @HiveField(0)
   String get id;
-  @override
-  List<MessageDTO> get messages;
   @override
   @HiveField(1)
   bool get isArchived;
@@ -312,9 +337,13 @@ abstract class _ChatDTO extends ChatDTO {
   bool get canSend;
   @override
   @HiveField(4)
-  String get type;
+  String get timestamp;
   @override
   @HiveField(5)
+  String get type;
+  @override
+  @HiveField(6)
+  @ChatPropertiesConverter()
   Map<String, dynamic> get properties;
   @override
   String get updateType;

@@ -1,9 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:drop_chat/domain/auth/i_auth_facade.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:meta/meta.dart';
 
+import '../../infrastructure/auth/user_dtos.dart';
 import '../../injection.dart';
+import '../auth/i_auth_facade.dart';
 import '../auth/user.dart';
 import '../core/failures.dart';
 import '../core/value_objects.dart';
@@ -128,12 +129,13 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
   static const individualKeys = {receiverKey};
 
   //# Global parameters
+  ChatType get type => typeFromJson(value.getOrElse(() => null));
+
   //$ ChatTypeUpdate
-  ChatType get type {
-    final map = value.getOrElse(() => null);
-    if (map.containsKey(usersKey)) {
+  static ChatType typeFromJson(Map<String, dynamic> json) {
+    if (json.keys.toSet().containsAll(groupKeys)) {
       return ChatType.group();
-    } else if (map.containsKey(receiverKey)) {
+    } else if (json.keys.toSet().containsAll(individualKeys)) {
       return ChatType.individual();
     } else {
       return ChatType.nil();
@@ -206,6 +208,82 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
       }, ChatType.individual());
 
   factory ChatProperties.nil() => ChatProperties(const {}, ChatType.nil());
+
+  factory ChatProperties.fromMap(Map<String, dynamic> input, {@required bool fromJson}) =>
+      ChatProperties.typeFromJson(input).fold(
+        group: () => ChatProperties.group(
+          users: fromJson
+              ? List<Map<String, dynamic>>.from(input[ChatProperties.usersKey] as List)
+                  .map((json) => UserDTO.fromJson(json).toDomain())
+                  .toImmutableList()
+              : List<UserDTO>.from(input[ChatProperties.usersKey] as List)
+                  .map((dto) => dto.toDomain())
+                  .toImmutableList(),
+          isAdmin: input[ChatProperties.isAdminKey] as bool,
+          canReceive: input[ChatProperties.canReceiveKey] as bool,
+          groupName: GroupName(input[ChatProperties.groupNameKey] as String),
+          groupDescription: GroupDescription(input[ChatProperties.groupDescriptionKey] as String),
+        ),
+        individual: () => ChatProperties.individual(
+            receiver: fromJson
+                ? UserDTO.fromJson(
+                        Map<String, dynamic>.from(input[ChatProperties.receiverKey] as Map))
+                    .toDomain()
+                : (input[ChatProperties.receiverKey] as UserDTO).toDomain()),
+        nil: () => ChatProperties.nil(),
+      );
+
+  //$ ChatPropertiesUpdate
+  Map<String, dynamic> toMap({@required bool toJson}) {
+    final Map<String, dynamic> prop = {};
+    type.fold(
+      group: () {
+        for (final key in ChatProperties.groupKeys) {
+          switch (key) {
+            case ChatProperties.usersKey:
+              prop.addAll({
+                ChatProperties.usersKey: toJson
+                    ? users.asList().map((user) => UserDTO.fromDomain(user).toJson()).toList()
+                    : users.asList().map((user) => UserDTO.fromDomain(user)).toList()
+              });
+              break;
+            case ChatProperties.isAdminKey:
+              prop.addAll({ChatProperties.isAdminKey: isAdmin});
+              break;
+            case ChatProperties.canReceiveKey:
+              prop.addAll({ChatProperties.canReceiveKey: canReceive});
+              break;
+            case ChatProperties.groupNameKey:
+              prop.addAll({ChatProperties.groupNameKey: groupName.getOrCrash()});
+              break;
+            case ChatProperties.groupDescriptionKey:
+              prop.addAll({ChatProperties.groupDescriptionKey: groupDescription.getOrCrash()});
+              break;
+            default:
+              throw IndexError(42069, ChatProperties.groupKeys, key,
+                  "Ya dumb dumb. You tried to put an invalid key for making a 'chat'. Bet ya didn't expect me to find out, eh?");
+          }
+        }
+      },
+      individual: () {
+        for (final key in ChatProperties.individualKeys) {
+          switch (key) {
+            case ChatProperties.receiverKey:
+              prop.addAll({
+                ChatProperties.receiverKey:
+                    toJson ? UserDTO.fromDomain(receiver).toJson() : UserDTO.fromDomain(receiver)
+              });
+              break;
+            default:
+              throw IndexError(42069, ChatProperties.groupKeys, key,
+                  "Ya dumb dumb. You tried to put an invalid key for making a 'chat'. Bet ya didn't expect me to find out, eh?");
+          }
+        }
+      },
+      nil: () => const {},
+    );
+    return prop;
+  }
 
   //$ ChatPropertiesUpdate
   ChatProperties copyWith({

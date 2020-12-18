@@ -20,14 +20,14 @@ class _$MessageDTOTearOff {
   _MessageDTO call(
       {@required @HiveField(0) String id,
       @required @HiveField(1) String userId,
-      @required @HiveField(2) String timeStamp,
+      @required @HiveField(2) String timestamp,
       @required @HiveField(3) String text,
       @required @HiveField(4) bool isStarred,
       String updateType = 'nil'}) {
     return _MessageDTO(
       id: id,
       userId: userId,
-      timeStamp: timeStamp,
+      timestamp: timestamp,
       text: text,
       isStarred: isStarred,
       updateType: updateType,
@@ -51,7 +51,7 @@ mixin _$MessageDTO {
   @HiveField(1)
   String get userId;
   @HiveField(2)
-  String get timeStamp;
+  String get timestamp;
   @HiveField(3)
   String get text;
   @HiveField(4)
@@ -70,7 +70,7 @@ abstract class $MessageDTOCopyWith<$Res> {
   $Res call(
       {@HiveField(0) String id,
       @HiveField(1) String userId,
-      @HiveField(2) String timeStamp,
+      @HiveField(2) String timestamp,
       @HiveField(3) String text,
       @HiveField(4) bool isStarred,
       String updateType});
@@ -88,7 +88,7 @@ class _$MessageDTOCopyWithImpl<$Res> implements $MessageDTOCopyWith<$Res> {
   $Res call({
     Object id = freezed,
     Object userId = freezed,
-    Object timeStamp = freezed,
+    Object timestamp = freezed,
     Object text = freezed,
     Object isStarred = freezed,
     Object updateType = freezed,
@@ -96,7 +96,7 @@ class _$MessageDTOCopyWithImpl<$Res> implements $MessageDTOCopyWith<$Res> {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
       userId: userId == freezed ? _value.userId : userId as String,
-      timeStamp: timeStamp == freezed ? _value.timeStamp : timeStamp as String,
+      timestamp: timestamp == freezed ? _value.timestamp : timestamp as String,
       text: text == freezed ? _value.text : text as String,
       isStarred: isStarred == freezed ? _value.isStarred : isStarred as bool,
       updateType:
@@ -114,7 +114,7 @@ abstract class _$MessageDTOCopyWith<$Res> implements $MessageDTOCopyWith<$Res> {
   $Res call(
       {@HiveField(0) String id,
       @HiveField(1) String userId,
-      @HiveField(2) String timeStamp,
+      @HiveField(2) String timestamp,
       @HiveField(3) String text,
       @HiveField(4) bool isStarred,
       String updateType});
@@ -134,7 +134,7 @@ class __$MessageDTOCopyWithImpl<$Res> extends _$MessageDTOCopyWithImpl<$Res>
   $Res call({
     Object id = freezed,
     Object userId = freezed,
-    Object timeStamp = freezed,
+    Object timestamp = freezed,
     Object text = freezed,
     Object isStarred = freezed,
     Object updateType = freezed,
@@ -142,7 +142,7 @@ class __$MessageDTOCopyWithImpl<$Res> extends _$MessageDTOCopyWithImpl<$Res>
     return _then(_MessageDTO(
       id: id == freezed ? _value.id : id as String,
       userId: userId == freezed ? _value.userId : userId as String,
-      timeStamp: timeStamp == freezed ? _value.timeStamp : timeStamp as String,
+      timestamp: timestamp == freezed ? _value.timestamp : timestamp as String,
       text: text == freezed ? _value.text : text as String,
       isStarred: isStarred == freezed ? _value.isStarred : isStarred as bool,
       updateType:
@@ -158,13 +158,13 @@ class _$_MessageDTO extends _MessageDTO {
   const _$_MessageDTO(
       {@required @HiveField(0) this.id,
       @required @HiveField(1) this.userId,
-      @required @HiveField(2) this.timeStamp,
+      @required @HiveField(2) this.timestamp,
       @required @HiveField(3) this.text,
       @required @HiveField(4) this.isStarred,
       this.updateType = 'nil'})
       : assert(id != null),
         assert(userId != null),
-        assert(timeStamp != null),
+        assert(timestamp != null),
         assert(text != null),
         assert(isStarred != null),
         assert(updateType != null),
@@ -181,7 +181,7 @@ class _$_MessageDTO extends _MessageDTO {
   final String userId;
   @override
   @HiveField(2)
-  final String timeStamp;
+  final String timestamp;
   @override
   @HiveField(3)
   final String text;
@@ -194,7 +194,7 @@ class _$_MessageDTO extends _MessageDTO {
 
   @override
   String toString() {
-    return 'MessageDTO(id: $id, userId: $userId, timeStamp: $timeStamp, text: $text, isStarred: $isStarred, updateType: $updateType)';
+    return 'MessageDTO(id: $id, userId: $userId, timestamp: $timestamp, text: $text, isStarred: $isStarred, updateType: $updateType)';
   }
 
   @override
@@ -205,9 +205,9 @@ class _$_MessageDTO extends _MessageDTO {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.userId, userId) ||
                 const DeepCollectionEquality().equals(other.userId, userId)) &&
-            (identical(other.timeStamp, timeStamp) ||
+            (identical(other.timestamp, timestamp) ||
                 const DeepCollectionEquality()
-                    .equals(other.timeStamp, timeStamp)) &&
+                    .equals(other.timestamp, timestamp)) &&
             (identical(other.text, text) ||
                 const DeepCollectionEquality().equals(other.text, text)) &&
             (identical(other.isStarred, isStarred) ||
@@ -223,7 +223,7 @@ class _$_MessageDTO extends _MessageDTO {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(userId) ^
-      const DeepCollectionEquality().hash(timeStamp) ^
+      const DeepCollectionEquality().hash(timestamp) ^
       const DeepCollectionEquality().hash(text) ^
       const DeepCollectionEquality().hash(isStarred) ^
       const DeepCollectionEquality().hash(updateType);
@@ -243,7 +243,7 @@ abstract class _MessageDTO extends MessageDTO {
   const factory _MessageDTO(
       {@required @HiveField(0) String id,
       @required @HiveField(1) String userId,
-      @required @HiveField(2) String timeStamp,
+      @required @HiveField(2) String timestamp,
       @required @HiveField(3) String text,
       @required @HiveField(4) bool isStarred,
       String updateType}) = _$_MessageDTO;
@@ -259,7 +259,7 @@ abstract class _MessageDTO extends MessageDTO {
   String get userId;
   @override
   @HiveField(2)
-  String get timeStamp;
+  String get timestamp;
   @override
   @HiveField(3)
   String get text;

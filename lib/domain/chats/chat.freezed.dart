@@ -16,22 +16,24 @@ class _$ChatTearOff {
 // ignore: unused_element
   _Chat call(
       {@required UniqueId id,
-      @required KtList<Message> messages,
       @required bool isArchived,
       @required bool isMuted,
       @required bool canSend,
+      @required DateTime timestamp,
       @required ChatType type,
       @required UpdateType updateType,
-      @required ChatProperties properties}) {
+      @required ChatProperties properties,
+      @factoryParam IMessageRepository msgRepo}) {
     return _Chat(
       id: id,
-      messages: messages,
       isArchived: isArchived,
       isMuted: isMuted,
       canSend: canSend,
+      timestamp: timestamp,
       type: type,
       updateType: updateType,
       properties: properties,
+      msgRepo: msgRepo,
     );
   }
 }
@@ -43,13 +45,15 @@ const $Chat = _$ChatTearOff();
 /// @nodoc
 mixin _$Chat {
   UniqueId get id;
-  KtList<Message> get messages;
   bool get isArchived;
   bool get isMuted;
   bool get canSend;
+  DateTime get timestamp;
   ChatType get type;
   UpdateType get updateType;
   ChatProperties get properties;
+  @factoryParam
+  IMessageRepository get msgRepo;
 
   $ChatCopyWith<Chat> get copyWith;
 }
@@ -60,13 +64,14 @@ abstract class $ChatCopyWith<$Res> {
       _$ChatCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
-      KtList<Message> messages,
       bool isArchived,
       bool isMuted,
       bool canSend,
+      DateTime timestamp,
       ChatType type,
       UpdateType updateType,
-      ChatProperties properties});
+      ChatProperties properties,
+      @factoryParam IMessageRepository msgRepo});
 }
 
 /// @nodoc
@@ -80,28 +85,31 @@ class _$ChatCopyWithImpl<$Res> implements $ChatCopyWith<$Res> {
   @override
   $Res call({
     Object id = freezed,
-    Object messages = freezed,
     Object isArchived = freezed,
     Object isMuted = freezed,
     Object canSend = freezed,
+    Object timestamp = freezed,
     Object type = freezed,
     Object updateType = freezed,
     Object properties = freezed,
+    Object msgRepo = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
-      messages:
-          messages == freezed ? _value.messages : messages as KtList<Message>,
       isArchived:
           isArchived == freezed ? _value.isArchived : isArchived as bool,
       isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
       canSend: canSend == freezed ? _value.canSend : canSend as bool,
+      timestamp:
+          timestamp == freezed ? _value.timestamp : timestamp as DateTime,
       type: type == freezed ? _value.type : type as ChatType,
       updateType:
           updateType == freezed ? _value.updateType : updateType as UpdateType,
       properties: properties == freezed
           ? _value.properties
           : properties as ChatProperties,
+      msgRepo:
+          msgRepo == freezed ? _value.msgRepo : msgRepo as IMessageRepository,
     ));
   }
 }
@@ -113,13 +121,14 @@ abstract class _$ChatCopyWith<$Res> implements $ChatCopyWith<$Res> {
   @override
   $Res call(
       {UniqueId id,
-      KtList<Message> messages,
       bool isArchived,
       bool isMuted,
       bool canSend,
+      DateTime timestamp,
       ChatType type,
       UpdateType updateType,
-      ChatProperties properties});
+      ChatProperties properties,
+      @factoryParam IMessageRepository msgRepo});
 }
 
 /// @nodoc
@@ -134,28 +143,31 @@ class __$ChatCopyWithImpl<$Res> extends _$ChatCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
-    Object messages = freezed,
     Object isArchived = freezed,
     Object isMuted = freezed,
     Object canSend = freezed,
+    Object timestamp = freezed,
     Object type = freezed,
     Object updateType = freezed,
     Object properties = freezed,
+    Object msgRepo = freezed,
   }) {
     return _then(_Chat(
       id: id == freezed ? _value.id : id as UniqueId,
-      messages:
-          messages == freezed ? _value.messages : messages as KtList<Message>,
       isArchived:
           isArchived == freezed ? _value.isArchived : isArchived as bool,
       isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
       canSend: canSend == freezed ? _value.canSend : canSend as bool,
+      timestamp:
+          timestamp == freezed ? _value.timestamp : timestamp as DateTime,
       type: type == freezed ? _value.type : type as ChatType,
       updateType:
           updateType == freezed ? _value.updateType : updateType as UpdateType,
       properties: properties == freezed
           ? _value.properties
           : properties as ChatProperties,
+      msgRepo:
+          msgRepo == freezed ? _value.msgRepo : msgRepo as IMessageRepository,
     ));
   }
 }
@@ -164,18 +176,19 @@ class __$ChatCopyWithImpl<$Res> extends _$ChatCopyWithImpl<$Res>
 class _$_Chat extends _Chat {
   const _$_Chat(
       {@required this.id,
-      @required this.messages,
       @required this.isArchived,
       @required this.isMuted,
       @required this.canSend,
+      @required this.timestamp,
       @required this.type,
       @required this.updateType,
-      @required this.properties})
+      @required this.properties,
+      @factoryParam this.msgRepo})
       : assert(id != null),
-        assert(messages != null),
         assert(isArchived != null),
         assert(isMuted != null),
         assert(canSend != null),
+        assert(timestamp != null),
         assert(type != null),
         assert(updateType != null),
         assert(properties != null),
@@ -184,23 +197,26 @@ class _$_Chat extends _Chat {
   @override
   final UniqueId id;
   @override
-  final KtList<Message> messages;
-  @override
   final bool isArchived;
   @override
   final bool isMuted;
   @override
   final bool canSend;
   @override
+  final DateTime timestamp;
+  @override
   final ChatType type;
   @override
   final UpdateType updateType;
   @override
   final ChatProperties properties;
+  @override
+  @factoryParam
+  final IMessageRepository msgRepo;
 
   @override
   String toString() {
-    return 'Chat(id: $id, messages: $messages, isArchived: $isArchived, isMuted: $isMuted, canSend: $canSend, type: $type, updateType: $updateType, properties: $properties)';
+    return 'Chat(id: $id, isArchived: $isArchived, isMuted: $isMuted, canSend: $canSend, timestamp: $timestamp, type: $type, updateType: $updateType, properties: $properties, msgRepo: $msgRepo)';
   }
 
   @override
@@ -209,9 +225,6 @@ class _$_Chat extends _Chat {
         (other is _Chat &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.messages, messages) ||
-                const DeepCollectionEquality()
-                    .equals(other.messages, messages)) &&
             (identical(other.isArchived, isArchived) ||
                 const DeepCollectionEquality()
                     .equals(other.isArchived, isArchived)) &&
@@ -221,6 +234,9 @@ class _$_Chat extends _Chat {
             (identical(other.canSend, canSend) ||
                 const DeepCollectionEquality()
                     .equals(other.canSend, canSend)) &&
+            (identical(other.timestamp, timestamp) ||
+                const DeepCollectionEquality()
+                    .equals(other.timestamp, timestamp)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.updateType, updateType) ||
@@ -228,20 +244,23 @@ class _$_Chat extends _Chat {
                     .equals(other.updateType, updateType)) &&
             (identical(other.properties, properties) ||
                 const DeepCollectionEquality()
-                    .equals(other.properties, properties)));
+                    .equals(other.properties, properties)) &&
+            (identical(other.msgRepo, msgRepo) ||
+                const DeepCollectionEquality().equals(other.msgRepo, msgRepo)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(messages) ^
       const DeepCollectionEquality().hash(isArchived) ^
       const DeepCollectionEquality().hash(isMuted) ^
       const DeepCollectionEquality().hash(canSend) ^
+      const DeepCollectionEquality().hash(timestamp) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(updateType) ^
-      const DeepCollectionEquality().hash(properties);
+      const DeepCollectionEquality().hash(properties) ^
+      const DeepCollectionEquality().hash(msgRepo);
 
   @override
   _$ChatCopyWith<_Chat> get copyWith =>
@@ -252,18 +271,17 @@ abstract class _Chat extends Chat {
   const _Chat._() : super._();
   const factory _Chat(
       {@required UniqueId id,
-      @required KtList<Message> messages,
       @required bool isArchived,
       @required bool isMuted,
       @required bool canSend,
+      @required DateTime timestamp,
       @required ChatType type,
       @required UpdateType updateType,
-      @required ChatProperties properties}) = _$_Chat;
+      @required ChatProperties properties,
+      @factoryParam IMessageRepository msgRepo}) = _$_Chat;
 
   @override
   UniqueId get id;
-  @override
-  KtList<Message> get messages;
   @override
   bool get isArchived;
   @override
@@ -271,11 +289,16 @@ abstract class _Chat extends Chat {
   @override
   bool get canSend;
   @override
+  DateTime get timestamp;
+  @override
   ChatType get type;
   @override
   UpdateType get updateType;
   @override
   ChatProperties get properties;
+  @override
+  @factoryParam
+  IMessageRepository get msgRepo;
   @override
   _$ChatCopyWith<_Chat> get copyWith;
 }

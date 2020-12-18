@@ -2,73 +2,69 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:drop_chat/domain/auth/i_auth_facade.dart';
-import 'package:drop_chat/injection.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:meta/meta.dart';
 
-import '../../domain/auth/user.dart';
+import '../../domain/chats/chat.dart';
+import '../../domain/core/value_objects.dart';
 import '../../domain/messages/i_message_repository.dart';
 import '../../domain/messages/message.dart';
 import '../../domain/messages/message_failure.dart';
 import '../core/firestore_helpers.dart';
 import 'message_dtos.dart';
 
-@LazySingleton(as: IMessageRepository)
+@Injectable(as: IMessageRepository)
 class MessageRepository implements IMessageRepository {
-  final String chatBoxId;
+  Chat _chat;
+  Box<MessageDTO> _box;
   final FirebaseFirestore _firestore;
 
-  const MessageRepository(this._firestore, {@required this.chatBoxId});
-
-  Future<Box<MessageDTO>> _init() async => Hive.openBox<MessageDTO>(chatBoxId);
-
-  Either<MessageFailure, KtList<Message>> _getAllMessages() =>
-      right<MessageFailure, KtList<Message>>(
-          (Hive.box<MessageDTO>(chatBoxId)).values.map((dto) => dto.toDomain()).toImmutableList());
-
-  Either<MessageFailure, KtList<Message>> _getStarredMessages() =>
-      right<MessageFailure, KtList<Message>>((Hive.box<MessageDTO>(chatBoxId))
-          .values
-          .where((dto) => dto.isStarred)
-          .map((dto) => dto.toDomain())
-          .toImmutableList());
+  MessageRepository(this._firestore);
 
   Future<void> _updateHive(Message message) async {
-    final box = await _init();
-    //TODO: Implement hive edit message
+    final dto = MessageDTO.fromDomain(message);
     message.updateType.fold(
-      add: () async {
-        await box.add(MessageDTO.fromDomain(message));
+      add: () async => _box.put(dto.id, dto),
+      edit: () async {
+        final prev = _box.get(dto.id);
+        await _box.delete(dto.id);
+        await _box.put(dto.id, dto.copyWith(timestamp: prev.timestamp));
       },
-      edit: () => null,
-      delete: () async {
-        await box.delete(message.id.getOrCrash());
-      },
+      delete: () async => _box.delete(message.id.getOrCrash()),
       nil: () => null,
     );
   }
 
-  //TODO: Make the streams listen to firebase
-  @override
-  Stream<Either<MessageFailure, KtList<Message>>> watchAll() async* {
-    // final box = await _init();
-    yield _getAllMessages();
-    // await for (final _ in box.watch()) {
-    //   yield _getAllMessages();
-    // }
-    final userId = getIt<IAuthFacade>().getSignedInUser().getOrElse(() => null).id.getOrCrash();
-    final userDoc = _firestore.userDocument(userId);
+  Either<MessageFailure, KtList<Message>> _getAllMessages() =>
+      right<MessageFailure, KtList<Message>>(_box.values
+          .map((dto) => dto.toDomain())
+          .toImmutableList()
+          .sortedBy((message) => message.timestamp));
+
+  Either<MessageFailure, KtList<Message>> _getStarredMessages() =>
+      right<MessageFailure, KtList<Message>>(_box.values
+          .where((dto) => dto.isStarred)
+          .map((dto) => dto.toDomain())
+          .toImmutableList()
+          .sortedBy((message) => message.timestamp));
+
+  Stream<Either<MessageFailure, KtList<Message>>> _watch({@required bool starred}) async* {
+    yield starred ? _getStarredMessages() : _getAllMessages();
+    final userDoc = _firestore.curretUserDocument();
     try {
       await for (final snap
-          in userDoc.chatCollection.doc(chatBoxId).messageCollection.snapshots()) {
+          in userDoc.chatCollection.doc(_chat.id.getOrCrash()).messageCollection.snapshots()) {
         for (final doc in snap.docs) {
           final dto = MessageDTO.fromFirestore(doc);
           await _updateHive(dto.toDomain());
-          yield _getAllMessages();
-          await userDoc.chatCollection.doc(chatBoxId).messageCollection.doc(dto.id).delete();
+          yield starred ? _getStarredMessages() : _getAllMessages();
+          await userDoc.chatCollection
+              .doc(_chat.id.getOrCrash())
+              .messageCollection
+              .doc(dto.id)
+              .delete();
         }
       }
     } on FirebaseException catch (e) {
@@ -82,44 +78,24 @@ class MessageRepository implements IMessageRepository {
     } catch (e) {
       yield left(MessageFailure.unexpected(e));
     }
-    // yield* userDoc.chatCollection
-    //     .doc(chatBoxId)
-    //     .messageCollection
-    //     .snapshots()
-    //     .map((snap) => right<MessageFailure, KtList<Message>>(snap.docs.map((doc) {
-    //           final dto = MessageDTO.fromFirestore(doc);
-    //           return dto.toDomain();
-    //         }).toImmutableList()))
-    //     .handleError((error) {
-    //   if (error is FirebaseException && error.message.contains('PERMISSION_DENIED')) {
-    //     return left(const MessageFailure.insufficientPermissions());
-    //   } else {
-    //     return left(MessageFailure.unexpected(error));
-    //   }
-    // });
   }
 
-  @override
-  Stream<Either<MessageFailure, KtList<Message>>> watchStarred() async* {
-    final box = await _init();
-    yield _getStarredMessages();
-    await for (final _ in box.watch()) {
-      yield _getStarredMessages();
-    }
-  }
-
-  @override
-  Future<Either<MessageFailure, Unit>> create(Message message, Iterable<User> receivers) async {
-    // final box = await _init();
-    // await box
-    //     .add(MessageDTO.fromDomain(message))
-    //     .catchError(() => left(const MessageFailure.unableToUpdate()));
-    final messageDTO = MessageDTO.fromDomain(message).copyWith(updateType: 'add');
+  Future<Either<MessageFailure, Unit>> _action({
+    @required Message message,
+    @required UpdateType type,
+  }) async {
+    final messageDTO = MessageDTO.fromDomain(message).copyWith(
+        updateType: type.fold(
+      add: () => UpdateType.addStr,
+      edit: () => UpdateType.editStr,
+      delete: () => UpdateType.deleteStr,
+      nil: () => UpdateType.nilStr,
+    ));
     try {
-      for (final receiver in receivers) {
+      for (final receiver in _chat.properties.receivers) {
         final userDoc = _firestore.userDocument(receiver.id.getOrCrash());
         await userDoc.chatCollection
-            .doc(chatBoxId)
+            .doc(_chat.id.getOrCrash())
             .messageCollection
             .doc(messageDTO.id)
             .set(messageDTO.toJson());
@@ -133,63 +109,30 @@ class MessageRepository implements IMessageRepository {
   }
 
   @override
-  Future<Either<MessageFailure, Unit>> delete(Message message, Iterable<User> receivers) async {
-    // final box = await _init();
-    // await box.add(MessageDTO.fromDomain(message));
-    // if (box.containsKey(messageDTO.id)) {
-    //   await box.delete(messageDTO.id);
-    // } else {
-    //   return left(const MessageFailure.unableToUpdate());
-    // }
-    //! False code
-    final messageDTO = MessageDTO.fromDomain(message).copyWith(updateType: 'delete');
-    try {
-      for (final receiver in receivers) {
-        final userDoc = _firestore.userDocument(receiver.id.getOrCrash());
-        await userDoc.chatCollection.doc(chatBoxId).messageCollection.doc(messageDTO.id).delete();
-      }
-      return right(unit);
-    } on FirebaseException catch (e) {
-      if (e.message.contains('PERMISSION_DENIED')) {
-        return left(const MessageFailure.insufficientPermissions());
-      } else if (e.message.contains('NOT_FOUND')) {
-        return left(const MessageFailure.unableToUpdate());
-      } else {
-        return left(MessageFailure.unexpected(e));
-      }
-    } catch (e) {
-      return left(MessageFailure.unexpected(e));
-    }
+  Future<void> init(Chat chat) async {
+    _chat = chat;
+    _box = await Hive.openBox(_chat.id.getOrCrash());
   }
 
   @override
-  Future<Either<MessageFailure, Unit>> edit(Message message, Iterable<User> receivers) async {
-    // final box = await _init();
-    // if (box.containsKey(messageDTO.id)) {
-    //   //TOD: 'Updating hive' implementation
-    // }
-    // await box.add(MessageDTO.fromDomain(message));
-    final messageDTO = MessageDTO.fromDomain(message).copyWith(updateType: 'edit');
-    try {
-      for (final receiver in receivers) {
-        final userDoc = _firestore.userDocument(receiver.id.getOrCrash());
-        await userDoc.chatCollection
-            .doc(chatBoxId)
-            .messageCollection
-            .doc(messageDTO.id)
-            .update(messageDTO.toJson());
-      }
-      return right(unit);
-    } on FirebaseException catch (e) {
-      if (e.message.contains('PERMISSION_DENIED')) {
-        return left(const MessageFailure.insufficientPermissions());
-      } else if (e.message.contains('NOT_FOUND')) {
-        return left(const MessageFailure.unableToUpdate());
-      } else {
-        return left(MessageFailure.unexpected(e));
-      }
-    } catch (e) {
-      return left(MessageFailure.unexpected(e));
-    }
+  Stream<Either<MessageFailure, KtList<Message>>> watchAll() async* {
+    yield* _watch(starred: false);
   }
+
+  @override
+  Stream<Either<MessageFailure, KtList<Message>>> watchStarred() async* {
+    yield* _watch(starred: true);
+  }
+
+  @override
+  Future<Either<MessageFailure, Unit>> add(Message message) async =>
+      _action(message: message, type: UpdateType.add());
+
+  @override
+  Future<Either<MessageFailure, Unit>> delete(Message message) async =>
+      _action(message: message, type: UpdateType.delete());
+
+  @override
+  Future<Either<MessageFailure, Unit>> edit(Message message) async =>
+      _action(message: message, type: UpdateType.edit());
 }

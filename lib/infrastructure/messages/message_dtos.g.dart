@@ -19,7 +19,7 @@ class MessageDTOAdapter extends TypeAdapter<MessageDTO> {
     return MessageDTO(
       id: fields[0] as String,
       userId: fields[1] as String,
-      timeStamp: fields[2] as String,
+      timestamp: fields[2] as String,
       text: fields[3] as String,
       isStarred: fields[4] as bool,
     );
@@ -34,7 +34,7 @@ class MessageDTOAdapter extends TypeAdapter<MessageDTO> {
       ..writeByte(1)
       ..write(obj.userId)
       ..writeByte(2)
-      ..write(obj.timeStamp)
+      ..write(obj.timestamp)
       ..writeByte(3)
       ..write(obj.text)
       ..writeByte(4)
@@ -60,7 +60,7 @@ _$_MessageDTO _$_$_MessageDTOFromJson(Map<String, dynamic> json) {
   return _$_MessageDTO(
     id: json['id'] as String,
     userId: json['userId'] as String,
-    timeStamp: json['timeStamp'] as String,
+    timestamp: json['timestamp'] as String,
     text: json['text'] as String,
     isStarred: json['isStarred'] as bool,
     updateType: json['updateType'] as String ?? 'nil',
@@ -71,7 +71,7 @@ Map<String, dynamic> _$_$_MessageDTOToJson(_$_MessageDTO instance) =>
     <String, dynamic>{
       'id': instance.id,
       'userId': instance.userId,
-      'timeStamp': instance.timeStamp,
+      'timestamp': instance.timestamp,
       'text': instance.text,
       'isStarred': instance.isStarred,
       'updateType': instance.updateType,

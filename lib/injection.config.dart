@@ -31,13 +31,14 @@ GetIt $initGetIt(
   final gh = GetItHelper(get, environment, environmentFilter);
   final firebaseInjectableModule = _$FirebaseInjectableModule();
   gh.lazySingleton<FirebaseAuth>(() => firebaseInjectableModule.firebaseAuth);
+  gh.lazySingleton<FirebaseFirestore>(() => firebaseInjectableModule.firestore);
   gh.lazySingleton<GoogleSignIn>(() => firebaseInjectableModule.googleSignIn);
   gh.lazySingleton<IAuthFacade>(
       () => FirebaseAuthFacade(get<FirebaseAuth>(), get<GoogleSignIn>()));
   gh.lazySingleton<IChatRepository>(
       () => ChatRepository(get<FirebaseFirestore>()));
-  gh.lazySingleton<IMessageRepository>(() =>
-      MessageRepository(get<FirebaseFirestore>(), chatBoxId: get<String>()));
+  gh.factory<IMessageRepository>(
+      () => MessageRepository(get<FirebaseFirestore>()));
   gh.factory<SignInFormBloc>(() => SignInFormBloc(get<IAuthFacade>()));
   gh.factory<AuthBloc>(() => AuthBloc(get<IAuthFacade>()));
   return get;

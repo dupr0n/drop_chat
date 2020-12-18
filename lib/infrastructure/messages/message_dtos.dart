@@ -17,7 +17,7 @@ abstract class MessageDTO with _$MessageDTO {
   const factory MessageDTO({
     @HiveField(0) @required String id,
     @HiveField(1) @required String userId,
-    @HiveField(2) @required String timeStamp,
+    @HiveField(2) @required String timestamp,
     @HiveField(3) @required String text,
     @HiveField(4) @required bool isStarred,
     @Default('nil') String updateType,
@@ -26,7 +26,7 @@ abstract class MessageDTO with _$MessageDTO {
   factory MessageDTO.fromDomain(Message message) => MessageDTO(
         id: message.id.getOrCrash(),
         userId: message.userId.getOrCrash(),
-        timeStamp: message.timestamp.toIso8601String(),
+        timestamp: message.timestamp.toIso8601String(),
         text: message.text.getOrCrash(),
         isStarred: message.isStarred,
       );
@@ -34,7 +34,7 @@ abstract class MessageDTO with _$MessageDTO {
   Message toDomain() => Message(
         id: UniqueId.fromUniqueString(id),
         userId: UniqueId.fromUniqueString(userId),
-        timestamp: DateTime.parse(timeStamp),
+        timestamp: DateTime.parse(timestamp),
         text: MessageText(text),
         isStarred: isStarred,
         updateType: UpdateType(updateType),

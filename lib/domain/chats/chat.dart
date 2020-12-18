@@ -1,11 +1,14 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 
 import '../auth/user.dart';
 import '../core/failures.dart';
 import '../core/value_objects.dart';
+import '../messages/i_message_repository.dart';
 import '../messages/message.dart';
+import '../messages/message_failure.dart';
 import 'value_objects.dart';
 
 part 'chat.freezed.dart';
@@ -16,27 +19,29 @@ abstract class ChatBase {
 }
 
 @freezed
+@factoryMethod
 abstract class Chat extends ChatBase implements _$Chat {
   const Chat._();
 
   const factory Chat({
     @required UniqueId id,
-    @required KtList<Message> messages,
     @required bool isArchived,
     @required bool isMuted,
     @required bool canSend,
+    @required DateTime timestamp,
     @required ChatType type,
     @required UpdateType updateType,
     @required ChatProperties properties,
+    @factoryParam IMessageRepository msgRepo,
   }) = _Chat;
 
   //$ ChatTypeUpdate
   factory Chat.group() => Chat(
         id: UniqueId(),
-        messages: const KtList.empty(),
         isArchived: false,
         isMuted: false,
         canSend: true,
+        timestamp: DateTime.now(),
         type: ChatType.group(),
         updateType: UpdateType.add(),
         properties: ChatProperties.group(
@@ -50,10 +55,10 @@ abstract class Chat extends ChatBase implements _$Chat {
 
   factory Chat.individual({@required User user}) => Chat(
         id: UniqueId(),
-        messages: const KtList.empty(),
         isArchived: false,
         isMuted: false,
         canSend: true,
+        timestamp: DateTime.now(),
         type: ChatType.individual(),
         updateType: UpdateType.add(),
         properties: ChatProperties.individual(receiver: user),
@@ -65,6 +70,11 @@ abstract class Chat extends ChatBase implements _$Chat {
         individual: () => properties.receiver.displayName.getOrCrash(),
         nil: () => id.toString(),
       );
+
+  Stream<Either<MessageFailure, KtList<Message>>> watchMessages() async* {
+    await msgRepo.init(this);
+    yield* msgRepo.watchAll();
+  }
 
   Option<ValueFailure<dynamic>> get failureOption => properties.failureOrUnit
       .andThen(updateType.failureOrUnit)
