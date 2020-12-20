@@ -11,13 +11,18 @@ import 'package:injectable/injectable.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import 'application/auth/auth_bloc.dart';
+import 'application/chats/chat_actor/chat_actor_bloc.dart';
+import 'application/chats/chat_form/chat_form_bloc.dart';
 import 'infrastructure/chats/chat_repository.dart';
+import 'application/chats/chat_watcher/chat_watcher_bloc.dart';
 import 'infrastructure/auth/firebase_auth_facade.dart';
 import 'infrastructure/core/firebase_injectable_module.dart';
 import 'domain/auth/i_auth_facade.dart';
 import 'domain/chats/i_chat_repository.dart';
 import 'domain/messages/i_message_repository.dart';
+import 'application/messages/message_form/message_form_bloc.dart';
 import 'infrastructure/messages/message_repository.dart';
+import 'application/messages/message_watcher/message_watcher_bloc.dart';
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart';
 
 /// adds generated dependencies
@@ -39,8 +44,14 @@ GetIt $initGetIt(
       () => ChatRepository(get<FirebaseFirestore>()));
   gh.factory<IMessageRepository>(
       () => MessageRepository(get<FirebaseFirestore>()));
+  gh.factory<MessageFormBloc>(() => MessageFormBloc(get<IMessageRepository>()));
+  gh.factory<MessageWatcherBloc>(
+      () => MessageWatcherBloc(get<IMessageRepository>()));
   gh.factory<SignInFormBloc>(() => SignInFormBloc(get<IAuthFacade>()));
   gh.factory<AuthBloc>(() => AuthBloc(get<IAuthFacade>()));
+  gh.factory<ChatActorBloc>(() => ChatActorBloc(get<IChatRepository>()));
+  gh.factory<ChatFormBloc>(() => ChatFormBloc(get<IChatRepository>()));
+  gh.factory<ChatWatcherBloc>(() => ChatWatcherBloc(get<IChatRepository>()));
   return get;
 }
 

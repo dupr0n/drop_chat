@@ -48,6 +48,7 @@ class ChatRepository implements IChatRepository {
           .sortedBy((chat) => chat.timestamp));
 
   Stream<Either<ChatFailure, KtList<Chat>>> _watch({@required bool archived}) async* {
+    _box = await Hive.openBox('chats');
     yield archived ? _getArchivedChats() : _getAllChats();
     final userId = getIt<IAuthFacade>().getSignedInUser().getOrElse(() => null).id.getOrCrash();
     final userDoc = _firestore.userDocument(userId);
@@ -60,15 +61,9 @@ class ChatRepository implements IChatRepository {
           yield archived ? _getArchivedChats() : _getAllChats();
           while (
               (await userDoc.chatCollection.doc(dto.id).messageCollection.get()).docs.isNotEmpty) {
-            await Future.delayed(const Duration(seconds: 1));
+            await Future.delayed(const Duration(milliseconds: 1));
           }
-          // final messages = (await userDoc.chatCollection.doc(dto.id).messageCollection.get())
-          //     .docs
-          //     .map((message) => MessageDTO.fromFirestore(message).toJson());
           await userDoc.chatCollection.doc(dto.id).delete();
-          // for (final msg in messages) {
-          //   await userDoc.chatCollection.doc(dto.id).messageCollection.add(msg);
-          // }
         }
       }
     } on FirebaseException catch (e) {
@@ -110,11 +105,6 @@ class ChatRepository implements IChatRepository {
         return left(ChatFailure.unexpected(e));
       }
     }
-  }
-
-  @override
-  Future<void> init() async {
-    _box = await Hive.openBox('chats');
   }
 
   @override

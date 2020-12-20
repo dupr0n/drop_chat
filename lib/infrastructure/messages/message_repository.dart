@@ -50,6 +50,7 @@ class MessageRepository implements IMessageRepository {
           .toImmutableList()
           .sortedBy((message) => message.timestamp));
 
+  //TODO: Delete messages in cloud itself, or make a seperate function to delete when exited
   Stream<Either<MessageFailure, KtList<Message>>> _watch({@required bool starred}) async* {
     yield starred ? _getStarredMessages() : _getAllMessages();
     final userDoc = _firestore.curretUserDocument();

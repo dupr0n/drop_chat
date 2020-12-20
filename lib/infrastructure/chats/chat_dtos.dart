@@ -9,6 +9,7 @@ import '../../domain/core/value_objects.dart';
 part 'chat_dtos.freezed.dart';
 part 'chat_dtos.g.dart';
 
+//TODO: Have another chat type for firebase.
 @freezed
 @HiveType(typeId: 1)
 abstract class ChatDTO with _$ChatDTO {

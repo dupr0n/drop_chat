@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 
+import '../../injection.dart';
 import '../auth/user.dart';
 import '../core/failures.dart';
 import '../core/value_objects.dart';
@@ -19,7 +19,6 @@ abstract class ChatBase {
 }
 
 @freezed
-@factoryMethod
 abstract class Chat extends ChatBase implements _$Chat {
   const Chat._();
 
@@ -32,7 +31,6 @@ abstract class Chat extends ChatBase implements _$Chat {
     @required ChatType type,
     @required UpdateType updateType,
     @required ChatProperties properties,
-    @factoryParam IMessageRepository msgRepo,
   }) = _Chat;
 
   //$ ChatTypeUpdate
@@ -72,8 +70,9 @@ abstract class Chat extends ChatBase implements _$Chat {
       );
 
   Stream<Either<MessageFailure, KtList<Message>>> watchMessages() async* {
-    await msgRepo.init(this);
-    yield* msgRepo.watchAll();
+    final repo = getIt<IMessageRepository>();
+    await repo.init(this);
+    yield* repo.watchAll();
   }
 
   Option<ValueFailure<dynamic>> get failureOption => properties.failureOrUnit

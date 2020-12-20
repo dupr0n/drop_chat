@@ -5,7 +5,6 @@ import 'chat.dart';
 import 'chat_failure.dart';
 
 abstract class IChatRepository {
-  Future<void> init();
   Stream<Either<ChatFailure, KtList<Chat>>> watchAll();
   Stream<Either<ChatFailure, KtList<Chat>>> watchArchived();
   Future<Either<ChatFailure, Unit>> add(Chat chat);
