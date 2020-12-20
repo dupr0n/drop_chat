@@ -425,6 +425,25 @@ class _$MessageWatcherStateTearOff {
   _Initial initial() {
     return const _Initial();
   }
+
+// ignore: unused_element
+  _Loading loading() {
+    return const _Loading();
+  }
+
+// ignore: unused_element
+  _LoadSuccess loadSuccess(KtList<Message> messages) {
+    return _LoadSuccess(
+      messages,
+    );
+  }
+
+// ignore: unused_element
+  _LoadFailure loadFailure(MessageFailure messageFailure) {
+    return _LoadFailure(
+      messageFailure,
+    );
+  }
 }
 
 /// @nodoc
@@ -436,19 +455,31 @@ mixin _$MessageWatcherState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(KtList<Message> messages),
+    @required TResult loadFailure(MessageFailure messageFailure),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(KtList<Message> messages),
+    TResult loadFailure(MessageFailure messageFailure),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
     @required TResult orElse(),
   });
 }
@@ -508,8 +539,14 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(KtList<Message> messages),
+    @required TResult loadFailure(MessageFailure messageFailure),
   }) {
     assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
     return initial();
   }
 
@@ -517,6 +554,9 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(KtList<Message> messages),
+    TResult loadFailure(MessageFailure messageFailure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -530,8 +570,14 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
     return initial(this);
   }
 
@@ -539,6 +585,9 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -551,4 +600,376 @@ class _$_Initial implements _Initial {
 
 abstract class _Initial implements MessageWatcherState {
   const factory _Initial() = _$_Initial;
+}
+
+/// @nodoc
+abstract class _$LoadingCopyWith<$Res> {
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+      __$LoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadingCopyWithImpl<$Res>
+    extends _$MessageWatcherStateCopyWithImpl<$Res>
+    implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+      : super(_value, (v) => _then(v as _Loading));
+
+  @override
+  _Loading get _value => super._value as _Loading;
+}
+
+/// @nodoc
+class _$_Loading implements _Loading {
+  const _$_Loading();
+
+  @override
+  String toString() {
+    return 'MessageWatcherState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Loading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(KtList<Message> messages),
+    @required TResult loadFailure(MessageFailure messageFailure),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(KtList<Message> messages),
+    TResult loadFailure(MessageFailure messageFailure),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loading implements MessageWatcherState {
+  const factory _Loading() = _$_Loading;
+}
+
+/// @nodoc
+abstract class _$LoadSuccessCopyWith<$Res> {
+  factory _$LoadSuccessCopyWith(
+          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
+      __$LoadSuccessCopyWithImpl<$Res>;
+  $Res call({KtList<Message> messages});
+}
+
+/// @nodoc
+class __$LoadSuccessCopyWithImpl<$Res>
+    extends _$MessageWatcherStateCopyWithImpl<$Res>
+    implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(
+      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+      : super(_value, (v) => _then(v as _LoadSuccess));
+
+  @override
+  _LoadSuccess get _value => super._value as _LoadSuccess;
+
+  @override
+  $Res call({
+    Object messages = freezed,
+  }) {
+    return _then(_LoadSuccess(
+      messages == freezed ? _value.messages : messages as KtList<Message>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_LoadSuccess implements _LoadSuccess {
+  const _$_LoadSuccess(this.messages) : assert(messages != null);
+
+  @override
+  final KtList<Message> messages;
+
+  @override
+  String toString() {
+    return 'MessageWatcherState.loadSuccess(messages: $messages)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LoadSuccess &&
+            (identical(other.messages, messages) ||
+                const DeepCollectionEquality()
+                    .equals(other.messages, messages)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(messages);
+
+  @override
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(KtList<Message> messages),
+    @required TResult loadFailure(MessageFailure messageFailure),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    return loadSuccess(messages);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(KtList<Message> messages),
+    TResult loadFailure(MessageFailure messageFailure),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadSuccess != null) {
+      return loadSuccess(messages);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    return loadSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadSuccess != null) {
+      return loadSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadSuccess implements MessageWatcherState {
+  const factory _LoadSuccess(KtList<Message> messages) = _$_LoadSuccess;
+
+  KtList<Message> get messages;
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
+}
+
+/// @nodoc
+abstract class _$LoadFailureCopyWith<$Res> {
+  factory _$LoadFailureCopyWith(
+          _LoadFailure value, $Res Function(_LoadFailure) then) =
+      __$LoadFailureCopyWithImpl<$Res>;
+  $Res call({MessageFailure messageFailure});
+
+  $MessageFailureCopyWith<$Res> get messageFailure;
+}
+
+/// @nodoc
+class __$LoadFailureCopyWithImpl<$Res>
+    extends _$MessageWatcherStateCopyWithImpl<$Res>
+    implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(
+      _LoadFailure _value, $Res Function(_LoadFailure) _then)
+      : super(_value, (v) => _then(v as _LoadFailure));
+
+  @override
+  _LoadFailure get _value => super._value as _LoadFailure;
+
+  @override
+  $Res call({
+    Object messageFailure = freezed,
+  }) {
+    return _then(_LoadFailure(
+      messageFailure == freezed
+          ? _value.messageFailure
+          : messageFailure as MessageFailure,
+    ));
+  }
+
+  @override
+  $MessageFailureCopyWith<$Res> get messageFailure {
+    if (_value.messageFailure == null) {
+      return null;
+    }
+    return $MessageFailureCopyWith<$Res>(_value.messageFailure, (value) {
+      return _then(_value.copyWith(messageFailure: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_LoadFailure implements _LoadFailure {
+  const _$_LoadFailure(this.messageFailure) : assert(messageFailure != null);
+
+  @override
+  final MessageFailure messageFailure;
+
+  @override
+  String toString() {
+    return 'MessageWatcherState.loadFailure(messageFailure: $messageFailure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LoadFailure &&
+            (identical(other.messageFailure, messageFailure) ||
+                const DeepCollectionEquality()
+                    .equals(other.messageFailure, messageFailure)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(messageFailure);
+
+  @override
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(KtList<Message> messages),
+    @required TResult loadFailure(MessageFailure messageFailure),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    return loadFailure(messageFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(KtList<Message> messages),
+    TResult loadFailure(MessageFailure messageFailure),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadFailure != null) {
+      return loadFailure(messageFailure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    return loadFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadFailure != null) {
+      return loadFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadFailure implements MessageWatcherState {
+  const factory _LoadFailure(MessageFailure messageFailure) = _$_LoadFailure;
+
+  MessageFailure get messageFailure;
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

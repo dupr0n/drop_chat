@@ -213,8 +213,8 @@ class _$ChatActorStateTearOff {
   }
 
 // ignore: unused_element
-  _InProgress inProgress() {
-    return const _InProgress();
+  _Loading loading() {
+    return const _Loading();
   }
 
 // ignore: unused_element
@@ -239,14 +239,14 @@ mixin _$ChatActorState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initial(),
-    @required TResult inProgress(),
+    @required TResult loading(),
     @required TResult deleteFailure(ChatFailure chatFailure),
     @required TResult deleteSuccess(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
-    TResult inProgress(),
+    TResult loading(),
     TResult deleteFailure(ChatFailure chatFailure),
     TResult deleteSuccess(),
     @required TResult orElse(),
@@ -254,14 +254,14 @@ mixin _$ChatActorState {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
-    @required TResult inProgress(_InProgress value),
+    @required TResult loading(_Loading value),
     @required TResult deleteFailure(_DeleteFailure value),
     @required TResult deleteSuccess(_DeleteSuccess value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
-    TResult inProgress(_InProgress value),
+    TResult loading(_Loading value),
     TResult deleteFailure(_DeleteFailure value),
     TResult deleteSuccess(_DeleteSuccess value),
     @required TResult orElse(),
@@ -322,12 +322,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initial(),
-    @required TResult inProgress(),
+    @required TResult loading(),
     @required TResult deleteFailure(ChatFailure chatFailure),
     @required TResult deleteSuccess(),
   }) {
     assert(initial != null);
-    assert(inProgress != null);
+    assert(loading != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
     return initial();
@@ -337,7 +337,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
-    TResult inProgress(),
+    TResult loading(),
     TResult deleteFailure(ChatFailure chatFailure),
     TResult deleteSuccess(),
     @required TResult orElse(),
@@ -353,12 +353,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
-    @required TResult inProgress(_InProgress value),
+    @required TResult loading(_Loading value),
     @required TResult deleteFailure(_DeleteFailure value),
     @required TResult deleteSuccess(_DeleteSuccess value),
   }) {
     assert(initial != null);
-    assert(inProgress != null);
+    assert(loading != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
     return initial(this);
@@ -368,7 +368,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
-    TResult inProgress(_InProgress value),
+    TResult loading(_Loading value),
     TResult deleteFailure(_DeleteFailure value),
     TResult deleteSuccess(_DeleteSuccess value),
     @required TResult orElse(),
@@ -386,35 +386,33 @@ abstract class _Initial implements ChatActorState {
 }
 
 /// @nodoc
-abstract class _$InProgressCopyWith<$Res> {
-  factory _$InProgressCopyWith(
-          _InProgress value, $Res Function(_InProgress) then) =
-      __$InProgressCopyWithImpl<$Res>;
+abstract class _$LoadingCopyWith<$Res> {
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+      __$LoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InProgressCopyWithImpl<$Res> extends _$ChatActorStateCopyWithImpl<$Res>
-    implements _$InProgressCopyWith<$Res> {
-  __$InProgressCopyWithImpl(
-      _InProgress _value, $Res Function(_InProgress) _then)
-      : super(_value, (v) => _then(v as _InProgress));
+class __$LoadingCopyWithImpl<$Res> extends _$ChatActorStateCopyWithImpl<$Res>
+    implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+      : super(_value, (v) => _then(v as _Loading));
 
   @override
-  _InProgress get _value => super._value as _InProgress;
+  _Loading get _value => super._value as _Loading;
 }
 
 /// @nodoc
-class _$_InProgress implements _InProgress {
-  const _$_InProgress();
+class _$_Loading implements _Loading {
+  const _$_Loading();
 
   @override
   String toString() {
-    return 'ChatActorState.inProgress()';
+    return 'ChatActorState.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InProgress);
+    return identical(this, other) || (other is _Loading);
   }
 
   @override
@@ -424,29 +422,29 @@ class _$_InProgress implements _InProgress {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initial(),
-    @required TResult inProgress(),
+    @required TResult loading(),
     @required TResult deleteFailure(ChatFailure chatFailure),
     @required TResult deleteSuccess(),
   }) {
     assert(initial != null);
-    assert(inProgress != null);
+    assert(loading != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
-    return inProgress();
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
-    TResult inProgress(),
+    TResult loading(),
     TResult deleteFailure(ChatFailure chatFailure),
     TResult deleteSuccess(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (inProgress != null) {
-      return inProgress();
+    if (loading != null) {
+      return loading();
     }
     return orElse();
   }
@@ -455,36 +453,36 @@ class _$_InProgress implements _InProgress {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
-    @required TResult inProgress(_InProgress value),
+    @required TResult loading(_Loading value),
     @required TResult deleteFailure(_DeleteFailure value),
     @required TResult deleteSuccess(_DeleteSuccess value),
   }) {
     assert(initial != null);
-    assert(inProgress != null);
+    assert(loading != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
-    return inProgress(this);
+    return loading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
-    TResult inProgress(_InProgress value),
+    TResult loading(_Loading value),
     TResult deleteFailure(_DeleteFailure value),
     TResult deleteSuccess(_DeleteSuccess value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (inProgress != null) {
-      return inProgress(this);
+    if (loading != null) {
+      return loading(this);
     }
     return orElse();
   }
 }
 
-abstract class _InProgress implements ChatActorState {
-  const factory _InProgress() = _$_InProgress;
+abstract class _Loading implements ChatActorState {
+  const factory _Loading() = _$_Loading;
 }
 
 /// @nodoc
@@ -561,12 +559,12 @@ class _$_DeleteFailure implements _DeleteFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initial(),
-    @required TResult inProgress(),
+    @required TResult loading(),
     @required TResult deleteFailure(ChatFailure chatFailure),
     @required TResult deleteSuccess(),
   }) {
     assert(initial != null);
-    assert(inProgress != null);
+    assert(loading != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
     return deleteFailure(chatFailure);
@@ -576,7 +574,7 @@ class _$_DeleteFailure implements _DeleteFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
-    TResult inProgress(),
+    TResult loading(),
     TResult deleteFailure(ChatFailure chatFailure),
     TResult deleteSuccess(),
     @required TResult orElse(),
@@ -592,12 +590,12 @@ class _$_DeleteFailure implements _DeleteFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
-    @required TResult inProgress(_InProgress value),
+    @required TResult loading(_Loading value),
     @required TResult deleteFailure(_DeleteFailure value),
     @required TResult deleteSuccess(_DeleteSuccess value),
   }) {
     assert(initial != null);
-    assert(inProgress != null);
+    assert(loading != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
     return deleteFailure(this);
@@ -607,7 +605,7 @@ class _$_DeleteFailure implements _DeleteFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
-    TResult inProgress(_InProgress value),
+    TResult loading(_Loading value),
     TResult deleteFailure(_DeleteFailure value),
     TResult deleteSuccess(_DeleteSuccess value),
     @required TResult orElse(),
@@ -667,12 +665,12 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initial(),
-    @required TResult inProgress(),
+    @required TResult loading(),
     @required TResult deleteFailure(ChatFailure chatFailure),
     @required TResult deleteSuccess(),
   }) {
     assert(initial != null);
-    assert(inProgress != null);
+    assert(loading != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
     return deleteSuccess();
@@ -682,7 +680,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
-    TResult inProgress(),
+    TResult loading(),
     TResult deleteFailure(ChatFailure chatFailure),
     TResult deleteSuccess(),
     @required TResult orElse(),
@@ -698,12 +696,12 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
-    @required TResult inProgress(_InProgress value),
+    @required TResult loading(_Loading value),
     @required TResult deleteFailure(_DeleteFailure value),
     @required TResult deleteSuccess(_DeleteSuccess value),
   }) {
     assert(initial != null);
-    assert(inProgress != null);
+    assert(loading != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
     return deleteSuccess(this);
@@ -713,7 +711,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
-    TResult inProgress(_InProgress value),
+    TResult loading(_Loading value),
     TResult deleteFailure(_DeleteFailure value),
     TResult deleteSuccess(_DeleteSuccess value),
     @required TResult orElse(),
