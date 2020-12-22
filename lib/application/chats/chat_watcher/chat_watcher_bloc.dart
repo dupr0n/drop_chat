@@ -17,13 +17,62 @@ part 'chat_watcher_state.dart';
 @injectable
 class ChatWatcherBloc extends Bloc<ChatWatcherEvent, ChatWatcherState> {
   final IChatRepository _chatRepository;
+  StreamSubscription<Either<ChatFailure, KtList<Chat>>> _chatStreamSubscription;
 
-  ChatWatcherBloc(this._chatRepository) : super(const _Initial());
+  ChatWatcherBloc(this._chatRepository) : super(const ChatWatcherState.initial());
 
   @override
   Stream<ChatWatcherState> mapEventToState(
     ChatWatcherEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    yield const ChatWatcherState.loading();
+    yield* event.map(
+      watchAllStarted: (e) async* {
+        await _chatStreamSubscription?.cancel();
+        _chatStreamSubscription = _chatRepository
+            .watchAll()
+            .listen((chats) => add(ChatWatcherEvent.chatsReceived(chats)));
+      },
+      watchArchivedStarted: (e) async* {
+        await _chatStreamSubscription?.cancel();
+        _chatStreamSubscription = _chatRepository
+            .watchArchived()
+            .listen((chats) => add(ChatWatcherEvent.chatsReceived(chats)));
+      },
+      chatsReceived: (e) async* {
+        yield e.failureOrChats.fold(
+          (f) => ChatWatcherState.loadFailure(f),
+          (chats) => ChatWatcherState.loadSuccess(chats),
+        );
+      },
+      muteChats: (e) async* {
+        yield* _batchAction(
+            e, (chat) => _chatRepository.edit(chat.copyWith(isMuted: !chat.isMuted)));
+      },
+      archiveChats: (e) async* {
+        yield* _batchAction(
+            e, (chat) => _chatRepository.edit(chat.copyWith(isArchived: !chat.isArchived)));
+      },
+      deleteChats: (e) async* {
+        yield* _batchAction(e, (chat) => _chatRepository.delete(chat));
+      },
+    );
+  }
+
+  Stream<ChatWatcherState> _batchAction(
+      dynamic e, Future<Either<ChatFailure, Unit>> Function(Chat chat) func) async* {
+    for (final chat in e.selectedChats.iter) {
+      final chatFailureOrUnit = await func(chat as Chat);
+      yield chatFailureOrUnit.fold(
+        (f) => ChatWatcherState.batchActionFailure(f),
+        (_) => const ChatWatcherState.batchActionSuccess(),
+      );
+    }
+  }
+
+  @override
+  Future<void> close() async {
+    await _chatStreamSubscription?.cancel();
+    return super.close();
   }
 }

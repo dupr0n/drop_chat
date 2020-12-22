@@ -293,15 +293,15 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
     GroupName groupName,
     GroupDescription groupDescription,
     User receiver,
-    @required ChatType type,
   }) =>
       type.fold(
         group: () => ChatProperties.group(
-            users: users ?? this.users,
-            isAdmin: isAdmin ?? this.isAdmin,
-            canReceive: canReceive ?? this.canReceive,
-            groupName: groupName ?? this.groupName,
-            groupDescription: groupDescription ?? this.groupDescription),
+          users: users ?? this.users,
+          isAdmin: isAdmin ?? this.isAdmin,
+          canReceive: canReceive ?? this.canReceive,
+          groupName: groupName ?? this.groupName,
+          groupDescription: groupDescription ?? this.groupDescription,
+        ),
         individual: () => ChatProperties.individual(receiver: receiver ?? this.receiver),
         nil: () => ChatProperties.nil(),
       );

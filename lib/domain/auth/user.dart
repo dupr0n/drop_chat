@@ -12,4 +12,10 @@ abstract class User with _$User {
     @required DisplayName displayName,
     @required bool isOnline,
   }) = _User;
+
+  factory User.empty() => User(
+        id: UniqueId(),
+        displayName: DisplayName(''),
+        isOnline: false,
+      );
 }

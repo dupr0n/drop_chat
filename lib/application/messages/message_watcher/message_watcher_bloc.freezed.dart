@@ -30,6 +30,20 @@ class _$MessageWatcherEventTearOff {
       failureOrMessages,
     );
   }
+
+// ignore: unused_element
+  _DeleteMessages deleteMessages(KtList<Message> selectedMessages) {
+    return _DeleteMessages(
+      selectedMessages,
+    );
+  }
+
+// ignore: unused_element
+  _StarMessages starMessages(KtList<Message> selectedMessages) {
+    return _StarMessages(
+      selectedMessages,
+    );
+  }
 }
 
 /// @nodoc
@@ -45,6 +59,8 @@ mixin _$MessageWatcherEvent {
     @required
         TResult messagesReceived(
             Either<MessageFailure, KtList<Message>> failureOrMessages),
+    @required TResult deleteMessages(KtList<Message> selectedMessages),
+    @required TResult starMessages(KtList<Message> selectedMessages),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -52,6 +68,8 @@ mixin _$MessageWatcherEvent {
     TResult watchStarredStarted(),
     TResult messagesReceived(
         Either<MessageFailure, KtList<Message>> failureOrMessages),
+    TResult deleteMessages(KtList<Message> selectedMessages),
+    TResult starMessages(KtList<Message> selectedMessages),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -59,12 +77,16 @@ mixin _$MessageWatcherEvent {
     @required TResult watchAllStarted(_WatchAllStarted value),
     @required TResult watchStarredStarted(_WatchStarredStarted value),
     @required TResult messagesReceived(_MessagesReceived value),
+    @required TResult deleteMessages(_DeleteMessages value),
+    @required TResult starMessages(_StarMessages value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchAllStarted(_WatchAllStarted value),
     TResult watchStarredStarted(_WatchStarredStarted value),
     TResult messagesReceived(_MessagesReceived value),
+    TResult deleteMessages(_DeleteMessages value),
+    TResult starMessages(_StarMessages value),
     @required TResult orElse(),
   });
 }
@@ -130,10 +152,14 @@ class _$_WatchAllStarted implements _WatchAllStarted {
     @required
         TResult messagesReceived(
             Either<MessageFailure, KtList<Message>> failureOrMessages),
+    @required TResult deleteMessages(KtList<Message> selectedMessages),
+    @required TResult starMessages(KtList<Message> selectedMessages),
   }) {
     assert(watchAllStarted != null);
     assert(watchStarredStarted != null);
     assert(messagesReceived != null);
+    assert(deleteMessages != null);
+    assert(starMessages != null);
     return watchAllStarted();
   }
 
@@ -144,6 +170,8 @@ class _$_WatchAllStarted implements _WatchAllStarted {
     TResult watchStarredStarted(),
     TResult messagesReceived(
         Either<MessageFailure, KtList<Message>> failureOrMessages),
+    TResult deleteMessages(KtList<Message> selectedMessages),
+    TResult starMessages(KtList<Message> selectedMessages),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -159,10 +187,14 @@ class _$_WatchAllStarted implements _WatchAllStarted {
     @required TResult watchAllStarted(_WatchAllStarted value),
     @required TResult watchStarredStarted(_WatchStarredStarted value),
     @required TResult messagesReceived(_MessagesReceived value),
+    @required TResult deleteMessages(_DeleteMessages value),
+    @required TResult starMessages(_StarMessages value),
   }) {
     assert(watchAllStarted != null);
     assert(watchStarredStarted != null);
     assert(messagesReceived != null);
+    assert(deleteMessages != null);
+    assert(starMessages != null);
     return watchAllStarted(this);
   }
 
@@ -172,6 +204,8 @@ class _$_WatchAllStarted implements _WatchAllStarted {
     TResult watchAllStarted(_WatchAllStarted value),
     TResult watchStarredStarted(_WatchStarredStarted value),
     TResult messagesReceived(_MessagesReceived value),
+    TResult deleteMessages(_DeleteMessages value),
+    TResult starMessages(_StarMessages value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -230,10 +264,14 @@ class _$_WatchStarredStarted implements _WatchStarredStarted {
     @required
         TResult messagesReceived(
             Either<MessageFailure, KtList<Message>> failureOrMessages),
+    @required TResult deleteMessages(KtList<Message> selectedMessages),
+    @required TResult starMessages(KtList<Message> selectedMessages),
   }) {
     assert(watchAllStarted != null);
     assert(watchStarredStarted != null);
     assert(messagesReceived != null);
+    assert(deleteMessages != null);
+    assert(starMessages != null);
     return watchStarredStarted();
   }
 
@@ -244,6 +282,8 @@ class _$_WatchStarredStarted implements _WatchStarredStarted {
     TResult watchStarredStarted(),
     TResult messagesReceived(
         Either<MessageFailure, KtList<Message>> failureOrMessages),
+    TResult deleteMessages(KtList<Message> selectedMessages),
+    TResult starMessages(KtList<Message> selectedMessages),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -259,10 +299,14 @@ class _$_WatchStarredStarted implements _WatchStarredStarted {
     @required TResult watchAllStarted(_WatchAllStarted value),
     @required TResult watchStarredStarted(_WatchStarredStarted value),
     @required TResult messagesReceived(_MessagesReceived value),
+    @required TResult deleteMessages(_DeleteMessages value),
+    @required TResult starMessages(_StarMessages value),
   }) {
     assert(watchAllStarted != null);
     assert(watchStarredStarted != null);
     assert(messagesReceived != null);
+    assert(deleteMessages != null);
+    assert(starMessages != null);
     return watchStarredStarted(this);
   }
 
@@ -272,6 +316,8 @@ class _$_WatchStarredStarted implements _WatchStarredStarted {
     TResult watchAllStarted(_WatchAllStarted value),
     TResult watchStarredStarted(_WatchStarredStarted value),
     TResult messagesReceived(_MessagesReceived value),
+    TResult deleteMessages(_DeleteMessages value),
+    TResult starMessages(_StarMessages value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -356,10 +402,14 @@ class _$_MessagesReceived implements _MessagesReceived {
     @required
         TResult messagesReceived(
             Either<MessageFailure, KtList<Message>> failureOrMessages),
+    @required TResult deleteMessages(KtList<Message> selectedMessages),
+    @required TResult starMessages(KtList<Message> selectedMessages),
   }) {
     assert(watchAllStarted != null);
     assert(watchStarredStarted != null);
     assert(messagesReceived != null);
+    assert(deleteMessages != null);
+    assert(starMessages != null);
     return messagesReceived(failureOrMessages);
   }
 
@@ -370,6 +420,8 @@ class _$_MessagesReceived implements _MessagesReceived {
     TResult watchStarredStarted(),
     TResult messagesReceived(
         Either<MessageFailure, KtList<Message>> failureOrMessages),
+    TResult deleteMessages(KtList<Message> selectedMessages),
+    TResult starMessages(KtList<Message> selectedMessages),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -385,10 +437,14 @@ class _$_MessagesReceived implements _MessagesReceived {
     @required TResult watchAllStarted(_WatchAllStarted value),
     @required TResult watchStarredStarted(_WatchStarredStarted value),
     @required TResult messagesReceived(_MessagesReceived value),
+    @required TResult deleteMessages(_DeleteMessages value),
+    @required TResult starMessages(_StarMessages value),
   }) {
     assert(watchAllStarted != null);
     assert(watchStarredStarted != null);
     assert(messagesReceived != null);
+    assert(deleteMessages != null);
+    assert(starMessages != null);
     return messagesReceived(this);
   }
 
@@ -398,6 +454,8 @@ class _$_MessagesReceived implements _MessagesReceived {
     TResult watchAllStarted(_WatchAllStarted value),
     TResult watchStarredStarted(_WatchStarredStarted value),
     TResult messagesReceived(_MessagesReceived value),
+    TResult deleteMessages(_DeleteMessages value),
+    TResult starMessages(_StarMessages value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -415,6 +473,290 @@ abstract class _MessagesReceived implements MessageWatcherEvent {
 
   Either<MessageFailure, KtList<Message>> get failureOrMessages;
   _$MessagesReceivedCopyWith<_MessagesReceived> get copyWith;
+}
+
+/// @nodoc
+abstract class _$DeleteMessagesCopyWith<$Res> {
+  factory _$DeleteMessagesCopyWith(
+          _DeleteMessages value, $Res Function(_DeleteMessages) then) =
+      __$DeleteMessagesCopyWithImpl<$Res>;
+  $Res call({KtList<Message> selectedMessages});
+}
+
+/// @nodoc
+class __$DeleteMessagesCopyWithImpl<$Res>
+    extends _$MessageWatcherEventCopyWithImpl<$Res>
+    implements _$DeleteMessagesCopyWith<$Res> {
+  __$DeleteMessagesCopyWithImpl(
+      _DeleteMessages _value, $Res Function(_DeleteMessages) _then)
+      : super(_value, (v) => _then(v as _DeleteMessages));
+
+  @override
+  _DeleteMessages get _value => super._value as _DeleteMessages;
+
+  @override
+  $Res call({
+    Object selectedMessages = freezed,
+  }) {
+    return _then(_DeleteMessages(
+      selectedMessages == freezed
+          ? _value.selectedMessages
+          : selectedMessages as KtList<Message>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_DeleteMessages implements _DeleteMessages {
+  const _$_DeleteMessages(this.selectedMessages)
+      : assert(selectedMessages != null);
+
+  @override
+  final KtList<Message> selectedMessages;
+
+  @override
+  String toString() {
+    return 'MessageWatcherEvent.deleteMessages(selectedMessages: $selectedMessages)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DeleteMessages &&
+            (identical(other.selectedMessages, selectedMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.selectedMessages, selectedMessages)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(selectedMessages);
+
+  @override
+  _$DeleteMessagesCopyWith<_DeleteMessages> get copyWith =>
+      __$DeleteMessagesCopyWithImpl<_DeleteMessages>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult watchAllStarted(),
+    @required TResult watchStarredStarted(),
+    @required
+        TResult messagesReceived(
+            Either<MessageFailure, KtList<Message>> failureOrMessages),
+    @required TResult deleteMessages(KtList<Message> selectedMessages),
+    @required TResult starMessages(KtList<Message> selectedMessages),
+  }) {
+    assert(watchAllStarted != null);
+    assert(watchStarredStarted != null);
+    assert(messagesReceived != null);
+    assert(deleteMessages != null);
+    assert(starMessages != null);
+    return deleteMessages(selectedMessages);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllStarted(),
+    TResult watchStarredStarted(),
+    TResult messagesReceived(
+        Either<MessageFailure, KtList<Message>> failureOrMessages),
+    TResult deleteMessages(KtList<Message> selectedMessages),
+    TResult starMessages(KtList<Message> selectedMessages),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (deleteMessages != null) {
+      return deleteMessages(selectedMessages);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult watchAllStarted(_WatchAllStarted value),
+    @required TResult watchStarredStarted(_WatchStarredStarted value),
+    @required TResult messagesReceived(_MessagesReceived value),
+    @required TResult deleteMessages(_DeleteMessages value),
+    @required TResult starMessages(_StarMessages value),
+  }) {
+    assert(watchAllStarted != null);
+    assert(watchStarredStarted != null);
+    assert(messagesReceived != null);
+    assert(deleteMessages != null);
+    assert(starMessages != null);
+    return deleteMessages(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllStarted(_WatchAllStarted value),
+    TResult watchStarredStarted(_WatchStarredStarted value),
+    TResult messagesReceived(_MessagesReceived value),
+    TResult deleteMessages(_DeleteMessages value),
+    TResult starMessages(_StarMessages value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (deleteMessages != null) {
+      return deleteMessages(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteMessages implements MessageWatcherEvent {
+  const factory _DeleteMessages(KtList<Message> selectedMessages) =
+      _$_DeleteMessages;
+
+  KtList<Message> get selectedMessages;
+  _$DeleteMessagesCopyWith<_DeleteMessages> get copyWith;
+}
+
+/// @nodoc
+abstract class _$StarMessagesCopyWith<$Res> {
+  factory _$StarMessagesCopyWith(
+          _StarMessages value, $Res Function(_StarMessages) then) =
+      __$StarMessagesCopyWithImpl<$Res>;
+  $Res call({KtList<Message> selectedMessages});
+}
+
+/// @nodoc
+class __$StarMessagesCopyWithImpl<$Res>
+    extends _$MessageWatcherEventCopyWithImpl<$Res>
+    implements _$StarMessagesCopyWith<$Res> {
+  __$StarMessagesCopyWithImpl(
+      _StarMessages _value, $Res Function(_StarMessages) _then)
+      : super(_value, (v) => _then(v as _StarMessages));
+
+  @override
+  _StarMessages get _value => super._value as _StarMessages;
+
+  @override
+  $Res call({
+    Object selectedMessages = freezed,
+  }) {
+    return _then(_StarMessages(
+      selectedMessages == freezed
+          ? _value.selectedMessages
+          : selectedMessages as KtList<Message>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_StarMessages implements _StarMessages {
+  const _$_StarMessages(this.selectedMessages)
+      : assert(selectedMessages != null);
+
+  @override
+  final KtList<Message> selectedMessages;
+
+  @override
+  String toString() {
+    return 'MessageWatcherEvent.starMessages(selectedMessages: $selectedMessages)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _StarMessages &&
+            (identical(other.selectedMessages, selectedMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.selectedMessages, selectedMessages)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(selectedMessages);
+
+  @override
+  _$StarMessagesCopyWith<_StarMessages> get copyWith =>
+      __$StarMessagesCopyWithImpl<_StarMessages>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult watchAllStarted(),
+    @required TResult watchStarredStarted(),
+    @required
+        TResult messagesReceived(
+            Either<MessageFailure, KtList<Message>> failureOrMessages),
+    @required TResult deleteMessages(KtList<Message> selectedMessages),
+    @required TResult starMessages(KtList<Message> selectedMessages),
+  }) {
+    assert(watchAllStarted != null);
+    assert(watchStarredStarted != null);
+    assert(messagesReceived != null);
+    assert(deleteMessages != null);
+    assert(starMessages != null);
+    return starMessages(selectedMessages);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllStarted(),
+    TResult watchStarredStarted(),
+    TResult messagesReceived(
+        Either<MessageFailure, KtList<Message>> failureOrMessages),
+    TResult deleteMessages(KtList<Message> selectedMessages),
+    TResult starMessages(KtList<Message> selectedMessages),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (starMessages != null) {
+      return starMessages(selectedMessages);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult watchAllStarted(_WatchAllStarted value),
+    @required TResult watchStarredStarted(_WatchStarredStarted value),
+    @required TResult messagesReceived(_MessagesReceived value),
+    @required TResult deleteMessages(_DeleteMessages value),
+    @required TResult starMessages(_StarMessages value),
+  }) {
+    assert(watchAllStarted != null);
+    assert(watchStarredStarted != null);
+    assert(messagesReceived != null);
+    assert(deleteMessages != null);
+    assert(starMessages != null);
+    return starMessages(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllStarted(_WatchAllStarted value),
+    TResult watchStarredStarted(_WatchStarredStarted value),
+    TResult messagesReceived(_MessagesReceived value),
+    TResult deleteMessages(_DeleteMessages value),
+    TResult starMessages(_StarMessages value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (starMessages != null) {
+      return starMessages(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StarMessages implements MessageWatcherEvent {
+  const factory _StarMessages(KtList<Message> selectedMessages) =
+      _$_StarMessages;
+
+  KtList<Message> get selectedMessages;
+  _$StarMessagesCopyWith<_StarMessages> get copyWith;
 }
 
 /// @nodoc
@@ -444,6 +786,18 @@ class _$MessageWatcherStateTearOff {
       messageFailure,
     );
   }
+
+// ignore: unused_element
+  _DeleteSuccess batchActionSuccess() {
+    return const _DeleteSuccess();
+  }
+
+// ignore: unused_element
+  _DeleteFailure batchActionFailure(MessageFailure messageFailure) {
+    return _DeleteFailure(
+      messageFailure,
+    );
+  }
 }
 
 /// @nodoc
@@ -458,6 +812,8 @@ mixin _$MessageWatcherState {
     @required TResult loading(),
     @required TResult loadSuccess(KtList<Message> messages),
     @required TResult loadFailure(MessageFailure messageFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(MessageFailure messageFailure),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -465,6 +821,8 @@ mixin _$MessageWatcherState {
     TResult loading(),
     TResult loadSuccess(KtList<Message> messages),
     TResult loadFailure(MessageFailure messageFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(MessageFailure messageFailure),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -473,6 +831,8 @@ mixin _$MessageWatcherState {
     @required TResult loading(_Loading value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_DeleteSuccess value),
+    @required TResult batchActionFailure(_DeleteFailure value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -480,6 +840,8 @@ mixin _$MessageWatcherState {
     TResult loading(_Loading value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_DeleteSuccess value),
+    TResult batchActionFailure(_DeleteFailure value),
     @required TResult orElse(),
   });
 }
@@ -542,11 +904,15 @@ class _$_Initial implements _Initial {
     @required TResult loading(),
     @required TResult loadSuccess(KtList<Message> messages),
     @required TResult loadFailure(MessageFailure messageFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(MessageFailure messageFailure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return initial();
   }
 
@@ -557,6 +923,8 @@ class _$_Initial implements _Initial {
     TResult loading(),
     TResult loadSuccess(KtList<Message> messages),
     TResult loadFailure(MessageFailure messageFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(MessageFailure messageFailure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -573,11 +941,15 @@ class _$_Initial implements _Initial {
     @required TResult loading(_Loading value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_DeleteSuccess value),
+    @required TResult batchActionFailure(_DeleteFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return initial(this);
   }
 
@@ -588,6 +960,8 @@ class _$_Initial implements _Initial {
     TResult loading(_Loading value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_DeleteSuccess value),
+    TResult batchActionFailure(_DeleteFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -643,11 +1017,15 @@ class _$_Loading implements _Loading {
     @required TResult loading(),
     @required TResult loadSuccess(KtList<Message> messages),
     @required TResult loadFailure(MessageFailure messageFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(MessageFailure messageFailure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return loading();
   }
 
@@ -658,6 +1036,8 @@ class _$_Loading implements _Loading {
     TResult loading(),
     TResult loadSuccess(KtList<Message> messages),
     TResult loadFailure(MessageFailure messageFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(MessageFailure messageFailure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -674,11 +1054,15 @@ class _$_Loading implements _Loading {
     @required TResult loading(_Loading value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_DeleteSuccess value),
+    @required TResult batchActionFailure(_DeleteFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return loading(this);
   }
 
@@ -689,6 +1073,8 @@ class _$_Loading implements _Loading {
     TResult loading(_Loading value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_DeleteSuccess value),
+    TResult batchActionFailure(_DeleteFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -768,11 +1154,15 @@ class _$_LoadSuccess implements _LoadSuccess {
     @required TResult loading(),
     @required TResult loadSuccess(KtList<Message> messages),
     @required TResult loadFailure(MessageFailure messageFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(MessageFailure messageFailure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return loadSuccess(messages);
   }
 
@@ -783,6 +1173,8 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult loading(),
     TResult loadSuccess(KtList<Message> messages),
     TResult loadFailure(MessageFailure messageFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(MessageFailure messageFailure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -799,11 +1191,15 @@ class _$_LoadSuccess implements _LoadSuccess {
     @required TResult loading(_Loading value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_DeleteSuccess value),
+    @required TResult batchActionFailure(_DeleteFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return loadSuccess(this);
   }
 
@@ -814,6 +1210,8 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult loading(_Loading value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_DeleteSuccess value),
+    TResult batchActionFailure(_DeleteFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -911,11 +1309,15 @@ class _$_LoadFailure implements _LoadFailure {
     @required TResult loading(),
     @required TResult loadSuccess(KtList<Message> messages),
     @required TResult loadFailure(MessageFailure messageFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(MessageFailure messageFailure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return loadFailure(messageFailure);
   }
 
@@ -926,6 +1328,8 @@ class _$_LoadFailure implements _LoadFailure {
     TResult loading(),
     TResult loadSuccess(KtList<Message> messages),
     TResult loadFailure(MessageFailure messageFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(MessageFailure messageFailure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -942,11 +1346,15 @@ class _$_LoadFailure implements _LoadFailure {
     @required TResult loading(_Loading value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_DeleteSuccess value),
+    @required TResult batchActionFailure(_DeleteFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return loadFailure(this);
   }
 
@@ -957,6 +1365,8 @@ class _$_LoadFailure implements _LoadFailure {
     TResult loading(_Loading value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_DeleteSuccess value),
+    TResult batchActionFailure(_DeleteFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -972,4 +1382,275 @@ abstract class _LoadFailure implements MessageWatcherState {
 
   MessageFailure get messageFailure;
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
+}
+
+/// @nodoc
+abstract class _$DeleteSuccessCopyWith<$Res> {
+  factory _$DeleteSuccessCopyWith(
+          _DeleteSuccess value, $Res Function(_DeleteSuccess) then) =
+      __$DeleteSuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$DeleteSuccessCopyWithImpl<$Res>
+    extends _$MessageWatcherStateCopyWithImpl<$Res>
+    implements _$DeleteSuccessCopyWith<$Res> {
+  __$DeleteSuccessCopyWithImpl(
+      _DeleteSuccess _value, $Res Function(_DeleteSuccess) _then)
+      : super(_value, (v) => _then(v as _DeleteSuccess));
+
+  @override
+  _DeleteSuccess get _value => super._value as _DeleteSuccess;
+}
+
+/// @nodoc
+class _$_DeleteSuccess implements _DeleteSuccess {
+  const _$_DeleteSuccess();
+
+  @override
+  String toString() {
+    return 'MessageWatcherState.batchActionSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _DeleteSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(KtList<Message> messages),
+    @required TResult loadFailure(MessageFailure messageFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(MessageFailure messageFailure),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
+    return batchActionSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(KtList<Message> messages),
+    TResult loadFailure(MessageFailure messageFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(MessageFailure messageFailure),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (batchActionSuccess != null) {
+      return batchActionSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_DeleteSuccess value),
+    @required TResult batchActionFailure(_DeleteFailure value),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
+    return batchActionSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_DeleteSuccess value),
+    TResult batchActionFailure(_DeleteFailure value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (batchActionSuccess != null) {
+      return batchActionSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteSuccess implements MessageWatcherState {
+  const factory _DeleteSuccess() = _$_DeleteSuccess;
+}
+
+/// @nodoc
+abstract class _$DeleteFailureCopyWith<$Res> {
+  factory _$DeleteFailureCopyWith(
+          _DeleteFailure value, $Res Function(_DeleteFailure) then) =
+      __$DeleteFailureCopyWithImpl<$Res>;
+  $Res call({MessageFailure messageFailure});
+
+  $MessageFailureCopyWith<$Res> get messageFailure;
+}
+
+/// @nodoc
+class __$DeleteFailureCopyWithImpl<$Res>
+    extends _$MessageWatcherStateCopyWithImpl<$Res>
+    implements _$DeleteFailureCopyWith<$Res> {
+  __$DeleteFailureCopyWithImpl(
+      _DeleteFailure _value, $Res Function(_DeleteFailure) _then)
+      : super(_value, (v) => _then(v as _DeleteFailure));
+
+  @override
+  _DeleteFailure get _value => super._value as _DeleteFailure;
+
+  @override
+  $Res call({
+    Object messageFailure = freezed,
+  }) {
+    return _then(_DeleteFailure(
+      messageFailure == freezed
+          ? _value.messageFailure
+          : messageFailure as MessageFailure,
+    ));
+  }
+
+  @override
+  $MessageFailureCopyWith<$Res> get messageFailure {
+    if (_value.messageFailure == null) {
+      return null;
+    }
+    return $MessageFailureCopyWith<$Res>(_value.messageFailure, (value) {
+      return _then(_value.copyWith(messageFailure: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_DeleteFailure implements _DeleteFailure {
+  const _$_DeleteFailure(this.messageFailure) : assert(messageFailure != null);
+
+  @override
+  final MessageFailure messageFailure;
+
+  @override
+  String toString() {
+    return 'MessageWatcherState.batchActionFailure(messageFailure: $messageFailure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DeleteFailure &&
+            (identical(other.messageFailure, messageFailure) ||
+                const DeepCollectionEquality()
+                    .equals(other.messageFailure, messageFailure)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(messageFailure);
+
+  @override
+  _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
+      __$DeleteFailureCopyWithImpl<_DeleteFailure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(KtList<Message> messages),
+    @required TResult loadFailure(MessageFailure messageFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(MessageFailure messageFailure),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
+    return batchActionFailure(messageFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(KtList<Message> messages),
+    TResult loadFailure(MessageFailure messageFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(MessageFailure messageFailure),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (batchActionFailure != null) {
+      return batchActionFailure(messageFailure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_DeleteSuccess value),
+    @required TResult batchActionFailure(_DeleteFailure value),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
+    return batchActionFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_DeleteSuccess value),
+    TResult batchActionFailure(_DeleteFailure value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (batchActionFailure != null) {
+      return batchActionFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteFailure implements MessageWatcherState {
+  const factory _DeleteFailure(MessageFailure messageFailure) =
+      _$_DeleteFailure;
+
+  MessageFailure get messageFailure;
+  _$DeleteFailureCopyWith<_DeleteFailure> get copyWith;
 }

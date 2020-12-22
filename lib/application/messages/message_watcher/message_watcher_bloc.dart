@@ -17,13 +17,58 @@ part 'message_watcher_state.dart';
 @injectable
 class MessageWatcherBloc extends Bloc<MessageWatcherEvent, MessageWatcherState> {
   final IMessageRepository _messageRepository;
+  StreamSubscription<Either<MessageFailure, KtList<Message>>> _messageStreamSubscription;
 
-  MessageWatcherBloc(this._messageRepository) : super(const _Initial());
+  MessageWatcherBloc(this._messageRepository) : super(const MessageWatcherState.initial());
 
   @override
   Stream<MessageWatcherState> mapEventToState(
     MessageWatcherEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    yield const MessageWatcherState.loading();
+    yield* event.map(
+      watchAllStarted: (e) async* {
+        await _messageStreamSubscription?.cancel();
+        _messageStreamSubscription = _messageRepository
+            .watchAll()
+            .listen((messages) => add(MessageWatcherEvent.messagesReceived(messages)));
+      },
+      watchStarredStarted: (e) async* {
+        await _messageStreamSubscription?.cancel();
+        _messageStreamSubscription = _messageRepository
+            .watchStarred()
+            .listen((messages) => add(MessageWatcherEvent.messagesReceived(messages)));
+      },
+      messagesReceived: (e) async* {
+        yield e.failureOrMessages.fold(
+          (f) => MessageWatcherState.loadFailure(f),
+          (messages) => MessageWatcherState.loadSuccess(messages),
+        );
+      },
+      deleteMessages: (e) async* {
+        yield* _batchAction(e, (msg) => _messageRepository.delete(msg));
+      },
+      starMessages: (e) async* {
+        yield* _batchAction(
+            e, (msg) => _messageRepository.edit(msg.copyWith(isStarred: !msg.isStarred)));
+      },
+    );
+  }
+
+  Stream<MessageWatcherState> _batchAction(
+      dynamic e, Future<Either<MessageFailure, Unit>> Function(Message msg) func) async* {
+    for (final msg in e.selectedMessages.iter) {
+      final msgFailureOrUnit = await func(msg as Message);
+      yield msgFailureOrUnit.fold(
+        (f) => MessageWatcherState.batchActionFailure(f),
+        (_) => const MessageWatcherState.batchActionSuccess(),
+      );
+    }
+  }
+
+  @override
+  Future<void> close() {
+    _messageStreamSubscription?.cancel();
+    return super.close();
   }
 }

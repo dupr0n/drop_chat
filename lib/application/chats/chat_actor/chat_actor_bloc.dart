@@ -16,12 +16,17 @@ part 'chat_actor_state.dart';
 class ChatActorBloc extends Bloc<ChatActorEvent, ChatActorState> {
   final IChatRepository _chatRepository;
 
-  ChatActorBloc(this._chatRepository) : super(const _Initial());
+  ChatActorBloc(this._chatRepository) : super(const ChatActorState.initial());
 
   @override
   Stream<ChatActorState> mapEventToState(
     ChatActorEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    yield const ChatActorState.loading();
+    final possibleFailure = await _chatRepository.delete(event.chat);
+    yield possibleFailure.fold(
+      (f) => ChatActorState.deleteFailure(f),
+      (_) => const ChatActorState.deleteSuccess(),
+    );
   }
 }

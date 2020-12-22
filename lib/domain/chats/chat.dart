@@ -51,7 +51,7 @@ abstract class Chat extends ChatBase implements _$Chat {
         ),
       );
 
-  factory Chat.individual({@required User user}) => Chat(
+  factory Chat.individual() => Chat(
         id: UniqueId(),
         isArchived: false,
         isMuted: false,
@@ -59,7 +59,18 @@ abstract class Chat extends ChatBase implements _$Chat {
         timestamp: DateTime.now(),
         type: ChatType.individual(),
         updateType: UpdateType.add(),
-        properties: ChatProperties.individual(receiver: user),
+        properties: ChatProperties.individual(receiver: User.empty()),
+      );
+
+  factory Chat.nil() => Chat(
+        id: UniqueId(),
+        isArchived: false,
+        isMuted: false,
+        canSend: true,
+        timestamp: DateTime.now(),
+        type: ChatType.nil(),
+        updateType: UpdateType.add(),
+        properties: ChatProperties.nil(),
       );
 
   @override

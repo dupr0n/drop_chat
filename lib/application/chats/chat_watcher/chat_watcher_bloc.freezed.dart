@@ -30,6 +30,27 @@ class _$ChatWatcherEventTearOff {
       failureOrChats,
     );
   }
+
+// ignore: unused_element
+  _MuteChats muteChats(KtList<Chat> selectedChats) {
+    return _MuteChats(
+      selectedChats,
+    );
+  }
+
+// ignore: unused_element
+  _ArchiveChats archiveChats(KtList<Chat> selectedChats) {
+    return _ArchiveChats(
+      selectedChats,
+    );
+  }
+
+// ignore: unused_element
+  _DeleteChats deleteChats(KtList<Chat> selectedChats) {
+    return _DeleteChats(
+      selectedChats,
+    );
+  }
 }
 
 /// @nodoc
@@ -44,12 +65,18 @@ mixin _$ChatWatcherEvent {
     @required TResult watchArchivedStarted(),
     @required
         TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    @required TResult muteChats(KtList<Chat> selectedChats),
+    @required TResult archiveChats(KtList<Chat> selectedChats),
+    @required TResult deleteChats(KtList<Chat> selectedChats),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchAllStarted(),
     TResult watchArchivedStarted(),
     TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    TResult muteChats(KtList<Chat> selectedChats),
+    TResult archiveChats(KtList<Chat> selectedChats),
+    TResult deleteChats(KtList<Chat> selectedChats),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -57,12 +84,18 @@ mixin _$ChatWatcherEvent {
     @required TResult watchAllStarted(_WatchAllStarted value),
     @required TResult watchArchivedStarted(_WatchArchivedStarted value),
     @required TResult chatsReceived(_ChatsReceived value),
+    @required TResult muteChats(_MuteChats value),
+    @required TResult archiveChats(_ArchiveChats value),
+    @required TResult deleteChats(_DeleteChats value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchAllStarted(_WatchAllStarted value),
     TResult watchArchivedStarted(_WatchArchivedStarted value),
     TResult chatsReceived(_ChatsReceived value),
+    TResult muteChats(_MuteChats value),
+    TResult archiveChats(_ArchiveChats value),
+    TResult deleteChats(_DeleteChats value),
     @required TResult orElse(),
   });
 }
@@ -127,10 +160,16 @@ class _$_WatchAllStarted implements _WatchAllStarted {
     @required TResult watchArchivedStarted(),
     @required
         TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    @required TResult muteChats(KtList<Chat> selectedChats),
+    @required TResult archiveChats(KtList<Chat> selectedChats),
+    @required TResult deleteChats(KtList<Chat> selectedChats),
   }) {
     assert(watchAllStarted != null);
     assert(watchArchivedStarted != null);
     assert(chatsReceived != null);
+    assert(muteChats != null);
+    assert(archiveChats != null);
+    assert(deleteChats != null);
     return watchAllStarted();
   }
 
@@ -140,6 +179,9 @@ class _$_WatchAllStarted implements _WatchAllStarted {
     TResult watchAllStarted(),
     TResult watchArchivedStarted(),
     TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    TResult muteChats(KtList<Chat> selectedChats),
+    TResult archiveChats(KtList<Chat> selectedChats),
+    TResult deleteChats(KtList<Chat> selectedChats),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -155,10 +197,16 @@ class _$_WatchAllStarted implements _WatchAllStarted {
     @required TResult watchAllStarted(_WatchAllStarted value),
     @required TResult watchArchivedStarted(_WatchArchivedStarted value),
     @required TResult chatsReceived(_ChatsReceived value),
+    @required TResult muteChats(_MuteChats value),
+    @required TResult archiveChats(_ArchiveChats value),
+    @required TResult deleteChats(_DeleteChats value),
   }) {
     assert(watchAllStarted != null);
     assert(watchArchivedStarted != null);
     assert(chatsReceived != null);
+    assert(muteChats != null);
+    assert(archiveChats != null);
+    assert(deleteChats != null);
     return watchAllStarted(this);
   }
 
@@ -168,6 +216,9 @@ class _$_WatchAllStarted implements _WatchAllStarted {
     TResult watchAllStarted(_WatchAllStarted value),
     TResult watchArchivedStarted(_WatchArchivedStarted value),
     TResult chatsReceived(_ChatsReceived value),
+    TResult muteChats(_MuteChats value),
+    TResult archiveChats(_ArchiveChats value),
+    TResult deleteChats(_DeleteChats value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -225,10 +276,16 @@ class _$_WatchArchivedStarted implements _WatchArchivedStarted {
     @required TResult watchArchivedStarted(),
     @required
         TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    @required TResult muteChats(KtList<Chat> selectedChats),
+    @required TResult archiveChats(KtList<Chat> selectedChats),
+    @required TResult deleteChats(KtList<Chat> selectedChats),
   }) {
     assert(watchAllStarted != null);
     assert(watchArchivedStarted != null);
     assert(chatsReceived != null);
+    assert(muteChats != null);
+    assert(archiveChats != null);
+    assert(deleteChats != null);
     return watchArchivedStarted();
   }
 
@@ -238,6 +295,9 @@ class _$_WatchArchivedStarted implements _WatchArchivedStarted {
     TResult watchAllStarted(),
     TResult watchArchivedStarted(),
     TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    TResult muteChats(KtList<Chat> selectedChats),
+    TResult archiveChats(KtList<Chat> selectedChats),
+    TResult deleteChats(KtList<Chat> selectedChats),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -253,10 +313,16 @@ class _$_WatchArchivedStarted implements _WatchArchivedStarted {
     @required TResult watchAllStarted(_WatchAllStarted value),
     @required TResult watchArchivedStarted(_WatchArchivedStarted value),
     @required TResult chatsReceived(_ChatsReceived value),
+    @required TResult muteChats(_MuteChats value),
+    @required TResult archiveChats(_ArchiveChats value),
+    @required TResult deleteChats(_DeleteChats value),
   }) {
     assert(watchAllStarted != null);
     assert(watchArchivedStarted != null);
     assert(chatsReceived != null);
+    assert(muteChats != null);
+    assert(archiveChats != null);
+    assert(deleteChats != null);
     return watchArchivedStarted(this);
   }
 
@@ -266,6 +332,9 @@ class _$_WatchArchivedStarted implements _WatchArchivedStarted {
     TResult watchAllStarted(_WatchAllStarted value),
     TResult watchArchivedStarted(_WatchArchivedStarted value),
     TResult chatsReceived(_ChatsReceived value),
+    TResult muteChats(_MuteChats value),
+    TResult archiveChats(_ArchiveChats value),
+    TResult deleteChats(_DeleteChats value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -348,10 +417,16 @@ class _$_ChatsReceived implements _ChatsReceived {
     @required TResult watchArchivedStarted(),
     @required
         TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    @required TResult muteChats(KtList<Chat> selectedChats),
+    @required TResult archiveChats(KtList<Chat> selectedChats),
+    @required TResult deleteChats(KtList<Chat> selectedChats),
   }) {
     assert(watchAllStarted != null);
     assert(watchArchivedStarted != null);
     assert(chatsReceived != null);
+    assert(muteChats != null);
+    assert(archiveChats != null);
+    assert(deleteChats != null);
     return chatsReceived(failureOrChats);
   }
 
@@ -361,6 +436,9 @@ class _$_ChatsReceived implements _ChatsReceived {
     TResult watchAllStarted(),
     TResult watchArchivedStarted(),
     TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    TResult muteChats(KtList<Chat> selectedChats),
+    TResult archiveChats(KtList<Chat> selectedChats),
+    TResult deleteChats(KtList<Chat> selectedChats),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -376,10 +454,16 @@ class _$_ChatsReceived implements _ChatsReceived {
     @required TResult watchAllStarted(_WatchAllStarted value),
     @required TResult watchArchivedStarted(_WatchArchivedStarted value),
     @required TResult chatsReceived(_ChatsReceived value),
+    @required TResult muteChats(_MuteChats value),
+    @required TResult archiveChats(_ArchiveChats value),
+    @required TResult deleteChats(_DeleteChats value),
   }) {
     assert(watchAllStarted != null);
     assert(watchArchivedStarted != null);
     assert(chatsReceived != null);
+    assert(muteChats != null);
+    assert(archiveChats != null);
+    assert(deleteChats != null);
     return chatsReceived(this);
   }
 
@@ -389,6 +473,9 @@ class _$_ChatsReceived implements _ChatsReceived {
     TResult watchAllStarted(_WatchAllStarted value),
     TResult watchArchivedStarted(_WatchArchivedStarted value),
     TResult chatsReceived(_ChatsReceived value),
+    TResult muteChats(_MuteChats value),
+    TResult archiveChats(_ArchiveChats value),
+    TResult deleteChats(_DeleteChats value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -405,6 +492,434 @@ abstract class _ChatsReceived implements ChatWatcherEvent {
 
   Either<ChatFailure, KtList<Chat>> get failureOrChats;
   _$ChatsReceivedCopyWith<_ChatsReceived> get copyWith;
+}
+
+/// @nodoc
+abstract class _$MuteChatsCopyWith<$Res> {
+  factory _$MuteChatsCopyWith(
+          _MuteChats value, $Res Function(_MuteChats) then) =
+      __$MuteChatsCopyWithImpl<$Res>;
+  $Res call({KtList<Chat> selectedChats});
+}
+
+/// @nodoc
+class __$MuteChatsCopyWithImpl<$Res>
+    extends _$ChatWatcherEventCopyWithImpl<$Res>
+    implements _$MuteChatsCopyWith<$Res> {
+  __$MuteChatsCopyWithImpl(_MuteChats _value, $Res Function(_MuteChats) _then)
+      : super(_value, (v) => _then(v as _MuteChats));
+
+  @override
+  _MuteChats get _value => super._value as _MuteChats;
+
+  @override
+  $Res call({
+    Object selectedChats = freezed,
+  }) {
+    return _then(_MuteChats(
+      selectedChats == freezed
+          ? _value.selectedChats
+          : selectedChats as KtList<Chat>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_MuteChats implements _MuteChats {
+  const _$_MuteChats(this.selectedChats) : assert(selectedChats != null);
+
+  @override
+  final KtList<Chat> selectedChats;
+
+  @override
+  String toString() {
+    return 'ChatWatcherEvent.muteChats(selectedChats: $selectedChats)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _MuteChats &&
+            (identical(other.selectedChats, selectedChats) ||
+                const DeepCollectionEquality()
+                    .equals(other.selectedChats, selectedChats)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(selectedChats);
+
+  @override
+  _$MuteChatsCopyWith<_MuteChats> get copyWith =>
+      __$MuteChatsCopyWithImpl<_MuteChats>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult watchAllStarted(),
+    @required TResult watchArchivedStarted(),
+    @required
+        TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    @required TResult muteChats(KtList<Chat> selectedChats),
+    @required TResult archiveChats(KtList<Chat> selectedChats),
+    @required TResult deleteChats(KtList<Chat> selectedChats),
+  }) {
+    assert(watchAllStarted != null);
+    assert(watchArchivedStarted != null);
+    assert(chatsReceived != null);
+    assert(muteChats != null);
+    assert(archiveChats != null);
+    assert(deleteChats != null);
+    return muteChats(selectedChats);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllStarted(),
+    TResult watchArchivedStarted(),
+    TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    TResult muteChats(KtList<Chat> selectedChats),
+    TResult archiveChats(KtList<Chat> selectedChats),
+    TResult deleteChats(KtList<Chat> selectedChats),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (muteChats != null) {
+      return muteChats(selectedChats);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult watchAllStarted(_WatchAllStarted value),
+    @required TResult watchArchivedStarted(_WatchArchivedStarted value),
+    @required TResult chatsReceived(_ChatsReceived value),
+    @required TResult muteChats(_MuteChats value),
+    @required TResult archiveChats(_ArchiveChats value),
+    @required TResult deleteChats(_DeleteChats value),
+  }) {
+    assert(watchAllStarted != null);
+    assert(watchArchivedStarted != null);
+    assert(chatsReceived != null);
+    assert(muteChats != null);
+    assert(archiveChats != null);
+    assert(deleteChats != null);
+    return muteChats(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllStarted(_WatchAllStarted value),
+    TResult watchArchivedStarted(_WatchArchivedStarted value),
+    TResult chatsReceived(_ChatsReceived value),
+    TResult muteChats(_MuteChats value),
+    TResult archiveChats(_ArchiveChats value),
+    TResult deleteChats(_DeleteChats value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (muteChats != null) {
+      return muteChats(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MuteChats implements ChatWatcherEvent {
+  const factory _MuteChats(KtList<Chat> selectedChats) = _$_MuteChats;
+
+  KtList<Chat> get selectedChats;
+  _$MuteChatsCopyWith<_MuteChats> get copyWith;
+}
+
+/// @nodoc
+abstract class _$ArchiveChatsCopyWith<$Res> {
+  factory _$ArchiveChatsCopyWith(
+          _ArchiveChats value, $Res Function(_ArchiveChats) then) =
+      __$ArchiveChatsCopyWithImpl<$Res>;
+  $Res call({KtList<Chat> selectedChats});
+}
+
+/// @nodoc
+class __$ArchiveChatsCopyWithImpl<$Res>
+    extends _$ChatWatcherEventCopyWithImpl<$Res>
+    implements _$ArchiveChatsCopyWith<$Res> {
+  __$ArchiveChatsCopyWithImpl(
+      _ArchiveChats _value, $Res Function(_ArchiveChats) _then)
+      : super(_value, (v) => _then(v as _ArchiveChats));
+
+  @override
+  _ArchiveChats get _value => super._value as _ArchiveChats;
+
+  @override
+  $Res call({
+    Object selectedChats = freezed,
+  }) {
+    return _then(_ArchiveChats(
+      selectedChats == freezed
+          ? _value.selectedChats
+          : selectedChats as KtList<Chat>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_ArchiveChats implements _ArchiveChats {
+  const _$_ArchiveChats(this.selectedChats) : assert(selectedChats != null);
+
+  @override
+  final KtList<Chat> selectedChats;
+
+  @override
+  String toString() {
+    return 'ChatWatcherEvent.archiveChats(selectedChats: $selectedChats)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ArchiveChats &&
+            (identical(other.selectedChats, selectedChats) ||
+                const DeepCollectionEquality()
+                    .equals(other.selectedChats, selectedChats)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(selectedChats);
+
+  @override
+  _$ArchiveChatsCopyWith<_ArchiveChats> get copyWith =>
+      __$ArchiveChatsCopyWithImpl<_ArchiveChats>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult watchAllStarted(),
+    @required TResult watchArchivedStarted(),
+    @required
+        TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    @required TResult muteChats(KtList<Chat> selectedChats),
+    @required TResult archiveChats(KtList<Chat> selectedChats),
+    @required TResult deleteChats(KtList<Chat> selectedChats),
+  }) {
+    assert(watchAllStarted != null);
+    assert(watchArchivedStarted != null);
+    assert(chatsReceived != null);
+    assert(muteChats != null);
+    assert(archiveChats != null);
+    assert(deleteChats != null);
+    return archiveChats(selectedChats);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllStarted(),
+    TResult watchArchivedStarted(),
+    TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    TResult muteChats(KtList<Chat> selectedChats),
+    TResult archiveChats(KtList<Chat> selectedChats),
+    TResult deleteChats(KtList<Chat> selectedChats),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (archiveChats != null) {
+      return archiveChats(selectedChats);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult watchAllStarted(_WatchAllStarted value),
+    @required TResult watchArchivedStarted(_WatchArchivedStarted value),
+    @required TResult chatsReceived(_ChatsReceived value),
+    @required TResult muteChats(_MuteChats value),
+    @required TResult archiveChats(_ArchiveChats value),
+    @required TResult deleteChats(_DeleteChats value),
+  }) {
+    assert(watchAllStarted != null);
+    assert(watchArchivedStarted != null);
+    assert(chatsReceived != null);
+    assert(muteChats != null);
+    assert(archiveChats != null);
+    assert(deleteChats != null);
+    return archiveChats(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllStarted(_WatchAllStarted value),
+    TResult watchArchivedStarted(_WatchArchivedStarted value),
+    TResult chatsReceived(_ChatsReceived value),
+    TResult muteChats(_MuteChats value),
+    TResult archiveChats(_ArchiveChats value),
+    TResult deleteChats(_DeleteChats value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (archiveChats != null) {
+      return archiveChats(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ArchiveChats implements ChatWatcherEvent {
+  const factory _ArchiveChats(KtList<Chat> selectedChats) = _$_ArchiveChats;
+
+  KtList<Chat> get selectedChats;
+  _$ArchiveChatsCopyWith<_ArchiveChats> get copyWith;
+}
+
+/// @nodoc
+abstract class _$DeleteChatsCopyWith<$Res> {
+  factory _$DeleteChatsCopyWith(
+          _DeleteChats value, $Res Function(_DeleteChats) then) =
+      __$DeleteChatsCopyWithImpl<$Res>;
+  $Res call({KtList<Chat> selectedChats});
+}
+
+/// @nodoc
+class __$DeleteChatsCopyWithImpl<$Res>
+    extends _$ChatWatcherEventCopyWithImpl<$Res>
+    implements _$DeleteChatsCopyWith<$Res> {
+  __$DeleteChatsCopyWithImpl(
+      _DeleteChats _value, $Res Function(_DeleteChats) _then)
+      : super(_value, (v) => _then(v as _DeleteChats));
+
+  @override
+  _DeleteChats get _value => super._value as _DeleteChats;
+
+  @override
+  $Res call({
+    Object selectedChats = freezed,
+  }) {
+    return _then(_DeleteChats(
+      selectedChats == freezed
+          ? _value.selectedChats
+          : selectedChats as KtList<Chat>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_DeleteChats implements _DeleteChats {
+  const _$_DeleteChats(this.selectedChats) : assert(selectedChats != null);
+
+  @override
+  final KtList<Chat> selectedChats;
+
+  @override
+  String toString() {
+    return 'ChatWatcherEvent.deleteChats(selectedChats: $selectedChats)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DeleteChats &&
+            (identical(other.selectedChats, selectedChats) ||
+                const DeepCollectionEquality()
+                    .equals(other.selectedChats, selectedChats)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(selectedChats);
+
+  @override
+  _$DeleteChatsCopyWith<_DeleteChats> get copyWith =>
+      __$DeleteChatsCopyWithImpl<_DeleteChats>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult watchAllStarted(),
+    @required TResult watchArchivedStarted(),
+    @required
+        TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    @required TResult muteChats(KtList<Chat> selectedChats),
+    @required TResult archiveChats(KtList<Chat> selectedChats),
+    @required TResult deleteChats(KtList<Chat> selectedChats),
+  }) {
+    assert(watchAllStarted != null);
+    assert(watchArchivedStarted != null);
+    assert(chatsReceived != null);
+    assert(muteChats != null);
+    assert(archiveChats != null);
+    assert(deleteChats != null);
+    return deleteChats(selectedChats);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllStarted(),
+    TResult watchArchivedStarted(),
+    TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
+    TResult muteChats(KtList<Chat> selectedChats),
+    TResult archiveChats(KtList<Chat> selectedChats),
+    TResult deleteChats(KtList<Chat> selectedChats),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (deleteChats != null) {
+      return deleteChats(selectedChats);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult watchAllStarted(_WatchAllStarted value),
+    @required TResult watchArchivedStarted(_WatchArchivedStarted value),
+    @required TResult chatsReceived(_ChatsReceived value),
+    @required TResult muteChats(_MuteChats value),
+    @required TResult archiveChats(_ArchiveChats value),
+    @required TResult deleteChats(_DeleteChats value),
+  }) {
+    assert(watchAllStarted != null);
+    assert(watchArchivedStarted != null);
+    assert(chatsReceived != null);
+    assert(muteChats != null);
+    assert(archiveChats != null);
+    assert(deleteChats != null);
+    return deleteChats(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllStarted(_WatchAllStarted value),
+    TResult watchArchivedStarted(_WatchArchivedStarted value),
+    TResult chatsReceived(_ChatsReceived value),
+    TResult muteChats(_MuteChats value),
+    TResult archiveChats(_ArchiveChats value),
+    TResult deleteChats(_DeleteChats value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (deleteChats != null) {
+      return deleteChats(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteChats implements ChatWatcherEvent {
+  const factory _DeleteChats(KtList<Chat> selectedChats) = _$_DeleteChats;
+
+  KtList<Chat> get selectedChats;
+  _$DeleteChatsCopyWith<_DeleteChats> get copyWith;
 }
 
 /// @nodoc
@@ -434,6 +949,18 @@ class _$ChatWatcherStateTearOff {
       chatFailure,
     );
   }
+
+// ignore: unused_element
+  _BatchActionsSuccess batchActionSuccess() {
+    return const _BatchActionsSuccess();
+  }
+
+// ignore: unused_element
+  _BatchActionsFailure batchActionFailure(ChatFailure chatFailure) {
+    return _BatchActionsFailure(
+      chatFailure,
+    );
+  }
 }
 
 /// @nodoc
@@ -448,6 +975,8 @@ mixin _$ChatWatcherState {
     @required TResult loading(),
     @required TResult loadSuccess(KtList<Chat> chats),
     @required TResult loadFailure(ChatFailure chatFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(ChatFailure chatFailure),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -455,6 +984,8 @@ mixin _$ChatWatcherState {
     TResult loading(),
     TResult loadSuccess(KtList<Chat> chats),
     TResult loadFailure(ChatFailure chatFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(ChatFailure chatFailure),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -463,6 +994,8 @@ mixin _$ChatWatcherState {
     @required TResult loading(_Loading value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_BatchActionsSuccess value),
+    @required TResult batchActionFailure(_BatchActionsFailure value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -470,6 +1003,8 @@ mixin _$ChatWatcherState {
     TResult loading(_Loading value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_BatchActionsSuccess value),
+    TResult batchActionFailure(_BatchActionsFailure value),
     @required TResult orElse(),
   });
 }
@@ -531,11 +1066,15 @@ class _$_Initial implements _Initial {
     @required TResult loading(),
     @required TResult loadSuccess(KtList<Chat> chats),
     @required TResult loadFailure(ChatFailure chatFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(ChatFailure chatFailure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return initial();
   }
 
@@ -546,6 +1085,8 @@ class _$_Initial implements _Initial {
     TResult loading(),
     TResult loadSuccess(KtList<Chat> chats),
     TResult loadFailure(ChatFailure chatFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(ChatFailure chatFailure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -562,11 +1103,15 @@ class _$_Initial implements _Initial {
     @required TResult loading(_Loading value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_BatchActionsSuccess value),
+    @required TResult batchActionFailure(_BatchActionsFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return initial(this);
   }
 
@@ -577,6 +1122,8 @@ class _$_Initial implements _Initial {
     TResult loading(_Loading value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_BatchActionsSuccess value),
+    TResult batchActionFailure(_BatchActionsFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -631,11 +1178,15 @@ class _$_Loading implements _Loading {
     @required TResult loading(),
     @required TResult loadSuccess(KtList<Chat> chats),
     @required TResult loadFailure(ChatFailure chatFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(ChatFailure chatFailure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return loading();
   }
 
@@ -646,6 +1197,8 @@ class _$_Loading implements _Loading {
     TResult loading(),
     TResult loadSuccess(KtList<Chat> chats),
     TResult loadFailure(ChatFailure chatFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(ChatFailure chatFailure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -662,11 +1215,15 @@ class _$_Loading implements _Loading {
     @required TResult loading(_Loading value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_BatchActionsSuccess value),
+    @required TResult batchActionFailure(_BatchActionsFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return loading(this);
   }
 
@@ -677,6 +1234,8 @@ class _$_Loading implements _Loading {
     TResult loading(_Loading value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_BatchActionsSuccess value),
+    TResult batchActionFailure(_BatchActionsFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -755,11 +1314,15 @@ class _$_LoadSuccess implements _LoadSuccess {
     @required TResult loading(),
     @required TResult loadSuccess(KtList<Chat> chats),
     @required TResult loadFailure(ChatFailure chatFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(ChatFailure chatFailure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return loadSuccess(chats);
   }
 
@@ -770,6 +1333,8 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult loading(),
     TResult loadSuccess(KtList<Chat> chats),
     TResult loadFailure(ChatFailure chatFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(ChatFailure chatFailure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -786,11 +1351,15 @@ class _$_LoadSuccess implements _LoadSuccess {
     @required TResult loading(_Loading value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_BatchActionsSuccess value),
+    @required TResult batchActionFailure(_BatchActionsFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return loadSuccess(this);
   }
 
@@ -801,6 +1370,8 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult loading(_Loading value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_BatchActionsSuccess value),
+    TResult batchActionFailure(_BatchActionsFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -895,11 +1466,15 @@ class _$_LoadFailure implements _LoadFailure {
     @required TResult loading(),
     @required TResult loadSuccess(KtList<Chat> chats),
     @required TResult loadFailure(ChatFailure chatFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(ChatFailure chatFailure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return loadFailure(chatFailure);
   }
 
@@ -910,6 +1485,8 @@ class _$_LoadFailure implements _LoadFailure {
     TResult loading(),
     TResult loadSuccess(KtList<Chat> chats),
     TResult loadFailure(ChatFailure chatFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(ChatFailure chatFailure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -926,11 +1503,15 @@ class _$_LoadFailure implements _LoadFailure {
     @required TResult loading(_Loading value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_BatchActionsSuccess value),
+    @required TResult batchActionFailure(_BatchActionsFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
     return loadFailure(this);
   }
 
@@ -941,6 +1522,8 @@ class _$_LoadFailure implements _LoadFailure {
     TResult loading(_Loading value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_BatchActionsSuccess value),
+    TResult batchActionFailure(_BatchActionsFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -956,4 +1539,273 @@ abstract class _LoadFailure implements ChatWatcherState {
 
   ChatFailure get chatFailure;
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
+}
+
+/// @nodoc
+abstract class _$BatchActionsSuccessCopyWith<$Res> {
+  factory _$BatchActionsSuccessCopyWith(_BatchActionsSuccess value,
+          $Res Function(_BatchActionsSuccess) then) =
+      __$BatchActionsSuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$BatchActionsSuccessCopyWithImpl<$Res>
+    extends _$ChatWatcherStateCopyWithImpl<$Res>
+    implements _$BatchActionsSuccessCopyWith<$Res> {
+  __$BatchActionsSuccessCopyWithImpl(
+      _BatchActionsSuccess _value, $Res Function(_BatchActionsSuccess) _then)
+      : super(_value, (v) => _then(v as _BatchActionsSuccess));
+
+  @override
+  _BatchActionsSuccess get _value => super._value as _BatchActionsSuccess;
+}
+
+/// @nodoc
+class _$_BatchActionsSuccess implements _BatchActionsSuccess {
+  const _$_BatchActionsSuccess();
+
+  @override
+  String toString() {
+    return 'ChatWatcherState.batchActionSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _BatchActionsSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(KtList<Chat> chats),
+    @required TResult loadFailure(ChatFailure chatFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(ChatFailure chatFailure),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
+    return batchActionSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(KtList<Chat> chats),
+    TResult loadFailure(ChatFailure chatFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(ChatFailure chatFailure),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (batchActionSuccess != null) {
+      return batchActionSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_BatchActionsSuccess value),
+    @required TResult batchActionFailure(_BatchActionsFailure value),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
+    return batchActionSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_BatchActionsSuccess value),
+    TResult batchActionFailure(_BatchActionsFailure value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (batchActionSuccess != null) {
+      return batchActionSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _BatchActionsSuccess implements ChatWatcherState {
+  const factory _BatchActionsSuccess() = _$_BatchActionsSuccess;
+}
+
+/// @nodoc
+abstract class _$BatchActionsFailureCopyWith<$Res> {
+  factory _$BatchActionsFailureCopyWith(_BatchActionsFailure value,
+          $Res Function(_BatchActionsFailure) then) =
+      __$BatchActionsFailureCopyWithImpl<$Res>;
+  $Res call({ChatFailure chatFailure});
+
+  $ChatFailureCopyWith<$Res> get chatFailure;
+}
+
+/// @nodoc
+class __$BatchActionsFailureCopyWithImpl<$Res>
+    extends _$ChatWatcherStateCopyWithImpl<$Res>
+    implements _$BatchActionsFailureCopyWith<$Res> {
+  __$BatchActionsFailureCopyWithImpl(
+      _BatchActionsFailure _value, $Res Function(_BatchActionsFailure) _then)
+      : super(_value, (v) => _then(v as _BatchActionsFailure));
+
+  @override
+  _BatchActionsFailure get _value => super._value as _BatchActionsFailure;
+
+  @override
+  $Res call({
+    Object chatFailure = freezed,
+  }) {
+    return _then(_BatchActionsFailure(
+      chatFailure == freezed ? _value.chatFailure : chatFailure as ChatFailure,
+    ));
+  }
+
+  @override
+  $ChatFailureCopyWith<$Res> get chatFailure {
+    if (_value.chatFailure == null) {
+      return null;
+    }
+    return $ChatFailureCopyWith<$Res>(_value.chatFailure, (value) {
+      return _then(_value.copyWith(chatFailure: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_BatchActionsFailure implements _BatchActionsFailure {
+  const _$_BatchActionsFailure(this.chatFailure) : assert(chatFailure != null);
+
+  @override
+  final ChatFailure chatFailure;
+
+  @override
+  String toString() {
+    return 'ChatWatcherState.batchActionFailure(chatFailure: $chatFailure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _BatchActionsFailure &&
+            (identical(other.chatFailure, chatFailure) ||
+                const DeepCollectionEquality()
+                    .equals(other.chatFailure, chatFailure)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(chatFailure);
+
+  @override
+  _$BatchActionsFailureCopyWith<_BatchActionsFailure> get copyWith =>
+      __$BatchActionsFailureCopyWithImpl<_BatchActionsFailure>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(KtList<Chat> chats),
+    @required TResult loadFailure(ChatFailure chatFailure),
+    @required TResult batchActionSuccess(),
+    @required TResult batchActionFailure(ChatFailure chatFailure),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
+    return batchActionFailure(chatFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(KtList<Chat> chats),
+    TResult loadFailure(ChatFailure chatFailure),
+    TResult batchActionSuccess(),
+    TResult batchActionFailure(ChatFailure chatFailure),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (batchActionFailure != null) {
+      return batchActionFailure(chatFailure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
+    @required TResult batchActionSuccess(_BatchActionsSuccess value),
+    @required TResult batchActionFailure(_BatchActionsFailure value),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loadSuccess != null);
+    assert(loadFailure != null);
+    assert(batchActionSuccess != null);
+    assert(batchActionFailure != null);
+    return batchActionFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    TResult batchActionSuccess(_BatchActionsSuccess value),
+    TResult batchActionFailure(_BatchActionsFailure value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (batchActionFailure != null) {
+      return batchActionFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _BatchActionsFailure implements ChatWatcherState {
+  const factory _BatchActionsFailure(ChatFailure chatFailure) =
+      _$_BatchActionsFailure;
+
+  ChatFailure get chatFailure;
+  _$BatchActionsFailureCopyWith<_BatchActionsFailure> get copyWith;
 }
