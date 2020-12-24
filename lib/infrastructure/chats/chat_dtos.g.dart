@@ -23,14 +23,19 @@ class ChatDTOAdapter extends TypeAdapter<ChatDTO> {
       canSend: fields[3] as bool,
       timestamp: fields[4] as String,
       type: fields[5] as String,
-      properties: (fields[6] as Map)?.cast<String, dynamic>(),
+      receiver: fields[6] as UserDTO,
+      users: (fields[7] as List)?.cast<UserDTO>(),
+      isAdmin: fields[8] as bool,
+      canReceive: fields[9] as bool,
+      groupName: fields[10] as String,
+      groupDescription: fields[11] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, ChatDTO obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(12)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -44,7 +49,17 @@ class ChatDTOAdapter extends TypeAdapter<ChatDTO> {
       ..writeByte(5)
       ..write(obj.type)
       ..writeByte(6)
-      ..write(obj.properties);
+      ..write(obj.receiver)
+      ..writeByte(7)
+      ..write(obj.users)
+      ..writeByte(8)
+      ..write(obj.isAdmin)
+      ..writeByte(9)
+      ..write(obj.canReceive)
+      ..writeByte(10)
+      ..write(obj.groupName)
+      ..writeByte(11)
+      ..write(obj.groupDescription);
   }
 
   @override
@@ -70,9 +85,18 @@ _$_ChatDTO _$_$_ChatDTOFromJson(Map<String, dynamic> json) {
     canSend: json['canSend'] as bool ?? true,
     timestamp: json['timestamp'] as String,
     type: json['type'] as String,
-    properties: const ChatPropertiesConverter()
-        .fromJson(json['properties'] as Map<String, dynamic>),
     updateType: json['updateType'] as String ?? 'nil',
+    receiver: json['receiver'] == null
+        ? null
+        : UserDTO.fromJson(json['receiver'] as Map<String, dynamic>),
+    users: (json['users'] as List)
+        ?.map((e) =>
+            e == null ? null : UserDTO.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    isAdmin: json['isAdmin'] as bool,
+    canReceive: json['canReceive'] as bool,
+    groupName: json['groupName'] as String,
+    groupDescription: json['groupDescription'] as String,
   );
 }
 
@@ -84,6 +108,11 @@ Map<String, dynamic> _$_$_ChatDTOToJson(_$_ChatDTO instance) =>
       'canSend': instance.canSend,
       'timestamp': instance.timestamp,
       'type': instance.type,
-      'properties': const ChatPropertiesConverter().toJson(instance.properties),
       'updateType': instance.updateType,
+      'receiver': instance.receiver?.toJson(),
+      'users': instance.users?.map((e) => e?.toJson())?.toList(),
+      'isAdmin': instance.isAdmin,
+      'canReceive': instance.canReceive,
+      'groupName': instance.groupName,
+      'groupDescription': instance.groupDescription,
     };

@@ -14,7 +14,7 @@ class _$ChatActorEventTearOff {
   const _$ChatActorEventTearOff();
 
 // ignore: unused_element
-  _Deleted deleted(Chat chat) {
+  _Deleted deleted(Chat<dynamic> chat) {
     return _Deleted(
       chat,
     );
@@ -27,15 +27,15 @@ const $ChatActorEvent = _$ChatActorEventTearOff();
 
 /// @nodoc
 mixin _$ChatActorEvent {
-  Chat get chat;
+  Chat<dynamic> get chat;
 
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult deleted(Chat chat),
+    @required TResult deleted(Chat<dynamic> chat),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult deleted(Chat chat),
+    TResult deleted(Chat<dynamic> chat),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -56,9 +56,7 @@ abstract class $ChatActorEventCopyWith<$Res> {
   factory $ChatActorEventCopyWith(
           ChatActorEvent value, $Res Function(ChatActorEvent) then) =
       _$ChatActorEventCopyWithImpl<$Res>;
-  $Res call({Chat chat});
-
-  $ChatCopyWith<$Res> get chat;
+  $Res call({Chat<dynamic> chat});
 }
 
 /// @nodoc
@@ -75,18 +73,8 @@ class _$ChatActorEventCopyWithImpl<$Res>
     Object chat = freezed,
   }) {
     return _then(_value.copyWith(
-      chat: chat == freezed ? _value.chat : chat as Chat,
+      chat: chat == freezed ? _value.chat : chat as Chat<dynamic>,
     ));
-  }
-
-  @override
-  $ChatCopyWith<$Res> get chat {
-    if (_value.chat == null) {
-      return null;
-    }
-    return $ChatCopyWith<$Res>(_value.chat, (value) {
-      return _then(_value.copyWith(chat: value));
-    });
   }
 }
 
@@ -96,10 +84,7 @@ abstract class _$DeletedCopyWith<$Res>
   factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
       __$DeletedCopyWithImpl<$Res>;
   @override
-  $Res call({Chat chat});
-
-  @override
-  $ChatCopyWith<$Res> get chat;
+  $Res call({Chat<dynamic> chat});
 }
 
 /// @nodoc
@@ -116,7 +101,7 @@ class __$DeletedCopyWithImpl<$Res> extends _$ChatActorEventCopyWithImpl<$Res>
     Object chat = freezed,
   }) {
     return _then(_Deleted(
-      chat == freezed ? _value.chat : chat as Chat,
+      chat == freezed ? _value.chat : chat as Chat<dynamic>,
     ));
   }
 }
@@ -126,7 +111,7 @@ class _$_Deleted implements _Deleted {
   const _$_Deleted(this.chat) : assert(chat != null);
 
   @override
-  final Chat chat;
+  final Chat<dynamic> chat;
 
   @override
   String toString() {
@@ -152,7 +137,7 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult deleted(Chat chat),
+    @required TResult deleted(Chat<dynamic> chat),
   }) {
     assert(deleted != null);
     return deleted(chat);
@@ -161,7 +146,7 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult deleted(Chat chat),
+    TResult deleted(Chat<dynamic> chat),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -195,10 +180,10 @@ class _$_Deleted implements _Deleted {
 }
 
 abstract class _Deleted implements ChatActorEvent {
-  const factory _Deleted(Chat chat) = _$_Deleted;
+  const factory _Deleted(Chat<dynamic> chat) = _$_Deleted;
 
   @override
-  Chat get chat;
+  Chat<dynamic> get chat;
   @override
   _$DeletedCopyWith<_Deleted> get copyWith;
 }

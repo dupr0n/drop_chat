@@ -6,6 +6,7 @@ import 'package:kt_dart/collection.dart';
 import 'package:meta/meta.dart';
 
 import '../../domain/auth/i_auth_facade.dart';
+import '../../domain/auth/user.dart';
 import '../../domain/chats/chat.dart';
 import '../../domain/chats/chat_failure.dart';
 import '../../domain/chats/i_chat_repository.dart';
@@ -21,16 +22,15 @@ class ChatRepository implements IChatRepository {
 
   ChatRepository(this._firestore);
 
-  Future<void> _updateHive(Chat chat) async {
-    final dto = ChatDTO.fromDomain(chat);
-    chat.updateType.fold(
+  Future<void> _updateHive(ChatDTO dto) async {
+    UpdateType(dto.updateType).fold(
       add: () async => _box.put(dto.id, dto),
       edit: () async {
         final prev = _box.get(dto.id);
         await _box.delete(dto.id);
         await _box.put(dto.id, dto.copyWith(timestamp: prev.timestamp));
       },
-      delete: () async => _box.delete(chat.id.getOrCrash()),
+      delete: () async => _box.delete(dto.id),
       nil: () => null,
     );
   }
@@ -50,14 +50,15 @@ class ChatRepository implements IChatRepository {
   Stream<Either<ChatFailure, KtList<Chat>>> _watch({@required bool archived}) async* {
     _box = await Hive.openBox('chats');
     yield archived ? _getArchivedChats() : _getAllChats();
-    final userId = getIt<IAuthFacade>().getSignedInUser().getOrElse(() => null).id.getOrCrash();
+    final userId =
+        getIt<IAuthFacade>().getSignedInUser().getOrElse(() => User.empty()).id.getOrCrash();
     final userDoc = _firestore.userDocument(userId);
     try {
       await for (final snap in userDoc.chatCollection.snapshots()) {
         for (final doc in snap.docs) {
           if (!doc.data().containsKey('updateType')) continue;
           final dto = ChatDTO.fromFirestore(doc);
-          await _updateHive(dto.toDomain());
+          await _updateHive(dto);
           yield archived ? _getArchivedChats() : _getAllChats();
           while (
               (await userDoc.chatCollection.doc(dto.id).messageCollection.get()).docs.isNotEmpty) {
@@ -91,7 +92,7 @@ class ChatRepository implements IChatRepository {
       nil: () => UpdateType.nilStr,
     ));
     try {
-      for (final receiver in chat.properties.receivers) {
+      for (final receiver in chat.receivers) {
         final userDoc = _firestore.userDocument(receiver.id.getOrCrash());
         final firebaseJson = chatDTO.toJson();
         firebaseJson.remove('messages');

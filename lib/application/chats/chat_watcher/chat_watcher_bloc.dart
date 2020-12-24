@@ -47,22 +47,29 @@ class ChatWatcherBloc extends Bloc<ChatWatcherEvent, ChatWatcherState> {
       },
       muteChats: (e) async* {
         yield* _batchAction(
-            e, (chat) => _chatRepository.edit(chat.copyWith(isMuted: !chat.isMuted)));
+          e.selectedChats,
+          (chat) => _chatRepository.edit(chat.copyWith(isMuted: !chat.isMuted) as Chat),
+        );
       },
       archiveChats: (e) async* {
         yield* _batchAction(
-            e, (chat) => _chatRepository.edit(chat.copyWith(isArchived: !chat.isArchived)));
+          e.selectedChats,
+          (chat) => _chatRepository.edit(chat.copyWith(isArchived: !chat.isArchived) as Chat),
+        );
       },
       deleteChats: (e) async* {
-        yield* _batchAction(e, (chat) => _chatRepository.delete(chat));
+        yield* _batchAction(
+          e.selectedChats,
+          (chat) => _chatRepository.delete(chat),
+        );
       },
     );
   }
 
-  Stream<ChatWatcherState> _batchAction(
-      dynamic e, Future<Either<ChatFailure, Unit>> Function(Chat chat) func) async* {
-    for (final chat in e.selectedChats.iter) {
-      final chatFailureOrUnit = await func(chat as Chat);
+  Stream<ChatWatcherState> _batchAction(KtList<Chat> selectedChats,
+      Future<Either<ChatFailure, Unit>> Function(Chat chat) func) async* {
+    for (final chat in selectedChats.iter) {
+      final chatFailureOrUnit = await func(chat);
       yield chatFailureOrUnit.fold(
         (f) => ChatWatcherState.batchActionFailure(f),
         (_) => const ChatWatcherState.batchActionSuccess(),

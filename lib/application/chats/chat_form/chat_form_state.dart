@@ -12,9 +12,9 @@ abstract class ChatFormState with _$ChatFormState {
 
   factory ChatFormState.initial(ChatType chatType) => ChatFormState(
         chat: chatType.fold(
-          group: () => Chat.group(),
-          individual: () => Chat.individual(),
-          nil: () => Chat.nil(),
+          group: () => GroupChat.empty(),
+          individual: () => IndividualChat.empty(),
+          nil: () => NilChat.empty(),
         ),
         isSaving: false,
         isEditing: false,

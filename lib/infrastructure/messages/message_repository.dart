@@ -93,7 +93,7 @@ class MessageRepository implements IMessageRepository {
       nil: () => UpdateType.nilStr,
     ));
     try {
-      for (final receiver in _chat.properties.receivers) {
+      for (final receiver in _chat.receivers) {
         final userDoc = _firestore.userDocument(receiver.id.getOrCrash());
         await userDoc.chatCollection
             .doc(_chat.id.getOrCrash())

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'chat.dart';
+part of 'nil_chat.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,72 +10,64 @@ part of 'chat.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$ChatTearOff {
-  const _$ChatTearOff();
+class _$NilChatTearOff {
+  const _$NilChatTearOff();
 
 // ignore: unused_element
-  _Chat call(
+  _NilChat call(
       {@required UniqueId id,
       @required bool isArchived,
       @required bool isMuted,
       @required bool canSend,
       @required DateTime timestamp,
-      @required ChatType type,
-      @required UpdateType updateType,
-      @required ChatProperties properties}) {
-    return _Chat(
+      @required ChatType type}) {
+    return _NilChat(
       id: id,
       isArchived: isArchived,
       isMuted: isMuted,
       canSend: canSend,
       timestamp: timestamp,
       type: type,
-      updateType: updateType,
-      properties: properties,
     );
   }
 }
 
 /// @nodoc
 // ignore: unused_element
-const $Chat = _$ChatTearOff();
+const $NilChat = _$NilChatTearOff();
 
 /// @nodoc
-mixin _$Chat {
+mixin _$NilChat {
   UniqueId get id;
   bool get isArchived;
   bool get isMuted;
   bool get canSend;
   DateTime get timestamp;
   ChatType get type;
-  UpdateType get updateType;
-  ChatProperties get properties;
 
-  $ChatCopyWith<Chat> get copyWith;
+  $NilChatCopyWith<NilChat> get copyWith;
 }
 
 /// @nodoc
-abstract class $ChatCopyWith<$Res> {
-  factory $ChatCopyWith(Chat value, $Res Function(Chat) then) =
-      _$ChatCopyWithImpl<$Res>;
+abstract class $NilChatCopyWith<$Res> {
+  factory $NilChatCopyWith(NilChat value, $Res Function(NilChat) then) =
+      _$NilChatCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
       bool isArchived,
       bool isMuted,
       bool canSend,
       DateTime timestamp,
-      ChatType type,
-      UpdateType updateType,
-      ChatProperties properties});
+      ChatType type});
 }
 
 /// @nodoc
-class _$ChatCopyWithImpl<$Res> implements $ChatCopyWith<$Res> {
-  _$ChatCopyWithImpl(this._value, this._then);
+class _$NilChatCopyWithImpl<$Res> implements $NilChatCopyWith<$Res> {
+  _$NilChatCopyWithImpl(this._value, this._then);
 
-  final Chat _value;
+  final NilChat _value;
   // ignore: unused_field
-  final $Res Function(Chat) _then;
+  final $Res Function(NilChat) _then;
 
   @override
   $Res call({
@@ -85,8 +77,6 @@ class _$ChatCopyWithImpl<$Res> implements $ChatCopyWith<$Res> {
     Object canSend = freezed,
     Object timestamp = freezed,
     Object type = freezed,
-    Object updateType = freezed,
-    Object properties = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
@@ -97,19 +87,14 @@ class _$ChatCopyWithImpl<$Res> implements $ChatCopyWith<$Res> {
       timestamp:
           timestamp == freezed ? _value.timestamp : timestamp as DateTime,
       type: type == freezed ? _value.type : type as ChatType,
-      updateType:
-          updateType == freezed ? _value.updateType : updateType as UpdateType,
-      properties: properties == freezed
-          ? _value.properties
-          : properties as ChatProperties,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$ChatCopyWith<$Res> implements $ChatCopyWith<$Res> {
-  factory _$ChatCopyWith(_Chat value, $Res Function(_Chat) then) =
-      __$ChatCopyWithImpl<$Res>;
+abstract class _$NilChatCopyWith<$Res> implements $NilChatCopyWith<$Res> {
+  factory _$NilChatCopyWith(_NilChat value, $Res Function(_NilChat) then) =
+      __$NilChatCopyWithImpl<$Res>;
   @override
   $Res call(
       {UniqueId id,
@@ -117,19 +102,17 @@ abstract class _$ChatCopyWith<$Res> implements $ChatCopyWith<$Res> {
       bool isMuted,
       bool canSend,
       DateTime timestamp,
-      ChatType type,
-      UpdateType updateType,
-      ChatProperties properties});
+      ChatType type});
 }
 
 /// @nodoc
-class __$ChatCopyWithImpl<$Res> extends _$ChatCopyWithImpl<$Res>
-    implements _$ChatCopyWith<$Res> {
-  __$ChatCopyWithImpl(_Chat _value, $Res Function(_Chat) _then)
-      : super(_value, (v) => _then(v as _Chat));
+class __$NilChatCopyWithImpl<$Res> extends _$NilChatCopyWithImpl<$Res>
+    implements _$NilChatCopyWith<$Res> {
+  __$NilChatCopyWithImpl(_NilChat _value, $Res Function(_NilChat) _then)
+      : super(_value, (v) => _then(v as _NilChat));
 
   @override
-  _Chat get _value => super._value as _Chat;
+  _NilChat get _value => super._value as _NilChat;
 
   @override
   $Res call({
@@ -139,10 +122,8 @@ class __$ChatCopyWithImpl<$Res> extends _$ChatCopyWithImpl<$Res>
     Object canSend = freezed,
     Object timestamp = freezed,
     Object type = freezed,
-    Object updateType = freezed,
-    Object properties = freezed,
   }) {
-    return _then(_Chat(
+    return _then(_NilChat(
       id: id == freezed ? _value.id : id as UniqueId,
       isArchived:
           isArchived == freezed ? _value.isArchived : isArchived as bool,
@@ -151,34 +132,27 @@ class __$ChatCopyWithImpl<$Res> extends _$ChatCopyWithImpl<$Res>
       timestamp:
           timestamp == freezed ? _value.timestamp : timestamp as DateTime,
       type: type == freezed ? _value.type : type as ChatType,
-      updateType:
-          updateType == freezed ? _value.updateType : updateType as UpdateType,
-      properties: properties == freezed
-          ? _value.properties
-          : properties as ChatProperties,
     ));
   }
 }
 
+@Implements(Chat)
+
 /// @nodoc
-class _$_Chat extends _Chat {
-  const _$_Chat(
+class _$_NilChat extends _NilChat {
+  const _$_NilChat(
       {@required this.id,
       @required this.isArchived,
       @required this.isMuted,
       @required this.canSend,
       @required this.timestamp,
-      @required this.type,
-      @required this.updateType,
-      @required this.properties})
+      @required this.type})
       : assert(id != null),
         assert(isArchived != null),
         assert(isMuted != null),
         assert(canSend != null),
         assert(timestamp != null),
         assert(type != null),
-        assert(updateType != null),
-        assert(properties != null),
         super._();
 
   @override
@@ -193,20 +167,16 @@ class _$_Chat extends _Chat {
   final DateTime timestamp;
   @override
   final ChatType type;
-  @override
-  final UpdateType updateType;
-  @override
-  final ChatProperties properties;
 
   @override
   String toString() {
-    return 'Chat(id: $id, isArchived: $isArchived, isMuted: $isMuted, canSend: $canSend, timestamp: $timestamp, type: $type, updateType: $updateType, properties: $properties)';
+    return 'NilChat(id: $id, isArchived: $isArchived, isMuted: $isMuted, canSend: $canSend, timestamp: $timestamp, type: $type)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Chat &&
+        (other is _NilChat &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.isArchived, isArchived) ||
@@ -222,13 +192,7 @@ class _$_Chat extends _Chat {
                 const DeepCollectionEquality()
                     .equals(other.timestamp, timestamp)) &&
             (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.updateType, updateType) ||
-                const DeepCollectionEquality()
-                    .equals(other.updateType, updateType)) &&
-            (identical(other.properties, properties) ||
-                const DeepCollectionEquality()
-                    .equals(other.properties, properties)));
+                const DeepCollectionEquality().equals(other.type, type)));
   }
 
   @override
@@ -239,26 +203,22 @@ class _$_Chat extends _Chat {
       const DeepCollectionEquality().hash(isMuted) ^
       const DeepCollectionEquality().hash(canSend) ^
       const DeepCollectionEquality().hash(timestamp) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(updateType) ^
-      const DeepCollectionEquality().hash(properties);
+      const DeepCollectionEquality().hash(type);
 
   @override
-  _$ChatCopyWith<_Chat> get copyWith =>
-      __$ChatCopyWithImpl<_Chat>(this, _$identity);
+  _$NilChatCopyWith<_NilChat> get copyWith =>
+      __$NilChatCopyWithImpl<_NilChat>(this, _$identity);
 }
 
-abstract class _Chat extends Chat {
-  const _Chat._() : super._();
-  const factory _Chat(
+abstract class _NilChat extends NilChat implements Chat<dynamic> {
+  const _NilChat._() : super._();
+  const factory _NilChat(
       {@required UniqueId id,
       @required bool isArchived,
       @required bool isMuted,
       @required bool canSend,
       @required DateTime timestamp,
-      @required ChatType type,
-      @required UpdateType updateType,
-      @required ChatProperties properties}) = _$_Chat;
+      @required ChatType type}) = _$_NilChat;
 
   @override
   UniqueId get id;
@@ -273,9 +233,5 @@ abstract class _Chat extends Chat {
   @override
   ChatType get type;
   @override
-  UpdateType get updateType;
-  @override
-  ChatProperties get properties;
-  @override
-  _$ChatCopyWith<_Chat> get copyWith;
+  _$NilChatCopyWith<_NilChat> get copyWith;
 }

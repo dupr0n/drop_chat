@@ -1,15 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
+import 'package:kt_dart/collection.dart';
 
 import '../../domain/chats/chat.dart';
+import '../../domain/chats/chat_types/group_chat.dart';
+import '../../domain/chats/chat_types/individual_chat.dart';
+import '../../domain/chats/chat_types/nil_chat.dart';
 import '../../domain/chats/value_objects.dart';
 import '../../domain/core/value_objects.dart';
+import '../auth/user_dtos.dart';
 
 part 'chat_dtos.freezed.dart';
 part 'chat_dtos.g.dart';
 
-//TODO: Have another chat type for firebase.
 @freezed
 @HiveType(typeId: 1)
 abstract class ChatDTO with _$ChatDTO {
@@ -22,46 +26,85 @@ abstract class ChatDTO with _$ChatDTO {
     @HiveField(3) @Default(true) bool canSend,
     @HiveField(4) @required String timestamp,
     @HiveField(5) @required String type,
-    @HiveField(6) @ChatPropertiesConverter() @required Map<String, dynamic> properties,
+    //$ Global parameters
     @Default('nil') String updateType,
+    //$ Individual parameters
+    @HiveField(6) UserDTO receiver,
+    //$ Group parameters
+    @HiveField(7) List<UserDTO> users,
+    @HiveField(8) bool isAdmin,
+    @HiveField(9) bool canReceive,
+    @HiveField(10) String groupName,
+    @HiveField(11) String groupDescription,
   }) = _ChatDTO;
 
-  factory ChatDTO.fromDomain(Chat chat) => ChatDTO(
-        id: chat.id.getOrCrash(),
-        isArchived: chat.isArchived,
-        isMuted: chat.isMuted,
-        canSend: chat.canSend,
-        timestamp: chat.timestamp.toIso8601String(),
-        type: chat.type.getOrCrash(),
-        updateType: chat.updateType.getOrCrash(),
-        properties: chat.properties.toMap(toJson: false),
-      );
+  factory ChatDTO.fromDomain(Chat chat) {
+    final dto = ChatDTO(
+      id: chat.id.getOrCrash(),
+      isArchived: chat.isArchived,
+      isMuted: chat.isMuted,
+      canSend: chat.canSend,
+      timestamp: chat.timestamp.toIso8601String(),
+      type: chat.type.getOrCrash(),
+    );
 
-  Chat toDomain() => Chat(
+    return chat.type.fold(
+      group: () {
+        final groupChat = chat as GroupChat;
+        return dto.copyWith(
+          users: groupChat.users.map((user) => UserDTO.fromDomain(user)).asList(),
+          isAdmin: groupChat.isAdmin,
+          canReceive: groupChat.canReceive,
+          canSend: groupChat.canSend,
+          groupName: groupChat.groupName.getOrCrash(),
+          groupDescription: groupChat.groupDescription.getOrCrash(),
+        );
+      },
+      individual: () {
+        final individualChat = chat as IndividualChat;
+        return dto.copyWith(receiver: UserDTO.fromDomain(individualChat.receiver));
+      },
+      nil: () => dto,
+    );
+  }
+
+  Chat toDomain() {
+    return ChatType(type).fold(
+      group: () => GroupChat(
         id: UniqueId.fromUniqueString(id),
         isArchived: isArchived,
         isMuted: isMuted,
         canSend: canSend,
         timestamp: DateTime.parse(timestamp),
         type: ChatType(type),
-        updateType: UpdateType(updateType),
-        properties: ChatProperties.fromMap(properties, fromJson: false),
-      );
+        users: users.map((user) => user.toDomain()).toImmutableList(),
+        isAdmin: isAdmin,
+        canReceive: canReceive,
+        groupName: GroupName(groupName),
+        groupDescription: GroupDescription(groupDescription),
+      ),
+      individual: () => IndividualChat(
+        id: UniqueId.fromUniqueString(id),
+        isArchived: isArchived,
+        isMuted: isMuted,
+        canSend: canSend,
+        timestamp: DateTime.parse(timestamp),
+        type: ChatType(type),
+        receiver: receiver.toDomain(),
+      ),
+      nil: () => NilChat(
+        id: UniqueId.fromUniqueString(id),
+        isArchived: isArchived,
+        isMuted: isMuted,
+        canSend: canSend,
+        timestamp: DateTime.parse(timestamp),
+        type: ChatType(type),
+      ),
+    );
+  }
 
   factory ChatDTO.fromFirestore(DocumentSnapshot doc) =>
       ChatDTO.fromJson(doc.data()).copyWith(id: doc.id);
 
   factory ChatDTO.fromJson(Map<String, dynamic> json) => _$ChatDTOFromJson(json);
-}
-
-class ChatPropertiesConverter implements JsonConverter<Map<String, dynamic>, Map<String, dynamic>> {
-  const ChatPropertiesConverter();
-
-  @override
-  Map<String, dynamic> fromJson(Map<String, dynamic> json) =>
-      ChatProperties.fromMap(json, fromJson: true).toMap(toJson: false);
-
-  @override
-  Map<String, dynamic> toJson(Map<String, dynamic> input) =>
-      ChatProperties.fromMap(input, fromJson: false).toMap(toJson: true);
 }

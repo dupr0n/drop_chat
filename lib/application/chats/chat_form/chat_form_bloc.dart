@@ -10,6 +10,9 @@ import 'package:kt_dart/collection.dart';
 import '../../../domain/auth/user.dart';
 import '../../../domain/chats/chat.dart';
 import '../../../domain/chats/chat_failure.dart';
+import '../../../domain/chats/chat_types/group_chat.dart';
+import '../../../domain/chats/chat_types/individual_chat.dart';
+import '../../../domain/chats/chat_types/nil_chat.dart';
 import '../../../domain/chats/i_chat_repository.dart';
 import '../../../domain/chats/value_objects.dart';
 
@@ -46,41 +49,37 @@ class ChatFormBloc extends Bloc<ChatFormEvent, ChatFormState> {
       },
       isArchivedChanged: (e) async* {
         yield state.copyWith(
-          chat: state.chat.copyWith(isArchived: !state.chat.isArchived),
+          chat: (state.chat as NilChat).copyWith(isArchived: !state.chat.isArchived),
           saveFailureOrSuccessOption: none(),
         );
       },
       isMutedChanged: (e) async* {
         yield state.copyWith(
-          chat: state.chat.copyWith(isMuted: !state.chat.isMuted),
+          chat: (state.chat as NilChat).copyWith(isMuted: !state.chat.isMuted),
           saveFailureOrSuccessOption: none(),
         );
       },
       canSendChanged: (e) async* {
         yield state.copyWith(
-          chat: state.chat.copyWith(canSend: !state.chat.canSend),
+          chat: (state.chat as NilChat).copyWith(canSend: !state.chat.canSend),
           saveFailureOrSuccessOption: none(),
         );
       },
       chatPropertiesChanged: (e) async* {
-        yield state.chat.properties.type.fold(
+        yield state.chat.type.fold(
           group: () => state.copyWith(
-            chat: state.chat.copyWith(
-              properties: state.chat.properties.copyWith(
-                canReceive: e.canReceive,
-                groupDescription: GroupDescription(e.groupDescription),
-                groupName: GroupName(e.groupName),
-                isAdmin: e.isAdmin,
-                users: e.users,
-              ),
+            chat: (state.chat as GroupChat).copyWith(
+              canReceive: e.canReceive,
+              groupDescription: GroupDescription(e.groupDescription),
+              groupName: GroupName(e.groupName),
+              isAdmin: e.isAdmin,
+              users: e.users,
             ),
             saveFailureOrSuccessOption: none(),
           ),
           individual: () => state.copyWith(
-            chat: state.chat.copyWith(
-              properties: state.chat.properties.copyWith(
-                receiver: e.receiver,
-              ),
+            chat: (state.chat as IndividualChat).copyWith(
+              receiver: e.receiver,
             ),
             saveFailureOrSuccessOption: none(),
           ),

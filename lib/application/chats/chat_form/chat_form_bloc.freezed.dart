@@ -1104,7 +1104,7 @@ class _$ChatFormStateTearOff {
 
 // ignore: unused_element
   _ChatFormState call(
-      {@required Chat chat,
+      {@required Chat<dynamic> chat,
       @required bool isSaving,
       @required bool isEditing,
       @required bool showErrorMessages,
@@ -1125,7 +1125,7 @@ const $ChatFormState = _$ChatFormStateTearOff();
 
 /// @nodoc
 mixin _$ChatFormState {
-  Chat get chat;
+  Chat<dynamic> get chat;
   bool get isSaving;
   bool get isEditing;
   bool get showErrorMessages;
@@ -1140,13 +1140,11 @@ abstract class $ChatFormStateCopyWith<$Res> {
           ChatFormState value, $Res Function(ChatFormState) then) =
       _$ChatFormStateCopyWithImpl<$Res>;
   $Res call(
-      {Chat chat,
+      {Chat<dynamic> chat,
       bool isSaving,
       bool isEditing,
       bool showErrorMessages,
       Option<Either<ChatFailure, Unit>> saveFailureOrSuccessOption});
-
-  $ChatCopyWith<$Res> get chat;
 }
 
 /// @nodoc
@@ -1167,7 +1165,7 @@ class _$ChatFormStateCopyWithImpl<$Res>
     Object saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      chat: chat == freezed ? _value.chat : chat as Chat,
+      chat: chat == freezed ? _value.chat : chat as Chat<dynamic>,
       isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
       isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
       showErrorMessages: showErrorMessages == freezed
@@ -1177,16 +1175,6 @@ class _$ChatFormStateCopyWithImpl<$Res>
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption as Option<Either<ChatFailure, Unit>>,
     ));
-  }
-
-  @override
-  $ChatCopyWith<$Res> get chat {
-    if (_value.chat == null) {
-      return null;
-    }
-    return $ChatCopyWith<$Res>(_value.chat, (value) {
-      return _then(_value.copyWith(chat: value));
-    });
   }
 }
 
@@ -1198,14 +1186,11 @@ abstract class _$ChatFormStateCopyWith<$Res>
       __$ChatFormStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Chat chat,
+      {Chat<dynamic> chat,
       bool isSaving,
       bool isEditing,
       bool showErrorMessages,
       Option<Either<ChatFailure, Unit>> saveFailureOrSuccessOption});
-
-  @override
-  $ChatCopyWith<$Res> get chat;
 }
 
 /// @nodoc
@@ -1228,7 +1213,7 @@ class __$ChatFormStateCopyWithImpl<$Res>
     Object saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_ChatFormState(
-      chat: chat == freezed ? _value.chat : chat as Chat,
+      chat: chat == freezed ? _value.chat : chat as Chat<dynamic>,
       isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
       isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
       showErrorMessages: showErrorMessages == freezed
@@ -1256,7 +1241,7 @@ class _$_ChatFormState with DiagnosticableTreeMixin implements _ChatFormState {
         assert(saveFailureOrSuccessOption != null);
 
   @override
-  final Chat chat;
+  final Chat<dynamic> chat;
   @override
   final bool isSaving;
   @override
@@ -1323,7 +1308,7 @@ class _$_ChatFormState with DiagnosticableTreeMixin implements _ChatFormState {
 abstract class _ChatFormState implements ChatFormState {
   const factory _ChatFormState(
           {@required
-              Chat chat,
+              Chat<dynamic> chat,
           @required
               bool isSaving,
           @required
@@ -1335,7 +1320,7 @@ abstract class _ChatFormState implements ChatFormState {
       _$_ChatFormState;
 
   @override
-  Chat get chat;
+  Chat<dynamic> get chat;
   @override
   bool get isSaving;
   @override
