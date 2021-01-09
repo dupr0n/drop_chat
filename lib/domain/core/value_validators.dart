@@ -19,6 +19,25 @@ Either<ValueFailure<String>, String> validateShortPassword(String input) {
   }
 }
 
+Either<ValueFailure<String>, String> validatePhoneNumber(String input) {
+  const _pattern = r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$';
+  final _regExp = RegExp(_pattern);
+
+  if (_regExp.hasMatch(input)) {
+    return Right(input);
+  } else {
+    return Left(ValueFailure.invalidPhoneNumber(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateSmsCode(String input) {
+  if (input.length == 4) {
+    return Right(input);
+  } else {
+    return Left(ValueFailure.invalidSMS(failedValue: input));
+  }
+}
+
 Either<ValueFailure<String>, String> validateMaxStringLength(
   String input,
   int maxLength,

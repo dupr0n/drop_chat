@@ -32,6 +32,23 @@ class _$AuthFailureTearOff {
   InvalidEmailAndPassword invalidEmailAndPassword() {
     return const InvalidEmailAndPassword();
   }
+
+// ignore: unused_element
+  _InvalidPhoneNumber invalidPhoneNumber() {
+    return const _InvalidPhoneNumber();
+  }
+
+// ignore: unused_element
+  _InvalidSMS invalidSMS() {
+    return const _InvalidSMS();
+  }
+
+// ignore: unused_element
+  _AuthError authError({@required dynamic error}) {
+    return _AuthError(
+      error: error,
+    );
+  }
 }
 
 /// @nodoc
@@ -46,6 +63,9 @@ mixin _$AuthFailure {
     @required TResult serverError(),
     @required TResult emailAlreadyInUse(),
     @required TResult invalidEmailAndPassword(),
+    @required TResult invalidPhoneNumber(),
+    @required TResult invalidSMS(),
+    @required TResult authError(dynamic error),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -53,6 +73,9 @@ mixin _$AuthFailure {
     TResult serverError(),
     TResult emailAlreadyInUse(),
     TResult invalidEmailAndPassword(),
+    TResult invalidPhoneNumber(),
+    TResult invalidSMS(),
+    TResult authError(dynamic error),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -61,6 +84,9 @@ mixin _$AuthFailure {
     @required TResult serverError(ServerError value),
     @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
     @required TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    @required TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    @required TResult invalidSMS(_InvalidSMS value),
+    @required TResult authError(_AuthError value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -68,6 +94,9 @@ mixin _$AuthFailure {
     TResult serverError(ServerError value),
     TResult emailAlreadyInUse(EmailAlreadyInUse value),
     TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    TResult invalidSMS(_InvalidSMS value),
+    TResult authError(_AuthError value),
     @required TResult orElse(),
   });
 }
@@ -131,11 +160,17 @@ class _$CancelledByUser implements CancelledByUser {
     @required TResult serverError(),
     @required TResult emailAlreadyInUse(),
     @required TResult invalidEmailAndPassword(),
+    @required TResult invalidPhoneNumber(),
+    @required TResult invalidSMS(),
+    @required TResult authError(dynamic error),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
     assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
     return cancelledByUser();
   }
 
@@ -146,6 +181,9 @@ class _$CancelledByUser implements CancelledByUser {
     TResult serverError(),
     TResult emailAlreadyInUse(),
     TResult invalidEmailAndPassword(),
+    TResult invalidPhoneNumber(),
+    TResult invalidSMS(),
+    TResult authError(dynamic error),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -162,11 +200,17 @@ class _$CancelledByUser implements CancelledByUser {
     @required TResult serverError(ServerError value),
     @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
     @required TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    @required TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    @required TResult invalidSMS(_InvalidSMS value),
+    @required TResult authError(_AuthError value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
     assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
     return cancelledByUser(this);
   }
 
@@ -177,6 +221,9 @@ class _$CancelledByUser implements CancelledByUser {
     TResult serverError(ServerError value),
     TResult emailAlreadyInUse(EmailAlreadyInUse value),
     TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    TResult invalidSMS(_InvalidSMS value),
+    TResult authError(_AuthError value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -233,11 +280,17 @@ class _$ServerError implements ServerError {
     @required TResult serverError(),
     @required TResult emailAlreadyInUse(),
     @required TResult invalidEmailAndPassword(),
+    @required TResult invalidPhoneNumber(),
+    @required TResult invalidSMS(),
+    @required TResult authError(dynamic error),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
     assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
     return serverError();
   }
 
@@ -248,6 +301,9 @@ class _$ServerError implements ServerError {
     TResult serverError(),
     TResult emailAlreadyInUse(),
     TResult invalidEmailAndPassword(),
+    TResult invalidPhoneNumber(),
+    TResult invalidSMS(),
+    TResult authError(dynamic error),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -264,11 +320,17 @@ class _$ServerError implements ServerError {
     @required TResult serverError(ServerError value),
     @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
     @required TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    @required TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    @required TResult invalidSMS(_InvalidSMS value),
+    @required TResult authError(_AuthError value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
     assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
     return serverError(this);
   }
 
@@ -279,6 +341,9 @@ class _$ServerError implements ServerError {
     TResult serverError(ServerError value),
     TResult emailAlreadyInUse(EmailAlreadyInUse value),
     TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    TResult invalidSMS(_InvalidSMS value),
+    TResult authError(_AuthError value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -336,11 +401,17 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     @required TResult serverError(),
     @required TResult emailAlreadyInUse(),
     @required TResult invalidEmailAndPassword(),
+    @required TResult invalidPhoneNumber(),
+    @required TResult invalidSMS(),
+    @required TResult authError(dynamic error),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
     assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
     return emailAlreadyInUse();
   }
 
@@ -351,6 +422,9 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     TResult serverError(),
     TResult emailAlreadyInUse(),
     TResult invalidEmailAndPassword(),
+    TResult invalidPhoneNumber(),
+    TResult invalidSMS(),
+    TResult authError(dynamic error),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -367,11 +441,17 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     @required TResult serverError(ServerError value),
     @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
     @required TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    @required TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    @required TResult invalidSMS(_InvalidSMS value),
+    @required TResult authError(_AuthError value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
     assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
     return emailAlreadyInUse(this);
   }
 
@@ -382,6 +462,9 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     TResult serverError(ServerError value),
     TResult emailAlreadyInUse(EmailAlreadyInUse value),
     TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    TResult invalidSMS(_InvalidSMS value),
+    TResult authError(_AuthError value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -439,11 +522,17 @@ class _$InvalidEmailAndPassword implements InvalidEmailAndPassword {
     @required TResult serverError(),
     @required TResult emailAlreadyInUse(),
     @required TResult invalidEmailAndPassword(),
+    @required TResult invalidPhoneNumber(),
+    @required TResult invalidSMS(),
+    @required TResult authError(dynamic error),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
     assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
     return invalidEmailAndPassword();
   }
 
@@ -454,6 +543,9 @@ class _$InvalidEmailAndPassword implements InvalidEmailAndPassword {
     TResult serverError(),
     TResult emailAlreadyInUse(),
     TResult invalidEmailAndPassword(),
+    TResult invalidPhoneNumber(),
+    TResult invalidSMS(),
+    TResult authError(dynamic error),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -470,11 +562,17 @@ class _$InvalidEmailAndPassword implements InvalidEmailAndPassword {
     @required TResult serverError(ServerError value),
     @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
     @required TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    @required TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    @required TResult invalidSMS(_InvalidSMS value),
+    @required TResult authError(_AuthError value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
     assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
     return invalidEmailAndPassword(this);
   }
 
@@ -485,6 +583,9 @@ class _$InvalidEmailAndPassword implements InvalidEmailAndPassword {
     TResult serverError(ServerError value),
     TResult emailAlreadyInUse(EmailAlreadyInUse value),
     TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    TResult invalidSMS(_InvalidSMS value),
+    TResult authError(_AuthError value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -497,4 +598,388 @@ class _$InvalidEmailAndPassword implements InvalidEmailAndPassword {
 
 abstract class InvalidEmailAndPassword implements AuthFailure {
   const factory InvalidEmailAndPassword() = _$InvalidEmailAndPassword;
+}
+
+/// @nodoc
+abstract class _$InvalidPhoneNumberCopyWith<$Res> {
+  factory _$InvalidPhoneNumberCopyWith(
+          _InvalidPhoneNumber value, $Res Function(_InvalidPhoneNumber) then) =
+      __$InvalidPhoneNumberCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$InvalidPhoneNumberCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$InvalidPhoneNumberCopyWith<$Res> {
+  __$InvalidPhoneNumberCopyWithImpl(
+      _InvalidPhoneNumber _value, $Res Function(_InvalidPhoneNumber) _then)
+      : super(_value, (v) => _then(v as _InvalidPhoneNumber));
+
+  @override
+  _InvalidPhoneNumber get _value => super._value as _InvalidPhoneNumber;
+}
+
+/// @nodoc
+class _$_InvalidPhoneNumber implements _InvalidPhoneNumber {
+  const _$_InvalidPhoneNumber();
+
+  @override
+  String toString() {
+    return 'AuthFailure.invalidPhoneNumber()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidPhoneNumber);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult cancelledByUser(),
+    @required TResult serverError(),
+    @required TResult emailAlreadyInUse(),
+    @required TResult invalidEmailAndPassword(),
+    @required TResult invalidPhoneNumber(),
+    @required TResult invalidSMS(),
+    @required TResult authError(dynamic error),
+  }) {
+    assert(cancelledByUser != null);
+    assert(serverError != null);
+    assert(emailAlreadyInUse != null);
+    assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
+    return invalidPhoneNumber();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult cancelledByUser(),
+    TResult serverError(),
+    TResult emailAlreadyInUse(),
+    TResult invalidEmailAndPassword(),
+    TResult invalidPhoneNumber(),
+    TResult invalidSMS(),
+    TResult authError(dynamic error),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidPhoneNumber != null) {
+      return invalidPhoneNumber();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult cancelledByUser(CancelledByUser value),
+    @required TResult serverError(ServerError value),
+    @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
+    @required TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    @required TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    @required TResult invalidSMS(_InvalidSMS value),
+    @required TResult authError(_AuthError value),
+  }) {
+    assert(cancelledByUser != null);
+    assert(serverError != null);
+    assert(emailAlreadyInUse != null);
+    assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
+    return invalidPhoneNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult cancelledByUser(CancelledByUser value),
+    TResult serverError(ServerError value),
+    TResult emailAlreadyInUse(EmailAlreadyInUse value),
+    TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    TResult invalidSMS(_InvalidSMS value),
+    TResult authError(_AuthError value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidPhoneNumber != null) {
+      return invalidPhoneNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidPhoneNumber implements AuthFailure {
+  const factory _InvalidPhoneNumber() = _$_InvalidPhoneNumber;
+}
+
+/// @nodoc
+abstract class _$InvalidSMSCopyWith<$Res> {
+  factory _$InvalidSMSCopyWith(
+          _InvalidSMS value, $Res Function(_InvalidSMS) then) =
+      __$InvalidSMSCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$InvalidSMSCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$InvalidSMSCopyWith<$Res> {
+  __$InvalidSMSCopyWithImpl(
+      _InvalidSMS _value, $Res Function(_InvalidSMS) _then)
+      : super(_value, (v) => _then(v as _InvalidSMS));
+
+  @override
+  _InvalidSMS get _value => super._value as _InvalidSMS;
+}
+
+/// @nodoc
+class _$_InvalidSMS implements _InvalidSMS {
+  const _$_InvalidSMS();
+
+  @override
+  String toString() {
+    return 'AuthFailure.invalidSMS()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidSMS);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult cancelledByUser(),
+    @required TResult serverError(),
+    @required TResult emailAlreadyInUse(),
+    @required TResult invalidEmailAndPassword(),
+    @required TResult invalidPhoneNumber(),
+    @required TResult invalidSMS(),
+    @required TResult authError(dynamic error),
+  }) {
+    assert(cancelledByUser != null);
+    assert(serverError != null);
+    assert(emailAlreadyInUse != null);
+    assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
+    return invalidSMS();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult cancelledByUser(),
+    TResult serverError(),
+    TResult emailAlreadyInUse(),
+    TResult invalidEmailAndPassword(),
+    TResult invalidPhoneNumber(),
+    TResult invalidSMS(),
+    TResult authError(dynamic error),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidSMS != null) {
+      return invalidSMS();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult cancelledByUser(CancelledByUser value),
+    @required TResult serverError(ServerError value),
+    @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
+    @required TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    @required TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    @required TResult invalidSMS(_InvalidSMS value),
+    @required TResult authError(_AuthError value),
+  }) {
+    assert(cancelledByUser != null);
+    assert(serverError != null);
+    assert(emailAlreadyInUse != null);
+    assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
+    return invalidSMS(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult cancelledByUser(CancelledByUser value),
+    TResult serverError(ServerError value),
+    TResult emailAlreadyInUse(EmailAlreadyInUse value),
+    TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    TResult invalidSMS(_InvalidSMS value),
+    TResult authError(_AuthError value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidSMS != null) {
+      return invalidSMS(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidSMS implements AuthFailure {
+  const factory _InvalidSMS() = _$_InvalidSMS;
+}
+
+/// @nodoc
+abstract class _$AuthErrorCopyWith<$Res> {
+  factory _$AuthErrorCopyWith(
+          _AuthError value, $Res Function(_AuthError) then) =
+      __$AuthErrorCopyWithImpl<$Res>;
+  $Res call({dynamic error});
+}
+
+/// @nodoc
+class __$AuthErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$AuthErrorCopyWith<$Res> {
+  __$AuthErrorCopyWithImpl(_AuthError _value, $Res Function(_AuthError) _then)
+      : super(_value, (v) => _then(v as _AuthError));
+
+  @override
+  _AuthError get _value => super._value as _AuthError;
+
+  @override
+  $Res call({
+    Object error = freezed,
+  }) {
+    return _then(_AuthError(
+      error: error == freezed ? _value.error : error as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_AuthError implements _AuthError {
+  const _$_AuthError({@required this.error}) : assert(error != null);
+
+  @override
+  final dynamic error;
+
+  @override
+  String toString() {
+    return 'AuthFailure.authError(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _AuthError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @override
+  _$AuthErrorCopyWith<_AuthError> get copyWith =>
+      __$AuthErrorCopyWithImpl<_AuthError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult cancelledByUser(),
+    @required TResult serverError(),
+    @required TResult emailAlreadyInUse(),
+    @required TResult invalidEmailAndPassword(),
+    @required TResult invalidPhoneNumber(),
+    @required TResult invalidSMS(),
+    @required TResult authError(dynamic error),
+  }) {
+    assert(cancelledByUser != null);
+    assert(serverError != null);
+    assert(emailAlreadyInUse != null);
+    assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
+    return authError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult cancelledByUser(),
+    TResult serverError(),
+    TResult emailAlreadyInUse(),
+    TResult invalidEmailAndPassword(),
+    TResult invalidPhoneNumber(),
+    TResult invalidSMS(),
+    TResult authError(dynamic error),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (authError != null) {
+      return authError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult cancelledByUser(CancelledByUser value),
+    @required TResult serverError(ServerError value),
+    @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
+    @required TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    @required TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    @required TResult invalidSMS(_InvalidSMS value),
+    @required TResult authError(_AuthError value),
+  }) {
+    assert(cancelledByUser != null);
+    assert(serverError != null);
+    assert(emailAlreadyInUse != null);
+    assert(invalidEmailAndPassword != null);
+    assert(invalidPhoneNumber != null);
+    assert(invalidSMS != null);
+    assert(authError != null);
+    return authError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult cancelledByUser(CancelledByUser value),
+    TResult serverError(ServerError value),
+    TResult emailAlreadyInUse(EmailAlreadyInUse value),
+    TResult invalidEmailAndPassword(InvalidEmailAndPassword value),
+    TResult invalidPhoneNumber(_InvalidPhoneNumber value),
+    TResult invalidSMS(_InvalidSMS value),
+    TResult authError(_AuthError value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (authError != null) {
+      return authError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AuthError implements AuthFailure {
+  const factory _AuthError({@required dynamic error}) = _$_AuthError;
+
+  dynamic get error;
+  _$AuthErrorCopyWith<_AuthError> get copyWith;
 }

@@ -1,12 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 import '../../application/auth/auth_bloc.dart';
 import '../../injection.dart';
 import '../routes/router.gr.dart' as rte;
 
-class AppWidget extends StatelessWidget {
+class AppWidgetView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -16,7 +17,8 @@ class AppWidget extends StatelessWidget {
         )
       ],
       child: MaterialApp(
-        title: 'Notes',
+        title: 'Chats',
+        navigatorKey: getIt<NavigationService>().navigatorKey,
         debugShowCheckedModeBanner: false,
         builder: ExtendedNavigator.builder(router: rte.Router()),
         theme: ThemeData.dark().copyWith(
@@ -30,6 +32,7 @@ class AppWidget extends StatelessWidget {
             ),
           ),
         ),
+        onGenerateRoute: rte.Router().onGenerateRoute,
       ),
     );
   }

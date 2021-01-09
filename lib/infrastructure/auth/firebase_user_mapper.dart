@@ -6,5 +6,9 @@ import '../../domain/core/value_objects.dart';
 
 extension FirebaseUserDomainX on auth.User {
   User toDomain() => User(
-      id: UniqueId.fromUniqueString(uid), displayName: DisplayName(displayName), isOnline: true);
+        id: UniqueId.fromUniqueString(uid),
+        displayName: DisplayName(displayName),
+        phoneNumber: PhoneNumber(phoneNumber),
+        isOnline: true,
+      );
 }

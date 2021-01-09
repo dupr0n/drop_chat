@@ -28,6 +28,30 @@ class Password extends ValueObject<String> {
   }
 }
 
+class PhoneNumber extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  const PhoneNumber._(this.value);
+
+  factory PhoneNumber(String input) {
+    assert(input != null);
+    return PhoneNumber._(validateStringNotEmpty(input).flatMap(validatePhoneNumber));
+  }
+}
+
+class SmsCode extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  const SmsCode._(this.value);
+
+  factory SmsCode(String input) {
+    assert(input != null);
+    return SmsCode._(validateStringNotEmpty(input));
+  }
+}
+
 class DisplayName extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;

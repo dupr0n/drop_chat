@@ -10,6 +10,12 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.shortPassword({
     @required T failedValue,
   }) = ShortPassword<T>;
+  const factory ValueFailure.invalidPhoneNumber({
+    @required T failedValue,
+  }) = _InvalidPhoneNumber<T>;
+  const factory ValueFailure.invalidSMS({
+    @required T failedValue,
+  }) = _InvalidSMS<T>;
   const factory ValueFailure.exceedingLength({
     @required T failedValue,
     @required int max,

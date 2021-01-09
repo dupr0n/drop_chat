@@ -17,10 +17,12 @@ class _$UserTearOff {
   _User call(
       {@required UniqueId id,
       @required DisplayName displayName,
+      @required PhoneNumber phoneNumber,
       @required bool isOnline}) {
     return _User(
       id: id,
       displayName: displayName,
+      phoneNumber: phoneNumber,
       isOnline: isOnline,
     );
   }
@@ -34,6 +36,7 @@ const $User = _$UserTearOff();
 mixin _$User {
   UniqueId get id;
   DisplayName get displayName;
+  PhoneNumber get phoneNumber;
   bool get isOnline;
 
   $UserCopyWith<User> get copyWith;
@@ -43,7 +46,11 @@ mixin _$User {
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
-  $Res call({UniqueId id, DisplayName displayName, bool isOnline});
+  $Res call(
+      {UniqueId id,
+      DisplayName displayName,
+      PhoneNumber phoneNumber,
+      bool isOnline});
 }
 
 /// @nodoc
@@ -58,6 +65,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   $Res call({
     Object id = freezed,
     Object displayName = freezed,
+    Object phoneNumber = freezed,
     Object isOnline = freezed,
   }) {
     return _then(_value.copyWith(
@@ -65,6 +73,9 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       displayName: displayName == freezed
           ? _value.displayName
           : displayName as DisplayName,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber as PhoneNumber,
       isOnline: isOnline == freezed ? _value.isOnline : isOnline as bool,
     ));
   }
@@ -75,7 +86,11 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
       __$UserCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, DisplayName displayName, bool isOnline});
+  $Res call(
+      {UniqueId id,
+      DisplayName displayName,
+      PhoneNumber phoneNumber,
+      bool isOnline});
 }
 
 /// @nodoc
@@ -91,6 +106,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   $Res call({
     Object id = freezed,
     Object displayName = freezed,
+    Object phoneNumber = freezed,
     Object isOnline = freezed,
   }) {
     return _then(_User(
@@ -98,6 +114,9 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       displayName: displayName == freezed
           ? _value.displayName
           : displayName as DisplayName,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber as PhoneNumber,
       isOnline: isOnline == freezed ? _value.isOnline : isOnline as bool,
     ));
   }
@@ -106,9 +125,13 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 /// @nodoc
 class _$_User implements _User {
   const _$_User(
-      {@required this.id, @required this.displayName, @required this.isOnline})
+      {@required this.id,
+      @required this.displayName,
+      @required this.phoneNumber,
+      @required this.isOnline})
       : assert(id != null),
         assert(displayName != null),
+        assert(phoneNumber != null),
         assert(isOnline != null);
 
   @override
@@ -116,11 +139,13 @@ class _$_User implements _User {
   @override
   final DisplayName displayName;
   @override
+  final PhoneNumber phoneNumber;
+  @override
   final bool isOnline;
 
   @override
   String toString() {
-    return 'User(id: $id, displayName: $displayName, isOnline: $isOnline)';
+    return 'User(id: $id, displayName: $displayName, phoneNumber: $phoneNumber, isOnline: $isOnline)';
   }
 
   @override
@@ -132,6 +157,9 @@ class _$_User implements _User {
             (identical(other.displayName, displayName) ||
                 const DeepCollectionEquality()
                     .equals(other.displayName, displayName)) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.phoneNumber, phoneNumber)) &&
             (identical(other.isOnline, isOnline) ||
                 const DeepCollectionEquality()
                     .equals(other.isOnline, isOnline)));
@@ -142,6 +170,7 @@ class _$_User implements _User {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(displayName) ^
+      const DeepCollectionEquality().hash(phoneNumber) ^
       const DeepCollectionEquality().hash(isOnline);
 
   @override
@@ -153,12 +182,15 @@ abstract class _User implements User {
   const factory _User(
       {@required UniqueId id,
       @required DisplayName displayName,
+      @required PhoneNumber phoneNumber,
       @required bool isOnline}) = _$_User;
 
   @override
   UniqueId get id;
   @override
   DisplayName get displayName;
+  @override
+  PhoneNumber get phoneNumber;
   @override
   bool get isOnline;
   @override

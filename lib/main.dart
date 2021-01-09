@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'infrastructure/auth/user_dtos.dart';
@@ -9,6 +8,7 @@ import 'infrastructure/chats/chat_dtos.dart';
 import 'infrastructure/messages/message_dtos.dart';
 import 'injection.dart';
 import 'presentation/core/app_widget.dart';
+import 'presentation/core/setup_dialog_ui.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,8 @@ Future<void> main() async {
     ..registerAdapter(MessageDTOAdapter())
     ..registerAdapter(ChatDTOAdapter())
     ..registerAdapter(UserDTOAdapter());
-  configureInjection(Environment.prod);
+  configureInjection();
   await Firebase.initializeApp();
-  runApp(AppWidget());
+  setupDialogUi();
+  runApp(AppWidgetView());
 }

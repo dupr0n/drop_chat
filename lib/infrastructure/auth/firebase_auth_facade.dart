@@ -4,11 +4,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 import '../../domain/auth/auth_failure.dart';
 import '../../domain/auth/i_auth_facade.dart';
 import '../../domain/auth/user.dart';
 import '../../domain/auth/value_objects.dart';
+import '../../injection.dart';
+import '../../presentation/core/setup_dialog_ui.dart';
 import 'firebase_user_mapper.dart';
 
 @LazySingleton(as: IAuthFacade)
@@ -60,6 +63,57 @@ class FirebaseAuthFacade implements IAuthFacade {
         return left(const AuthFailure.serverError());
       }
     }
+  }
+
+  @override
+  Future<Either<AuthFailure, Unit>> signInWithPhoneNumber({PhoneNumber phoneNumber}) async {
+    Either<AuthFailure, Unit> _failureOrUnit = right(unit);
+    try {
+      phoneNumber.value.fold(
+        (_) => _failureOrUnit = left(const AuthFailure.invalidPhoneNumber()),
+        (_) => null,
+      );
+      if (_failureOrUnit.isRight()) {
+        await _firebaseAuth.verifyPhoneNumber(
+          phoneNumber: phoneNumber.getOrCrash(),
+          verificationCompleted: (auth.PhoneAuthCredential phoneAuthCredential) {
+            _failureOrUnit = right(unit);
+          },
+          verificationFailed: (auth.FirebaseAuthException e) {
+            if (e.code == 'invalid-phone-number') {
+              _failureOrUnit = left(const AuthFailure.invalidPhoneNumber());
+            } else {
+              _failureOrUnit = left(AuthFailure.authError(error: e));
+            }
+          },
+          codeSent: (String verificationId, int forceResendingToken) async {
+            final smsCode = await getIt<DialogService>().showCustomDialog(variant: DialogType.form);
+            if (smsCode.confirmed) {
+              final sms = smsCode.responseData as SmsCode;
+              sms.value.fold(
+                (f) => _failureOrUnit = left(const AuthFailure.invalidSMS()),
+                (sms) => null,
+              );
+              if (_failureOrUnit.isRight()) {
+                await _firebaseAuth.signInWithCredential(auth.PhoneAuthProvider.credential(
+                  verificationId: verificationId,
+                  smsCode: sms.getOrCrash(),
+                ));
+              }
+            } else {
+              _failureOrUnit = left(const AuthFailure.cancelledByUser());
+            }
+          },
+          timeout: const Duration(seconds: 60),
+          codeAutoRetrievalTimeout: (String verificationId) async {
+            _failureOrUnit = await signInWithPhoneNumber(phoneNumber: phoneNumber);
+          },
+        );
+      }
+    } on PlatformException {
+      _failureOrUnit = left(const AuthFailure.serverError());
+    }
+    return _failureOrUnit;
   }
 
   @override

@@ -28,6 +28,13 @@ class _$SignInFormEventTearOff {
   }
 
 // ignore: unused_element
+  _PhoneNumberChanged phoneNumberChanged(String phoneNumber) {
+    return _PhoneNumberChanged(
+      phoneNumber,
+    );
+  }
+
+// ignore: unused_element
   RegisterWithEmailAndPasswordPressed registerWithEmailAndPasswordPressed() {
     return const RegisterWithEmailAndPasswordPressed();
   }
@@ -41,6 +48,11 @@ class _$SignInFormEventTearOff {
   SignInWithGooglePressed signInWithGooglePressed() {
     return const SignInWithGooglePressed();
   }
+
+// ignore: unused_element
+  _SignInWithPhoneNumber signInWithPhoneNumber() {
+    return const _SignInWithPhoneNumber();
+  }
 }
 
 /// @nodoc
@@ -53,23 +65,28 @@ mixin _$SignInFormEvent {
   TResult when<TResult extends Object>({
     @required TResult emailChanged(String emailStr),
     @required TResult passwordChanged(String passwordStr),
+    @required TResult phoneNumberChanged(String phoneNumber),
     @required TResult registerWithEmailAndPasswordPressed(),
     @required TResult signInWithEmailAndPasswordPressed(),
     @required TResult signInWithGooglePressed(),
+    @required TResult signInWithPhoneNumber(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult emailChanged(String emailStr),
     TResult passwordChanged(String passwordStr),
+    TResult phoneNumberChanged(String phoneNumber),
     TResult registerWithEmailAndPasswordPressed(),
     TResult signInWithEmailAndPasswordPressed(),
     TResult signInWithGooglePressed(),
+    TResult signInWithPhoneNumber(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult emailChanged(EmailChanged value),
     @required TResult passwordChanged(PasswordChanged value),
+    @required TResult phoneNumberChanged(_PhoneNumberChanged value),
     @required
         TResult registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
@@ -77,16 +94,19 @@ mixin _$SignInFormEvent {
         TResult signInWithEmailAndPasswordPressed(
             SignInWithEmailAndPasswordPressed value),
     @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult emailChanged(EmailChanged value),
     TResult passwordChanged(PasswordChanged value),
+    TResult phoneNumberChanged(_PhoneNumberChanged value),
     TResult registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
     TResult signInWithEmailAndPasswordPressed(
         SignInWithEmailAndPasswordPressed value),
     TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
     @required TResult orElse(),
   });
 }
@@ -171,15 +191,19 @@ class _$EmailChanged implements EmailChanged {
   TResult when<TResult extends Object>({
     @required TResult emailChanged(String emailStr),
     @required TResult passwordChanged(String passwordStr),
+    @required TResult phoneNumberChanged(String phoneNumber),
     @required TResult registerWithEmailAndPasswordPressed(),
     @required TResult signInWithEmailAndPasswordPressed(),
     @required TResult signInWithGooglePressed(),
+    @required TResult signInWithPhoneNumber(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
     return emailChanged(emailStr);
   }
 
@@ -188,9 +212,11 @@ class _$EmailChanged implements EmailChanged {
   TResult maybeWhen<TResult extends Object>({
     TResult emailChanged(String emailStr),
     TResult passwordChanged(String passwordStr),
+    TResult phoneNumberChanged(String phoneNumber),
     TResult registerWithEmailAndPasswordPressed(),
     TResult signInWithEmailAndPasswordPressed(),
     TResult signInWithGooglePressed(),
+    TResult signInWithPhoneNumber(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -205,6 +231,7 @@ class _$EmailChanged implements EmailChanged {
   TResult map<TResult extends Object>({
     @required TResult emailChanged(EmailChanged value),
     @required TResult passwordChanged(PasswordChanged value),
+    @required TResult phoneNumberChanged(_PhoneNumberChanged value),
     @required
         TResult registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
@@ -212,12 +239,15 @@ class _$EmailChanged implements EmailChanged {
         TResult signInWithEmailAndPasswordPressed(
             SignInWithEmailAndPasswordPressed value),
     @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
     return emailChanged(this);
   }
 
@@ -226,11 +256,13 @@ class _$EmailChanged implements EmailChanged {
   TResult maybeMap<TResult extends Object>({
     TResult emailChanged(EmailChanged value),
     TResult passwordChanged(PasswordChanged value),
+    TResult phoneNumberChanged(_PhoneNumberChanged value),
     TResult registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
     TResult signInWithEmailAndPasswordPressed(
         SignInWithEmailAndPasswordPressed value),
     TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -311,15 +343,19 @@ class _$PasswordChanged implements PasswordChanged {
   TResult when<TResult extends Object>({
     @required TResult emailChanged(String emailStr),
     @required TResult passwordChanged(String passwordStr),
+    @required TResult phoneNumberChanged(String phoneNumber),
     @required TResult registerWithEmailAndPasswordPressed(),
     @required TResult signInWithEmailAndPasswordPressed(),
     @required TResult signInWithGooglePressed(),
+    @required TResult signInWithPhoneNumber(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
     return passwordChanged(passwordStr);
   }
 
@@ -328,9 +364,11 @@ class _$PasswordChanged implements PasswordChanged {
   TResult maybeWhen<TResult extends Object>({
     TResult emailChanged(String emailStr),
     TResult passwordChanged(String passwordStr),
+    TResult phoneNumberChanged(String phoneNumber),
     TResult registerWithEmailAndPasswordPressed(),
     TResult signInWithEmailAndPasswordPressed(),
     TResult signInWithGooglePressed(),
+    TResult signInWithPhoneNumber(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -345,6 +383,7 @@ class _$PasswordChanged implements PasswordChanged {
   TResult map<TResult extends Object>({
     @required TResult emailChanged(EmailChanged value),
     @required TResult passwordChanged(PasswordChanged value),
+    @required TResult phoneNumberChanged(_PhoneNumberChanged value),
     @required
         TResult registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
@@ -352,12 +391,15 @@ class _$PasswordChanged implements PasswordChanged {
         TResult signInWithEmailAndPasswordPressed(
             SignInWithEmailAndPasswordPressed value),
     @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
     return passwordChanged(this);
   }
 
@@ -366,11 +408,13 @@ class _$PasswordChanged implements PasswordChanged {
   TResult maybeMap<TResult extends Object>({
     TResult emailChanged(EmailChanged value),
     TResult passwordChanged(PasswordChanged value),
+    TResult phoneNumberChanged(_PhoneNumberChanged value),
     TResult registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
     TResult signInWithEmailAndPasswordPressed(
         SignInWithEmailAndPasswordPressed value),
     TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -386,6 +430,158 @@ abstract class PasswordChanged implements SignInFormEvent {
 
   String get passwordStr;
   $PasswordChangedCopyWith<PasswordChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$PhoneNumberChangedCopyWith<$Res> {
+  factory _$PhoneNumberChangedCopyWith(
+          _PhoneNumberChanged value, $Res Function(_PhoneNumberChanged) then) =
+      __$PhoneNumberChangedCopyWithImpl<$Res>;
+  $Res call({String phoneNumber});
+}
+
+/// @nodoc
+class __$PhoneNumberChangedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements _$PhoneNumberChangedCopyWith<$Res> {
+  __$PhoneNumberChangedCopyWithImpl(
+      _PhoneNumberChanged _value, $Res Function(_PhoneNumberChanged) _then)
+      : super(_value, (v) => _then(v as _PhoneNumberChanged));
+
+  @override
+  _PhoneNumberChanged get _value => super._value as _PhoneNumberChanged;
+
+  @override
+  $Res call({
+    Object phoneNumber = freezed,
+  }) {
+    return _then(_PhoneNumberChanged(
+      phoneNumber == freezed ? _value.phoneNumber : phoneNumber as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_PhoneNumberChanged implements _PhoneNumberChanged {
+  const _$_PhoneNumberChanged(this.phoneNumber) : assert(phoneNumber != null);
+
+  @override
+  final String phoneNumber;
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.phoneNumberChanged(phoneNumber: $phoneNumber)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _PhoneNumberChanged &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.phoneNumber, phoneNumber)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(phoneNumber);
+
+  @override
+  _$PhoneNumberChangedCopyWith<_PhoneNumberChanged> get copyWith =>
+      __$PhoneNumberChangedCopyWithImpl<_PhoneNumberChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult emailChanged(String emailStr),
+    @required TResult passwordChanged(String passwordStr),
+    @required TResult phoneNumberChanged(String phoneNumber),
+    @required TResult registerWithEmailAndPasswordPressed(),
+    @required TResult signInWithEmailAndPasswordPressed(),
+    @required TResult signInWithGooglePressed(),
+    @required TResult signInWithPhoneNumber(),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
+    assert(registerWithEmailAndPasswordPressed != null);
+    assert(signInWithEmailAndPasswordPressed != null);
+    assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
+    return phoneNumberChanged(phoneNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult emailChanged(String emailStr),
+    TResult passwordChanged(String passwordStr),
+    TResult phoneNumberChanged(String phoneNumber),
+    TResult registerWithEmailAndPasswordPressed(),
+    TResult signInWithEmailAndPasswordPressed(),
+    TResult signInWithGooglePressed(),
+    TResult signInWithPhoneNumber(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (phoneNumberChanged != null) {
+      return phoneNumberChanged(phoneNumber);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult emailChanged(EmailChanged value),
+    @required TResult passwordChanged(PasswordChanged value),
+    @required TResult phoneNumberChanged(_PhoneNumberChanged value),
+    @required
+        TResult registerWithEmailAndPasswordPressed(
+            RegisterWithEmailAndPasswordPressed value),
+    @required
+        TResult signInWithEmailAndPasswordPressed(
+            SignInWithEmailAndPasswordPressed value),
+    @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
+    assert(registerWithEmailAndPasswordPressed != null);
+    assert(signInWithEmailAndPasswordPressed != null);
+    assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
+    return phoneNumberChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult emailChanged(EmailChanged value),
+    TResult passwordChanged(PasswordChanged value),
+    TResult phoneNumberChanged(_PhoneNumberChanged value),
+    TResult registerWithEmailAndPasswordPressed(
+        RegisterWithEmailAndPasswordPressed value),
+    TResult signInWithEmailAndPasswordPressed(
+        SignInWithEmailAndPasswordPressed value),
+    TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (phoneNumberChanged != null) {
+      return phoneNumberChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PhoneNumberChanged implements SignInFormEvent {
+  const factory _PhoneNumberChanged(String phoneNumber) = _$_PhoneNumberChanged;
+
+  String get phoneNumber;
+  _$PhoneNumberChangedCopyWith<_PhoneNumberChanged> get copyWith;
 }
 
 /// @nodoc
@@ -434,15 +630,19 @@ class _$RegisterWithEmailAndPasswordPressed
   TResult when<TResult extends Object>({
     @required TResult emailChanged(String emailStr),
     @required TResult passwordChanged(String passwordStr),
+    @required TResult phoneNumberChanged(String phoneNumber),
     @required TResult registerWithEmailAndPasswordPressed(),
     @required TResult signInWithEmailAndPasswordPressed(),
     @required TResult signInWithGooglePressed(),
+    @required TResult signInWithPhoneNumber(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
     return registerWithEmailAndPasswordPressed();
   }
 
@@ -451,9 +651,11 @@ class _$RegisterWithEmailAndPasswordPressed
   TResult maybeWhen<TResult extends Object>({
     TResult emailChanged(String emailStr),
     TResult passwordChanged(String passwordStr),
+    TResult phoneNumberChanged(String phoneNumber),
     TResult registerWithEmailAndPasswordPressed(),
     TResult signInWithEmailAndPasswordPressed(),
     TResult signInWithGooglePressed(),
+    TResult signInWithPhoneNumber(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -468,6 +670,7 @@ class _$RegisterWithEmailAndPasswordPressed
   TResult map<TResult extends Object>({
     @required TResult emailChanged(EmailChanged value),
     @required TResult passwordChanged(PasswordChanged value),
+    @required TResult phoneNumberChanged(_PhoneNumberChanged value),
     @required
         TResult registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
@@ -475,12 +678,15 @@ class _$RegisterWithEmailAndPasswordPressed
         TResult signInWithEmailAndPasswordPressed(
             SignInWithEmailAndPasswordPressed value),
     @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
     return registerWithEmailAndPasswordPressed(this);
   }
 
@@ -489,11 +695,13 @@ class _$RegisterWithEmailAndPasswordPressed
   TResult maybeMap<TResult extends Object>({
     TResult emailChanged(EmailChanged value),
     TResult passwordChanged(PasswordChanged value),
+    TResult phoneNumberChanged(_PhoneNumberChanged value),
     TResult registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
     TResult signInWithEmailAndPasswordPressed(
         SignInWithEmailAndPasswordPressed value),
     TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -555,15 +763,19 @@ class _$SignInWithEmailAndPasswordPressed
   TResult when<TResult extends Object>({
     @required TResult emailChanged(String emailStr),
     @required TResult passwordChanged(String passwordStr),
+    @required TResult phoneNumberChanged(String phoneNumber),
     @required TResult registerWithEmailAndPasswordPressed(),
     @required TResult signInWithEmailAndPasswordPressed(),
     @required TResult signInWithGooglePressed(),
+    @required TResult signInWithPhoneNumber(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
     return signInWithEmailAndPasswordPressed();
   }
 
@@ -572,9 +784,11 @@ class _$SignInWithEmailAndPasswordPressed
   TResult maybeWhen<TResult extends Object>({
     TResult emailChanged(String emailStr),
     TResult passwordChanged(String passwordStr),
+    TResult phoneNumberChanged(String phoneNumber),
     TResult registerWithEmailAndPasswordPressed(),
     TResult signInWithEmailAndPasswordPressed(),
     TResult signInWithGooglePressed(),
+    TResult signInWithPhoneNumber(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -589,6 +803,7 @@ class _$SignInWithEmailAndPasswordPressed
   TResult map<TResult extends Object>({
     @required TResult emailChanged(EmailChanged value),
     @required TResult passwordChanged(PasswordChanged value),
+    @required TResult phoneNumberChanged(_PhoneNumberChanged value),
     @required
         TResult registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
@@ -596,12 +811,15 @@ class _$SignInWithEmailAndPasswordPressed
         TResult signInWithEmailAndPasswordPressed(
             SignInWithEmailAndPasswordPressed value),
     @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
     return signInWithEmailAndPasswordPressed(this);
   }
 
@@ -610,11 +828,13 @@ class _$SignInWithEmailAndPasswordPressed
   TResult maybeMap<TResult extends Object>({
     TResult emailChanged(EmailChanged value),
     TResult passwordChanged(PasswordChanged value),
+    TResult phoneNumberChanged(_PhoneNumberChanged value),
     TResult registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
     TResult signInWithEmailAndPasswordPressed(
         SignInWithEmailAndPasswordPressed value),
     TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -671,15 +891,19 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   TResult when<TResult extends Object>({
     @required TResult emailChanged(String emailStr),
     @required TResult passwordChanged(String passwordStr),
+    @required TResult phoneNumberChanged(String phoneNumber),
     @required TResult registerWithEmailAndPasswordPressed(),
     @required TResult signInWithEmailAndPasswordPressed(),
     @required TResult signInWithGooglePressed(),
+    @required TResult signInWithPhoneNumber(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
     return signInWithGooglePressed();
   }
 
@@ -688,9 +912,11 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   TResult maybeWhen<TResult extends Object>({
     TResult emailChanged(String emailStr),
     TResult passwordChanged(String passwordStr),
+    TResult phoneNumberChanged(String phoneNumber),
     TResult registerWithEmailAndPasswordPressed(),
     TResult signInWithEmailAndPasswordPressed(),
     TResult signInWithGooglePressed(),
+    TResult signInWithPhoneNumber(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -705,6 +931,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   TResult map<TResult extends Object>({
     @required TResult emailChanged(EmailChanged value),
     @required TResult passwordChanged(PasswordChanged value),
+    @required TResult phoneNumberChanged(_PhoneNumberChanged value),
     @required
         TResult registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
@@ -712,12 +939,15 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
         TResult signInWithEmailAndPasswordPressed(
             SignInWithEmailAndPasswordPressed value),
     @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
     return signInWithGooglePressed(this);
   }
 
@@ -726,11 +956,13 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   TResult maybeMap<TResult extends Object>({
     TResult emailChanged(EmailChanged value),
     TResult passwordChanged(PasswordChanged value),
+    TResult phoneNumberChanged(_PhoneNumberChanged value),
     TResult registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
     TResult signInWithEmailAndPasswordPressed(
         SignInWithEmailAndPasswordPressed value),
     TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -746,6 +978,133 @@ abstract class SignInWithGooglePressed implements SignInFormEvent {
 }
 
 /// @nodoc
+abstract class _$SignInWithPhoneNumberCopyWith<$Res> {
+  factory _$SignInWithPhoneNumberCopyWith(_SignInWithPhoneNumber value,
+          $Res Function(_SignInWithPhoneNumber) then) =
+      __$SignInWithPhoneNumberCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInWithPhoneNumberCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements _$SignInWithPhoneNumberCopyWith<$Res> {
+  __$SignInWithPhoneNumberCopyWithImpl(_SignInWithPhoneNumber _value,
+      $Res Function(_SignInWithPhoneNumber) _then)
+      : super(_value, (v) => _then(v as _SignInWithPhoneNumber));
+
+  @override
+  _SignInWithPhoneNumber get _value => super._value as _SignInWithPhoneNumber;
+}
+
+/// @nodoc
+class _$_SignInWithPhoneNumber implements _SignInWithPhoneNumber {
+  const _$_SignInWithPhoneNumber();
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.signInWithPhoneNumber()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _SignInWithPhoneNumber);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult emailChanged(String emailStr),
+    @required TResult passwordChanged(String passwordStr),
+    @required TResult phoneNumberChanged(String phoneNumber),
+    @required TResult registerWithEmailAndPasswordPressed(),
+    @required TResult signInWithEmailAndPasswordPressed(),
+    @required TResult signInWithGooglePressed(),
+    @required TResult signInWithPhoneNumber(),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
+    assert(registerWithEmailAndPasswordPressed != null);
+    assert(signInWithEmailAndPasswordPressed != null);
+    assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
+    return signInWithPhoneNumber();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult emailChanged(String emailStr),
+    TResult passwordChanged(String passwordStr),
+    TResult phoneNumberChanged(String phoneNumber),
+    TResult registerWithEmailAndPasswordPressed(),
+    TResult signInWithEmailAndPasswordPressed(),
+    TResult signInWithGooglePressed(),
+    TResult signInWithPhoneNumber(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (signInWithPhoneNumber != null) {
+      return signInWithPhoneNumber();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult emailChanged(EmailChanged value),
+    @required TResult passwordChanged(PasswordChanged value),
+    @required TResult phoneNumberChanged(_PhoneNumberChanged value),
+    @required
+        TResult registerWithEmailAndPasswordPressed(
+            RegisterWithEmailAndPasswordPressed value),
+    @required
+        TResult signInWithEmailAndPasswordPressed(
+            SignInWithEmailAndPasswordPressed value),
+    @required TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    @required TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(phoneNumberChanged != null);
+    assert(registerWithEmailAndPasswordPressed != null);
+    assert(signInWithEmailAndPasswordPressed != null);
+    assert(signInWithGooglePressed != null);
+    assert(signInWithPhoneNumber != null);
+    return signInWithPhoneNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult emailChanged(EmailChanged value),
+    TResult passwordChanged(PasswordChanged value),
+    TResult phoneNumberChanged(_PhoneNumberChanged value),
+    TResult registerWithEmailAndPasswordPressed(
+        RegisterWithEmailAndPasswordPressed value),
+    TResult signInWithEmailAndPasswordPressed(
+        SignInWithEmailAndPasswordPressed value),
+    TResult signInWithGooglePressed(SignInWithGooglePressed value),
+    TResult signInWithPhoneNumber(_SignInWithPhoneNumber value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (signInWithPhoneNumber != null) {
+      return signInWithPhoneNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInWithPhoneNumber implements SignInFormEvent {
+  const factory _SignInWithPhoneNumber() = _$_SignInWithPhoneNumber;
+}
+
+/// @nodoc
 class _$SignInFormStateTearOff {
   const _$SignInFormStateTearOff();
 
@@ -753,12 +1112,14 @@ class _$SignInFormStateTearOff {
   _SignInFormState call(
       {@required EmailAddress emailAddress,
       @required Password password,
+      @required PhoneNumber phoneNumber,
       @required bool showErrorMessages,
       @required bool isSubmitting,
       @required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption}) {
     return _SignInFormState(
       emailAddress: emailAddress,
       password: password,
+      phoneNumber: phoneNumber,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       authFailureOrSuccessOption: authFailureOrSuccessOption,
@@ -774,6 +1135,7 @@ const $SignInFormState = _$SignInFormStateTearOff();
 mixin _$SignInFormState {
   EmailAddress get emailAddress;
   Password get password;
+  PhoneNumber get phoneNumber;
   bool get showErrorMessages;
   bool get isSubmitting;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
@@ -789,6 +1151,7 @@ abstract class $SignInFormStateCopyWith<$Res> {
   $Res call(
       {EmailAddress emailAddress,
       Password password,
+      PhoneNumber phoneNumber,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
@@ -807,6 +1170,7 @@ class _$SignInFormStateCopyWithImpl<$Res>
   $Res call({
     Object emailAddress = freezed,
     Object password = freezed,
+    Object phoneNumber = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
     Object authFailureOrSuccessOption = freezed,
@@ -816,6 +1180,9 @@ class _$SignInFormStateCopyWithImpl<$Res>
           ? _value.emailAddress
           : emailAddress as EmailAddress,
       password: password == freezed ? _value.password : password as Password,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber as PhoneNumber,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -838,6 +1205,7 @@ abstract class _$SignInFormStateCopyWith<$Res>
   $Res call(
       {EmailAddress emailAddress,
       Password password,
+      PhoneNumber phoneNumber,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
@@ -858,6 +1226,7 @@ class __$SignInFormStateCopyWithImpl<$Res>
   $Res call({
     Object emailAddress = freezed,
     Object password = freezed,
+    Object phoneNumber = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
     Object authFailureOrSuccessOption = freezed,
@@ -867,6 +1236,9 @@ class __$SignInFormStateCopyWithImpl<$Res>
           ? _value.emailAddress
           : emailAddress as EmailAddress,
       password: password == freezed ? _value.password : password as Password,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber as PhoneNumber,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -884,11 +1256,13 @@ class _$_SignInFormState implements _SignInFormState {
   const _$_SignInFormState(
       {@required this.emailAddress,
       @required this.password,
+      @required this.phoneNumber,
       @required this.showErrorMessages,
       @required this.isSubmitting,
       @required this.authFailureOrSuccessOption})
       : assert(emailAddress != null),
         assert(password != null),
+        assert(phoneNumber != null),
         assert(showErrorMessages != null),
         assert(isSubmitting != null),
         assert(authFailureOrSuccessOption != null);
@@ -898,6 +1272,8 @@ class _$_SignInFormState implements _SignInFormState {
   @override
   final Password password;
   @override
+  final PhoneNumber phoneNumber;
+  @override
   final bool showErrorMessages;
   @override
   final bool isSubmitting;
@@ -906,7 +1282,7 @@ class _$_SignInFormState implements _SignInFormState {
 
   @override
   String toString() {
-    return 'SignInFormState(emailAddress: $emailAddress, password: $password, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
+    return 'SignInFormState(emailAddress: $emailAddress, password: $password, phoneNumber: $phoneNumber, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
   }
 
   @override
@@ -919,6 +1295,9 @@ class _$_SignInFormState implements _SignInFormState {
             (identical(other.password, password) ||
                 const DeepCollectionEquality()
                     .equals(other.password, password)) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.phoneNumber, phoneNumber)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
@@ -937,6 +1316,7 @@ class _$_SignInFormState implements _SignInFormState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(emailAddress) ^
       const DeepCollectionEquality().hash(password) ^
+      const DeepCollectionEquality().hash(phoneNumber) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(authFailureOrSuccessOption);
@@ -953,6 +1333,8 @@ abstract class _SignInFormState implements SignInFormState {
           @required
               Password password,
           @required
+              PhoneNumber phoneNumber,
+          @required
               bool showErrorMessages,
           @required
               bool isSubmitting,
@@ -964,6 +1346,8 @@ abstract class _SignInFormState implements SignInFormState {
   EmailAddress get emailAddress;
   @override
   Password get password;
+  @override
+  PhoneNumber get phoneNumber;
   @override
   bool get showErrorMessages;
   @override

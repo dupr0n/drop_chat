@@ -19,19 +19,22 @@ class UserDTOAdapter extends TypeAdapter<UserDTO> {
     return UserDTO(
       id: fields[0] as String,
       displayName: fields[1] as String,
-      isOnline: fields[2] as bool,
+      phoneNumber: fields[2] as String,
+      isOnline: fields[3] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, UserDTO obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(4)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
       ..write(obj.displayName)
       ..writeByte(2)
+      ..write(obj.phoneNumber)
+      ..writeByte(3)
       ..write(obj.isOnline);
   }
 
@@ -54,6 +57,7 @@ _$_UserDTO _$_$_UserDTOFromJson(Map<String, dynamic> json) {
   return _$_UserDTO(
     id: json['id'] as String,
     displayName: json['displayName'] as String,
+    phoneNumber: json['phoneNumber'] as String,
     isOnline: json['isOnline'] as bool,
   );
 }
@@ -62,5 +66,6 @@ Map<String, dynamic> _$_$_UserDTOToJson(_$_UserDTO instance) =>
     <String, dynamic>{
       'id': instance.id,
       'displayName': instance.displayName,
+      'phoneNumber': instance.phoneNumber,
       'isOnline': instance.isOnline,
     };

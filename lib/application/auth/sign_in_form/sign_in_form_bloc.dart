@@ -37,6 +37,12 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
           authFailureOrSuccessOption: none(),
         );
       },
+      phoneNumberChanged: (e) async* {
+        yield state.copyWith(
+          phoneNumber: PhoneNumber(e.phoneNumber),
+          authFailureOrSuccessOption: none(),
+        );
+      },
       registerWithEmailAndPasswordPressed: (e) async* {
         yield* _useEmailAndPassword(_authFacade.registerWithEmailAndPassword);
       },
@@ -54,15 +60,35 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
           authFailureOrSuccessOption: some(failureOrSuccess),
         );
       },
+      signInWithPhoneNumber: (e) async* {
+        final phoneNo = state.phoneNumber;
+        Either<AuthFailure, Unit> failureOrSuccess;
+        if (phoneNo.isValid()) {
+          yield state.copyWith(
+            isSubmitting: true,
+            authFailureOrSuccessOption: none(),
+          );
+          failureOrSuccess = await _authFacade.signInWithPhoneNumber(phoneNumber: phoneNo);
+          yield state.copyWith(
+            isSubmitting: false,
+            showErrorMessages: true,
+            authFailureOrSuccessOption: optionOf(failureOrSuccess),
+          );
+        } else {
+          failureOrSuccess = left(const AuthFailure.invalidPhoneNumber());
+        }
+        yield state.copyWith(authFailureOrSuccessOption: optionOf(failureOrSuccess));
+      },
     );
   }
 
   Stream<SignInFormState> _useEmailAndPassword(
-      Future<Either<AuthFailure, Unit>> Function({
-    @required EmailAddress emailAddress,
-    @required Password password,
-  })
-          forwardedCall) async* {
+    Future<Either<AuthFailure, Unit>> Function({
+      @required EmailAddress emailAddress,
+      @required Password password,
+    })
+        forwardedCall,
+  ) async* {
     Either<AuthFailure, Unit> failureOrSuccess;
     if (state.emailAddress.isValid() && state.password.isValid()) {
       yield state.copyWith(
@@ -73,6 +99,8 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         emailAddress: state.emailAddress,
         password: state.password,
       );
+    } else {
+      failureOrSuccess = left(const AuthFailure.invalidEmailAndPassword());
     }
     yield state.copyWith(
       isSubmitting: false,

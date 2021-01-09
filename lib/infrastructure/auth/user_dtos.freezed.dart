@@ -20,10 +20,12 @@ class _$UserDTOTearOff {
   _UserDTO call(
       {@required @HiveField(0) String id,
       @required @HiveField(1) String displayName,
-      @required @HiveField(2) bool isOnline}) {
+      @required @HiveField(2) String phoneNumber,
+      @required @HiveField(3) bool isOnline}) {
     return _UserDTO(
       id: id,
       displayName: displayName,
+      phoneNumber: phoneNumber,
       isOnline: isOnline,
     );
   }
@@ -45,6 +47,8 @@ mixin _$UserDTO {
   @HiveField(1)
   String get displayName;
   @HiveField(2)
+  String get phoneNumber;
+  @HiveField(3)
   bool get isOnline;
 
   Map<String, dynamic> toJson();
@@ -58,7 +62,8 @@ abstract class $UserDTOCopyWith<$Res> {
   $Res call(
       {@HiveField(0) String id,
       @HiveField(1) String displayName,
-      @HiveField(2) bool isOnline});
+      @HiveField(2) String phoneNumber,
+      @HiveField(3) bool isOnline});
 }
 
 /// @nodoc
@@ -73,12 +78,15 @@ class _$UserDTOCopyWithImpl<$Res> implements $UserDTOCopyWith<$Res> {
   $Res call({
     Object id = freezed,
     Object displayName = freezed,
+    Object phoneNumber = freezed,
     Object isOnline = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
       displayName:
           displayName == freezed ? _value.displayName : displayName as String,
+      phoneNumber:
+          phoneNumber == freezed ? _value.phoneNumber : phoneNumber as String,
       isOnline: isOnline == freezed ? _value.isOnline : isOnline as bool,
     ));
   }
@@ -92,7 +100,8 @@ abstract class _$UserDTOCopyWith<$Res> implements $UserDTOCopyWith<$Res> {
   $Res call(
       {@HiveField(0) String id,
       @HiveField(1) String displayName,
-      @HiveField(2) bool isOnline});
+      @HiveField(2) String phoneNumber,
+      @HiveField(3) bool isOnline});
 }
 
 /// @nodoc
@@ -108,12 +117,15 @@ class __$UserDTOCopyWithImpl<$Res> extends _$UserDTOCopyWithImpl<$Res>
   $Res call({
     Object id = freezed,
     Object displayName = freezed,
+    Object phoneNumber = freezed,
     Object isOnline = freezed,
   }) {
     return _then(_UserDTO(
       id: id == freezed ? _value.id : id as String,
       displayName:
           displayName == freezed ? _value.displayName : displayName as String,
+      phoneNumber:
+          phoneNumber == freezed ? _value.phoneNumber : phoneNumber as String,
       isOnline: isOnline == freezed ? _value.isOnline : isOnline as bool,
     ));
   }
@@ -126,9 +138,11 @@ class _$_UserDTO extends _UserDTO {
   const _$_UserDTO(
       {@required @HiveField(0) this.id,
       @required @HiveField(1) this.displayName,
-      @required @HiveField(2) this.isOnline})
+      @required @HiveField(2) this.phoneNumber,
+      @required @HiveField(3) this.isOnline})
       : assert(id != null),
         assert(displayName != null),
+        assert(phoneNumber != null),
         assert(isOnline != null),
         super._();
 
@@ -143,11 +157,14 @@ class _$_UserDTO extends _UserDTO {
   final String displayName;
   @override
   @HiveField(2)
+  final String phoneNumber;
+  @override
+  @HiveField(3)
   final bool isOnline;
 
   @override
   String toString() {
-    return 'UserDTO(id: $id, displayName: $displayName, isOnline: $isOnline)';
+    return 'UserDTO(id: $id, displayName: $displayName, phoneNumber: $phoneNumber, isOnline: $isOnline)';
   }
 
   @override
@@ -159,6 +176,9 @@ class _$_UserDTO extends _UserDTO {
             (identical(other.displayName, displayName) ||
                 const DeepCollectionEquality()
                     .equals(other.displayName, displayName)) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.phoneNumber, phoneNumber)) &&
             (identical(other.isOnline, isOnline) ||
                 const DeepCollectionEquality()
                     .equals(other.isOnline, isOnline)));
@@ -169,6 +189,7 @@ class _$_UserDTO extends _UserDTO {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(displayName) ^
+      const DeepCollectionEquality().hash(phoneNumber) ^
       const DeepCollectionEquality().hash(isOnline);
 
   @override
@@ -186,7 +207,8 @@ abstract class _UserDTO extends UserDTO {
   const factory _UserDTO(
       {@required @HiveField(0) String id,
       @required @HiveField(1) String displayName,
-      @required @HiveField(2) bool isOnline}) = _$_UserDTO;
+      @required @HiveField(2) String phoneNumber,
+      @required @HiveField(3) bool isOnline}) = _$_UserDTO;
 
   factory _UserDTO.fromJson(Map<String, dynamic> json) = _$_UserDTO.fromJson;
 
@@ -198,6 +220,9 @@ abstract class _UserDTO extends UserDTO {
   String get displayName;
   @override
   @HiveField(2)
+  String get phoneNumber;
+  @override
+  @HiveField(3)
   bool get isOnline;
   @override
   _$UserDTOCopyWith<_UserDTO> get copyWith;

@@ -15,6 +15,9 @@ abstract class IAuthFacade {
     @required EmailAddress emailAddress,
     @required Password password,
   });
+  Future<Either<AuthFailure, Unit>> signInWithPhoneNumber({
+    @required PhoneNumber phoneNumber,
+  });
   Future<Either<AuthFailure, Unit>> signInWithGoogle();
   Option<User> getSignedInUser();
   Future<void> signOut();

@@ -18,18 +18,21 @@ abstract class UserDTO with _$UserDTO {
   const factory UserDTO({
     @HiveField(0) @required String id,
     @HiveField(1) @required String displayName,
-    @HiveField(2) @required bool isOnline,
+    @HiveField(2) @required String phoneNumber,
+    @HiveField(3) @required bool isOnline,
   }) = _UserDTO;
 
   factory UserDTO.fromDomain(User user) => UserDTO(
         id: user.id.getOrCrash(),
         displayName: user.displayName.getOrCrash(),
+        phoneNumber: user.phoneNumber.getOrCrash(),
         isOnline: user.isOnline,
       );
 
   User toDomain() => User(
         id: UniqueId.fromUniqueString(id),
         displayName: DisplayName(displayName),
+        phoneNumber: PhoneNumber(phoneNumber),
         isOnline: isOnline,
       );
 

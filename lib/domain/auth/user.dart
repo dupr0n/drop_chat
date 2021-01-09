@@ -10,12 +10,14 @@ abstract class User with _$User {
   const factory User({
     @required UniqueId id,
     @required DisplayName displayName,
+    @required PhoneNumber phoneNumber,
     @required bool isOnline,
   }) = _User;
 
   factory User.empty() => User(
         id: UniqueId(),
         displayName: DisplayName(''),
+        phoneNumber: PhoneNumber(''),
         isOnline: false,
       );
 }
