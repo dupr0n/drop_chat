@@ -66,7 +66,8 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Either<AuthFailure, Unit>> signInWithPhoneNumber({PhoneNumber phoneNumber}) async {
+  Future<Either<AuthFailure, Unit>> signInWithPhoneNumber(
+      {@required PhoneNumber phoneNumber}) async {
     Either<AuthFailure, Unit> _failureOrUnit = right(unit);
     try {
       phoneNumber.value.fold(

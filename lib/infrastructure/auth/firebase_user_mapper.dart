@@ -7,8 +7,8 @@ import '../../domain/core/value_objects.dart';
 extension FirebaseUserDomainX on auth.User {
   User toDomain() => User(
         id: UniqueId.fromUniqueString(uid),
-        displayName: DisplayName(displayName),
-        phoneNumber: PhoneNumber(phoneNumber),
+        displayName: DisplayName(displayName ?? 'Human'),
+        phoneNumber: PhoneNumber(phoneNumber ?? '+1 12345 67890'),
         isOnline: true,
       );
 }

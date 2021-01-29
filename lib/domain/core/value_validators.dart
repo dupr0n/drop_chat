@@ -31,7 +31,7 @@ Either<ValueFailure<String>, String> validatePhoneNumber(String input) {
 }
 
 Either<ValueFailure<String>, String> validateSmsCode(String input) {
-  if (input.length == 4) {
+  if (input.length == 6) {
     return Right(input);
   } else {
     return Left(ValueFailure.invalidSMS(failedValue: input));
