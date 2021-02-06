@@ -48,6 +48,7 @@ mixin _$ChatActorEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $ChatActorEventCopyWith<ChatActorEvent> get copyWith;
 }
 
@@ -130,6 +131,7 @@ class _$_Deleted implements _Deleted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chat);
 
+  @JsonKey(ignore: true)
   @override
   _$DeletedCopyWith<_Deleted> get copyWith =>
       __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
@@ -185,6 +187,7 @@ abstract class _Deleted implements ChatActorEvent {
   @override
   Chat<dynamic> get chat;
   @override
+  @JsonKey(ignore: true)
   _$DeletedCopyWith<_Deleted> get copyWith;
 }
 
@@ -536,6 +539,7 @@ class _$_DeleteFailure implements _DeleteFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chatFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
       __$DeleteFailureCopyWithImpl<_DeleteFailure>(this, _$identity);
@@ -607,6 +611,7 @@ abstract class _DeleteFailure implements ChatActorState {
   const factory _DeleteFailure(ChatFailure chatFailure) = _$_DeleteFailure;
 
   ChatFailure get chatFailure;
+  @JsonKey(ignore: true)
   _$DeleteFailureCopyWith<_DeleteFailure> get copyWith;
 }
 

@@ -892,6 +892,7 @@ class _$_AuthError implements _AuthError {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
 
+  @JsonKey(ignore: true)
   @override
   _$AuthErrorCopyWith<_AuthError> get copyWith =>
       __$AuthErrorCopyWithImpl<_AuthError>(this, _$identity);
@@ -981,5 +982,6 @@ abstract class _AuthError implements AuthFailure {
   const factory _AuthError({@required dynamic error}) = _$_AuthError;
 
   dynamic get error;
+  @JsonKey(ignore: true)
   _$AuthErrorCopyWith<_AuthError> get copyWith;
 }

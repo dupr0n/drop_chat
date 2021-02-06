@@ -390,6 +390,7 @@ class _$_MessagesReceived implements _MessagesReceived {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureOrMessages);
 
+  @JsonKey(ignore: true)
   @override
   _$MessagesReceivedCopyWith<_MessagesReceived> get copyWith =>
       __$MessagesReceivedCopyWithImpl<_MessagesReceived>(this, _$identity);
@@ -472,6 +473,7 @@ abstract class _MessagesReceived implements MessageWatcherEvent {
       _$_MessagesReceived;
 
   Either<MessageFailure, KtList<Message>> get failureOrMessages;
+  @JsonKey(ignore: true)
   _$MessagesReceivedCopyWith<_MessagesReceived> get copyWith;
 }
 
@@ -533,6 +535,7 @@ class _$_DeleteMessages implements _DeleteMessages {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(selectedMessages);
 
+  @JsonKey(ignore: true)
   @override
   _$DeleteMessagesCopyWith<_DeleteMessages> get copyWith =>
       __$DeleteMessagesCopyWithImpl<_DeleteMessages>(this, _$identity);
@@ -614,6 +617,7 @@ abstract class _DeleteMessages implements MessageWatcherEvent {
       _$_DeleteMessages;
 
   KtList<Message> get selectedMessages;
+  @JsonKey(ignore: true)
   _$DeleteMessagesCopyWith<_DeleteMessages> get copyWith;
 }
 
@@ -675,6 +679,7 @@ class _$_StarMessages implements _StarMessages {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(selectedMessages);
 
+  @JsonKey(ignore: true)
   @override
   _$StarMessagesCopyWith<_StarMessages> get copyWith =>
       __$StarMessagesCopyWithImpl<_StarMessages>(this, _$identity);
@@ -756,6 +761,7 @@ abstract class _StarMessages implements MessageWatcherEvent {
       _$_StarMessages;
 
   KtList<Message> get selectedMessages;
+  @JsonKey(ignore: true)
   _$StarMessagesCopyWith<_StarMessages> get copyWith;
 }
 
@@ -1143,6 +1149,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(messages);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
@@ -1226,6 +1233,7 @@ abstract class _LoadSuccess implements MessageWatcherState {
   const factory _LoadSuccess(KtList<Message> messages) = _$_LoadSuccess;
 
   KtList<Message> get messages;
+  @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -1298,6 +1306,7 @@ class _$_LoadFailure implements _LoadFailure {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(messageFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
@@ -1381,6 +1390,7 @@ abstract class _LoadFailure implements MessageWatcherState {
   const factory _LoadFailure(MessageFailure messageFailure) = _$_LoadFailure;
 
   MessageFailure get messageFailure;
+  @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }
 
@@ -1568,6 +1578,7 @@ class _$_DeleteFailure implements _DeleteFailure {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(messageFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
       __$DeleteFailureCopyWithImpl<_DeleteFailure>(this, _$identity);
@@ -1652,5 +1663,6 @@ abstract class _DeleteFailure implements MessageWatcherState {
       _$_DeleteFailure;
 
   MessageFailure get messageFailure;
+  @JsonKey(ignore: true)
   _$DeleteFailureCopyWith<_DeleteFailure> get copyWith;
 }

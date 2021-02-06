@@ -45,6 +45,7 @@ mixin _$NilChat {
   DateTime get timestamp;
   ChatType get type;
 
+  @JsonKey(ignore: true)
   $NilChatCopyWith<NilChat> get copyWith;
 }
 
@@ -205,6 +206,7 @@ class _$_NilChat extends _NilChat {
       const DeepCollectionEquality().hash(timestamp) ^
       const DeepCollectionEquality().hash(type);
 
+  @JsonKey(ignore: true)
   @override
   _$NilChatCopyWith<_NilChat> get copyWith =>
       __$NilChatCopyWithImpl<_NilChat>(this, _$identity);
@@ -233,5 +235,6 @@ abstract class _NilChat extends NilChat implements Chat<dynamic> {
   @override
   ChatType get type;
   @override
+  @JsonKey(ignore: true)
   _$NilChatCopyWith<_NilChat> get copyWith;
 }

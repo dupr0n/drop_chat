@@ -406,6 +406,7 @@ class _$_ChatsReceived implements _ChatsReceived {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureOrChats);
 
+  @JsonKey(ignore: true)
   @override
   _$ChatsReceivedCopyWith<_ChatsReceived> get copyWith =>
       __$ChatsReceivedCopyWithImpl<_ChatsReceived>(this, _$identity);
@@ -491,6 +492,7 @@ abstract class _ChatsReceived implements ChatWatcherEvent {
       Either<ChatFailure, KtList<Chat>> failureOrChats) = _$_ChatsReceived;
 
   Either<ChatFailure, KtList<Chat>> get failureOrChats;
+  @JsonKey(ignore: true)
   _$ChatsReceivedCopyWith<_ChatsReceived> get copyWith;
 }
 
@@ -549,6 +551,7 @@ class _$_MuteChats implements _MuteChats {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(selectedChats);
 
+  @JsonKey(ignore: true)
   @override
   _$MuteChatsCopyWith<_MuteChats> get copyWith =>
       __$MuteChatsCopyWithImpl<_MuteChats>(this, _$identity);
@@ -633,6 +636,7 @@ abstract class _MuteChats implements ChatWatcherEvent {
   const factory _MuteChats(KtList<Chat> selectedChats) = _$_MuteChats;
 
   KtList<Chat> get selectedChats;
+  @JsonKey(ignore: true)
   _$MuteChatsCopyWith<_MuteChats> get copyWith;
 }
 
@@ -692,6 +696,7 @@ class _$_ArchiveChats implements _ArchiveChats {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(selectedChats);
 
+  @JsonKey(ignore: true)
   @override
   _$ArchiveChatsCopyWith<_ArchiveChats> get copyWith =>
       __$ArchiveChatsCopyWithImpl<_ArchiveChats>(this, _$identity);
@@ -776,6 +781,7 @@ abstract class _ArchiveChats implements ChatWatcherEvent {
   const factory _ArchiveChats(KtList<Chat> selectedChats) = _$_ArchiveChats;
 
   KtList<Chat> get selectedChats;
+  @JsonKey(ignore: true)
   _$ArchiveChatsCopyWith<_ArchiveChats> get copyWith;
 }
 
@@ -835,6 +841,7 @@ class _$_DeleteChats implements _DeleteChats {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(selectedChats);
 
+  @JsonKey(ignore: true)
   @override
   _$DeleteChatsCopyWith<_DeleteChats> get copyWith =>
       __$DeleteChatsCopyWithImpl<_DeleteChats>(this, _$identity);
@@ -919,6 +926,7 @@ abstract class _DeleteChats implements ChatWatcherEvent {
   const factory _DeleteChats(KtList<Chat> selectedChats) = _$_DeleteChats;
 
   KtList<Chat> get selectedChats;
+  @JsonKey(ignore: true)
   _$DeleteChatsCopyWith<_DeleteChats> get copyWith;
 }
 
@@ -1303,6 +1311,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chats);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
@@ -1386,6 +1395,7 @@ abstract class _LoadSuccess implements ChatWatcherState {
   const factory _LoadSuccess(KtList<Chat> chats) = _$_LoadSuccess;
 
   KtList<Chat> get chats;
+  @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -1455,6 +1465,7 @@ class _$_LoadFailure implements _LoadFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chatFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
@@ -1538,6 +1549,7 @@ abstract class _LoadFailure implements ChatWatcherState {
   const factory _LoadFailure(ChatFailure chatFailure) = _$_LoadFailure;
 
   ChatFailure get chatFailure;
+  @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }
 
@@ -1722,6 +1734,7 @@ class _$_BatchActionsFailure implements _BatchActionsFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chatFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$BatchActionsFailureCopyWith<_BatchActionsFailure> get copyWith =>
       __$BatchActionsFailureCopyWithImpl<_BatchActionsFailure>(
@@ -1807,5 +1820,6 @@ abstract class _BatchActionsFailure implements ChatWatcherState {
       _$_BatchActionsFailure;
 
   ChatFailure get chatFailure;
+  @JsonKey(ignore: true)
   _$BatchActionsFailureCopyWith<_BatchActionsFailure> get copyWith;
 }

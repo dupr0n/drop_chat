@@ -45,6 +45,7 @@ mixin _$Message {
   UpdateType get updateType;
   bool get isStarred;
 
+  @JsonKey(ignore: true)
   $MessageCopyWith<Message> get copyWith;
 }
 
@@ -202,6 +203,7 @@ class _$_Message extends _Message {
       const DeepCollectionEquality().hash(updateType) ^
       const DeepCollectionEquality().hash(isStarred);
 
+  @JsonKey(ignore: true)
   @override
   _$MessageCopyWith<_Message> get copyWith =>
       __$MessageCopyWithImpl<_Message>(this, _$identity);
@@ -230,5 +232,6 @@ abstract class _Message extends Message {
   @override
   bool get isStarred;
   @override
+  @JsonKey(ignore: true)
   _$MessageCopyWith<_Message> get copyWith;
 }

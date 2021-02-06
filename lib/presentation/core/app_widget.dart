@@ -18,7 +18,7 @@ class AppWidgetView extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Chats',
-        navigatorKey: getIt<NavigationService>().navigatorKey,
+        navigatorKey: StackedService.navigatorKey,
         debugShowCheckedModeBanner: false,
         builder: ExtendedNavigator.builder(router: rte.Router()),
         theme: ThemeData.dark().copyWith(

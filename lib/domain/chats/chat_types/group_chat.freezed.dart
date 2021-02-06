@@ -60,6 +60,7 @@ mixin _$GroupChat {
   GroupName get groupName;
   GroupDescription get groupDescription;
 
+  @JsonKey(ignore: true)
   $GroupChatCopyWith<GroupChat> get copyWith;
 }
 
@@ -298,6 +299,7 @@ class _$_GroupChat extends _GroupChat {
       const DeepCollectionEquality().hash(groupName) ^
       const DeepCollectionEquality().hash(groupDescription);
 
+  @JsonKey(ignore: true)
   @override
   _$GroupChatCopyWith<_GroupChat> get copyWith =>
       __$GroupChatCopyWithImpl<_GroupChat>(this, _$identity);
@@ -341,5 +343,6 @@ abstract class _GroupChat extends GroupChat implements Chat<dynamic> {
   @override
   GroupDescription get groupDescription;
   @override
+  @JsonKey(ignore: true)
   _$GroupChatCopyWith<_GroupChat> get copyWith;
 }

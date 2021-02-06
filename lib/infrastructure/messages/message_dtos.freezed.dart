@@ -59,13 +59,13 @@ mixin _$MessageDTO {
   String get updateType;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $MessageDTOCopyWith<MessageDTO> get copyWith;
 }
 
 /// @nodoc
 abstract class $MessageDTOCopyWith<$Res> {
-  factory $MessageDTOCopyWith(
-          MessageDTO value, $Res Function(MessageDTO) then) =
+  factory $MessageDTOCopyWith(MessageDTO value, $Res Function(MessageDTO) then) =
       _$MessageDTOCopyWithImpl<$Res>;
   $Res call(
       {@HiveField(0) String id,
@@ -99,16 +99,14 @@ class _$MessageDTOCopyWithImpl<$Res> implements $MessageDTOCopyWith<$Res> {
       timestamp: timestamp == freezed ? _value.timestamp : timestamp as String,
       text: text == freezed ? _value.text : text as String,
       isStarred: isStarred == freezed ? _value.isStarred : isStarred as bool,
-      updateType:
-          updateType == freezed ? _value.updateType : updateType as String,
+      updateType: updateType == freezed ? _value.updateType : updateType as String,
     ));
   }
 }
 
 /// @nodoc
 abstract class _$MessageDTOCopyWith<$Res> implements $MessageDTOCopyWith<$Res> {
-  factory _$MessageDTOCopyWith(
-          _MessageDTO value, $Res Function(_MessageDTO) then) =
+  factory _$MessageDTOCopyWith(_MessageDTO value, $Res Function(_MessageDTO) then) =
       __$MessageDTOCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -123,8 +121,7 @@ abstract class _$MessageDTOCopyWith<$Res> implements $MessageDTOCopyWith<$Res> {
 /// @nodoc
 class __$MessageDTOCopyWithImpl<$Res> extends _$MessageDTOCopyWithImpl<$Res>
     implements _$MessageDTOCopyWith<$Res> {
-  __$MessageDTOCopyWithImpl(
-      _MessageDTO _value, $Res Function(_MessageDTO) _then)
+  __$MessageDTOCopyWithImpl(_MessageDTO _value, $Res Function(_MessageDTO) _then)
       : super(_value, (v) => _then(v as _MessageDTO));
 
   @override
@@ -145,8 +142,7 @@ class __$MessageDTOCopyWithImpl<$Res> extends _$MessageDTOCopyWithImpl<$Res>
       timestamp: timestamp == freezed ? _value.timestamp : timestamp as String,
       text: text == freezed ? _value.text : text as String,
       isStarred: isStarred == freezed ? _value.isStarred : isStarred as bool,
-      updateType:
-          updateType == freezed ? _value.updateType : updateType as String,
+      updateType: updateType == freezed ? _value.updateType : updateType as String,
     ));
   }
 }
@@ -170,8 +166,7 @@ class _$_MessageDTO extends _MessageDTO {
         assert(updateType != null),
         super._();
 
-  factory _$_MessageDTO.fromJson(Map<String, dynamic> json) =>
-      _$_$_MessageDTOFromJson(json);
+  factory _$_MessageDTO.fromJson(Map<String, dynamic> json) => _$_$_MessageDTOFromJson(json);
 
   @override
   @HiveField(0)
@@ -201,21 +196,17 @@ class _$_MessageDTO extends _MessageDTO {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _MessageDTO &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.userId, userId) ||
                 const DeepCollectionEquality().equals(other.userId, userId)) &&
             (identical(other.timestamp, timestamp) ||
-                const DeepCollectionEquality()
-                    .equals(other.timestamp, timestamp)) &&
+                const DeepCollectionEquality().equals(other.timestamp, timestamp)) &&
             (identical(other.text, text) ||
                 const DeepCollectionEquality().equals(other.text, text)) &&
             (identical(other.isStarred, isStarred) ||
-                const DeepCollectionEquality()
-                    .equals(other.isStarred, isStarred)) &&
+                const DeepCollectionEquality().equals(other.isStarred, isStarred)) &&
             (identical(other.updateType, updateType) ||
-                const DeepCollectionEquality()
-                    .equals(other.updateType, updateType)));
+                const DeepCollectionEquality().equals(other.updateType, updateType)));
   }
 
   @override
@@ -228,6 +219,7 @@ class _$_MessageDTO extends _MessageDTO {
       const DeepCollectionEquality().hash(isStarred) ^
       const DeepCollectionEquality().hash(updateType);
 
+  @JsonKey(ignore: true)
   @override
   _$MessageDTOCopyWith<_MessageDTO> get copyWith =>
       __$MessageDTOCopyWithImpl<_MessageDTO>(this, _$identity);
@@ -248,8 +240,7 @@ abstract class _MessageDTO extends MessageDTO {
       @required @HiveField(4) bool isStarred,
       String updateType}) = _$_MessageDTO;
 
-  factory _MessageDTO.fromJson(Map<String, dynamic> json) =
-      _$_MessageDTO.fromJson;
+  factory _MessageDTO.fromJson(Map<String, dynamic> json) = _$_MessageDTO.fromJson;
 
   @override
   @HiveField(0)
@@ -269,5 +260,6 @@ abstract class _MessageDTO extends MessageDTO {
   @override
   String get updateType;
   @override
+  @JsonKey(ignore: true)
   _$MessageDTOCopyWith<_MessageDTO> get copyWith;
 }

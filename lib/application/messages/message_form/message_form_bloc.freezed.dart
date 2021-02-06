@@ -151,6 +151,7 @@ class _$_Initialized implements _Initialized {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(initialMessageOption);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -223,6 +224,7 @@ abstract class _Initialized implements MessageFormEvent {
       _$_Initialized;
 
   Option<Message> get initialMessageOption;
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -279,6 +281,7 @@ class _$_TextChanged implements _TextChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(text);
 
+  @JsonKey(ignore: true)
   @override
   _$TextChangedCopyWith<_TextChanged> get copyWith =>
       __$TextChangedCopyWithImpl<_TextChanged>(this, _$identity);
@@ -350,6 +353,7 @@ abstract class _TextChanged implements MessageFormEvent {
   const factory _TextChanged(String text) = _$_TextChanged;
 
   String get text;
+  @JsonKey(ignore: true)
   _$TextChangedCopyWith<_TextChanged> get copyWith;
 }
 
@@ -594,6 +598,7 @@ mixin _$MessageFormState {
   bool get showErrorMessages;
   Option<Either<MessageFailure, Unit>> get saveFailureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $MessageFormStateCopyWith<MessageFormState> get copyWith;
 }
 
@@ -766,6 +771,7 @@ class _$_MessageFormState implements _MessageFormState {
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$MessageFormStateCopyWith<_MessageFormState> get copyWith =>
       __$MessageFormStateCopyWithImpl<_MessageFormState>(this, _$identity);
@@ -796,5 +802,6 @@ abstract class _MessageFormState implements MessageFormState {
   @override
   Option<Either<MessageFailure, Unit>> get saveFailureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$MessageFormStateCopyWith<_MessageFormState> get copyWith;
 }

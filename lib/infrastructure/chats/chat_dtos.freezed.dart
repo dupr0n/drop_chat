@@ -87,6 +87,7 @@ mixin _$ChatDTO {
   String get groupDescription;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $ChatDTOCopyWith<ChatDTO> get copyWith;
 }
 
@@ -378,6 +379,7 @@ class _$_ChatDTO extends _ChatDTO {
       const DeepCollectionEquality().hash(groupName) ^
       const DeepCollectionEquality().hash(groupDescription);
 
+  @JsonKey(ignore: true)
   @override
   _$ChatDTOCopyWith<_ChatDTO> get copyWith =>
       __$ChatDTOCopyWithImpl<_ChatDTO>(this, _$identity);
@@ -446,5 +448,6 @@ abstract class _ChatDTO extends ChatDTO {
   @HiveField(11)
   String get groupDescription;
   @override
+  @JsonKey(ignore: true)
   _$ChatDTOCopyWith<_ChatDTO> get copyWith;
 }

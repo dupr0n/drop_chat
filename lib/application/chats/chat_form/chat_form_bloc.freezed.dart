@@ -201,6 +201,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(initialChatOption);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -299,6 +300,7 @@ abstract class _Initialized implements ChatFormEvent {
       _$_Initialized;
 
   Option<Either<ChatType, Chat>> get initialChatOption;
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -852,6 +854,7 @@ class _$_ChatPropertiesChanged
       const DeepCollectionEquality().hash(groupDescription) ^
       const DeepCollectionEquality().hash(receiver);
 
+  @JsonKey(ignore: true)
   @override
   _$ChatPropertiesChangedCopyWith<_ChatPropertiesChanged> get copyWith =>
       __$ChatPropertiesChangedCopyWithImpl<_ChatPropertiesChanged>(
@@ -963,6 +966,7 @@ abstract class _ChatPropertiesChanged implements ChatFormEvent {
   String get groupName;
   String get groupDescription;
   User get receiver;
+  @JsonKey(ignore: true)
   _$ChatPropertiesChangedCopyWith<_ChatPropertiesChanged> get copyWith;
 }
 
@@ -1131,6 +1135,7 @@ mixin _$ChatFormState {
   bool get showErrorMessages;
   Option<Either<ChatFailure, Unit>> get saveFailureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $ChatFormStateCopyWith<ChatFormState> get copyWith;
 }
 
@@ -1300,6 +1305,7 @@ class _$_ChatFormState with DiagnosticableTreeMixin implements _ChatFormState {
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$ChatFormStateCopyWith<_ChatFormState> get copyWith =>
       __$ChatFormStateCopyWithImpl<_ChatFormState>(this, _$identity);
@@ -1330,5 +1336,6 @@ abstract class _ChatFormState implements ChatFormState {
   @override
   Option<Either<ChatFailure, Unit>> get saveFailureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$ChatFormStateCopyWith<_ChatFormState> get copyWith;
 }

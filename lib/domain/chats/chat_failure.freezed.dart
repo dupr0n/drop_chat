@@ -133,6 +133,7 @@ class _$_Unexpected implements _Unexpected {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(e);
 
+  @JsonKey(ignore: true)
   @override
   _$UnexpectedCopyWith<_Unexpected> get copyWith =>
       __$UnexpectedCopyWithImpl<_Unexpected>(this, _$identity);
@@ -198,6 +199,7 @@ abstract class _Unexpected implements ChatFailure {
   const factory _Unexpected(dynamic e) = _$_Unexpected;
 
   dynamic get e;
+  @JsonKey(ignore: true)
   _$UnexpectedCopyWith<_Unexpected> get copyWith;
 }
 

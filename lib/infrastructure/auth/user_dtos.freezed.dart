@@ -52,6 +52,7 @@ mixin _$UserDTO {
   bool get isOnline;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $UserDTOCopyWith<UserDTO> get copyWith;
 }
 
@@ -192,6 +193,7 @@ class _$_UserDTO extends _UserDTO {
       const DeepCollectionEquality().hash(phoneNumber) ^
       const DeepCollectionEquality().hash(isOnline);
 
+  @JsonKey(ignore: true)
   @override
   _$UserDTOCopyWith<_UserDTO> get copyWith =>
       __$UserDTOCopyWithImpl<_UserDTO>(this, _$identity);
@@ -225,5 +227,6 @@ abstract class _UserDTO extends UserDTO {
   @HiveField(3)
   bool get isOnline;
   @override
+  @JsonKey(ignore: true)
   _$UserDTOCopyWith<_UserDTO> get copyWith;
 }

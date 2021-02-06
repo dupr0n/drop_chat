@@ -39,6 +39,7 @@ mixin _$User {
   PhoneNumber get phoneNumber;
   bool get isOnline;
 
+  @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith;
 }
 
@@ -173,6 +174,7 @@ class _$_User implements _User {
       const DeepCollectionEquality().hash(phoneNumber) ^
       const DeepCollectionEquality().hash(isOnline);
 
+  @JsonKey(ignore: true)
   @override
   _$UserCopyWith<_User> get copyWith =>
       __$UserCopyWithImpl<_User>(this, _$identity);
@@ -194,5 +196,6 @@ abstract class _User implements User {
   @override
   bool get isOnline;
   @override
+  @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith;
 }

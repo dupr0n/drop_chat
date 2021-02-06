@@ -48,6 +48,7 @@ mixin _$IndividualChat {
   ChatType get type;
   User get receiver;
 
+  @JsonKey(ignore: true)
   $IndividualChatCopyWith<IndividualChat> get copyWith;
 }
 
@@ -243,6 +244,7 @@ class _$_IndividualChat extends _IndividualChat {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(receiver);
 
+  @JsonKey(ignore: true)
   @override
   _$IndividualChatCopyWith<_IndividualChat> get copyWith =>
       __$IndividualChatCopyWithImpl<_IndividualChat>(this, _$identity);
@@ -274,5 +276,6 @@ abstract class _IndividualChat extends IndividualChat implements Chat<dynamic> {
   @override
   User get receiver;
   @override
+  @JsonKey(ignore: true)
   _$IndividualChatCopyWith<_IndividualChat> get copyWith;
 }
