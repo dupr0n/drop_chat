@@ -53,12 +53,12 @@ class _FormDialog extends StatelessWidget {
           ),
           Row(
             children: [
-              FlatButton.icon(
+              TextButton.icon(
                 onPressed: () => completer(DialogResponse(confirmed: false)),
                 icon: const Icon(Icons.cancel_outlined),
                 label: const Text('Cancel'),
               ),
-              FlatButton.icon(
+              TextButton.icon(
                 onPressed: () => completer(DialogResponse(
                   confirmed: true,
                   responseData: SmsCode(controller.text),

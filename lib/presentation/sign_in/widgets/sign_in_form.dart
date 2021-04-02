@@ -87,7 +87,7 @@ class SignInForm extends StatelessWidget {
               Row(
                 children: <Widget>[
                   Expanded(
-                    child: FlatButton(
+                    child: TextButton(
                       onPressed: () {
                         // if (signInBloc.state.phoneNumber.isValid()) {
                         signInBloc.add(const SignInFormEvent.signInWithPhoneNumber());
@@ -99,7 +99,7 @@ class SignInForm extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    child: FlatButton(
+                    child: TextButton(
                       onPressed: () => signInBloc
                           .add(const SignInFormEvent.registerWithEmailAndPasswordPressed()),
                       child: const Text('REGISTER'),
@@ -107,9 +107,9 @@ class SignInForm extends StatelessWidget {
                   ),
                 ],
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () => signInBloc.add(const SignInFormEvent.signInWithGooglePressed()),
-                color: Colors.lightBlue,
+                // color: Colors.lightBlue,
                 child: const Text(
                   'SIGN IN WITH GOOGLE',
                   style: TextStyle(
