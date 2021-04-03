@@ -3,7 +3,6 @@ import 'package:dartz/dartz.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:meta/meta.dart';
 
 import '../../domain/auth/i_auth_facade.dart';
 import '../../domain/auth/user.dart';

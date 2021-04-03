@@ -2,13 +2,12 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:drop_chat/domain/chats/chat_types/nil_chat.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:meta/meta.dart';
 
 import '../../domain/chats/chat.dart';
+import '../../domain/chats/chat_types/nil_chat.dart';
 import '../../domain/core/value_objects.dart';
 import '../../domain/messages/i_message_repository.dart';
 import '../../domain/messages/message.dart';
