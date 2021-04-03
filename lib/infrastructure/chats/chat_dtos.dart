@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 import 'package:kt_dart/collection.dart';
 
+import '../../domain/auth/user.dart';
 import '../../domain/chats/chat.dart';
 import '../../domain/chats/chat_types/group_chat.dart';
 import '../../domain/chats/chat_types/individual_chat.dart';
@@ -16,26 +17,26 @@ part 'chat_dtos.g.dart';
 
 @freezed
 @HiveType(typeId: 1)
-abstract class ChatDTO with _$ChatDTO {
+class ChatDTO with _$ChatDTO {
   const ChatDTO._();
 
   const factory ChatDTO({
-    @HiveField(0) @required String id,
+    @HiveField(0) required String id,
     @HiveField(1) @Default(false) bool isArchived,
     @HiveField(2) @Default(false) bool isMuted,
     @HiveField(3) @Default(true) bool canSend,
-    @HiveField(4) @required String timestamp,
-    @HiveField(5) @required String type,
+    @HiveField(4) required String timestamp,
+    @HiveField(5) required String type,
     //$ Global parameters
     @Default('nil') String updateType,
     //$ Individual parameters
-    @HiveField(6) UserDTO receiver,
+    @HiveField(6) UserDTO? receiver,
     //$ Group parameters
-    @HiveField(7) List<UserDTO> users,
-    @HiveField(8) bool isAdmin,
-    @HiveField(9) bool canReceive,
-    @HiveField(10) String groupName,
-    @HiveField(11) String groupDescription,
+    @HiveField(7) List<UserDTO>? users,
+    @HiveField(8) bool? isAdmin,
+    @HiveField(9) bool? canReceive,
+    @HiveField(10) String? groupName,
+    @HiveField(11) String? groupDescription,
   }) = _ChatDTO;
 
   factory ChatDTO.fromDomain(Chat chat) {
@@ -77,11 +78,11 @@ abstract class ChatDTO with _$ChatDTO {
         canSend: canSend,
         timestamp: DateTime.parse(timestamp),
         type: ChatType(type),
-        users: users.map((user) => user.toDomain()).toImmutableList(),
-        isAdmin: isAdmin,
-        canReceive: canReceive,
-        groupName: GroupName(groupName),
-        groupDescription: GroupDescription(groupDescription),
+        users: (users ?? []).map((user) => user.toDomain()).toImmutableList(),
+        isAdmin: isAdmin ?? false,
+        canReceive: canReceive ?? true,
+        groupName: GroupName(groupName ?? 'Uh oh'),
+        groupDescription: GroupDescription(groupDescription ?? 'Uh oh'),
       ),
       individual: () => IndividualChat(
         id: UniqueId.fromUniqueString(id),
@@ -90,7 +91,7 @@ abstract class ChatDTO with _$ChatDTO {
         canSend: canSend,
         timestamp: DateTime.parse(timestamp),
         type: ChatType(type),
-        receiver: receiver.toDomain(),
+        receiver: (receiver ?? UserDTO.fromDomain(User.empty())).toDomain(),
       ),
       nil: () => NilChat(
         id: UniqueId.fromUniqueString(id),
@@ -104,7 +105,7 @@ abstract class ChatDTO with _$ChatDTO {
   }
 
   factory ChatDTO.fromFirestore(DocumentSnapshot doc) =>
-      ChatDTO.fromJson(doc.data()).copyWith(id: doc.id);
+      ChatDTO.fromJson(doc.data() ?? {}).copyWith(id: doc.id);
 
   factory ChatDTO.fromJson(Map<String, dynamic> json) => _$ChatDTOFromJson(json);
 }

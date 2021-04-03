@@ -16,18 +16,18 @@ import '../value_objects.dart';
 part 'individual_chat.freezed.dart';
 
 @freezed
-abstract class IndividualChat extends Chat implements _$IndividualChat {
+class IndividualChat extends Chat implements _$IndividualChat {
   const IndividualChat._();
 
   @Implements(Chat)
   const factory IndividualChat({
-    @required UniqueId id,
-    @required bool isArchived,
-    @required bool isMuted,
-    @required bool canSend,
-    @required DateTime timestamp,
-    @required ChatType type,
-    @required User receiver,
+    required UniqueId id,
+    required bool isArchived,
+    required bool isMuted,
+    required bool canSend,
+    required DateTime timestamp,
+    required ChatType type,
+    required User receiver,
   }) = _IndividualChat;
 
   factory IndividualChat.empty() => IndividualChat(
@@ -57,4 +57,7 @@ abstract class IndividualChat extends Chat implements _$IndividualChat {
   @override
   Option<ValueFailure<dynamic>> get failureOption =>
       type.failureOrUnit.fold((f) => some(f), (_) => none());
+
+  @override
+  void noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }

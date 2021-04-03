@@ -8,18 +8,18 @@ import 'value_objects.dart';
 part 'message.freezed.dart';
 
 @freezed
-abstract class Message with _$Message {
+class Message with _$Message {
   const Message._();
   const factory Message({
-    @required UniqueId id,
-    @required UniqueId userId,
-    @required DateTime timestamp,
-    @required MessageText text,
-    @required UpdateType updateType,
-    @required bool isStarred,
+    required UniqueId id,
+    required UniqueId userId,
+    required DateTime timestamp,
+    required MessageText text,
+    required UpdateType updateType,
+    required bool isStarred,
   }) = _Message;
 
-  factory Message.empty({@required UniqueId userId}) => Message(
+  factory Message.empty({required UniqueId userId}) => Message(
         id: UniqueId(),
         userId: userId,
         timestamp: DateTime.now(),

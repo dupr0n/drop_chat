@@ -67,5 +67,5 @@ Either<ValueFailure<String>, String> validateType(String input, Set<String> type
 
 Either<ValueFailure<Map<String, dynamic>>, Map<String, dynamic>> validateChatProperties(
         Map<String, dynamic> input,
-        {bool isValid}) =>
+        {bool isValid = false}) =>
     isValid ? right(input) : left(ValueFailure.invalidChat(failedValue: input));

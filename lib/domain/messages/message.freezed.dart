@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'message.dart';
 
@@ -9,18 +9,20 @@ part of 'message.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$MessageTearOff {
   const _$MessageTearOff();
 
-// ignore: unused_element
   _Message call(
-      {@required UniqueId id,
-      @required UniqueId userId,
-      @required DateTime timestamp,
-      @required MessageText text,
-      @required UpdateType updateType,
-      @required bool isStarred}) {
+      {required UniqueId id,
+      required UniqueId userId,
+      required DateTime timestamp,
+      required MessageText text,
+      required UpdateType updateType,
+      required bool isStarred}) {
     return _Message(
       id: id,
       userId: userId,
@@ -33,20 +35,19 @@ class _$MessageTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Message = _$MessageTearOff();
 
 /// @nodoc
 mixin _$Message {
-  UniqueId get id;
-  UniqueId get userId;
-  DateTime get timestamp;
-  MessageText get text;
-  UpdateType get updateType;
-  bool get isStarred;
+  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get userId => throw _privateConstructorUsedError;
+  DateTime get timestamp => throw _privateConstructorUsedError;
+  MessageText get text => throw _privateConstructorUsedError;
+  UpdateType get updateType => throw _privateConstructorUsedError;
+  bool get isStarred => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MessageCopyWith<Message> get copyWith;
+  $MessageCopyWith<Message> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -72,22 +73,38 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object userId = freezed,
-    Object timestamp = freezed,
-    Object text = freezed,
-    Object updateType = freezed,
-    Object isStarred = freezed,
+    Object? id = freezed,
+    Object? userId = freezed,
+    Object? timestamp = freezed,
+    Object? text = freezed,
+    Object? updateType = freezed,
+    Object? isStarred = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      userId: userId == freezed ? _value.userId : userId as UniqueId,
-      timestamp:
-          timestamp == freezed ? _value.timestamp : timestamp as DateTime,
-      text: text == freezed ? _value.text : text as MessageText,
-      updateType:
-          updateType == freezed ? _value.updateType : updateType as UpdateType,
-      isStarred: isStarred == freezed ? _value.isStarred : isStarred as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      text: text == freezed
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as MessageText,
+      updateType: updateType == freezed
+          ? _value.updateType
+          : updateType // ignore: cast_nullable_to_non_nullable
+              as UpdateType,
+      isStarred: isStarred == freezed
+          ? _value.isStarred
+          : isStarred // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -117,22 +134,38 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object userId = freezed,
-    Object timestamp = freezed,
-    Object text = freezed,
-    Object updateType = freezed,
-    Object isStarred = freezed,
+    Object? id = freezed,
+    Object? userId = freezed,
+    Object? timestamp = freezed,
+    Object? text = freezed,
+    Object? updateType = freezed,
+    Object? isStarred = freezed,
   }) {
     return _then(_Message(
-      id: id == freezed ? _value.id : id as UniqueId,
-      userId: userId == freezed ? _value.userId : userId as UniqueId,
-      timestamp:
-          timestamp == freezed ? _value.timestamp : timestamp as DateTime,
-      text: text == freezed ? _value.text : text as MessageText,
-      updateType:
-          updateType == freezed ? _value.updateType : updateType as UpdateType,
-      isStarred: isStarred == freezed ? _value.isStarred : isStarred as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      text: text == freezed
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as MessageText,
+      updateType: updateType == freezed
+          ? _value.updateType
+          : updateType // ignore: cast_nullable_to_non_nullable
+              as UpdateType,
+      isStarred: isStarred == freezed
+          ? _value.isStarred
+          : isStarred // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -140,19 +173,13 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
 /// @nodoc
 class _$_Message extends _Message {
   const _$_Message(
-      {@required this.id,
-      @required this.userId,
-      @required this.timestamp,
-      @required this.text,
-      @required this.updateType,
-      @required this.isStarred})
-      : assert(id != null),
-        assert(userId != null),
-        assert(timestamp != null),
-        assert(text != null),
-        assert(updateType != null),
-        assert(isStarred != null),
-        super._();
+      {required this.id,
+      required this.userId,
+      required this.timestamp,
+      required this.text,
+      required this.updateType,
+      required this.isStarred})
+      : super._();
 
   @override
   final UniqueId id;
@@ -210,28 +237,29 @@ class _$_Message extends _Message {
 }
 
 abstract class _Message extends Message {
-  const _Message._() : super._();
   const factory _Message(
-      {@required UniqueId id,
-      @required UniqueId userId,
-      @required DateTime timestamp,
-      @required MessageText text,
-      @required UpdateType updateType,
-      @required bool isStarred}) = _$_Message;
+      {required UniqueId id,
+      required UniqueId userId,
+      required DateTime timestamp,
+      required MessageText text,
+      required UpdateType updateType,
+      required bool isStarred}) = _$_Message;
+  const _Message._() : super._();
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
   @override
-  UniqueId get userId;
+  UniqueId get userId => throw _privateConstructorUsedError;
   @override
-  DateTime get timestamp;
+  DateTime get timestamp => throw _privateConstructorUsedError;
   @override
-  MessageText get text;
+  MessageText get text => throw _privateConstructorUsedError;
   @override
-  UpdateType get updateType;
+  UpdateType get updateType => throw _privateConstructorUsedError;
   @override
-  bool get isStarred;
+  bool get isStarred => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$MessageCopyWith<_Message> get copyWith;
+  _$MessageCopyWith<_Message> get copyWith =>
+      throw _privateConstructorUsedError;
 }

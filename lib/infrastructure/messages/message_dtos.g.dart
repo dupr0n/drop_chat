@@ -63,7 +63,7 @@ _$_MessageDTO _$_$_MessageDTOFromJson(Map<String, dynamic> json) {
     timestamp: json['timestamp'] as String,
     text: json['text'] as String,
     isStarred: json['isStarred'] as bool,
-    updateType: json['updateType'] as String ?? 'nil',
+    updateType: json['updateType'] as String? ?? 'nil',
   );
 }
 

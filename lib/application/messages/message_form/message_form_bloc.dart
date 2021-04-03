@@ -45,12 +45,12 @@ class MessageFormBloc extends Bloc<MessageFormEvent, MessageFormState> {
       },
       isStarredChanged: (e) async* {
         yield state.copyWith(
-          message: state.message.copyWith(isStarred: !state.message.isStarred),
+          message: state.message.copyWith(isStarred: state.message.isStarred),
           saveFailureOrSuccessOption: none(),
         );
       },
       saved: (e) async* {
-        Either<MessageFailure, Unit> failureOrSuccess;
+        Either<MessageFailure, Unit> failureOrSuccess = left(MessageFailure.unexpected(e));
 
         yield state.copyWith(
           isSaving: true,

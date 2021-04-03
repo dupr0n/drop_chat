@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'nil_chat.dart';
 
@@ -9,18 +9,20 @@ part of 'nil_chat.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$NilChatTearOff {
   const _$NilChatTearOff();
 
-// ignore: unused_element
   _NilChat call(
-      {@required UniqueId id,
-      @required bool isArchived,
-      @required bool isMuted,
-      @required bool canSend,
-      @required DateTime timestamp,
-      @required ChatType type}) {
+      {required UniqueId id,
+      required bool isArchived,
+      required bool isMuted,
+      required bool canSend,
+      required DateTime timestamp,
+      required ChatType type}) {
     return _NilChat(
       id: id,
       isArchived: isArchived,
@@ -33,20 +35,19 @@ class _$NilChatTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $NilChat = _$NilChatTearOff();
 
 /// @nodoc
 mixin _$NilChat {
-  UniqueId get id;
-  bool get isArchived;
-  bool get isMuted;
-  bool get canSend;
-  DateTime get timestamp;
-  ChatType get type;
+  UniqueId get id => throw _privateConstructorUsedError;
+  bool get isArchived => throw _privateConstructorUsedError;
+  bool get isMuted => throw _privateConstructorUsedError;
+  bool get canSend => throw _privateConstructorUsedError;
+  DateTime get timestamp => throw _privateConstructorUsedError;
+  ChatType get type => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $NilChatCopyWith<NilChat> get copyWith;
+  $NilChatCopyWith<NilChat> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -72,22 +73,38 @@ class _$NilChatCopyWithImpl<$Res> implements $NilChatCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object isArchived = freezed,
-    Object isMuted = freezed,
-    Object canSend = freezed,
-    Object timestamp = freezed,
-    Object type = freezed,
+    Object? id = freezed,
+    Object? isArchived = freezed,
+    Object? isMuted = freezed,
+    Object? canSend = freezed,
+    Object? timestamp = freezed,
+    Object? type = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      isArchived:
-          isArchived == freezed ? _value.isArchived : isArchived as bool,
-      isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
-      canSend: canSend == freezed ? _value.canSend : canSend as bool,
-      timestamp:
-          timestamp == freezed ? _value.timestamp : timestamp as DateTime,
-      type: type == freezed ? _value.type : type as ChatType,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      isArchived: isArchived == freezed
+          ? _value.isArchived
+          : isArchived // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMuted: isMuted == freezed
+          ? _value.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canSend: canSend == freezed
+          ? _value.canSend
+          : canSend // ignore: cast_nullable_to_non_nullable
+              as bool,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ChatType,
     ));
   }
 }
@@ -117,22 +134,38 @@ class __$NilChatCopyWithImpl<$Res> extends _$NilChatCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object isArchived = freezed,
-    Object isMuted = freezed,
-    Object canSend = freezed,
-    Object timestamp = freezed,
-    Object type = freezed,
+    Object? id = freezed,
+    Object? isArchived = freezed,
+    Object? isMuted = freezed,
+    Object? canSend = freezed,
+    Object? timestamp = freezed,
+    Object? type = freezed,
   }) {
     return _then(_NilChat(
-      id: id == freezed ? _value.id : id as UniqueId,
-      isArchived:
-          isArchived == freezed ? _value.isArchived : isArchived as bool,
-      isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
-      canSend: canSend == freezed ? _value.canSend : canSend as bool,
-      timestamp:
-          timestamp == freezed ? _value.timestamp : timestamp as DateTime,
-      type: type == freezed ? _value.type : type as ChatType,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      isArchived: isArchived == freezed
+          ? _value.isArchived
+          : isArchived // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMuted: isMuted == freezed
+          ? _value.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canSend: canSend == freezed
+          ? _value.canSend
+          : canSend // ignore: cast_nullable_to_non_nullable
+              as bool,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ChatType,
     ));
   }
 }
@@ -142,19 +175,13 @@ class __$NilChatCopyWithImpl<$Res> extends _$NilChatCopyWithImpl<$Res>
 /// @nodoc
 class _$_NilChat extends _NilChat {
   const _$_NilChat(
-      {@required this.id,
-      @required this.isArchived,
-      @required this.isMuted,
-      @required this.canSend,
-      @required this.timestamp,
-      @required this.type})
-      : assert(id != null),
-        assert(isArchived != null),
-        assert(isMuted != null),
-        assert(canSend != null),
-        assert(timestamp != null),
-        assert(type != null),
-        super._();
+      {required this.id,
+      required this.isArchived,
+      required this.isMuted,
+      required this.canSend,
+      required this.timestamp,
+      required this.type})
+      : super._();
 
   @override
   final UniqueId id;
@@ -213,28 +240,29 @@ class _$_NilChat extends _NilChat {
 }
 
 abstract class _NilChat extends NilChat implements Chat<dynamic> {
-  const _NilChat._() : super._();
   const factory _NilChat(
-      {@required UniqueId id,
-      @required bool isArchived,
-      @required bool isMuted,
-      @required bool canSend,
-      @required DateTime timestamp,
-      @required ChatType type}) = _$_NilChat;
+      {required UniqueId id,
+      required bool isArchived,
+      required bool isMuted,
+      required bool canSend,
+      required DateTime timestamp,
+      required ChatType type}) = _$_NilChat;
+  const _NilChat._() : super._();
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
   @override
-  bool get isArchived;
+  bool get isArchived => throw _privateConstructorUsedError;
   @override
-  bool get isMuted;
+  bool get isMuted => throw _privateConstructorUsedError;
   @override
-  bool get canSend;
+  bool get canSend => throw _privateConstructorUsedError;
   @override
-  DateTime get timestamp;
+  DateTime get timestamp => throw _privateConstructorUsedError;
   @override
-  ChatType get type;
+  ChatType get type => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$NilChatCopyWith<_NilChat> get copyWith;
+  _$NilChatCopyWith<_NilChat> get copyWith =>
+      throw _privateConstructorUsedError;
 }

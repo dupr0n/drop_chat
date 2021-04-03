@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:meta/meta.dart';
 
 import '../../infrastructure/auth/user_dtos.dart';
 import '../../injection.dart';
@@ -19,7 +18,6 @@ class GroupName extends ValueObject<String> {
   static const maxLength = 25;
 
   factory GroupName(String input) {
-    assert(input != null);
     return GroupName._(validateMaxStringLength(input, maxLength).flatMap(validateStringNotEmpty));
   }
 }
@@ -33,7 +31,6 @@ class GroupDescription extends ValueObject<String> {
   static const maxLength = 500;
 
   factory GroupDescription(String input) {
-    assert(input != null);
     return GroupDescription._(
         validateMaxStringLength(input, maxLength).flatMap(validateStringNotEmpty));
   }
@@ -63,7 +60,6 @@ class ChatType extends ValueObject<String> {
   static const types = {_groupString, _individualString, _nilString};
 
   factory ChatType(String input) {
-    assert(input != null);
     return ChatType._(validateMaxStringLength(input, maxLength)
         .flatMap(validateStringNotEmpty)
         .andThen(validateType(input, types)));
@@ -71,9 +67,9 @@ class ChatType extends ValueObject<String> {
 
   //$ ChatTypeUpdate
   T fold<T>({
-    @required T Function() group,
-    @required T Function() individual,
-    @required T Function() nil,
+    required T Function() group,
+    required T Function() individual,
+    required T Function() nil,
   }) {
     final type = value.getOrElse(() => _nilString);
     switch (type) {
@@ -129,7 +125,7 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
   static const individualKeys = {receiverKey};
 
   //# Global parameters
-  ChatType get type => typeFromJson(value.getOrElse(() => null));
+  ChatType get type => typeFromJson(value.getOrElse(() => {}));
 
   //$ ChatTypeUpdate
   static ChatType typeFromJson(Map<String, dynamic> json) {
@@ -146,23 +142,26 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
         group: () => users.iter,
         individual: () => [
           receiver,
-          getIt<IAuthFacade>().getSignedInUser().getOrElse(() => null),
+          getIt<IAuthFacade>().getSignedInUser().getOrElse(() => User.empty()),
         ],
         nil: () => [],
       );
 
   //$ ChatPropertiesUpdate
-  KtList<User> get users => value.getOrElse(() => null)[usersKey] as KtList<User>;
-  bool get isAdmin => value.getOrElse(() => null)[isAdminKey] as bool;
-  bool get canReceive => value.getOrElse(() => null)[canReceiveKey] as bool;
-  GroupName get groupName => value.getOrElse(() => null)[groupNameKey] as GroupName;
-  GroupDescription get groupDescription =>
-      value.getOrElse(() => null)[groupDescriptionKey] as GroupDescription;
-  User get receiver => value.getOrElse(() => null)[receiverKey] as User;
+  KtList<User> get users => value.getOrElse(() => {
+        usersKey: [User.empty()].toImmutableList()
+      })[usersKey] as KtList<User>;
+  bool get isAdmin => value.getOrElse(() => {isAdminKey: false})[isAdminKey] as bool;
+  bool get canReceive => value.getOrElse(() => {canReceiveKey: false})[canReceiveKey] as bool;
+  GroupName get groupName =>
+      value.getOrElse(() => {groupNameKey: GroupName('Rickroll')})[groupNameKey] as GroupName;
+  GroupDescription get groupDescription => value
+          .getOrElse(() => {groupDescriptionKey: GroupDescription('Rickroll')})[groupDescriptionKey]
+      as GroupDescription;
+  User get receiver => value.getOrElse(() => {receiverKey: User.empty()})[receiverKey] as User;
 
   //$ ChatPropertiesUpdate
   factory ChatProperties(Map<String, dynamic> input, ChatType chatType) {
-    assert(input != null && chatType != null);
     bool isValid = false;
 
     if (ChatType.types.contains(chatType.getOrCrash())) {
@@ -183,17 +182,12 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
   //$ ChatPropertiesUpdate
   //$ ChatTypeUpdate
   factory ChatProperties.group({
-    @required KtList<User> users,
-    @required bool isAdmin,
-    @required bool canReceive,
-    @required GroupName groupName,
-    @required GroupDescription groupDescription,
+    required KtList<User> users,
+    required bool isAdmin,
+    required bool canReceive,
+    required GroupName groupName,
+    required GroupDescription groupDescription,
   }) {
-    assert(users != null &&
-        isAdmin != null &&
-        canReceive != null &&
-        groupName != null &&
-        groupDescription != null);
     return ChatProperties({
       usersKey: users,
       isAdminKey: isAdmin,
@@ -203,13 +197,13 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
     }, ChatType.group());
   }
 
-  factory ChatProperties.individual({@required User receiver}) => ChatProperties({
+  factory ChatProperties.individual({required User receiver}) => ChatProperties({
         receiverKey: receiver,
       }, ChatType.individual());
 
   factory ChatProperties.nil() => ChatProperties(const {}, ChatType.nil());
 
-  factory ChatProperties.fromMap(Map<String, dynamic> input, {@required bool fromJson}) =>
+  factory ChatProperties.fromMap(Map<String, dynamic> input, {required bool fromJson}) =>
       ChatProperties.typeFromJson(input).fold(
         group: () => ChatProperties.group(
           users: fromJson
@@ -234,7 +228,7 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
       );
 
   //$ ChatPropertiesUpdate
-  Map<String, dynamic> toMap({@required bool toJson}) {
+  Map<String, dynamic> toMap({required bool toJson}) {
     final Map<String, dynamic> prop = {};
     type.fold(
       group: () {
@@ -287,12 +281,12 @@ class ChatProperties extends ValueObject<Map<String, dynamic>> {
 
   //$ ChatPropertiesUpdate
   ChatProperties copyWith({
-    KtList<User> users,
-    bool isAdmin,
-    bool canReceive,
-    GroupName groupName,
-    GroupDescription groupDescription,
-    User receiver,
+    KtList<User>? users,
+    bool? isAdmin,
+    bool? canReceive,
+    GroupName? groupName,
+    GroupDescription? groupDescription,
+    User? receiver,
   }) =>
       type.fold(
         group: () => ChatProperties.group(

@@ -49,19 +49,19 @@ class ChatFormBloc extends Bloc<ChatFormEvent, ChatFormState> {
       },
       isArchivedChanged: (e) async* {
         yield state.copyWith(
-          chat: (state.chat as NilChat).copyWith(isArchived: !state.chat.isArchived),
+          chat: (state.chat as NilChat).copyWith(isArchived: state.chat.isArchived),
           saveFailureOrSuccessOption: none(),
         );
       },
       isMutedChanged: (e) async* {
         yield state.copyWith(
-          chat: (state.chat as NilChat).copyWith(isMuted: !state.chat.isMuted),
+          chat: (state.chat as NilChat).copyWith(isMuted: state.chat.isMuted),
           saveFailureOrSuccessOption: none(),
         );
       },
       canSendChanged: (e) async* {
         yield state.copyWith(
-          chat: (state.chat as NilChat).copyWith(canSend: !state.chat.canSend),
+          chat: (state.chat as NilChat).copyWith(canSend: state.chat.canSend),
           saveFailureOrSuccessOption: none(),
         );
       },
@@ -69,17 +69,17 @@ class ChatFormBloc extends Bloc<ChatFormEvent, ChatFormState> {
         yield state.chat.type.fold(
           group: () => state.copyWith(
             chat: (state.chat as GroupChat).copyWith(
-              canReceive: e.canReceive,
-              groupDescription: GroupDescription(e.groupDescription),
-              groupName: GroupName(e.groupName),
-              isAdmin: e.isAdmin,
-              users: e.users,
+              canReceive: e.canReceive ?? true,
+              groupDescription: GroupDescription(e.groupDescription ?? 'Oh no'),
+              groupName: GroupName(e.groupName ?? 'Oh no'),
+              isAdmin: e.isAdmin ?? false,
+              users: e.users ?? [User.empty()].toImmutableList(),
             ),
             saveFailureOrSuccessOption: none(),
           ),
           individual: () => state.copyWith(
             chat: (state.chat as IndividualChat).copyWith(
-              receiver: e.receiver,
+              receiver: e.receiver ?? User.empty(),
             ),
             saveFailureOrSuccessOption: none(),
           ),
@@ -87,7 +87,7 @@ class ChatFormBloc extends Bloc<ChatFormEvent, ChatFormState> {
         );
       },
       saved: (e) async* {
-        Either<ChatFailure, Unit> failureOrSuccess;
+        Either<ChatFailure, Unit> failureOrSuccess = left(ChatFailure.unexpected(e));
 
         yield state.copyWith(
           isSaving: true,

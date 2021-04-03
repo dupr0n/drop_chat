@@ -26,7 +26,7 @@ void setupDialogUi() {
 class _BasicDialog extends StatelessWidget {
   final DialogRequest request;
   final Function(DialogResponse) completer;
-  const _BasicDialog({Key key, this.request, this.completer}) : super(key: key);
+  const _BasicDialog({Key? key, this.request, this.completer}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

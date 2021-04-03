@@ -23,12 +23,12 @@ class ChatDTOAdapter extends TypeAdapter<ChatDTO> {
       canSend: fields[3] as bool,
       timestamp: fields[4] as String,
       type: fields[5] as String,
-      receiver: fields[6] as UserDTO,
-      users: (fields[7] as List)?.cast<UserDTO>(),
-      isAdmin: fields[8] as bool,
-      canReceive: fields[9] as bool,
-      groupName: fields[10] as String,
-      groupDescription: fields[11] as String,
+      receiver: fields[6] as UserDTO?,
+      users: (fields[7] as List?)?.cast<UserDTO>(),
+      isAdmin: fields[8] as bool?,
+      canReceive: fields[9] as bool?,
+      groupName: fields[10] as String?,
+      groupDescription: fields[11] as String?,
     );
   }
 
@@ -80,23 +80,22 @@ class ChatDTOAdapter extends TypeAdapter<ChatDTO> {
 _$_ChatDTO _$_$_ChatDTOFromJson(Map<String, dynamic> json) {
   return _$_ChatDTO(
     id: json['id'] as String,
-    isArchived: json['isArchived'] as bool ?? false,
-    isMuted: json['isMuted'] as bool ?? false,
-    canSend: json['canSend'] as bool ?? true,
+    isArchived: json['isArchived'] as bool? ?? false,
+    isMuted: json['isMuted'] as bool? ?? false,
+    canSend: json['canSend'] as bool? ?? true,
     timestamp: json['timestamp'] as String,
     type: json['type'] as String,
-    updateType: json['updateType'] as String ?? 'nil',
+    updateType: json['updateType'] as String? ?? 'nil',
     receiver: json['receiver'] == null
         ? null
         : UserDTO.fromJson(json['receiver'] as Map<String, dynamic>),
-    users: (json['users'] as List)
-        ?.map((e) =>
-            e == null ? null : UserDTO.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    isAdmin: json['isAdmin'] as bool,
-    canReceive: json['canReceive'] as bool,
-    groupName: json['groupName'] as String,
-    groupDescription: json['groupDescription'] as String,
+    users: (json['users'] as List<dynamic>?)
+        ?.map((e) => UserDTO.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    isAdmin: json['isAdmin'] as bool?,
+    canReceive: json['canReceive'] as bool?,
+    groupName: json['groupName'] as String?,
+    groupDescription: json['groupDescription'] as String?,
   );
 }
 
@@ -110,7 +109,7 @@ Map<String, dynamic> _$_$_ChatDTOToJson(_$_ChatDTO instance) =>
       'type': instance.type,
       'updateType': instance.updateType,
       'receiver': instance.receiver?.toJson(),
-      'users': instance.users?.map((e) => e?.toJson())?.toList(),
+      'users': instance.users?.map((e) => e.toJson()).toList(),
       'isAdmin': instance.isAdmin,
       'canReceive': instance.canReceive,
       'groupName': instance.groupName,

@@ -16,17 +16,17 @@ import '../value_objects.dart';
 part 'nil_chat.freezed.dart';
 
 @freezed
-abstract class NilChat extends Chat implements _$NilChat {
+class NilChat extends Chat with _$NilChat {
   const NilChat._();
 
   @Implements(Chat)
   const factory NilChat({
-    @required UniqueId id,
-    @required bool isArchived,
-    @required bool isMuted,
-    @required bool canSend,
-    @required DateTime timestamp,
-    @required ChatType type,
+    required UniqueId id,
+    required bool isArchived,
+    required bool isMuted,
+    required bool canSend,
+    required DateTime timestamp,
+    required ChatType type,
   }) = _NilChat;
 
   factory NilChat.empty() => NilChat(

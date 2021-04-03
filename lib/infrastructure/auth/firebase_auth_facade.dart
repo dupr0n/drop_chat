@@ -23,8 +23,8 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password,
+    required EmailAddress emailAddress,
+    required Password password,
   }) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = emailAddress.getOrCrash();
@@ -45,8 +45,8 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password,
+    required EmailAddress emailAddress,
+    required Password password,
   }) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = emailAddress.getOrCrash();
@@ -67,7 +67,7 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithPhoneNumber(
-      {@required PhoneNumber phoneNumber}) async {
+      {required PhoneNumber phoneNumber}) async {
     Either<AuthFailure, Unit> _failureOrUnit = right(unit);
     try {
       phoneNumber.value.fold(
@@ -87,23 +87,23 @@ class FirebaseAuthFacade implements IAuthFacade {
               _failureOrUnit = left(AuthFailure.authError(error: e));
             }
           },
-          codeSent: (String verificationId, int forceResendingToken) async {
-            final smsCode = await getIt<DialogService>().showCustomDialog(variant: DialogType.form);
-            if (smsCode.confirmed) {
-              final sms = smsCode.responseData as SmsCode;
-              sms.value.fold(
-                (f) => _failureOrUnit = left(const AuthFailure.invalidSMS()),
-                (sms) => null,
-              );
-              if (_failureOrUnit.isRight()) {
-                await _firebaseAuth.signInWithCredential(auth.PhoneAuthProvider.credential(
-                  verificationId: verificationId,
-                  smsCode: sms.getOrCrash(),
-                ));
-              }
-            } else {
-              _failureOrUnit = left(const AuthFailure.cancelledByUser());
-            }
+          codeSent: (String verificationId, int? forceResendingToken) {
+            // final smsCode = await getIt<DialogService>().showCustomDialog(variant: DialogType.form);
+            // if (smsCode.confirmed) {
+            //   final sms = smsCode.responseData as SmsCode;
+            //   sms.value.fold(
+            //     (f) => _failureOrUnit = left(const AuthFailure.invalidSMS()),
+            //     (sms) => null,
+            //   );
+            //   if (_failureOrUnit.isRight()) {
+            //     await _firebaseAuth.signInWithCredential(auth.PhoneAuthProvider.credential(
+            //       verificationId: verificationId,
+            //       smsCode: sms.getOrCrash(),
+            //     ));
+            //   }
+            // } else {
+            //   _failureOrUnit = left(const AuthFailure.cancelledByUser());
+            // }
           },
           timeout: const Duration(seconds: 60),
           codeAutoRetrievalTimeout: (String verificationId) async {

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'chat_dtos.dart';
 
@@ -8,6 +8,10 @@ part of 'chat_dtos.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 ChatDTO _$ChatDTOFromJson(Map<String, dynamic> json) {
   return _ChatDTO.fromJson(json);
 }
@@ -16,21 +20,20 @@ ChatDTO _$ChatDTOFromJson(Map<String, dynamic> json) {
 class _$ChatDTOTearOff {
   const _$ChatDTOTearOff();
 
-// ignore: unused_element
   _ChatDTO call(
-      {@required @HiveField(0) String id,
+      {@HiveField(0) required String id,
       @HiveField(1) bool isArchived = false,
       @HiveField(2) bool isMuted = false,
       @HiveField(3) bool canSend = true,
-      @required @HiveField(4) String timestamp,
-      @required @HiveField(5) String type,
+      @HiveField(4) required String timestamp,
+      @HiveField(5) required String type,
       String updateType = 'nil',
-      @HiveField(6) UserDTO receiver,
-      @HiveField(7) List<UserDTO> users,
-      @HiveField(8) bool isAdmin,
-      @HiveField(9) bool canReceive,
-      @HiveField(10) String groupName,
-      @HiveField(11) String groupDescription}) {
+      @HiveField(6) UserDTO? receiver,
+      @HiveField(7) List<UserDTO>? users,
+      @HiveField(8) bool? isAdmin,
+      @HiveField(9) bool? canReceive,
+      @HiveField(10) String? groupName,
+      @HiveField(11) String? groupDescription}) {
     return _ChatDTO(
       id: id,
       isArchived: isArchived,
@@ -48,47 +51,47 @@ class _$ChatDTOTearOff {
     );
   }
 
-// ignore: unused_element
   ChatDTO fromJson(Map<String, Object> json) {
     return ChatDTO.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ChatDTO = _$ChatDTOTearOff();
 
 /// @nodoc
 mixin _$ChatDTO {
   @HiveField(0)
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @HiveField(1)
-  bool get isArchived;
+  bool get isArchived => throw _privateConstructorUsedError;
   @HiveField(2)
-  bool get isMuted;
+  bool get isMuted => throw _privateConstructorUsedError;
   @HiveField(3)
-  bool get canSend;
+  bool get canSend => throw _privateConstructorUsedError;
   @HiveField(4)
-  String get timestamp;
+  String get timestamp => throw _privateConstructorUsedError;
   @HiveField(5)
-  String get type; //$ Global parameters
-  String get updateType; //$ Individual parameters
+  String get type => throw _privateConstructorUsedError; //$ Global parameters
+  String get updateType =>
+      throw _privateConstructorUsedError; //$ Individual parameters
   @HiveField(6)
-  UserDTO get receiver; //$ Group parameters
+  UserDTO? get receiver =>
+      throw _privateConstructorUsedError; //$ Group parameters
   @HiveField(7)
-  List<UserDTO> get users;
+  List<UserDTO>? get users => throw _privateConstructorUsedError;
   @HiveField(8)
-  bool get isAdmin;
+  bool? get isAdmin => throw _privateConstructorUsedError;
   @HiveField(9)
-  bool get canReceive;
+  bool? get canReceive => throw _privateConstructorUsedError;
   @HiveField(10)
-  String get groupName;
+  String? get groupName => throw _privateConstructorUsedError;
   @HiveField(11)
-  String get groupDescription;
+  String? get groupDescription => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ChatDTOCopyWith<ChatDTO> get copyWith;
+  $ChatDTOCopyWith<ChatDTO> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -103,14 +106,14 @@ abstract class $ChatDTOCopyWith<$Res> {
       @HiveField(4) String timestamp,
       @HiveField(5) String type,
       String updateType,
-      @HiveField(6) UserDTO receiver,
-      @HiveField(7) List<UserDTO> users,
-      @HiveField(8) bool isAdmin,
-      @HiveField(9) bool canReceive,
-      @HiveField(10) String groupName,
-      @HiveField(11) String groupDescription});
+      @HiveField(6) UserDTO? receiver,
+      @HiveField(7) List<UserDTO>? users,
+      @HiveField(8) bool? isAdmin,
+      @HiveField(9) bool? canReceive,
+      @HiveField(10) String? groupName,
+      @HiveField(11) String? groupDescription});
 
-  $UserDTOCopyWith<$Res> get receiver;
+  $UserDTOCopyWith<$Res>? get receiver;
 }
 
 /// @nodoc
@@ -123,48 +126,83 @@ class _$ChatDTOCopyWithImpl<$Res> implements $ChatDTOCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object isArchived = freezed,
-    Object isMuted = freezed,
-    Object canSend = freezed,
-    Object timestamp = freezed,
-    Object type = freezed,
-    Object updateType = freezed,
-    Object receiver = freezed,
-    Object users = freezed,
-    Object isAdmin = freezed,
-    Object canReceive = freezed,
-    Object groupName = freezed,
-    Object groupDescription = freezed,
+    Object? id = freezed,
+    Object? isArchived = freezed,
+    Object? isMuted = freezed,
+    Object? canSend = freezed,
+    Object? timestamp = freezed,
+    Object? type = freezed,
+    Object? updateType = freezed,
+    Object? receiver = freezed,
+    Object? users = freezed,
+    Object? isAdmin = freezed,
+    Object? canReceive = freezed,
+    Object? groupName = freezed,
+    Object? groupDescription = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      isArchived:
-          isArchived == freezed ? _value.isArchived : isArchived as bool,
-      isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
-      canSend: canSend == freezed ? _value.canSend : canSend as bool,
-      timestamp: timestamp == freezed ? _value.timestamp : timestamp as String,
-      type: type == freezed ? _value.type : type as String,
-      updateType:
-          updateType == freezed ? _value.updateType : updateType as String,
-      receiver: receiver == freezed ? _value.receiver : receiver as UserDTO,
-      users: users == freezed ? _value.users : users as List<UserDTO>,
-      isAdmin: isAdmin == freezed ? _value.isAdmin : isAdmin as bool,
-      canReceive:
-          canReceive == freezed ? _value.canReceive : canReceive as bool,
-      groupName: groupName == freezed ? _value.groupName : groupName as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      isArchived: isArchived == freezed
+          ? _value.isArchived
+          : isArchived // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMuted: isMuted == freezed
+          ? _value.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canSend: canSend == freezed
+          ? _value.canSend
+          : canSend // ignore: cast_nullable_to_non_nullable
+              as bool,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      updateType: updateType == freezed
+          ? _value.updateType
+          : updateType // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiver: receiver == freezed
+          ? _value.receiver
+          : receiver // ignore: cast_nullable_to_non_nullable
+              as UserDTO?,
+      users: users == freezed
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<UserDTO>?,
+      isAdmin: isAdmin == freezed
+          ? _value.isAdmin
+          : isAdmin // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canReceive: canReceive == freezed
+          ? _value.canReceive
+          : canReceive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      groupName: groupName == freezed
+          ? _value.groupName
+          : groupName // ignore: cast_nullable_to_non_nullable
+              as String?,
       groupDescription: groupDescription == freezed
           ? _value.groupDescription
-          : groupDescription as String,
+          : groupDescription // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
   @override
-  $UserDTOCopyWith<$Res> get receiver {
+  $UserDTOCopyWith<$Res>? get receiver {
     if (_value.receiver == null) {
       return null;
     }
-    return $UserDTOCopyWith<$Res>(_value.receiver, (value) {
+
+    return $UserDTOCopyWith<$Res>(_value.receiver!, (value) {
       return _then(_value.copyWith(receiver: value));
     });
   }
@@ -183,15 +221,15 @@ abstract class _$ChatDTOCopyWith<$Res> implements $ChatDTOCopyWith<$Res> {
       @HiveField(4) String timestamp,
       @HiveField(5) String type,
       String updateType,
-      @HiveField(6) UserDTO receiver,
-      @HiveField(7) List<UserDTO> users,
-      @HiveField(8) bool isAdmin,
-      @HiveField(9) bool canReceive,
-      @HiveField(10) String groupName,
-      @HiveField(11) String groupDescription});
+      @HiveField(6) UserDTO? receiver,
+      @HiveField(7) List<UserDTO>? users,
+      @HiveField(8) bool? isAdmin,
+      @HiveField(9) bool? canReceive,
+      @HiveField(10) String? groupName,
+      @HiveField(11) String? groupDescription});
 
   @override
-  $UserDTOCopyWith<$Res> get receiver;
+  $UserDTOCopyWith<$Res>? get receiver;
 }
 
 /// @nodoc
@@ -205,39 +243,73 @@ class __$ChatDTOCopyWithImpl<$Res> extends _$ChatDTOCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object isArchived = freezed,
-    Object isMuted = freezed,
-    Object canSend = freezed,
-    Object timestamp = freezed,
-    Object type = freezed,
-    Object updateType = freezed,
-    Object receiver = freezed,
-    Object users = freezed,
-    Object isAdmin = freezed,
-    Object canReceive = freezed,
-    Object groupName = freezed,
-    Object groupDescription = freezed,
+    Object? id = freezed,
+    Object? isArchived = freezed,
+    Object? isMuted = freezed,
+    Object? canSend = freezed,
+    Object? timestamp = freezed,
+    Object? type = freezed,
+    Object? updateType = freezed,
+    Object? receiver = freezed,
+    Object? users = freezed,
+    Object? isAdmin = freezed,
+    Object? canReceive = freezed,
+    Object? groupName = freezed,
+    Object? groupDescription = freezed,
   }) {
     return _then(_ChatDTO(
-      id: id == freezed ? _value.id : id as String,
-      isArchived:
-          isArchived == freezed ? _value.isArchived : isArchived as bool,
-      isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
-      canSend: canSend == freezed ? _value.canSend : canSend as bool,
-      timestamp: timestamp == freezed ? _value.timestamp : timestamp as String,
-      type: type == freezed ? _value.type : type as String,
-      updateType:
-          updateType == freezed ? _value.updateType : updateType as String,
-      receiver: receiver == freezed ? _value.receiver : receiver as UserDTO,
-      users: users == freezed ? _value.users : users as List<UserDTO>,
-      isAdmin: isAdmin == freezed ? _value.isAdmin : isAdmin as bool,
-      canReceive:
-          canReceive == freezed ? _value.canReceive : canReceive as bool,
-      groupName: groupName == freezed ? _value.groupName : groupName as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      isArchived: isArchived == freezed
+          ? _value.isArchived
+          : isArchived // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMuted: isMuted == freezed
+          ? _value.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canSend: canSend == freezed
+          ? _value.canSend
+          : canSend // ignore: cast_nullable_to_non_nullable
+              as bool,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      updateType: updateType == freezed
+          ? _value.updateType
+          : updateType // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiver: receiver == freezed
+          ? _value.receiver
+          : receiver // ignore: cast_nullable_to_non_nullable
+              as UserDTO?,
+      users: users == freezed
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<UserDTO>?,
+      isAdmin: isAdmin == freezed
+          ? _value.isAdmin
+          : isAdmin // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canReceive: canReceive == freezed
+          ? _value.canReceive
+          : canReceive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      groupName: groupName == freezed
+          ? _value.groupName
+          : groupName // ignore: cast_nullable_to_non_nullable
+              as String?,
       groupDescription: groupDescription == freezed
           ? _value.groupDescription
-          : groupDescription as String,
+          : groupDescription // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -247,12 +319,12 @@ class __$ChatDTOCopyWithImpl<$Res> extends _$ChatDTOCopyWithImpl<$Res>
 /// @nodoc
 class _$_ChatDTO extends _ChatDTO {
   const _$_ChatDTO(
-      {@required @HiveField(0) this.id,
+      {@HiveField(0) required this.id,
       @HiveField(1) this.isArchived = false,
       @HiveField(2) this.isMuted = false,
       @HiveField(3) this.canSend = true,
-      @required @HiveField(4) this.timestamp,
-      @required @HiveField(5) this.type,
+      @HiveField(4) required this.timestamp,
+      @HiveField(5) required this.type,
       this.updateType = 'nil',
       @HiveField(6) this.receiver,
       @HiveField(7) this.users,
@@ -260,14 +332,7 @@ class _$_ChatDTO extends _ChatDTO {
       @HiveField(9) this.canReceive,
       @HiveField(10) this.groupName,
       @HiveField(11) this.groupDescription})
-      : assert(id != null),
-        assert(isArchived != null),
-        assert(isMuted != null),
-        assert(canSend != null),
-        assert(timestamp != null),
-        assert(type != null),
-        assert(updateType != null),
-        super._();
+      : super._();
 
   factory _$_ChatDTO.fromJson(Map<String, dynamic> json) =>
       _$_$_ChatDTOFromJson(json);
@@ -298,22 +363,22 @@ class _$_ChatDTO extends _ChatDTO {
   final String updateType;
   @override //$ Individual parameters
   @HiveField(6)
-  final UserDTO receiver;
+  final UserDTO? receiver;
   @override //$ Group parameters
   @HiveField(7)
-  final List<UserDTO> users;
+  final List<UserDTO>? users;
   @override
   @HiveField(8)
-  final bool isAdmin;
+  final bool? isAdmin;
   @override
   @HiveField(9)
-  final bool canReceive;
+  final bool? canReceive;
   @override
   @HiveField(10)
-  final String groupName;
+  final String? groupName;
   @override
   @HiveField(11)
-  final String groupDescription;
+  final String? groupDescription;
 
   @override
   String toString() {
@@ -391,63 +456,64 @@ class _$_ChatDTO extends _ChatDTO {
 }
 
 abstract class _ChatDTO extends ChatDTO {
-  const _ChatDTO._() : super._();
   const factory _ChatDTO(
-      {@required @HiveField(0) String id,
+      {@HiveField(0) required String id,
       @HiveField(1) bool isArchived,
       @HiveField(2) bool isMuted,
       @HiveField(3) bool canSend,
-      @required @HiveField(4) String timestamp,
-      @required @HiveField(5) String type,
+      @HiveField(4) required String timestamp,
+      @HiveField(5) required String type,
       String updateType,
-      @HiveField(6) UserDTO receiver,
-      @HiveField(7) List<UserDTO> users,
-      @HiveField(8) bool isAdmin,
-      @HiveField(9) bool canReceive,
-      @HiveField(10) String groupName,
-      @HiveField(11) String groupDescription}) = _$_ChatDTO;
+      @HiveField(6) UserDTO? receiver,
+      @HiveField(7) List<UserDTO>? users,
+      @HiveField(8) bool? isAdmin,
+      @HiveField(9) bool? canReceive,
+      @HiveField(10) String? groupName,
+      @HiveField(11) String? groupDescription}) = _$_ChatDTO;
+  const _ChatDTO._() : super._();
 
   factory _ChatDTO.fromJson(Map<String, dynamic> json) = _$_ChatDTO.fromJson;
 
   @override
   @HiveField(0)
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
   @HiveField(1)
-  bool get isArchived;
+  bool get isArchived => throw _privateConstructorUsedError;
   @override
   @HiveField(2)
-  bool get isMuted;
+  bool get isMuted => throw _privateConstructorUsedError;
   @override
   @HiveField(3)
-  bool get canSend;
+  bool get canSend => throw _privateConstructorUsedError;
   @override
   @HiveField(4)
-  String get timestamp;
+  String get timestamp => throw _privateConstructorUsedError;
   @override
   @HiveField(5)
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override //$ Global parameters
-  String get updateType;
+  String get updateType => throw _privateConstructorUsedError;
   @override //$ Individual parameters
   @HiveField(6)
-  UserDTO get receiver;
+  UserDTO? get receiver => throw _privateConstructorUsedError;
   @override //$ Group parameters
   @HiveField(7)
-  List<UserDTO> get users;
+  List<UserDTO>? get users => throw _privateConstructorUsedError;
   @override
   @HiveField(8)
-  bool get isAdmin;
+  bool? get isAdmin => throw _privateConstructorUsedError;
   @override
   @HiveField(9)
-  bool get canReceive;
+  bool? get canReceive => throw _privateConstructorUsedError;
   @override
   @HiveField(10)
-  String get groupName;
+  String? get groupName => throw _privateConstructorUsedError;
   @override
   @HiveField(11)
-  String get groupDescription;
+  String? get groupDescription => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ChatDTOCopyWith<_ChatDTO> get copyWith;
+  _$ChatDTOCopyWith<_ChatDTO> get copyWith =>
+      throw _privateConstructorUsedError;
 }

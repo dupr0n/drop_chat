@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'chat_watcher_bloc.dart';
 
@@ -9,21 +9,21 @@ part of 'chat_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ChatWatcherEventTearOff {
   const _$ChatWatcherEventTearOff();
 
-// ignore: unused_element
   _WatchAllStarted watchAllStarted() {
     return const _WatchAllStarted();
   }
 
-// ignore: unused_element
   _WatchArchivedStarted watchArchivedStarted() {
     return const _WatchArchivedStarted();
   }
 
-// ignore: unused_element
   _ChatsReceived chatsReceived(
       Either<ChatFailure, KtList<Chat>> failureOrChats) {
     return _ChatsReceived(
@@ -31,21 +31,18 @@ class _$ChatWatcherEventTearOff {
     );
   }
 
-// ignore: unused_element
   _MuteChats muteChats(KtList<Chat> selectedChats) {
     return _MuteChats(
       selectedChats,
     );
   }
 
-// ignore: unused_element
   _ArchiveChats archiveChats(KtList<Chat> selectedChats) {
     return _ArchiveChats(
       selectedChats,
     );
   }
 
-// ignore: unused_element
   _DeleteChats deleteChats(KtList<Chat> selectedChats) {
     return _DeleteChats(
       selectedChats,
@@ -54,50 +51,54 @@ class _$ChatWatcherEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ChatWatcherEvent = _$ChatWatcherEventTearOff();
 
 /// @nodoc
 mixin _$ChatWatcherEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult watchArchivedStarted(),
-    @required
-        TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    @required TResult muteChats(KtList<Chat> selectedChats),
-    @required TResult archiveChats(KtList<Chat> selectedChats),
-    @required TResult deleteChats(KtList<Chat> selectedChats),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchAllStarted,
+    required TResult Function() watchArchivedStarted,
+    required TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)
+        chatsReceived,
+    required TResult Function(KtList<Chat> selectedChats) muteChats,
+    required TResult Function(KtList<Chat> selectedChats) archiveChats,
+    required TResult Function(KtList<Chat> selectedChats) deleteChats,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult watchArchivedStarted(),
-    TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    TResult muteChats(KtList<Chat> selectedChats),
-    TResult archiveChats(KtList<Chat> selectedChats),
-    TResult deleteChats(KtList<Chat> selectedChats),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchArchivedStarted,
+    TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)?
+        chatsReceived,
+    TResult Function(KtList<Chat> selectedChats)? muteChats,
+    TResult Function(KtList<Chat> selectedChats)? archiveChats,
+    TResult Function(KtList<Chat> selectedChats)? deleteChats,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult watchArchivedStarted(_WatchArchivedStarted value),
-    @required TResult chatsReceived(_ChatsReceived value),
-    @required TResult muteChats(_MuteChats value),
-    @required TResult archiveChats(_ArchiveChats value),
-    @required TResult deleteChats(_DeleteChats value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchAllStarted value) watchAllStarted,
+    required TResult Function(_WatchArchivedStarted value) watchArchivedStarted,
+    required TResult Function(_ChatsReceived value) chatsReceived,
+    required TResult Function(_MuteChats value) muteChats,
+    required TResult Function(_ArchiveChats value) archiveChats,
+    required TResult Function(_DeleteChats value) deleteChats,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult watchArchivedStarted(_WatchArchivedStarted value),
-    TResult chatsReceived(_ChatsReceived value),
-    TResult muteChats(_MuteChats value),
-    TResult archiveChats(_ArchiveChats value),
-    TResult deleteChats(_DeleteChats value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchArchivedStarted value)? watchArchivedStarted,
+    TResult Function(_ChatsReceived value)? chatsReceived,
+    TResult Function(_MuteChats value)? muteChats,
+    TResult Function(_ArchiveChats value)? archiveChats,
+    TResult Function(_DeleteChats value)? deleteChats,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -155,36 +156,30 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult watchArchivedStarted(),
-    @required
-        TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    @required TResult muteChats(KtList<Chat> selectedChats),
-    @required TResult archiveChats(KtList<Chat> selectedChats),
-    @required TResult deleteChats(KtList<Chat> selectedChats),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchAllStarted,
+    required TResult Function() watchArchivedStarted,
+    required TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)
+        chatsReceived,
+    required TResult Function(KtList<Chat> selectedChats) muteChats,
+    required TResult Function(KtList<Chat> selectedChats) archiveChats,
+    required TResult Function(KtList<Chat> selectedChats) deleteChats,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchArchivedStarted != null);
-    assert(chatsReceived != null);
-    assert(muteChats != null);
-    assert(archiveChats != null);
-    assert(deleteChats != null);
     return watchAllStarted();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult watchArchivedStarted(),
-    TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    TResult muteChats(KtList<Chat> selectedChats),
-    TResult archiveChats(KtList<Chat> selectedChats),
-    TResult deleteChats(KtList<Chat> selectedChats),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchArchivedStarted,
+    TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)?
+        chatsReceived,
+    TResult Function(KtList<Chat> selectedChats)? muteChats,
+    TResult Function(KtList<Chat> selectedChats)? archiveChats,
+    TResult Function(KtList<Chat> selectedChats)? deleteChats,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchAllStarted != null) {
       return watchAllStarted();
     }
@@ -193,35 +188,28 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult watchArchivedStarted(_WatchArchivedStarted value),
-    @required TResult chatsReceived(_ChatsReceived value),
-    @required TResult muteChats(_MuteChats value),
-    @required TResult archiveChats(_ArchiveChats value),
-    @required TResult deleteChats(_DeleteChats value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchAllStarted value) watchAllStarted,
+    required TResult Function(_WatchArchivedStarted value) watchArchivedStarted,
+    required TResult Function(_ChatsReceived value) chatsReceived,
+    required TResult Function(_MuteChats value) muteChats,
+    required TResult Function(_ArchiveChats value) archiveChats,
+    required TResult Function(_DeleteChats value) deleteChats,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchArchivedStarted != null);
-    assert(chatsReceived != null);
-    assert(muteChats != null);
-    assert(archiveChats != null);
-    assert(deleteChats != null);
     return watchAllStarted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult watchArchivedStarted(_WatchArchivedStarted value),
-    TResult chatsReceived(_ChatsReceived value),
-    TResult muteChats(_MuteChats value),
-    TResult archiveChats(_ArchiveChats value),
-    TResult deleteChats(_DeleteChats value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchArchivedStarted value)? watchArchivedStarted,
+    TResult Function(_ChatsReceived value)? chatsReceived,
+    TResult Function(_MuteChats value)? muteChats,
+    TResult Function(_ArchiveChats value)? archiveChats,
+    TResult Function(_DeleteChats value)? deleteChats,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchAllStarted != null) {
       return watchAllStarted(this);
     }
@@ -271,36 +259,30 @@ class _$_WatchArchivedStarted implements _WatchArchivedStarted {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult watchArchivedStarted(),
-    @required
-        TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    @required TResult muteChats(KtList<Chat> selectedChats),
-    @required TResult archiveChats(KtList<Chat> selectedChats),
-    @required TResult deleteChats(KtList<Chat> selectedChats),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchAllStarted,
+    required TResult Function() watchArchivedStarted,
+    required TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)
+        chatsReceived,
+    required TResult Function(KtList<Chat> selectedChats) muteChats,
+    required TResult Function(KtList<Chat> selectedChats) archiveChats,
+    required TResult Function(KtList<Chat> selectedChats) deleteChats,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchArchivedStarted != null);
-    assert(chatsReceived != null);
-    assert(muteChats != null);
-    assert(archiveChats != null);
-    assert(deleteChats != null);
     return watchArchivedStarted();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult watchArchivedStarted(),
-    TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    TResult muteChats(KtList<Chat> selectedChats),
-    TResult archiveChats(KtList<Chat> selectedChats),
-    TResult deleteChats(KtList<Chat> selectedChats),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchArchivedStarted,
+    TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)?
+        chatsReceived,
+    TResult Function(KtList<Chat> selectedChats)? muteChats,
+    TResult Function(KtList<Chat> selectedChats)? archiveChats,
+    TResult Function(KtList<Chat> selectedChats)? deleteChats,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchArchivedStarted != null) {
       return watchArchivedStarted();
     }
@@ -309,35 +291,28 @@ class _$_WatchArchivedStarted implements _WatchArchivedStarted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult watchArchivedStarted(_WatchArchivedStarted value),
-    @required TResult chatsReceived(_ChatsReceived value),
-    @required TResult muteChats(_MuteChats value),
-    @required TResult archiveChats(_ArchiveChats value),
-    @required TResult deleteChats(_DeleteChats value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchAllStarted value) watchAllStarted,
+    required TResult Function(_WatchArchivedStarted value) watchArchivedStarted,
+    required TResult Function(_ChatsReceived value) chatsReceived,
+    required TResult Function(_MuteChats value) muteChats,
+    required TResult Function(_ArchiveChats value) archiveChats,
+    required TResult Function(_DeleteChats value) deleteChats,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchArchivedStarted != null);
-    assert(chatsReceived != null);
-    assert(muteChats != null);
-    assert(archiveChats != null);
-    assert(deleteChats != null);
     return watchArchivedStarted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult watchArchivedStarted(_WatchArchivedStarted value),
-    TResult chatsReceived(_ChatsReceived value),
-    TResult muteChats(_MuteChats value),
-    TResult archiveChats(_ArchiveChats value),
-    TResult deleteChats(_DeleteChats value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchArchivedStarted value)? watchArchivedStarted,
+    TResult Function(_ChatsReceived value)? chatsReceived,
+    TResult Function(_MuteChats value)? muteChats,
+    TResult Function(_ArchiveChats value)? archiveChats,
+    TResult Function(_DeleteChats value)? deleteChats,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchArchivedStarted != null) {
       return watchArchivedStarted(this);
     }
@@ -370,19 +345,20 @@ class __$ChatsReceivedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failureOrChats = freezed,
+    Object? failureOrChats = freezed,
   }) {
     return _then(_ChatsReceived(
       failureOrChats == freezed
           ? _value.failureOrChats
-          : failureOrChats as Either<ChatFailure, KtList<Chat>>,
+          : failureOrChats // ignore: cast_nullable_to_non_nullable
+              as Either<ChatFailure, KtList<Chat>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ChatsReceived implements _ChatsReceived {
-  const _$_ChatsReceived(this.failureOrChats) : assert(failureOrChats != null);
+  const _$_ChatsReceived(this.failureOrChats);
 
   @override
   final Either<ChatFailure, KtList<Chat>> failureOrChats;
@@ -413,36 +389,30 @@ class _$_ChatsReceived implements _ChatsReceived {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult watchArchivedStarted(),
-    @required
-        TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    @required TResult muteChats(KtList<Chat> selectedChats),
-    @required TResult archiveChats(KtList<Chat> selectedChats),
-    @required TResult deleteChats(KtList<Chat> selectedChats),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchAllStarted,
+    required TResult Function() watchArchivedStarted,
+    required TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)
+        chatsReceived,
+    required TResult Function(KtList<Chat> selectedChats) muteChats,
+    required TResult Function(KtList<Chat> selectedChats) archiveChats,
+    required TResult Function(KtList<Chat> selectedChats) deleteChats,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchArchivedStarted != null);
-    assert(chatsReceived != null);
-    assert(muteChats != null);
-    assert(archiveChats != null);
-    assert(deleteChats != null);
     return chatsReceived(failureOrChats);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult watchArchivedStarted(),
-    TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    TResult muteChats(KtList<Chat> selectedChats),
-    TResult archiveChats(KtList<Chat> selectedChats),
-    TResult deleteChats(KtList<Chat> selectedChats),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchArchivedStarted,
+    TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)?
+        chatsReceived,
+    TResult Function(KtList<Chat> selectedChats)? muteChats,
+    TResult Function(KtList<Chat> selectedChats)? archiveChats,
+    TResult Function(KtList<Chat> selectedChats)? deleteChats,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (chatsReceived != null) {
       return chatsReceived(failureOrChats);
     }
@@ -451,35 +421,28 @@ class _$_ChatsReceived implements _ChatsReceived {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult watchArchivedStarted(_WatchArchivedStarted value),
-    @required TResult chatsReceived(_ChatsReceived value),
-    @required TResult muteChats(_MuteChats value),
-    @required TResult archiveChats(_ArchiveChats value),
-    @required TResult deleteChats(_DeleteChats value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchAllStarted value) watchAllStarted,
+    required TResult Function(_WatchArchivedStarted value) watchArchivedStarted,
+    required TResult Function(_ChatsReceived value) chatsReceived,
+    required TResult Function(_MuteChats value) muteChats,
+    required TResult Function(_ArchiveChats value) archiveChats,
+    required TResult Function(_DeleteChats value) deleteChats,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchArchivedStarted != null);
-    assert(chatsReceived != null);
-    assert(muteChats != null);
-    assert(archiveChats != null);
-    assert(deleteChats != null);
     return chatsReceived(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult watchArchivedStarted(_WatchArchivedStarted value),
-    TResult chatsReceived(_ChatsReceived value),
-    TResult muteChats(_MuteChats value),
-    TResult archiveChats(_ArchiveChats value),
-    TResult deleteChats(_DeleteChats value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchArchivedStarted value)? watchArchivedStarted,
+    TResult Function(_ChatsReceived value)? chatsReceived,
+    TResult Function(_MuteChats value)? muteChats,
+    TResult Function(_ArchiveChats value)? archiveChats,
+    TResult Function(_DeleteChats value)? deleteChats,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (chatsReceived != null) {
       return chatsReceived(this);
     }
@@ -491,9 +454,11 @@ abstract class _ChatsReceived implements ChatWatcherEvent {
   const factory _ChatsReceived(
       Either<ChatFailure, KtList<Chat>> failureOrChats) = _$_ChatsReceived;
 
-  Either<ChatFailure, KtList<Chat>> get failureOrChats;
+  Either<ChatFailure, KtList<Chat>> get failureOrChats =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ChatsReceivedCopyWith<_ChatsReceived> get copyWith;
+  _$ChatsReceivedCopyWith<_ChatsReceived> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -516,19 +481,20 @@ class __$MuteChatsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object selectedChats = freezed,
+    Object? selectedChats = freezed,
   }) {
     return _then(_MuteChats(
       selectedChats == freezed
           ? _value.selectedChats
-          : selectedChats as KtList<Chat>,
+          : selectedChats // ignore: cast_nullable_to_non_nullable
+              as KtList<Chat>,
     ));
   }
 }
 
 /// @nodoc
 class _$_MuteChats implements _MuteChats {
-  const _$_MuteChats(this.selectedChats) : assert(selectedChats != null);
+  const _$_MuteChats(this.selectedChats);
 
   @override
   final KtList<Chat> selectedChats;
@@ -558,36 +524,30 @@ class _$_MuteChats implements _MuteChats {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult watchArchivedStarted(),
-    @required
-        TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    @required TResult muteChats(KtList<Chat> selectedChats),
-    @required TResult archiveChats(KtList<Chat> selectedChats),
-    @required TResult deleteChats(KtList<Chat> selectedChats),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchAllStarted,
+    required TResult Function() watchArchivedStarted,
+    required TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)
+        chatsReceived,
+    required TResult Function(KtList<Chat> selectedChats) muteChats,
+    required TResult Function(KtList<Chat> selectedChats) archiveChats,
+    required TResult Function(KtList<Chat> selectedChats) deleteChats,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchArchivedStarted != null);
-    assert(chatsReceived != null);
-    assert(muteChats != null);
-    assert(archiveChats != null);
-    assert(deleteChats != null);
     return muteChats(selectedChats);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult watchArchivedStarted(),
-    TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    TResult muteChats(KtList<Chat> selectedChats),
-    TResult archiveChats(KtList<Chat> selectedChats),
-    TResult deleteChats(KtList<Chat> selectedChats),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchArchivedStarted,
+    TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)?
+        chatsReceived,
+    TResult Function(KtList<Chat> selectedChats)? muteChats,
+    TResult Function(KtList<Chat> selectedChats)? archiveChats,
+    TResult Function(KtList<Chat> selectedChats)? deleteChats,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (muteChats != null) {
       return muteChats(selectedChats);
     }
@@ -596,35 +556,28 @@ class _$_MuteChats implements _MuteChats {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult watchArchivedStarted(_WatchArchivedStarted value),
-    @required TResult chatsReceived(_ChatsReceived value),
-    @required TResult muteChats(_MuteChats value),
-    @required TResult archiveChats(_ArchiveChats value),
-    @required TResult deleteChats(_DeleteChats value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchAllStarted value) watchAllStarted,
+    required TResult Function(_WatchArchivedStarted value) watchArchivedStarted,
+    required TResult Function(_ChatsReceived value) chatsReceived,
+    required TResult Function(_MuteChats value) muteChats,
+    required TResult Function(_ArchiveChats value) archiveChats,
+    required TResult Function(_DeleteChats value) deleteChats,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchArchivedStarted != null);
-    assert(chatsReceived != null);
-    assert(muteChats != null);
-    assert(archiveChats != null);
-    assert(deleteChats != null);
     return muteChats(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult watchArchivedStarted(_WatchArchivedStarted value),
-    TResult chatsReceived(_ChatsReceived value),
-    TResult muteChats(_MuteChats value),
-    TResult archiveChats(_ArchiveChats value),
-    TResult deleteChats(_DeleteChats value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchArchivedStarted value)? watchArchivedStarted,
+    TResult Function(_ChatsReceived value)? chatsReceived,
+    TResult Function(_MuteChats value)? muteChats,
+    TResult Function(_ArchiveChats value)? archiveChats,
+    TResult Function(_DeleteChats value)? deleteChats,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (muteChats != null) {
       return muteChats(this);
     }
@@ -635,9 +588,10 @@ class _$_MuteChats implements _MuteChats {
 abstract class _MuteChats implements ChatWatcherEvent {
   const factory _MuteChats(KtList<Chat> selectedChats) = _$_MuteChats;
 
-  KtList<Chat> get selectedChats;
+  KtList<Chat> get selectedChats => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$MuteChatsCopyWith<_MuteChats> get copyWith;
+  _$MuteChatsCopyWith<_MuteChats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -661,19 +615,20 @@ class __$ArchiveChatsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object selectedChats = freezed,
+    Object? selectedChats = freezed,
   }) {
     return _then(_ArchiveChats(
       selectedChats == freezed
           ? _value.selectedChats
-          : selectedChats as KtList<Chat>,
+          : selectedChats // ignore: cast_nullable_to_non_nullable
+              as KtList<Chat>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ArchiveChats implements _ArchiveChats {
-  const _$_ArchiveChats(this.selectedChats) : assert(selectedChats != null);
+  const _$_ArchiveChats(this.selectedChats);
 
   @override
   final KtList<Chat> selectedChats;
@@ -703,36 +658,30 @@ class _$_ArchiveChats implements _ArchiveChats {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult watchArchivedStarted(),
-    @required
-        TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    @required TResult muteChats(KtList<Chat> selectedChats),
-    @required TResult archiveChats(KtList<Chat> selectedChats),
-    @required TResult deleteChats(KtList<Chat> selectedChats),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchAllStarted,
+    required TResult Function() watchArchivedStarted,
+    required TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)
+        chatsReceived,
+    required TResult Function(KtList<Chat> selectedChats) muteChats,
+    required TResult Function(KtList<Chat> selectedChats) archiveChats,
+    required TResult Function(KtList<Chat> selectedChats) deleteChats,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchArchivedStarted != null);
-    assert(chatsReceived != null);
-    assert(muteChats != null);
-    assert(archiveChats != null);
-    assert(deleteChats != null);
     return archiveChats(selectedChats);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult watchArchivedStarted(),
-    TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    TResult muteChats(KtList<Chat> selectedChats),
-    TResult archiveChats(KtList<Chat> selectedChats),
-    TResult deleteChats(KtList<Chat> selectedChats),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchArchivedStarted,
+    TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)?
+        chatsReceived,
+    TResult Function(KtList<Chat> selectedChats)? muteChats,
+    TResult Function(KtList<Chat> selectedChats)? archiveChats,
+    TResult Function(KtList<Chat> selectedChats)? deleteChats,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (archiveChats != null) {
       return archiveChats(selectedChats);
     }
@@ -741,35 +690,28 @@ class _$_ArchiveChats implements _ArchiveChats {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult watchArchivedStarted(_WatchArchivedStarted value),
-    @required TResult chatsReceived(_ChatsReceived value),
-    @required TResult muteChats(_MuteChats value),
-    @required TResult archiveChats(_ArchiveChats value),
-    @required TResult deleteChats(_DeleteChats value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchAllStarted value) watchAllStarted,
+    required TResult Function(_WatchArchivedStarted value) watchArchivedStarted,
+    required TResult Function(_ChatsReceived value) chatsReceived,
+    required TResult Function(_MuteChats value) muteChats,
+    required TResult Function(_ArchiveChats value) archiveChats,
+    required TResult Function(_DeleteChats value) deleteChats,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchArchivedStarted != null);
-    assert(chatsReceived != null);
-    assert(muteChats != null);
-    assert(archiveChats != null);
-    assert(deleteChats != null);
     return archiveChats(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult watchArchivedStarted(_WatchArchivedStarted value),
-    TResult chatsReceived(_ChatsReceived value),
-    TResult muteChats(_MuteChats value),
-    TResult archiveChats(_ArchiveChats value),
-    TResult deleteChats(_DeleteChats value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchArchivedStarted value)? watchArchivedStarted,
+    TResult Function(_ChatsReceived value)? chatsReceived,
+    TResult Function(_MuteChats value)? muteChats,
+    TResult Function(_ArchiveChats value)? archiveChats,
+    TResult Function(_DeleteChats value)? deleteChats,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (archiveChats != null) {
       return archiveChats(this);
     }
@@ -780,9 +722,10 @@ class _$_ArchiveChats implements _ArchiveChats {
 abstract class _ArchiveChats implements ChatWatcherEvent {
   const factory _ArchiveChats(KtList<Chat> selectedChats) = _$_ArchiveChats;
 
-  KtList<Chat> get selectedChats;
+  KtList<Chat> get selectedChats => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ArchiveChatsCopyWith<_ArchiveChats> get copyWith;
+  _$ArchiveChatsCopyWith<_ArchiveChats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -806,19 +749,20 @@ class __$DeleteChatsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object selectedChats = freezed,
+    Object? selectedChats = freezed,
   }) {
     return _then(_DeleteChats(
       selectedChats == freezed
           ? _value.selectedChats
-          : selectedChats as KtList<Chat>,
+          : selectedChats // ignore: cast_nullable_to_non_nullable
+              as KtList<Chat>,
     ));
   }
 }
 
 /// @nodoc
 class _$_DeleteChats implements _DeleteChats {
-  const _$_DeleteChats(this.selectedChats) : assert(selectedChats != null);
+  const _$_DeleteChats(this.selectedChats);
 
   @override
   final KtList<Chat> selectedChats;
@@ -848,36 +792,30 @@ class _$_DeleteChats implements _DeleteChats {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult watchArchivedStarted(),
-    @required
-        TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    @required TResult muteChats(KtList<Chat> selectedChats),
-    @required TResult archiveChats(KtList<Chat> selectedChats),
-    @required TResult deleteChats(KtList<Chat> selectedChats),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchAllStarted,
+    required TResult Function() watchArchivedStarted,
+    required TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)
+        chatsReceived,
+    required TResult Function(KtList<Chat> selectedChats) muteChats,
+    required TResult Function(KtList<Chat> selectedChats) archiveChats,
+    required TResult Function(KtList<Chat> selectedChats) deleteChats,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchArchivedStarted != null);
-    assert(chatsReceived != null);
-    assert(muteChats != null);
-    assert(archiveChats != null);
-    assert(deleteChats != null);
     return deleteChats(selectedChats);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult watchArchivedStarted(),
-    TResult chatsReceived(Either<ChatFailure, KtList<Chat>> failureOrChats),
-    TResult muteChats(KtList<Chat> selectedChats),
-    TResult archiveChats(KtList<Chat> selectedChats),
-    TResult deleteChats(KtList<Chat> selectedChats),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchArchivedStarted,
+    TResult Function(Either<ChatFailure, KtList<Chat>> failureOrChats)?
+        chatsReceived,
+    TResult Function(KtList<Chat> selectedChats)? muteChats,
+    TResult Function(KtList<Chat> selectedChats)? archiveChats,
+    TResult Function(KtList<Chat> selectedChats)? deleteChats,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteChats != null) {
       return deleteChats(selectedChats);
     }
@@ -886,35 +824,28 @@ class _$_DeleteChats implements _DeleteChats {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult watchArchivedStarted(_WatchArchivedStarted value),
-    @required TResult chatsReceived(_ChatsReceived value),
-    @required TResult muteChats(_MuteChats value),
-    @required TResult archiveChats(_ArchiveChats value),
-    @required TResult deleteChats(_DeleteChats value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchAllStarted value) watchAllStarted,
+    required TResult Function(_WatchArchivedStarted value) watchArchivedStarted,
+    required TResult Function(_ChatsReceived value) chatsReceived,
+    required TResult Function(_MuteChats value) muteChats,
+    required TResult Function(_ArchiveChats value) archiveChats,
+    required TResult Function(_DeleteChats value) deleteChats,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchArchivedStarted != null);
-    assert(chatsReceived != null);
-    assert(muteChats != null);
-    assert(archiveChats != null);
-    assert(deleteChats != null);
     return deleteChats(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult watchArchivedStarted(_WatchArchivedStarted value),
-    TResult chatsReceived(_ChatsReceived value),
-    TResult muteChats(_MuteChats value),
-    TResult archiveChats(_ArchiveChats value),
-    TResult deleteChats(_DeleteChats value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchArchivedStarted value)? watchArchivedStarted,
+    TResult Function(_ChatsReceived value)? chatsReceived,
+    TResult Function(_MuteChats value)? muteChats,
+    TResult Function(_ArchiveChats value)? archiveChats,
+    TResult Function(_DeleteChats value)? deleteChats,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteChats != null) {
       return deleteChats(this);
     }
@@ -925,45 +856,40 @@ class _$_DeleteChats implements _DeleteChats {
 abstract class _DeleteChats implements ChatWatcherEvent {
   const factory _DeleteChats(KtList<Chat> selectedChats) = _$_DeleteChats;
 
-  KtList<Chat> get selectedChats;
+  KtList<Chat> get selectedChats => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$DeleteChatsCopyWith<_DeleteChats> get copyWith;
+  _$DeleteChatsCopyWith<_DeleteChats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ChatWatcherStateTearOff {
   const _$ChatWatcherStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _Loading loading() {
     return const _Loading();
   }
 
-// ignore: unused_element
   _LoadSuccess loadSuccess(KtList<Chat> chats) {
     return _LoadSuccess(
       chats,
     );
   }
 
-// ignore: unused_element
   _LoadFailure loadFailure(ChatFailure chatFailure) {
     return _LoadFailure(
       chatFailure,
     );
   }
 
-// ignore: unused_element
   _BatchActionsSuccess batchActionSuccess() {
     return const _BatchActionsSuccess();
   }
 
-// ignore: unused_element
   _BatchActionsFailure batchActionFailure(ChatFailure chatFailure) {
     return _BatchActionsFailure(
       chatFailure,
@@ -972,49 +898,52 @@ class _$ChatWatcherStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ChatWatcherState = _$ChatWatcherStateTearOff();
 
 /// @nodoc
 mixin _$ChatWatcherState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult loadSuccess(KtList<Chat> chats),
-    @required TResult loadFailure(ChatFailure chatFailure),
-    @required TResult batchActionSuccess(),
-    @required TResult batchActionFailure(ChatFailure chatFailure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(KtList<Chat> chats) loadSuccess,
+    required TResult Function(ChatFailure chatFailure) loadFailure,
+    required TResult Function() batchActionSuccess,
+    required TResult Function(ChatFailure chatFailure) batchActionFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult loadSuccess(KtList<Chat> chats),
-    TResult loadFailure(ChatFailure chatFailure),
-    TResult batchActionSuccess(),
-    TResult batchActionFailure(ChatFailure chatFailure),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(KtList<Chat> chats)? loadSuccess,
+    TResult Function(ChatFailure chatFailure)? loadFailure,
+    TResult Function()? batchActionSuccess,
+    TResult Function(ChatFailure chatFailure)? batchActionFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
-    @required TResult batchActionSuccess(_BatchActionsSuccess value),
-    @required TResult batchActionFailure(_BatchActionsFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_BatchActionsSuccess value) batchActionSuccess,
+    required TResult Function(_BatchActionsFailure value) batchActionFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    TResult batchActionSuccess(_BatchActionsSuccess value),
-    TResult batchActionFailure(_BatchActionsFailure value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_BatchActionsSuccess value)? batchActionSuccess,
+    TResult Function(_BatchActionsFailure value)? batchActionFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1069,35 +998,28 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult loadSuccess(KtList<Chat> chats),
-    @required TResult loadFailure(ChatFailure chatFailure),
-    @required TResult batchActionSuccess(),
-    @required TResult batchActionFailure(ChatFailure chatFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(KtList<Chat> chats) loadSuccess,
+    required TResult Function(ChatFailure chatFailure) loadFailure,
+    required TResult Function() batchActionSuccess,
+    required TResult Function(ChatFailure chatFailure) batchActionFailure,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(batchActionSuccess != null);
-    assert(batchActionFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult loadSuccess(KtList<Chat> chats),
-    TResult loadFailure(ChatFailure chatFailure),
-    TResult batchActionSuccess(),
-    TResult batchActionFailure(ChatFailure chatFailure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(KtList<Chat> chats)? loadSuccess,
+    TResult Function(ChatFailure chatFailure)? loadFailure,
+    TResult Function()? batchActionSuccess,
+    TResult Function(ChatFailure chatFailure)? batchActionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -1106,35 +1028,28 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
-    @required TResult batchActionSuccess(_BatchActionsSuccess value),
-    @required TResult batchActionFailure(_BatchActionsFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_BatchActionsSuccess value) batchActionSuccess,
+    required TResult Function(_BatchActionsFailure value) batchActionFailure,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(batchActionSuccess != null);
-    assert(batchActionFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    TResult batchActionSuccess(_BatchActionsSuccess value),
-    TResult batchActionFailure(_BatchActionsFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_BatchActionsSuccess value)? batchActionSuccess,
+    TResult Function(_BatchActionsFailure value)? batchActionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -1181,35 +1096,28 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult loadSuccess(KtList<Chat> chats),
-    @required TResult loadFailure(ChatFailure chatFailure),
-    @required TResult batchActionSuccess(),
-    @required TResult batchActionFailure(ChatFailure chatFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(KtList<Chat> chats) loadSuccess,
+    required TResult Function(ChatFailure chatFailure) loadFailure,
+    required TResult Function() batchActionSuccess,
+    required TResult Function(ChatFailure chatFailure) batchActionFailure,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(batchActionSuccess != null);
-    assert(batchActionFailure != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult loadSuccess(KtList<Chat> chats),
-    TResult loadFailure(ChatFailure chatFailure),
-    TResult batchActionSuccess(),
-    TResult batchActionFailure(ChatFailure chatFailure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(KtList<Chat> chats)? loadSuccess,
+    TResult Function(ChatFailure chatFailure)? loadFailure,
+    TResult Function()? batchActionSuccess,
+    TResult Function(ChatFailure chatFailure)? batchActionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -1218,35 +1126,28 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
-    @required TResult batchActionSuccess(_BatchActionsSuccess value),
-    @required TResult batchActionFailure(_BatchActionsFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_BatchActionsSuccess value) batchActionSuccess,
+    required TResult Function(_BatchActionsFailure value) batchActionFailure,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(batchActionSuccess != null);
-    assert(batchActionFailure != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    TResult batchActionSuccess(_BatchActionsSuccess value),
-    TResult batchActionFailure(_BatchActionsFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_BatchActionsSuccess value)? batchActionSuccess,
+    TResult Function(_BatchActionsFailure value)? batchActionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -1279,17 +1180,20 @@ class __$LoadSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object chats = freezed,
+    Object? chats = freezed,
   }) {
     return _then(_LoadSuccess(
-      chats == freezed ? _value.chats : chats as KtList<Chat>,
+      chats == freezed
+          ? _value.chats
+          : chats // ignore: cast_nullable_to_non_nullable
+              as KtList<Chat>,
     ));
   }
 }
 
 /// @nodoc
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.chats) : assert(chats != null);
+  const _$_LoadSuccess(this.chats);
 
   @override
   final KtList<Chat> chats;
@@ -1318,35 +1222,28 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult loadSuccess(KtList<Chat> chats),
-    @required TResult loadFailure(ChatFailure chatFailure),
-    @required TResult batchActionSuccess(),
-    @required TResult batchActionFailure(ChatFailure chatFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(KtList<Chat> chats) loadSuccess,
+    required TResult Function(ChatFailure chatFailure) loadFailure,
+    required TResult Function() batchActionSuccess,
+    required TResult Function(ChatFailure chatFailure) batchActionFailure,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(batchActionSuccess != null);
-    assert(batchActionFailure != null);
     return loadSuccess(chats);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult loadSuccess(KtList<Chat> chats),
-    TResult loadFailure(ChatFailure chatFailure),
-    TResult batchActionSuccess(),
-    TResult batchActionFailure(ChatFailure chatFailure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(KtList<Chat> chats)? loadSuccess,
+    TResult Function(ChatFailure chatFailure)? loadFailure,
+    TResult Function()? batchActionSuccess,
+    TResult Function(ChatFailure chatFailure)? batchActionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadSuccess != null) {
       return loadSuccess(chats);
     }
@@ -1355,35 +1252,28 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
-    @required TResult batchActionSuccess(_BatchActionsSuccess value),
-    @required TResult batchActionFailure(_BatchActionsFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_BatchActionsSuccess value) batchActionSuccess,
+    required TResult Function(_BatchActionsFailure value) batchActionFailure,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(batchActionSuccess != null);
-    assert(batchActionFailure != null);
     return loadSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    TResult batchActionSuccess(_BatchActionsSuccess value),
-    TResult batchActionFailure(_BatchActionsFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_BatchActionsSuccess value)? batchActionSuccess,
+    TResult Function(_BatchActionsFailure value)? batchActionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadSuccess != null) {
       return loadSuccess(this);
     }
@@ -1394,9 +1284,10 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements ChatWatcherState {
   const factory _LoadSuccess(KtList<Chat> chats) = _$_LoadSuccess;
 
-  KtList<Chat> get chats;
+  KtList<Chat> get chats => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1422,18 +1313,18 @@ class __$LoadFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object chatFailure = freezed,
+    Object? chatFailure = freezed,
   }) {
     return _then(_LoadFailure(
-      chatFailure == freezed ? _value.chatFailure : chatFailure as ChatFailure,
+      chatFailure == freezed
+          ? _value.chatFailure
+          : chatFailure // ignore: cast_nullable_to_non_nullable
+              as ChatFailure,
     ));
   }
 
   @override
   $ChatFailureCopyWith<$Res> get chatFailure {
-    if (_value.chatFailure == null) {
-      return null;
-    }
     return $ChatFailureCopyWith<$Res>(_value.chatFailure, (value) {
       return _then(_value.copyWith(chatFailure: value));
     });
@@ -1442,7 +1333,7 @@ class __$LoadFailureCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.chatFailure) : assert(chatFailure != null);
+  const _$_LoadFailure(this.chatFailure);
 
   @override
   final ChatFailure chatFailure;
@@ -1472,35 +1363,28 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult loadSuccess(KtList<Chat> chats),
-    @required TResult loadFailure(ChatFailure chatFailure),
-    @required TResult batchActionSuccess(),
-    @required TResult batchActionFailure(ChatFailure chatFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(KtList<Chat> chats) loadSuccess,
+    required TResult Function(ChatFailure chatFailure) loadFailure,
+    required TResult Function() batchActionSuccess,
+    required TResult Function(ChatFailure chatFailure) batchActionFailure,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(batchActionSuccess != null);
-    assert(batchActionFailure != null);
     return loadFailure(chatFailure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult loadSuccess(KtList<Chat> chats),
-    TResult loadFailure(ChatFailure chatFailure),
-    TResult batchActionSuccess(),
-    TResult batchActionFailure(ChatFailure chatFailure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(KtList<Chat> chats)? loadSuccess,
+    TResult Function(ChatFailure chatFailure)? loadFailure,
+    TResult Function()? batchActionSuccess,
+    TResult Function(ChatFailure chatFailure)? batchActionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadFailure != null) {
       return loadFailure(chatFailure);
     }
@@ -1509,35 +1393,28 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
-    @required TResult batchActionSuccess(_BatchActionsSuccess value),
-    @required TResult batchActionFailure(_BatchActionsFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_BatchActionsSuccess value) batchActionSuccess,
+    required TResult Function(_BatchActionsFailure value) batchActionFailure,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(batchActionSuccess != null);
-    assert(batchActionFailure != null);
     return loadFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    TResult batchActionSuccess(_BatchActionsSuccess value),
-    TResult batchActionFailure(_BatchActionsFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_BatchActionsSuccess value)? batchActionSuccess,
+    TResult Function(_BatchActionsFailure value)? batchActionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadFailure != null) {
       return loadFailure(this);
     }
@@ -1548,9 +1425,10 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements ChatWatcherState {
   const factory _LoadFailure(ChatFailure chatFailure) = _$_LoadFailure;
 
-  ChatFailure get chatFailure;
+  ChatFailure get chatFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith;
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1591,35 +1469,28 @@ class _$_BatchActionsSuccess implements _BatchActionsSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult loadSuccess(KtList<Chat> chats),
-    @required TResult loadFailure(ChatFailure chatFailure),
-    @required TResult batchActionSuccess(),
-    @required TResult batchActionFailure(ChatFailure chatFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(KtList<Chat> chats) loadSuccess,
+    required TResult Function(ChatFailure chatFailure) loadFailure,
+    required TResult Function() batchActionSuccess,
+    required TResult Function(ChatFailure chatFailure) batchActionFailure,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(batchActionSuccess != null);
-    assert(batchActionFailure != null);
     return batchActionSuccess();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult loadSuccess(KtList<Chat> chats),
-    TResult loadFailure(ChatFailure chatFailure),
-    TResult batchActionSuccess(),
-    TResult batchActionFailure(ChatFailure chatFailure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(KtList<Chat> chats)? loadSuccess,
+    TResult Function(ChatFailure chatFailure)? loadFailure,
+    TResult Function()? batchActionSuccess,
+    TResult Function(ChatFailure chatFailure)? batchActionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (batchActionSuccess != null) {
       return batchActionSuccess();
     }
@@ -1628,35 +1499,28 @@ class _$_BatchActionsSuccess implements _BatchActionsSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
-    @required TResult batchActionSuccess(_BatchActionsSuccess value),
-    @required TResult batchActionFailure(_BatchActionsFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_BatchActionsSuccess value) batchActionSuccess,
+    required TResult Function(_BatchActionsFailure value) batchActionFailure,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(batchActionSuccess != null);
-    assert(batchActionFailure != null);
     return batchActionSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    TResult batchActionSuccess(_BatchActionsSuccess value),
-    TResult batchActionFailure(_BatchActionsFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_BatchActionsSuccess value)? batchActionSuccess,
+    TResult Function(_BatchActionsFailure value)? batchActionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (batchActionSuccess != null) {
       return batchActionSuccess(this);
     }
@@ -1691,18 +1555,18 @@ class __$BatchActionsFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object chatFailure = freezed,
+    Object? chatFailure = freezed,
   }) {
     return _then(_BatchActionsFailure(
-      chatFailure == freezed ? _value.chatFailure : chatFailure as ChatFailure,
+      chatFailure == freezed
+          ? _value.chatFailure
+          : chatFailure // ignore: cast_nullable_to_non_nullable
+              as ChatFailure,
     ));
   }
 
   @override
   $ChatFailureCopyWith<$Res> get chatFailure {
-    if (_value.chatFailure == null) {
-      return null;
-    }
     return $ChatFailureCopyWith<$Res>(_value.chatFailure, (value) {
       return _then(_value.copyWith(chatFailure: value));
     });
@@ -1711,7 +1575,7 @@ class __$BatchActionsFailureCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_BatchActionsFailure implements _BatchActionsFailure {
-  const _$_BatchActionsFailure(this.chatFailure) : assert(chatFailure != null);
+  const _$_BatchActionsFailure(this.chatFailure);
 
   @override
   final ChatFailure chatFailure;
@@ -1742,35 +1606,28 @@ class _$_BatchActionsFailure implements _BatchActionsFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult loadSuccess(KtList<Chat> chats),
-    @required TResult loadFailure(ChatFailure chatFailure),
-    @required TResult batchActionSuccess(),
-    @required TResult batchActionFailure(ChatFailure chatFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(KtList<Chat> chats) loadSuccess,
+    required TResult Function(ChatFailure chatFailure) loadFailure,
+    required TResult Function() batchActionSuccess,
+    required TResult Function(ChatFailure chatFailure) batchActionFailure,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(batchActionSuccess != null);
-    assert(batchActionFailure != null);
     return batchActionFailure(chatFailure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult loadSuccess(KtList<Chat> chats),
-    TResult loadFailure(ChatFailure chatFailure),
-    TResult batchActionSuccess(),
-    TResult batchActionFailure(ChatFailure chatFailure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(KtList<Chat> chats)? loadSuccess,
+    TResult Function(ChatFailure chatFailure)? loadFailure,
+    TResult Function()? batchActionSuccess,
+    TResult Function(ChatFailure chatFailure)? batchActionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (batchActionFailure != null) {
       return batchActionFailure(chatFailure);
     }
@@ -1779,35 +1636,28 @@ class _$_BatchActionsFailure implements _BatchActionsFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
-    @required TResult batchActionSuccess(_BatchActionsSuccess value),
-    @required TResult batchActionFailure(_BatchActionsFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_BatchActionsSuccess value) batchActionSuccess,
+    required TResult Function(_BatchActionsFailure value) batchActionFailure,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(batchActionSuccess != null);
-    assert(batchActionFailure != null);
     return batchActionFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    TResult batchActionSuccess(_BatchActionsSuccess value),
-    TResult batchActionFailure(_BatchActionsFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_BatchActionsSuccess value)? batchActionSuccess,
+    TResult Function(_BatchActionsFailure value)? batchActionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (batchActionFailure != null) {
       return batchActionFailure(this);
     }
@@ -1819,7 +1669,8 @@ abstract class _BatchActionsFailure implements ChatWatcherState {
   const factory _BatchActionsFailure(ChatFailure chatFailure) =
       _$_BatchActionsFailure;
 
-  ChatFailure get chatFailure;
+  ChatFailure get chatFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$BatchActionsFailureCopyWith<_BatchActionsFailure> get copyWith;
+  _$BatchActionsFailureCopyWith<_BatchActionsFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

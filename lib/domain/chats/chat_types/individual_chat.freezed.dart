@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'individual_chat.dart';
 
@@ -9,19 +9,21 @@ part of 'individual_chat.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$IndividualChatTearOff {
   const _$IndividualChatTearOff();
 
-// ignore: unused_element
   _IndividualChat call(
-      {@required UniqueId id,
-      @required bool isArchived,
-      @required bool isMuted,
-      @required bool canSend,
-      @required DateTime timestamp,
-      @required ChatType type,
-      @required User receiver}) {
+      {required UniqueId id,
+      required bool isArchived,
+      required bool isMuted,
+      required bool canSend,
+      required DateTime timestamp,
+      required ChatType type,
+      required User receiver}) {
     return _IndividualChat(
       id: id,
       isArchived: isArchived,
@@ -35,21 +37,21 @@ class _$IndividualChatTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $IndividualChat = _$IndividualChatTearOff();
 
 /// @nodoc
 mixin _$IndividualChat {
-  UniqueId get id;
-  bool get isArchived;
-  bool get isMuted;
-  bool get canSend;
-  DateTime get timestamp;
-  ChatType get type;
-  User get receiver;
+  UniqueId get id => throw _privateConstructorUsedError;
+  bool get isArchived => throw _privateConstructorUsedError;
+  bool get isMuted => throw _privateConstructorUsedError;
+  bool get canSend => throw _privateConstructorUsedError;
+  DateTime get timestamp => throw _privateConstructorUsedError;
+  ChatType get type => throw _privateConstructorUsedError;
+  User get receiver => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $IndividualChatCopyWith<IndividualChat> get copyWith;
+  $IndividualChatCopyWith<IndividualChat> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -80,32 +82,48 @@ class _$IndividualChatCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object isArchived = freezed,
-    Object isMuted = freezed,
-    Object canSend = freezed,
-    Object timestamp = freezed,
-    Object type = freezed,
-    Object receiver = freezed,
+    Object? id = freezed,
+    Object? isArchived = freezed,
+    Object? isMuted = freezed,
+    Object? canSend = freezed,
+    Object? timestamp = freezed,
+    Object? type = freezed,
+    Object? receiver = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      isArchived:
-          isArchived == freezed ? _value.isArchived : isArchived as bool,
-      isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
-      canSend: canSend == freezed ? _value.canSend : canSend as bool,
-      timestamp:
-          timestamp == freezed ? _value.timestamp : timestamp as DateTime,
-      type: type == freezed ? _value.type : type as ChatType,
-      receiver: receiver == freezed ? _value.receiver : receiver as User,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      isArchived: isArchived == freezed
+          ? _value.isArchived
+          : isArchived // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMuted: isMuted == freezed
+          ? _value.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canSend: canSend == freezed
+          ? _value.canSend
+          : canSend // ignore: cast_nullable_to_non_nullable
+              as bool,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ChatType,
+      receiver: receiver == freezed
+          ? _value.receiver
+          : receiver // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 
   @override
   $UserCopyWith<$Res> get receiver {
-    if (_value.receiver == null) {
-      return null;
-    }
     return $UserCopyWith<$Res>(_value.receiver, (value) {
       return _then(_value.copyWith(receiver: value));
     });
@@ -145,24 +163,43 @@ class __$IndividualChatCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object isArchived = freezed,
-    Object isMuted = freezed,
-    Object canSend = freezed,
-    Object timestamp = freezed,
-    Object type = freezed,
-    Object receiver = freezed,
+    Object? id = freezed,
+    Object? isArchived = freezed,
+    Object? isMuted = freezed,
+    Object? canSend = freezed,
+    Object? timestamp = freezed,
+    Object? type = freezed,
+    Object? receiver = freezed,
   }) {
     return _then(_IndividualChat(
-      id: id == freezed ? _value.id : id as UniqueId,
-      isArchived:
-          isArchived == freezed ? _value.isArchived : isArchived as bool,
-      isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
-      canSend: canSend == freezed ? _value.canSend : canSend as bool,
-      timestamp:
-          timestamp == freezed ? _value.timestamp : timestamp as DateTime,
-      type: type == freezed ? _value.type : type as ChatType,
-      receiver: receiver == freezed ? _value.receiver : receiver as User,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      isArchived: isArchived == freezed
+          ? _value.isArchived
+          : isArchived // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMuted: isMuted == freezed
+          ? _value.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canSend: canSend == freezed
+          ? _value.canSend
+          : canSend // ignore: cast_nullable_to_non_nullable
+              as bool,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ChatType,
+      receiver: receiver == freezed
+          ? _value.receiver
+          : receiver // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 }
@@ -172,21 +209,14 @@ class __$IndividualChatCopyWithImpl<$Res>
 /// @nodoc
 class _$_IndividualChat extends _IndividualChat {
   const _$_IndividualChat(
-      {@required this.id,
-      @required this.isArchived,
-      @required this.isMuted,
-      @required this.canSend,
-      @required this.timestamp,
-      @required this.type,
-      @required this.receiver})
-      : assert(id != null),
-        assert(isArchived != null),
-        assert(isMuted != null),
-        assert(canSend != null),
-        assert(timestamp != null),
-        assert(type != null),
-        assert(receiver != null),
-        super._();
+      {required this.id,
+      required this.isArchived,
+      required this.isMuted,
+      required this.canSend,
+      required this.timestamp,
+      required this.type,
+      required this.receiver})
+      : super._();
 
   @override
   final UniqueId id;
@@ -251,31 +281,32 @@ class _$_IndividualChat extends _IndividualChat {
 }
 
 abstract class _IndividualChat extends IndividualChat implements Chat<dynamic> {
-  const _IndividualChat._() : super._();
   const factory _IndividualChat(
-      {@required UniqueId id,
-      @required bool isArchived,
-      @required bool isMuted,
-      @required bool canSend,
-      @required DateTime timestamp,
-      @required ChatType type,
-      @required User receiver}) = _$_IndividualChat;
+      {required UniqueId id,
+      required bool isArchived,
+      required bool isMuted,
+      required bool canSend,
+      required DateTime timestamp,
+      required ChatType type,
+      required User receiver}) = _$_IndividualChat;
+  const _IndividualChat._() : super._();
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
   @override
-  bool get isArchived;
+  bool get isArchived => throw _privateConstructorUsedError;
   @override
-  bool get isMuted;
+  bool get isMuted => throw _privateConstructorUsedError;
   @override
-  bool get canSend;
+  bool get canSend => throw _privateConstructorUsedError;
   @override
-  DateTime get timestamp;
+  DateTime get timestamp => throw _privateConstructorUsedError;
   @override
-  ChatType get type;
+  ChatType get type => throw _privateConstructorUsedError;
   @override
-  User get receiver;
+  User get receiver => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$IndividualChatCopyWith<_IndividualChat> get copyWith;
+  _$IndividualChatCopyWith<_IndividualChat> get copyWith =>
+      throw _privateConstructorUsedError;
 }

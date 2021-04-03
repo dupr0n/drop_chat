@@ -32,7 +32,7 @@ class AppWidgetView extends StatelessWidget {
             ),
           ),
         ),
-        onGenerateRoute: rte.Router().onGenerateRoute,
+        // onGenerateRoute: rte.Router().onGenerateRoute,
       ),
     );
   }

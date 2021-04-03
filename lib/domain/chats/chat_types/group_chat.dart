@@ -15,22 +15,22 @@ import '../value_objects.dart';
 part 'group_chat.freezed.dart';
 
 @freezed
-abstract class GroupChat extends Chat implements _$GroupChat {
+class GroupChat extends Chat implements _$GroupChat {
   const GroupChat._();
 
   @Implements(Chat)
   const factory GroupChat({
-    @required UniqueId id,
-    @required bool isArchived,
-    @required bool isMuted,
-    @required bool canSend,
-    @required DateTime timestamp,
-    @required ChatType type,
-    @required KtList<User> users,
-    @required bool isAdmin,
-    @required bool canReceive,
-    @required GroupName groupName,
-    @required GroupDescription groupDescription,
+    required UniqueId id,
+    required bool isArchived,
+    required bool isMuted,
+    required bool canSend,
+    required DateTime timestamp,
+    required ChatType type,
+    required KtList<User> users,
+    required bool isAdmin,
+    required bool canReceive,
+    required GroupName groupName,
+    required GroupDescription groupDescription,
   }) = _GroupChat;
 
   factory GroupChat.empty() => GroupChat(
@@ -65,4 +65,7 @@ abstract class GroupChat extends Chat implements _$GroupChat {
       .andThen(groupName.failureOrUnit)
       .andThen(groupDescription.failureOrUnit)
       .fold((f) => some(f), (_) => none());
+
+  @override
+  void noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }

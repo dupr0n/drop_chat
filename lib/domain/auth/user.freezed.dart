@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'user.dart';
 
@@ -9,16 +9,18 @@ part of 'user.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$UserTearOff {
   const _$UserTearOff();
 
-// ignore: unused_element
   _User call(
-      {@required UniqueId id,
-      @required DisplayName displayName,
-      @required PhoneNumber phoneNumber,
-      @required bool isOnline}) {
+      {required UniqueId id,
+      required DisplayName displayName,
+      required PhoneNumber phoneNumber,
+      required bool isOnline}) {
     return _User(
       id: id,
       displayName: displayName,
@@ -29,18 +31,17 @@ class _$UserTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $User = _$UserTearOff();
 
 /// @nodoc
 mixin _$User {
-  UniqueId get id;
-  DisplayName get displayName;
-  PhoneNumber get phoneNumber;
-  bool get isOnline;
+  UniqueId get id => throw _privateConstructorUsedError;
+  DisplayName get displayName => throw _privateConstructorUsedError;
+  PhoneNumber get phoneNumber => throw _privateConstructorUsedError;
+  bool get isOnline => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith;
+  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -64,20 +65,28 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object displayName = freezed,
-    Object phoneNumber = freezed,
-    Object isOnline = freezed,
+    Object? id = freezed,
+    Object? displayName = freezed,
+    Object? phoneNumber = freezed,
+    Object? isOnline = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       displayName: displayName == freezed
           ? _value.displayName
-          : displayName as DisplayName,
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as DisplayName,
       phoneNumber: phoneNumber == freezed
           ? _value.phoneNumber
-          : phoneNumber as PhoneNumber,
-      isOnline: isOnline == freezed ? _value.isOnline : isOnline as bool,
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as PhoneNumber,
+      isOnline: isOnline == freezed
+          ? _value.isOnline
+          : isOnline // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -105,20 +114,28 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object displayName = freezed,
-    Object phoneNumber = freezed,
-    Object isOnline = freezed,
+    Object? id = freezed,
+    Object? displayName = freezed,
+    Object? phoneNumber = freezed,
+    Object? isOnline = freezed,
   }) {
     return _then(_User(
-      id: id == freezed ? _value.id : id as UniqueId,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       displayName: displayName == freezed
           ? _value.displayName
-          : displayName as DisplayName,
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as DisplayName,
       phoneNumber: phoneNumber == freezed
           ? _value.phoneNumber
-          : phoneNumber as PhoneNumber,
-      isOnline: isOnline == freezed ? _value.isOnline : isOnline as bool,
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as PhoneNumber,
+      isOnline: isOnline == freezed
+          ? _value.isOnline
+          : isOnline // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -126,14 +143,10 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 /// @nodoc
 class _$_User implements _User {
   const _$_User(
-      {@required this.id,
-      @required this.displayName,
-      @required this.phoneNumber,
-      @required this.isOnline})
-      : assert(id != null),
-        assert(displayName != null),
-        assert(phoneNumber != null),
-        assert(isOnline != null);
+      {required this.id,
+      required this.displayName,
+      required this.phoneNumber,
+      required this.isOnline});
 
   @override
   final UniqueId id;
@@ -182,20 +195,20 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {@required UniqueId id,
-      @required DisplayName displayName,
-      @required PhoneNumber phoneNumber,
-      @required bool isOnline}) = _$_User;
+      {required UniqueId id,
+      required DisplayName displayName,
+      required PhoneNumber phoneNumber,
+      required bool isOnline}) = _$_User;
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
   @override
-  DisplayName get displayName;
+  DisplayName get displayName => throw _privateConstructorUsedError;
   @override
-  PhoneNumber get phoneNumber;
+  PhoneNumber get phoneNumber => throw _privateConstructorUsedError;
   @override
-  bool get isOnline;
+  bool get isOnline => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UserCopyWith<_User> get copyWith;
+  _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
 }

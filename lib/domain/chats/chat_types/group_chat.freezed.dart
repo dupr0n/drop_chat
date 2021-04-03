@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'group_chat.dart';
 
@@ -9,23 +9,25 @@ part of 'group_chat.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$GroupChatTearOff {
   const _$GroupChatTearOff();
 
-// ignore: unused_element
   _GroupChat call(
-      {@required UniqueId id,
-      @required bool isArchived,
-      @required bool isMuted,
-      @required bool canSend,
-      @required DateTime timestamp,
-      @required ChatType type,
-      @required KtList<User> users,
-      @required bool isAdmin,
-      @required bool canReceive,
-      @required GroupName groupName,
-      @required GroupDescription groupDescription}) {
+      {required UniqueId id,
+      required bool isArchived,
+      required bool isMuted,
+      required bool canSend,
+      required DateTime timestamp,
+      required ChatType type,
+      required KtList<User> users,
+      required bool isAdmin,
+      required bool canReceive,
+      required GroupName groupName,
+      required GroupDescription groupDescription}) {
     return _GroupChat(
       id: id,
       isArchived: isArchived,
@@ -43,25 +45,25 @@ class _$GroupChatTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $GroupChat = _$GroupChatTearOff();
 
 /// @nodoc
 mixin _$GroupChat {
-  UniqueId get id;
-  bool get isArchived;
-  bool get isMuted;
-  bool get canSend;
-  DateTime get timestamp;
-  ChatType get type;
-  KtList<User> get users;
-  bool get isAdmin;
-  bool get canReceive;
-  GroupName get groupName;
-  GroupDescription get groupDescription;
+  UniqueId get id => throw _privateConstructorUsedError;
+  bool get isArchived => throw _privateConstructorUsedError;
+  bool get isMuted => throw _privateConstructorUsedError;
+  bool get canSend => throw _privateConstructorUsedError;
+  DateTime get timestamp => throw _privateConstructorUsedError;
+  ChatType get type => throw _privateConstructorUsedError;
+  KtList<User> get users => throw _privateConstructorUsedError;
+  bool get isAdmin => throw _privateConstructorUsedError;
+  bool get canReceive => throw _privateConstructorUsedError;
+  GroupName get groupName => throw _privateConstructorUsedError;
+  GroupDescription get groupDescription => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GroupChatCopyWith<GroupChat> get copyWith;
+  $GroupChatCopyWith<GroupChat> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -92,36 +94,63 @@ class _$GroupChatCopyWithImpl<$Res> implements $GroupChatCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object isArchived = freezed,
-    Object isMuted = freezed,
-    Object canSend = freezed,
-    Object timestamp = freezed,
-    Object type = freezed,
-    Object users = freezed,
-    Object isAdmin = freezed,
-    Object canReceive = freezed,
-    Object groupName = freezed,
-    Object groupDescription = freezed,
+    Object? id = freezed,
+    Object? isArchived = freezed,
+    Object? isMuted = freezed,
+    Object? canSend = freezed,
+    Object? timestamp = freezed,
+    Object? type = freezed,
+    Object? users = freezed,
+    Object? isAdmin = freezed,
+    Object? canReceive = freezed,
+    Object? groupName = freezed,
+    Object? groupDescription = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      isArchived:
-          isArchived == freezed ? _value.isArchived : isArchived as bool,
-      isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
-      canSend: canSend == freezed ? _value.canSend : canSend as bool,
-      timestamp:
-          timestamp == freezed ? _value.timestamp : timestamp as DateTime,
-      type: type == freezed ? _value.type : type as ChatType,
-      users: users == freezed ? _value.users : users as KtList<User>,
-      isAdmin: isAdmin == freezed ? _value.isAdmin : isAdmin as bool,
-      canReceive:
-          canReceive == freezed ? _value.canReceive : canReceive as bool,
-      groupName:
-          groupName == freezed ? _value.groupName : groupName as GroupName,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      isArchived: isArchived == freezed
+          ? _value.isArchived
+          : isArchived // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMuted: isMuted == freezed
+          ? _value.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canSend: canSend == freezed
+          ? _value.canSend
+          : canSend // ignore: cast_nullable_to_non_nullable
+              as bool,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ChatType,
+      users: users == freezed
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as KtList<User>,
+      isAdmin: isAdmin == freezed
+          ? _value.isAdmin
+          : isAdmin // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canReceive: canReceive == freezed
+          ? _value.canReceive
+          : canReceive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      groupName: groupName == freezed
+          ? _value.groupName
+          : groupName // ignore: cast_nullable_to_non_nullable
+              as GroupName,
       groupDescription: groupDescription == freezed
           ? _value.groupDescription
-          : groupDescription as GroupDescription,
+          : groupDescription // ignore: cast_nullable_to_non_nullable
+              as GroupDescription,
     ));
   }
 }
@@ -157,36 +186,63 @@ class __$GroupChatCopyWithImpl<$Res> extends _$GroupChatCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object isArchived = freezed,
-    Object isMuted = freezed,
-    Object canSend = freezed,
-    Object timestamp = freezed,
-    Object type = freezed,
-    Object users = freezed,
-    Object isAdmin = freezed,
-    Object canReceive = freezed,
-    Object groupName = freezed,
-    Object groupDescription = freezed,
+    Object? id = freezed,
+    Object? isArchived = freezed,
+    Object? isMuted = freezed,
+    Object? canSend = freezed,
+    Object? timestamp = freezed,
+    Object? type = freezed,
+    Object? users = freezed,
+    Object? isAdmin = freezed,
+    Object? canReceive = freezed,
+    Object? groupName = freezed,
+    Object? groupDescription = freezed,
   }) {
     return _then(_GroupChat(
-      id: id == freezed ? _value.id : id as UniqueId,
-      isArchived:
-          isArchived == freezed ? _value.isArchived : isArchived as bool,
-      isMuted: isMuted == freezed ? _value.isMuted : isMuted as bool,
-      canSend: canSend == freezed ? _value.canSend : canSend as bool,
-      timestamp:
-          timestamp == freezed ? _value.timestamp : timestamp as DateTime,
-      type: type == freezed ? _value.type : type as ChatType,
-      users: users == freezed ? _value.users : users as KtList<User>,
-      isAdmin: isAdmin == freezed ? _value.isAdmin : isAdmin as bool,
-      canReceive:
-          canReceive == freezed ? _value.canReceive : canReceive as bool,
-      groupName:
-          groupName == freezed ? _value.groupName : groupName as GroupName,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      isArchived: isArchived == freezed
+          ? _value.isArchived
+          : isArchived // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMuted: isMuted == freezed
+          ? _value.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canSend: canSend == freezed
+          ? _value.canSend
+          : canSend // ignore: cast_nullable_to_non_nullable
+              as bool,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ChatType,
+      users: users == freezed
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as KtList<User>,
+      isAdmin: isAdmin == freezed
+          ? _value.isAdmin
+          : isAdmin // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canReceive: canReceive == freezed
+          ? _value.canReceive
+          : canReceive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      groupName: groupName == freezed
+          ? _value.groupName
+          : groupName // ignore: cast_nullable_to_non_nullable
+              as GroupName,
       groupDescription: groupDescription == freezed
           ? _value.groupDescription
-          : groupDescription as GroupDescription,
+          : groupDescription // ignore: cast_nullable_to_non_nullable
+              as GroupDescription,
     ));
   }
 }
@@ -196,29 +252,18 @@ class __$GroupChatCopyWithImpl<$Res> extends _$GroupChatCopyWithImpl<$Res>
 /// @nodoc
 class _$_GroupChat extends _GroupChat {
   const _$_GroupChat(
-      {@required this.id,
-      @required this.isArchived,
-      @required this.isMuted,
-      @required this.canSend,
-      @required this.timestamp,
-      @required this.type,
-      @required this.users,
-      @required this.isAdmin,
-      @required this.canReceive,
-      @required this.groupName,
-      @required this.groupDescription})
-      : assert(id != null),
-        assert(isArchived != null),
-        assert(isMuted != null),
-        assert(canSend != null),
-        assert(timestamp != null),
-        assert(type != null),
-        assert(users != null),
-        assert(isAdmin != null),
-        assert(canReceive != null),
-        assert(groupName != null),
-        assert(groupDescription != null),
-        super._();
+      {required this.id,
+      required this.isArchived,
+      required this.isMuted,
+      required this.canSend,
+      required this.timestamp,
+      required this.type,
+      required this.users,
+      required this.isAdmin,
+      required this.canReceive,
+      required this.groupName,
+      required this.groupDescription})
+      : super._();
 
   @override
   final UniqueId id;
@@ -306,43 +351,44 @@ class _$_GroupChat extends _GroupChat {
 }
 
 abstract class _GroupChat extends GroupChat implements Chat<dynamic> {
-  const _GroupChat._() : super._();
   const factory _GroupChat(
-      {@required UniqueId id,
-      @required bool isArchived,
-      @required bool isMuted,
-      @required bool canSend,
-      @required DateTime timestamp,
-      @required ChatType type,
-      @required KtList<User> users,
-      @required bool isAdmin,
-      @required bool canReceive,
-      @required GroupName groupName,
-      @required GroupDescription groupDescription}) = _$_GroupChat;
+      {required UniqueId id,
+      required bool isArchived,
+      required bool isMuted,
+      required bool canSend,
+      required DateTime timestamp,
+      required ChatType type,
+      required KtList<User> users,
+      required bool isAdmin,
+      required bool canReceive,
+      required GroupName groupName,
+      required GroupDescription groupDescription}) = _$_GroupChat;
+  const _GroupChat._() : super._();
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
   @override
-  bool get isArchived;
+  bool get isArchived => throw _privateConstructorUsedError;
   @override
-  bool get isMuted;
+  bool get isMuted => throw _privateConstructorUsedError;
   @override
-  bool get canSend;
+  bool get canSend => throw _privateConstructorUsedError;
   @override
-  DateTime get timestamp;
+  DateTime get timestamp => throw _privateConstructorUsedError;
   @override
-  ChatType get type;
+  ChatType get type => throw _privateConstructorUsedError;
   @override
-  KtList<User> get users;
+  KtList<User> get users => throw _privateConstructorUsedError;
   @override
-  bool get isAdmin;
+  bool get isAdmin => throw _privateConstructorUsedError;
   @override
-  bool get canReceive;
+  bool get canReceive => throw _privateConstructorUsedError;
   @override
-  GroupName get groupName;
+  GroupName get groupName => throw _privateConstructorUsedError;
   @override
-  GroupDescription get groupDescription;
+  GroupDescription get groupDescription => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GroupChatCopyWith<_GroupChat> get copyWith;
+  _$GroupChatCopyWith<_GroupChat> get copyWith =>
+      throw _privateConstructorUsedError;
 }

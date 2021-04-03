@@ -40,10 +40,9 @@ class UniqueId extends ValueObject<String> {
   const UniqueId._(this.value);
 
   factory UniqueId() {
-    return UniqueId._(right(Uuid().v1()));
+    return UniqueId._(right(const Uuid().v1()));
   }
   factory UniqueId.fromUniqueString(String uniqueId) {
-    assert(uniqueId != null);
     return UniqueId._(right(uniqueId));
   }
 }
@@ -63,7 +62,6 @@ class UpdateType extends ValueObject<String> {
   static const types = {addStr, editStr, deleteStr, nilStr};
 
   factory UpdateType(String input) {
-    assert(input != null);
     return UpdateType._(validateMaxStringLength(input, maxLength)
         .flatMap(validateStringNotEmpty)
         .andThen(validateType(input, types)));
@@ -76,10 +74,10 @@ class UpdateType extends ValueObject<String> {
   factory UpdateType.nil() => UpdateType._(right(nilStr));
 
   T fold<T>({
-    @required T Function() add,
-    @required T Function() edit,
-    @required T Function() delete,
-    @required T Function() nil,
+    required T Function() add,
+    required T Function() edit,
+    required T Function() delete,
+    required T Function() nil,
   }) {
     switch (value.getOrElse(() => nilStr)) {
       case addStr:

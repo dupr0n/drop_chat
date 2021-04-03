@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'message_form_bloc.dart';
 
@@ -9,71 +9,73 @@ part of 'message_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$MessageFormEventTearOff {
   const _$MessageFormEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Option<Message> initialMessageOption) {
     return _Initialized(
       initialMessageOption,
     );
   }
 
-// ignore: unused_element
   _TextChanged textChanged(String text) {
     return _TextChanged(
       text,
     );
   }
 
-// ignore: unused_element
   _IsStarredChanged isStarredChanged() {
     return const _IsStarredChanged();
   }
 
-// ignore: unused_element
   _Saved saved() {
     return const _Saved();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $MessageFormEvent = _$MessageFormEventTearOff();
 
 /// @nodoc
 mixin _$MessageFormEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Message> initialMessageOption),
-    @required TResult textChanged(String text),
-    @required TResult isStarredChanged(),
-    @required TResult saved(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Message> initialMessageOption) initialized,
+    required TResult Function(String text) textChanged,
+    required TResult Function() isStarredChanged,
+    required TResult Function() saved,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Message> initialMessageOption),
-    TResult textChanged(String text),
-    TResult isStarredChanged(),
-    TResult saved(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Message> initialMessageOption)? initialized,
+    TResult Function(String text)? textChanged,
+    TResult Function()? isStarredChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult textChanged(_TextChanged value),
-    @required TResult isStarredChanged(_IsStarredChanged value),
-    @required TResult saved(_Saved value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TextChanged value) textChanged,
+    required TResult Function(_IsStarredChanged value) isStarredChanged,
+    required TResult Function(_Saved value) saved,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult textChanged(_TextChanged value),
-    TResult isStarredChanged(_IsStarredChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TextChanged value)? textChanged,
+    TResult Function(_IsStarredChanged value)? isStarredChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -114,20 +116,20 @@ class __$InitializedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object initialMessageOption = freezed,
+    Object? initialMessageOption = freezed,
   }) {
     return _then(_Initialized(
       initialMessageOption == freezed
           ? _value.initialMessageOption
-          : initialMessageOption as Option<Message>,
+          : initialMessageOption // ignore: cast_nullable_to_non_nullable
+              as Option<Message>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.initialMessageOption)
-      : assert(initialMessageOption != null);
+  const _$_Initialized(this.initialMessageOption);
 
   @override
   final Option<Message> initialMessageOption;
@@ -158,29 +160,24 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Message> initialMessageOption),
-    @required TResult textChanged(String text),
-    @required TResult isStarredChanged(),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Message> initialMessageOption) initialized,
+    required TResult Function(String text) textChanged,
+    required TResult Function() isStarredChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(textChanged != null);
-    assert(isStarredChanged != null);
-    assert(saved != null);
     return initialized(initialMessageOption);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Message> initialMessageOption),
-    TResult textChanged(String text),
-    TResult isStarredChanged(),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Message> initialMessageOption)? initialized,
+    TResult Function(String text)? textChanged,
+    TResult Function()? isStarredChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(initialMessageOption);
     }
@@ -189,29 +186,24 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult textChanged(_TextChanged value),
-    @required TResult isStarredChanged(_IsStarredChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TextChanged value) textChanged,
+    required TResult Function(_IsStarredChanged value) isStarredChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(textChanged != null);
-    assert(isStarredChanged != null);
-    assert(saved != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult textChanged(_TextChanged value),
-    TResult isStarredChanged(_IsStarredChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TextChanged value)? textChanged,
+    TResult Function(_IsStarredChanged value)? isStarredChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -223,9 +215,11 @@ abstract class _Initialized implements MessageFormEvent {
   const factory _Initialized(Option<Message> initialMessageOption) =
       _$_Initialized;
 
-  Option<Message> get initialMessageOption;
+  Option<Message> get initialMessageOption =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -249,17 +243,20 @@ class __$TextChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object text = freezed,
+    Object? text = freezed,
   }) {
     return _then(_TextChanged(
-      text == freezed ? _value.text : text as String,
+      text == freezed
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$_TextChanged implements _TextChanged {
-  const _$_TextChanged(this.text) : assert(text != null);
+  const _$_TextChanged(this.text);
 
   @override
   final String text;
@@ -288,29 +285,24 @@ class _$_TextChanged implements _TextChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Message> initialMessageOption),
-    @required TResult textChanged(String text),
-    @required TResult isStarredChanged(),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Message> initialMessageOption) initialized,
+    required TResult Function(String text) textChanged,
+    required TResult Function() isStarredChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(textChanged != null);
-    assert(isStarredChanged != null);
-    assert(saved != null);
     return textChanged(text);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Message> initialMessageOption),
-    TResult textChanged(String text),
-    TResult isStarredChanged(),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Message> initialMessageOption)? initialized,
+    TResult Function(String text)? textChanged,
+    TResult Function()? isStarredChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (textChanged != null) {
       return textChanged(text);
     }
@@ -319,29 +311,24 @@ class _$_TextChanged implements _TextChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult textChanged(_TextChanged value),
-    @required TResult isStarredChanged(_IsStarredChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TextChanged value) textChanged,
+    required TResult Function(_IsStarredChanged value) isStarredChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(textChanged != null);
-    assert(isStarredChanged != null);
-    assert(saved != null);
     return textChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult textChanged(_TextChanged value),
-    TResult isStarredChanged(_IsStarredChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TextChanged value)? textChanged,
+    TResult Function(_IsStarredChanged value)? isStarredChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (textChanged != null) {
       return textChanged(this);
     }
@@ -352,9 +339,10 @@ class _$_TextChanged implements _TextChanged {
 abstract class _TextChanged implements MessageFormEvent {
   const factory _TextChanged(String text) = _$_TextChanged;
 
-  String get text;
+  String get text => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$TextChangedCopyWith<_TextChanged> get copyWith;
+  _$TextChangedCopyWith<_TextChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -395,29 +383,24 @@ class _$_IsStarredChanged implements _IsStarredChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Message> initialMessageOption),
-    @required TResult textChanged(String text),
-    @required TResult isStarredChanged(),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Message> initialMessageOption) initialized,
+    required TResult Function(String text) textChanged,
+    required TResult Function() isStarredChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(textChanged != null);
-    assert(isStarredChanged != null);
-    assert(saved != null);
     return isStarredChanged();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Message> initialMessageOption),
-    TResult textChanged(String text),
-    TResult isStarredChanged(),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Message> initialMessageOption)? initialized,
+    TResult Function(String text)? textChanged,
+    TResult Function()? isStarredChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (isStarredChanged != null) {
       return isStarredChanged();
     }
@@ -426,29 +409,24 @@ class _$_IsStarredChanged implements _IsStarredChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult textChanged(_TextChanged value),
-    @required TResult isStarredChanged(_IsStarredChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TextChanged value) textChanged,
+    required TResult Function(_IsStarredChanged value) isStarredChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(textChanged != null);
-    assert(isStarredChanged != null);
-    assert(saved != null);
     return isStarredChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult textChanged(_TextChanged value),
-    TResult isStarredChanged(_IsStarredChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TextChanged value)? textChanged,
+    TResult Function(_IsStarredChanged value)? isStarredChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (isStarredChanged != null) {
       return isStarredChanged(this);
     }
@@ -495,29 +473,24 @@ class _$_Saved implements _Saved {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Message> initialMessageOption),
-    @required TResult textChanged(String text),
-    @required TResult isStarredChanged(),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Message> initialMessageOption) initialized,
+    required TResult Function(String text) textChanged,
+    required TResult Function() isStarredChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(textChanged != null);
-    assert(isStarredChanged != null);
-    assert(saved != null);
     return saved();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Message> initialMessageOption),
-    TResult textChanged(String text),
-    TResult isStarredChanged(),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Message> initialMessageOption)? initialized,
+    TResult Function(String text)? textChanged,
+    TResult Function()? isStarredChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (saved != null) {
       return saved();
     }
@@ -526,29 +499,24 @@ class _$_Saved implements _Saved {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult textChanged(_TextChanged value),
-    @required TResult isStarredChanged(_IsStarredChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TextChanged value) textChanged,
+    required TResult Function(_IsStarredChanged value) isStarredChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(textChanged != null);
-    assert(isStarredChanged != null);
-    assert(saved != null);
     return saved(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult textChanged(_TextChanged value),
-    TResult isStarredChanged(_IsStarredChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TextChanged value)? textChanged,
+    TResult Function(_IsStarredChanged value)? isStarredChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (saved != null) {
       return saved(this);
     }
@@ -564,18 +532,13 @@ abstract class _Saved implements MessageFormEvent {
 class _$MessageFormStateTearOff {
   const _$MessageFormStateTearOff();
 
-// ignore: unused_element
   _MessageFormState call(
-      {@required
-          Message message,
-      @required
-          bool isSaving,
-      @required
-          bool isEditing,
-      @required
-          bool showErrorMessages,
-      @required
-          Option<Either<MessageFailure, Unit>> saveFailureOrSuccessOption}) {
+      {required Message message,
+      required bool isSaving,
+      required bool isEditing,
+      required bool showErrorMessages,
+      required Option<Either<MessageFailure, Unit>>
+          saveFailureOrSuccessOption}) {
     return _MessageFormState(
       message: message,
       isSaving: isSaving,
@@ -587,19 +550,20 @@ class _$MessageFormStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $MessageFormState = _$MessageFormStateTearOff();
 
 /// @nodoc
 mixin _$MessageFormState {
-  Message get message;
-  bool get isSaving;
-  bool get isEditing;
-  bool get showErrorMessages;
-  Option<Either<MessageFailure, Unit>> get saveFailureOrSuccessOption;
+  Message get message => throw _privateConstructorUsedError;
+  bool get isSaving => throw _privateConstructorUsedError;
+  bool get isEditing => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  Option<Either<MessageFailure, Unit>> get saveFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MessageFormStateCopyWith<MessageFormState> get copyWith;
+  $MessageFormStateCopyWith<MessageFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -628,30 +592,38 @@ class _$MessageFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
-    Object isSaving = freezed,
-    Object isEditing = freezed,
-    Object showErrorMessages = freezed,
-    Object saveFailureOrSuccessOption = freezed,
+    Object? message = freezed,
+    Object? isSaving = freezed,
+    Object? isEditing = freezed,
+    Object? showErrorMessages = freezed,
+    Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      message: message == freezed ? _value.message : message as Message,
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as Message,
+      isSaving: isSaving == freezed
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<MessageFailure, Unit>>,
+          : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<MessageFailure, Unit>>,
     ));
   }
 
   @override
   $MessageCopyWith<$Res> get message {
-    if (_value.message == null) {
-      return null;
-    }
     return $MessageCopyWith<$Res>(_value.message, (value) {
       return _then(_value.copyWith(message: value));
     });
@@ -689,22 +661,33 @@ class __$MessageFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
-    Object isSaving = freezed,
-    Object isEditing = freezed,
-    Object showErrorMessages = freezed,
-    Object saveFailureOrSuccessOption = freezed,
+    Object? message = freezed,
+    Object? isSaving = freezed,
+    Object? isEditing = freezed,
+    Object? showErrorMessages = freezed,
+    Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_MessageFormState(
-      message: message == freezed ? _value.message : message as Message,
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as Message,
+      isSaving: isSaving == freezed
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<MessageFailure, Unit>>,
+          : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<MessageFailure, Unit>>,
     ));
   }
 }
@@ -712,16 +695,11 @@ class __$MessageFormStateCopyWithImpl<$Res>
 /// @nodoc
 class _$_MessageFormState implements _MessageFormState {
   const _$_MessageFormState(
-      {@required this.message,
-      @required this.isSaving,
-      @required this.isEditing,
-      @required this.showErrorMessages,
-      @required this.saveFailureOrSuccessOption})
-      : assert(message != null),
-        assert(isSaving != null),
-        assert(isEditing != null),
-        assert(showErrorMessages != null),
-        assert(saveFailureOrSuccessOption != null);
+      {required this.message,
+      required this.isSaving,
+      required this.isEditing,
+      required this.showErrorMessages,
+      required this.saveFailureOrSuccessOption});
 
   @override
   final Message message;
@@ -779,29 +757,26 @@ class _$_MessageFormState implements _MessageFormState {
 
 abstract class _MessageFormState implements MessageFormState {
   const factory _MessageFormState(
-      {@required
-          Message message,
-      @required
-          bool isSaving,
-      @required
-          bool isEditing,
-      @required
-          bool showErrorMessages,
-      @required
-          Option<Either<MessageFailure, Unit>>
-              saveFailureOrSuccessOption}) = _$_MessageFormState;
+      {required Message message,
+      required bool isSaving,
+      required bool isEditing,
+      required bool showErrorMessages,
+      required Option<Either<MessageFailure, Unit>>
+          saveFailureOrSuccessOption}) = _$_MessageFormState;
 
   @override
-  Message get message;
+  Message get message => throw _privateConstructorUsedError;
   @override
-  bool get isSaving;
+  bool get isSaving => throw _privateConstructorUsedError;
   @override
-  bool get isEditing;
+  bool get isEditing => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  Option<Either<MessageFailure, Unit>> get saveFailureOrSuccessOption;
+  Option<Either<MessageFailure, Unit>> get saveFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$MessageFormStateCopyWith<_MessageFormState> get copyWith;
+  _$MessageFormStateCopyWith<_MessageFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

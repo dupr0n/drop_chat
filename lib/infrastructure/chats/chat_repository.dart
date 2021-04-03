@@ -17,37 +17,37 @@ import 'chat_dtos.dart';
 
 @LazySingleton(as: IChatRepository)
 class ChatRepository implements IChatRepository {
-  Box<ChatDTO> _box;
+  Box<ChatDTO>? _box;
   final FirebaseFirestore _firestore;
 
   ChatRepository(this._firestore);
 
   Future<void> _updateHive(ChatDTO dto) async {
     UpdateType(dto.updateType).fold(
-      add: () async => _box.put(dto.id, dto),
+      add: () async => _box?.put(dto.id, dto),
       edit: () async {
-        final prev = _box.get(dto.id);
-        await _box.delete(dto.id);
-        await _box.put(dto.id, dto.copyWith(timestamp: prev.timestamp));
+        final prev = _box?.get(dto.id);
+        await _box?.delete(dto.id);
+        await _box?.put(dto.id, dto.copyWith(timestamp: prev!.timestamp));
       },
-      delete: () async => _box.delete(dto.id),
+      delete: () async => _box?.delete(dto.id),
       nil: () => null,
     );
   }
 
-  Either<ChatFailure, KtList<Chat>> _getAllChats() => right<ChatFailure, KtList<Chat>>(_box.values
+  Either<ChatFailure, KtList<Chat>> _getAllChats() => right<ChatFailure, KtList<Chat>>(_box!.values
       .map((dto) => dto.toDomain())
       .toImmutableList()
       .sortedBy((chat) => chat.timestamp));
 
   Either<ChatFailure, KtList<Chat>> _getArchivedChats() =>
-      right<ChatFailure, KtList<Chat>>(_box.values
+      right<ChatFailure, KtList<Chat>>(_box!.values
           .where((dto) => dto.isArchived)
           .map((dto) => dto.toDomain())
           .toImmutableList()
           .sortedBy((chat) => chat.timestamp));
 
-  Stream<Either<ChatFailure, KtList<Chat>>> _watch({@required bool archived}) async* {
+  Stream<Either<ChatFailure, KtList<Chat>>> _watch({required bool archived}) async* {
     _box = await Hive.openBox('chats');
     yield archived ? _getArchivedChats() : _getAllChats();
     final userId =
@@ -56,7 +56,7 @@ class ChatRepository implements IChatRepository {
     try {
       await for (final snap in userDoc.chatCollection.snapshots()) {
         for (final doc in snap.docs) {
-          if (!doc.data().containsKey('updateType')) continue;
+          if (!(doc.data() ?? {}).containsKey('updateType')) continue;
           final dto = ChatDTO.fromFirestore(doc);
           await _updateHive(dto);
           yield archived ? _getArchivedChats() : _getAllChats();
@@ -68,9 +68,9 @@ class ChatRepository implements IChatRepository {
         }
       }
     } on FirebaseException catch (e) {
-      if (e.message.contains('PERMISSION_DENIED')) {
+      if ((e.message ?? 'NULL_SAFETY').contains('PERMISSION_DENIED')) {
         yield left(const ChatFailure.insufficientPermissions());
-      } else if (e.message.contains('NOT_FOUND')) {
+      } else if ((e.message ?? 'NULL_SAFETY').contains('NOT_FOUND')) {
         yield left(const ChatFailure.unableToUpdate());
       } else {
         yield left(ChatFailure.unexpected(e));
@@ -81,8 +81,8 @@ class ChatRepository implements IChatRepository {
   }
 
   Future<Either<ChatFailure, Unit>> _action({
-    @required Chat chat,
-    @required UpdateType type,
+    required Chat chat,
+    required UpdateType type,
   }) async {
     final chatDTO = ChatDTO.fromDomain(chat).copyWith(
         updateType: type.fold(
@@ -100,7 +100,7 @@ class ChatRepository implements IChatRepository {
       }
       return right(unit);
     } on FirebaseException catch (e) {
-      if (e.message.contains('PERMISSION_DENIED')) {
+      if ((e.message ?? 'NULL_SAFETY').contains('PERMISSION_DENIED')) {
         return left(const ChatFailure.insufficientPermissions());
       } else {
         return left(ChatFailure.unexpected(e));

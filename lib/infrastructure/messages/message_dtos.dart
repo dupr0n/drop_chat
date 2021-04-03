@@ -11,15 +11,15 @@ part 'message_dtos.g.dart';
 
 @freezed
 @HiveType(typeId: 0)
-abstract class MessageDTO with _$MessageDTO {
+class MessageDTO with _$MessageDTO {
   const MessageDTO._();
 
   const factory MessageDTO({
-    @HiveField(0) @required String id,
-    @HiveField(1) @required String userId,
-    @HiveField(2) @required String timestamp,
-    @HiveField(3) @required String text,
-    @HiveField(4) @required bool isStarred,
+    @HiveField(0) required String id,
+    @HiveField(1) required String userId,
+    @HiveField(2) required String timestamp,
+    @HiveField(3) required String text,
+    @HiveField(4) required bool isStarred,
     @Default('nil') String updateType,
   }) = _MessageDTO;
 
@@ -43,5 +43,5 @@ abstract class MessageDTO with _$MessageDTO {
   factory MessageDTO.fromJson(Map<String, dynamic> json) => _$MessageDTOFromJson(json);
 
   factory MessageDTO.fromFirestore(DocumentSnapshot doc) =>
-      MessageDTO.fromJson(doc.data()).copyWith(id: doc.id);
+      MessageDTO.fromJson(doc.data() ?? {}).copyWith(id: doc.id);
 }

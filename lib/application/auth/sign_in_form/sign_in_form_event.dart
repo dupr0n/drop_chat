@@ -1,14 +1,14 @@
 part of 'sign_in_form_bloc.dart';
 
 @freezed
-abstract class SignInFormEvent with _$SignInFormEvent {
+class SignInFormEvent with _$SignInFormEvent {
   const factory SignInFormEvent.emailChanged(String emailStr) = EmailChanged;
   const factory SignInFormEvent.passwordChanged(String passwordStr) = PasswordChanged;
-  const factory SignInFormEvent.phoneNumberChanged(String phoneNumber) = _PhoneNumberChanged;
+  const factory SignInFormEvent.phoneNumberChanged(String phoneNumber) = PhoneNumberChanged;
   const factory SignInFormEvent.registerWithEmailAndPasswordPressed() =
       RegisterWithEmailAndPasswordPressed;
   const factory SignInFormEvent.signInWithEmailAndPasswordPressed() =
       SignInWithEmailAndPasswordPressed;
   const factory SignInFormEvent.signInWithGooglePressed() = SignInWithGooglePressed;
-  const factory SignInFormEvent.signInWithPhoneNumber() = _SignInWithPhoneNumber;
+  const factory SignInFormEvent.signInWithPhoneNumber() = SignInWithPhoneNumber;
 }

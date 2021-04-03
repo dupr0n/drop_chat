@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 
 import '../../../domain/auth/auth_failure.dart';
 import '../../../domain/auth/i_auth_facade.dart';
@@ -62,7 +61,8 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       },
       signInWithPhoneNumber: (e) async* {
         final phoneNo = state.phoneNumber;
-        Either<AuthFailure, Unit> failureOrSuccess;
+        Either<AuthFailure, Unit> failureOrSuccess =
+            left(const AuthFailure.authError(error: 'Initiate'));
         if (phoneNo.isValid()) {
           yield state.copyWith(
             isSubmitting: true,
@@ -84,12 +84,13 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
 
   Stream<SignInFormState> _useEmailAndPassword(
     Future<Either<AuthFailure, Unit>> Function({
-      @required EmailAddress emailAddress,
-      @required Password password,
+      required EmailAddress emailAddress,
+      required Password password,
     })
         forwardedCall,
   ) async* {
-    Either<AuthFailure, Unit> failureOrSuccess;
+    Either<AuthFailure, Unit> failureOrSuccess =
+        left(const AuthFailure.authError(error: 'Initiate'));
     if (state.emailAddress.isValid() && state.password.isValid()) {
       yield state.copyWith(
         isSubmitting: true,

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:drop_chat/domain/chats/chat_types/nil_chat.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
@@ -17,8 +18,8 @@ import 'message_dtos.dart';
 
 @Injectable(as: IMessageRepository)
 class MessageRepository implements IMessageRepository {
-  Chat _chat;
-  Box<MessageDTO> _box;
+  Chat? _chat;
+  Box<MessageDTO>? _box;
   final FirebaseFirestore _firestore;
 
   MessageRepository(this._firestore);
@@ -26,52 +27,53 @@ class MessageRepository implements IMessageRepository {
   Future<void> _updateHive(Message message) async {
     final dto = MessageDTO.fromDomain(message);
     message.updateType.fold(
-      add: () async => _box.put(dto.id, dto),
+      add: () async => _box?.put(dto.id, dto),
       edit: () async {
-        final prev = _box.get(dto.id);
-        await _box.delete(dto.id);
-        await _box.put(dto.id, dto.copyWith(timestamp: prev.timestamp));
+        final prev = _box?.get(dto.id);
+        await _box?.delete(dto.id);
+        await _box?.put(
+            dto.id, dto.copyWith(timestamp: (prev ?? MessageDTO.fromDomain(message)).timestamp));
       },
-      delete: () async => _box.delete(message.id.getOrCrash()),
+      delete: () async => _box?.delete(message.id.getOrCrash()),
       nil: () => null,
     );
   }
 
   Either<MessageFailure, KtList<Message>> _getAllMessages() =>
-      right<MessageFailure, KtList<Message>>(_box.values
+      right<MessageFailure, KtList<Message>>(_box!.values
           .map((dto) => dto.toDomain())
           .toImmutableList()
           .sortedBy((message) => message.timestamp));
 
   Either<MessageFailure, KtList<Message>> _getStarredMessages() =>
-      right<MessageFailure, KtList<Message>>(_box.values
+      right<MessageFailure, KtList<Message>>(_box!.values
           .where((dto) => dto.isStarred)
           .map((dto) => dto.toDomain())
           .toImmutableList()
           .sortedBy((message) => message.timestamp));
 
   //TODO: Delete messages in cloud itself, or make a seperate function to delete when exited
-  Stream<Either<MessageFailure, KtList<Message>>> _watch({@required bool starred}) async* {
+  Stream<Either<MessageFailure, KtList<Message>>> _watch({required bool starred}) async* {
     yield starred ? _getStarredMessages() : _getAllMessages();
     final userDoc = _firestore.curretUserDocument();
     try {
       await for (final snap
-          in userDoc.chatCollection.doc(_chat.id.getOrCrash()).messageCollection.snapshots()) {
+          in userDoc.chatCollection.doc(_chat?.id.getOrCrash()).messageCollection.snapshots()) {
         for (final doc in snap.docs) {
           final dto = MessageDTO.fromFirestore(doc);
           await _updateHive(dto.toDomain());
           yield starred ? _getStarredMessages() : _getAllMessages();
           await userDoc.chatCollection
-              .doc(_chat.id.getOrCrash())
+              .doc(_chat?.id.getOrCrash())
               .messageCollection
               .doc(dto.id)
               .delete();
         }
       }
     } on FirebaseException catch (e) {
-      if (e.message.contains('PERMISSION_DENIED')) {
+      if ((e.message ?? 'NULL_SAFETY').contains('PERMISSION_DENIED')) {
         yield left(const MessageFailure.insufficientPermissions());
-      } else if (e.message.contains('NOT_FOUND')) {
+      } else if ((e.message ?? 'NULL_SAFETY').contains('NOT_FOUND')) {
         yield left(const MessageFailure.unableToUpdate());
       } else {
         yield left(MessageFailure.unexpected(e));
@@ -82,8 +84,8 @@ class MessageRepository implements IMessageRepository {
   }
 
   Future<Either<MessageFailure, Unit>> _action({
-    @required Message message,
-    @required UpdateType type,
+    required Message message,
+    required UpdateType type,
   }) async {
     final messageDTO = MessageDTO.fromDomain(message).copyWith(
         updateType: type.fold(
@@ -93,10 +95,10 @@ class MessageRepository implements IMessageRepository {
       nil: () => UpdateType.nilStr,
     ));
     try {
-      for (final receiver in _chat.receivers) {
+      for (final receiver in (_chat ?? NilChat.empty()).receivers) {
         final userDoc = _firestore.userDocument(receiver.id.getOrCrash());
         await userDoc.chatCollection
-            .doc(_chat.id.getOrCrash())
+            .doc(_chat?.id.getOrCrash())
             .messageCollection
             .doc(messageDTO.id)
             .set(messageDTO.toJson());
@@ -112,7 +114,7 @@ class MessageRepository implements IMessageRepository {
   @override
   Future<void> init(Chat chat) async {
     _chat = chat;
-    _box = await Hive.openBox(_chat.id.getOrCrash());
+    _box = await Hive.openBox((_chat ?? chat).id.getOrCrash());
   }
 
   @override

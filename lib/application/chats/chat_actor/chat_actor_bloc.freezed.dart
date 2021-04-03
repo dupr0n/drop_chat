@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'chat_actor_bloc.dart';
 
@@ -9,11 +9,13 @@ part of 'chat_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ChatActorEventTearOff {
   const _$ChatActorEventTearOff();
 
-// ignore: unused_element
   _Deleted deleted(Chat<dynamic> chat) {
     return _Deleted(
       chat,
@@ -22,34 +24,38 @@ class _$ChatActorEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ChatActorEvent = _$ChatActorEventTearOff();
 
 /// @nodoc
 mixin _$ChatActorEvent {
-  Chat<dynamic> get chat;
+  Chat<dynamic> get chat => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult deleted(Chat<dynamic> chat),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Chat<dynamic> chat) deleted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult deleted(Chat<dynamic> chat),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Chat<dynamic> chat)? deleted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult deleted(_Deleted value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Deleted value) deleted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult deleted(_Deleted value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Deleted value)? deleted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ChatActorEventCopyWith<ChatActorEvent> get copyWith;
+  $ChatActorEventCopyWith<ChatActorEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -71,10 +77,13 @@ class _$ChatActorEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object chat = freezed,
+    Object? chat = freezed,
   }) {
     return _then(_value.copyWith(
-      chat: chat == freezed ? _value.chat : chat as Chat<dynamic>,
+      chat: chat == freezed
+          ? _value.chat
+          : chat // ignore: cast_nullable_to_non_nullable
+              as Chat<dynamic>,
     ));
   }
 }
@@ -99,17 +108,20 @@ class __$DeletedCopyWithImpl<$Res> extends _$ChatActorEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object chat = freezed,
+    Object? chat = freezed,
   }) {
     return _then(_Deleted(
-      chat == freezed ? _value.chat : chat as Chat<dynamic>,
+      chat == freezed
+          ? _value.chat
+          : chat // ignore: cast_nullable_to_non_nullable
+              as Chat<dynamic>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Deleted implements _Deleted {
-  const _$_Deleted(this.chat) : assert(chat != null);
+  const _$_Deleted(this.chat);
 
   @override
   final Chat<dynamic> chat;
@@ -138,20 +150,18 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult deleted(Chat<dynamic> chat),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Chat<dynamic> chat) deleted,
   }) {
-    assert(deleted != null);
     return deleted(chat);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult deleted(Chat<dynamic> chat),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Chat<dynamic> chat)? deleted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleted != null) {
       return deleted(chat);
     }
@@ -160,20 +170,18 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult deleted(_Deleted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Deleted value) deleted,
   }) {
-    assert(deleted != null);
     return deleted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult deleted(_Deleted value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Deleted value)? deleted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleted != null) {
       return deleted(this);
     }
@@ -185,75 +193,75 @@ abstract class _Deleted implements ChatActorEvent {
   const factory _Deleted(Chat<dynamic> chat) = _$_Deleted;
 
   @override
-  Chat<dynamic> get chat;
+  Chat<dynamic> get chat => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DeletedCopyWith<_Deleted> get copyWith;
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ChatActorStateTearOff {
   const _$ChatActorStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _Loading loading() {
     return const _Loading();
   }
 
-// ignore: unused_element
   _DeleteFailure deleteFailure(ChatFailure chatFailure) {
     return _DeleteFailure(
       chatFailure,
     );
   }
 
-// ignore: unused_element
   _DeleteSuccess deleteSuccess() {
     return const _DeleteSuccess();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ChatActorState = _$ChatActorStateTearOff();
 
 /// @nodoc
 mixin _$ChatActorState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult deleteFailure(ChatFailure chatFailure),
-    @required TResult deleteSuccess(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ChatFailure chatFailure) deleteFailure,
+    required TResult Function() deleteSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult deleteFailure(ChatFailure chatFailure),
-    TResult deleteSuccess(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ChatFailure chatFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult deleteFailure(_DeleteFailure value),
-    @required TResult deleteSuccess(_DeleteSuccess value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_DeleteFailure value) deleteFailure,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult deleteFailure(_DeleteFailure value),
-    TResult deleteSuccess(_DeleteSuccess value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -308,29 +316,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult deleteFailure(ChatFailure chatFailure),
-    @required TResult deleteSuccess(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ChatFailure chatFailure) deleteFailure,
+    required TResult Function() deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult deleteFailure(ChatFailure chatFailure),
-    TResult deleteSuccess(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ChatFailure chatFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -339,29 +342,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult deleteFailure(_DeleteFailure value),
-    @required TResult deleteSuccess(_DeleteSuccess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_DeleteFailure value) deleteFailure,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult deleteFailure(_DeleteFailure value),
-    TResult deleteSuccess(_DeleteSuccess value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -408,29 +406,24 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult deleteFailure(ChatFailure chatFailure),
-    @required TResult deleteSuccess(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ChatFailure chatFailure) deleteFailure,
+    required TResult Function() deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult deleteFailure(ChatFailure chatFailure),
-    TResult deleteSuccess(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ChatFailure chatFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -439,29 +432,24 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult deleteFailure(_DeleteFailure value),
-    @required TResult deleteSuccess(_DeleteSuccess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_DeleteFailure value) deleteFailure,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult deleteFailure(_DeleteFailure value),
-    TResult deleteSuccess(_DeleteSuccess value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -496,18 +484,18 @@ class __$DeleteFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object chatFailure = freezed,
+    Object? chatFailure = freezed,
   }) {
     return _then(_DeleteFailure(
-      chatFailure == freezed ? _value.chatFailure : chatFailure as ChatFailure,
+      chatFailure == freezed
+          ? _value.chatFailure
+          : chatFailure // ignore: cast_nullable_to_non_nullable
+              as ChatFailure,
     ));
   }
 
   @override
   $ChatFailureCopyWith<$Res> get chatFailure {
-    if (_value.chatFailure == null) {
-      return null;
-    }
     return $ChatFailureCopyWith<$Res>(_value.chatFailure, (value) {
       return _then(_value.copyWith(chatFailure: value));
     });
@@ -516,7 +504,7 @@ class __$DeleteFailureCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_DeleteFailure implements _DeleteFailure {
-  const _$_DeleteFailure(this.chatFailure) : assert(chatFailure != null);
+  const _$_DeleteFailure(this.chatFailure);
 
   @override
   final ChatFailure chatFailure;
@@ -546,29 +534,24 @@ class _$_DeleteFailure implements _DeleteFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult deleteFailure(ChatFailure chatFailure),
-    @required TResult deleteSuccess(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ChatFailure chatFailure) deleteFailure,
+    required TResult Function() deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return deleteFailure(chatFailure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult deleteFailure(ChatFailure chatFailure),
-    TResult deleteSuccess(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ChatFailure chatFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteFailure != null) {
       return deleteFailure(chatFailure);
     }
@@ -577,29 +560,24 @@ class _$_DeleteFailure implements _DeleteFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult deleteFailure(_DeleteFailure value),
-    @required TResult deleteSuccess(_DeleteSuccess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_DeleteFailure value) deleteFailure,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return deleteFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult deleteFailure(_DeleteFailure value),
-    TResult deleteSuccess(_DeleteSuccess value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteFailure != null) {
       return deleteFailure(this);
     }
@@ -610,9 +588,10 @@ class _$_DeleteFailure implements _DeleteFailure {
 abstract class _DeleteFailure implements ChatActorState {
   const factory _DeleteFailure(ChatFailure chatFailure) = _$_DeleteFailure;
 
-  ChatFailure get chatFailure;
+  ChatFailure get chatFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$DeleteFailureCopyWith<_DeleteFailure> get copyWith;
+  _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -653,29 +632,24 @@ class _$_DeleteSuccess implements _DeleteSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult deleteFailure(ChatFailure chatFailure),
-    @required TResult deleteSuccess(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ChatFailure chatFailure) deleteFailure,
+    required TResult Function() deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return deleteSuccess();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult deleteFailure(ChatFailure chatFailure),
-    TResult deleteSuccess(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ChatFailure chatFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteSuccess != null) {
       return deleteSuccess();
     }
@@ -684,29 +658,24 @@ class _$_DeleteSuccess implements _DeleteSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult deleteFailure(_DeleteFailure value),
-    @required TResult deleteSuccess(_DeleteSuccess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_DeleteFailure value) deleteFailure,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return deleteSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult deleteFailure(_DeleteFailure value),
-    TResult deleteSuccess(_DeleteSuccess value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteSuccess != null) {
       return deleteSuccess(this);
     }

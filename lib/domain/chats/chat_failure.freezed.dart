@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'chat_failure.dart';
 
@@ -9,60 +9,64 @@ part of 'chat_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ChatFailureTearOff {
   const _$ChatFailureTearOff();
 
-// ignore: unused_element
   _Unexpected unexpected(dynamic e) {
     return _Unexpected(
       e,
     );
   }
 
-// ignore: unused_element
   _UnableToUpdate unableToUpdate() {
     return const _UnableToUpdate();
   }
 
-// ignore: unused_element
   _InsufficientPermissions insufficientPermissions() {
     return const _InsufficientPermissions();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ChatFailure = _$ChatFailureTearOff();
 
 /// @nodoc
 mixin _$ChatFailure {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult unexpected(dynamic e),
-    @required TResult unableToUpdate(),
-    @required TResult insufficientPermissions(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(dynamic e) unexpected,
+    required TResult Function() unableToUpdate,
+    required TResult Function() insufficientPermissions,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult unexpected(dynamic e),
-    TResult unableToUpdate(),
-    TResult insufficientPermissions(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(dynamic e)? unexpected,
+    TResult Function()? unableToUpdate,
+    TResult Function()? insufficientPermissions,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult unexpected(_Unexpected value),
-    @required TResult unableToUpdate(_UnableToUpdate value),
-    @required TResult insufficientPermissions(_InsufficientPermissions value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_InsufficientPermissions value)
+        insufficientPermissions,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult unexpected(_Unexpected value),
-    TResult unableToUpdate(_UnableToUpdate value),
-    TResult insufficientPermissions(_InsufficientPermissions value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -101,17 +105,20 @@ class __$UnexpectedCopyWithImpl<$Res> extends _$ChatFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object e = freezed,
+    Object? e = freezed,
   }) {
     return _then(_Unexpected(
-      e == freezed ? _value.e : e as dynamic,
+      e == freezed
+          ? _value.e
+          : e // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
 
 /// @nodoc
 class _$_Unexpected implements _Unexpected {
-  const _$_Unexpected(this.e) : assert(e != null);
+  const _$_Unexpected(this.e);
 
   @override
   final dynamic e;
@@ -140,26 +147,22 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult unexpected(dynamic e),
-    @required TResult unableToUpdate(),
-    @required TResult insufficientPermissions(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(dynamic e) unexpected,
+    required TResult Function() unableToUpdate,
+    required TResult Function() insufficientPermissions,
   }) {
-    assert(unexpected != null);
-    assert(unableToUpdate != null);
-    assert(insufficientPermissions != null);
     return unexpected(e);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult unexpected(dynamic e),
-    TResult unableToUpdate(),
-    TResult insufficientPermissions(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(dynamic e)? unexpected,
+    TResult Function()? unableToUpdate,
+    TResult Function()? insufficientPermissions,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unexpected != null) {
       return unexpected(e);
     }
@@ -168,26 +171,23 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult unexpected(_Unexpected value),
-    @required TResult unableToUpdate(_UnableToUpdate value),
-    @required TResult insufficientPermissions(_InsufficientPermissions value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_InsufficientPermissions value)
+        insufficientPermissions,
   }) {
-    assert(unexpected != null);
-    assert(unableToUpdate != null);
-    assert(insufficientPermissions != null);
     return unexpected(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult unexpected(_Unexpected value),
-    TResult unableToUpdate(_UnableToUpdate value),
-    TResult insufficientPermissions(_InsufficientPermissions value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unexpected != null) {
       return unexpected(this);
     }
@@ -198,9 +198,10 @@ class _$_Unexpected implements _Unexpected {
 abstract class _Unexpected implements ChatFailure {
   const factory _Unexpected(dynamic e) = _$_Unexpected;
 
-  dynamic get e;
+  dynamic get e => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$UnexpectedCopyWith<_Unexpected> get copyWith;
+  _$UnexpectedCopyWith<_Unexpected> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -241,26 +242,22 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult unexpected(dynamic e),
-    @required TResult unableToUpdate(),
-    @required TResult insufficientPermissions(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(dynamic e) unexpected,
+    required TResult Function() unableToUpdate,
+    required TResult Function() insufficientPermissions,
   }) {
-    assert(unexpected != null);
-    assert(unableToUpdate != null);
-    assert(insufficientPermissions != null);
     return unableToUpdate();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult unexpected(dynamic e),
-    TResult unableToUpdate(),
-    TResult insufficientPermissions(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(dynamic e)? unexpected,
+    TResult Function()? unableToUpdate,
+    TResult Function()? insufficientPermissions,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unableToUpdate != null) {
       return unableToUpdate();
     }
@@ -269,26 +266,23 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult unexpected(_Unexpected value),
-    @required TResult unableToUpdate(_UnableToUpdate value),
-    @required TResult insufficientPermissions(_InsufficientPermissions value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_InsufficientPermissions value)
+        insufficientPermissions,
   }) {
-    assert(unexpected != null);
-    assert(unableToUpdate != null);
-    assert(insufficientPermissions != null);
     return unableToUpdate(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult unexpected(_Unexpected value),
-    TResult unableToUpdate(_UnableToUpdate value),
-    TResult insufficientPermissions(_InsufficientPermissions value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unableToUpdate != null) {
       return unableToUpdate(this);
     }
@@ -339,26 +333,22 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult unexpected(dynamic e),
-    @required TResult unableToUpdate(),
-    @required TResult insufficientPermissions(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(dynamic e) unexpected,
+    required TResult Function() unableToUpdate,
+    required TResult Function() insufficientPermissions,
   }) {
-    assert(unexpected != null);
-    assert(unableToUpdate != null);
-    assert(insufficientPermissions != null);
     return insufficientPermissions();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult unexpected(dynamic e),
-    TResult unableToUpdate(),
-    TResult insufficientPermissions(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(dynamic e)? unexpected,
+    TResult Function()? unableToUpdate,
+    TResult Function()? insufficientPermissions,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (insufficientPermissions != null) {
       return insufficientPermissions();
     }
@@ -367,26 +357,23 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult unexpected(_Unexpected value),
-    @required TResult unableToUpdate(_UnableToUpdate value),
-    @required TResult insufficientPermissions(_InsufficientPermissions value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_InsufficientPermissions value)
+        insufficientPermissions,
   }) {
-    assert(unexpected != null);
-    assert(unableToUpdate != null);
-    assert(insufficientPermissions != null);
     return insufficientPermissions(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult unexpected(_Unexpected value),
-    TResult unableToUpdate(_UnableToUpdate value),
-    TResult insufficientPermissions(_InsufficientPermissions value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (insufficientPermissions != null) {
       return insufficientPermissions(this);
     }

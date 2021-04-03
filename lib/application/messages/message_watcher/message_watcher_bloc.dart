@@ -17,7 +17,7 @@ part 'message_watcher_state.dart';
 @injectable
 class MessageWatcherBloc extends Bloc<MessageWatcherEvent, MessageWatcherState> {
   final IMessageRepository _messageRepository;
-  StreamSubscription<Either<MessageFailure, KtList<Message>>> _messageStreamSubscription;
+  StreamSubscription<Either<MessageFailure, KtList<Message>>>? _messageStreamSubscription;
 
   MessageWatcherBloc(this._messageRepository) : super(const MessageWatcherState.initial());
 
@@ -50,7 +50,7 @@ class MessageWatcherBloc extends Bloc<MessageWatcherEvent, MessageWatcherState> 
       },
       starMessages: (e) async* {
         yield* _batchAction(
-            e, (msg) => _messageRepository.edit(msg.copyWith(isStarred: !msg.isStarred)));
+            e, (msg) => _messageRepository.edit(msg.copyWith(isStarred: msg.isStarred)));
       },
     );
   }

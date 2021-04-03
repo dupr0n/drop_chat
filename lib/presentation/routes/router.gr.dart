@@ -4,54 +4,39 @@
 // AutoRouteGenerator
 // **************************************************************************
 
-// ignore_for_file: public_member_api_docs
+import 'package:auto_route/auto_route.dart' as _i1;
 
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import '../home_page/home_page.dart' as _i3;
+import '../sign_in/sign_in_page.dart' as _i2;
 
-import '../home_page/home_page.dart';
-import '../sign_in/sign_in_page.dart';
+class Router extends _i1.RootStackRouter {
+  Router();
 
-class Routes {
-  static const String signInPage = '/';
-  static const String homePage = '/home-page';
-  static const all = <String>{
-    signInPage,
-    homePage,
+  @override
+  final Map<String, _i1.PageFactory> pagesMap = {
+    SignInPageRoute.name: (entry) {
+      return _i1.MaterialPageX(entry: entry, child: _i2.SignInPage());
+    },
+    HomePageRoute.name: (entry) {
+      return _i1.MaterialPageX(entry: entry, child: const _i3.HomePage());
+    }
   };
+
+  @override
+  List<_i1.RouteConfig> get routes => [
+        _i1.RouteConfig(SignInPageRoute.name, path: '/'),
+        _i1.RouteConfig(HomePageRoute.name, path: '/home-page')
+      ];
 }
 
-class Router extends RouterBase {
-  @override
-  List<RouteDef> get routes => _routes;
-  final _routes = <RouteDef>[
-    RouteDef(Routes.signInPage, page: SignInPage),
-    RouteDef(Routes.homePage, page: HomePage),
-  ];
-  @override
-  Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
-  final _pagesMap = <Type, AutoRouteFactory>{
-    SignInPage: (data) {
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => SignInPage(),
-        settings: data,
-      );
-    },
-    HomePage: (data) {
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => const HomePage(),
-        settings: data,
-      );
-    },
-  };
+class SignInPageRoute extends _i1.PageRouteInfo {
+  const SignInPageRoute() : super(name, path: '/');
+
+  static const String name = 'SignInPageRoute';
 }
 
-/// ************************************************************************
-/// Navigation helper methods extension
-/// *************************************************************************
+class HomePageRoute extends _i1.PageRouteInfo {
+  const HomePageRoute() : super(name, path: '/home-page');
 
-extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
-  Future<dynamic> pushSignInPage() => push<dynamic>(Routes.signInPage);
-
-  Future<dynamic> pushHomePage() => push<dynamic>(Routes.homePage);
+  static const String name = 'HomePageRoute';
 }

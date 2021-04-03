@@ -17,7 +17,7 @@ part 'chat_watcher_state.dart';
 @injectable
 class ChatWatcherBloc extends Bloc<ChatWatcherEvent, ChatWatcherState> {
   final IChatRepository _chatRepository;
-  StreamSubscription<Either<ChatFailure, KtList<Chat>>> _chatStreamSubscription;
+  StreamSubscription<Either<ChatFailure, KtList<Chat>>>? _chatStreamSubscription;
 
   ChatWatcherBloc(this._chatRepository) : super(const ChatWatcherState.initial());
 
@@ -48,13 +48,13 @@ class ChatWatcherBloc extends Bloc<ChatWatcherEvent, ChatWatcherState> {
       muteChats: (e) async* {
         yield* _batchAction(
           e.selectedChats,
-          (chat) => _chatRepository.edit(chat.copyWith(isMuted: !chat.isMuted) as Chat),
+          (chat) => _chatRepository.edit(chat.copyWith(isMuted: chat.isMuted) as Chat),
         );
       },
       archiveChats: (e) async* {
         yield* _batchAction(
           e.selectedChats,
-          (chat) => _chatRepository.edit(chat.copyWith(isArchived: !chat.isArchived) as Chat),
+          (chat) => _chatRepository.edit(chat.copyWith(isArchived: chat.isArchived) as Chat),
         );
       },
       deleteChats: (e) async* {

@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
-import 'package:meta/meta.dart';
 
 import '../../domain/auth/user.dart';
 import '../../domain/auth/value_objects.dart';
@@ -12,14 +11,14 @@ part 'user_dtos.g.dart';
 
 @freezed
 @HiveType(typeId: 2)
-abstract class UserDTO with _$UserDTO {
+class UserDTO with _$UserDTO {
   const UserDTO._();
 
   const factory UserDTO({
-    @HiveField(0) @required String id,
-    @HiveField(1) @required String displayName,
-    @HiveField(2) @required String phoneNumber,
-    @HiveField(3) @required bool isOnline,
+    @HiveField(0) required String id,
+    @HiveField(1) required String displayName,
+    @HiveField(2) required String phoneNumber,
+    @HiveField(3) required bool isOnline,
   }) = _UserDTO;
 
   factory UserDTO.fromDomain(User user) => UserDTO(
@@ -37,7 +36,7 @@ abstract class UserDTO with _$UserDTO {
       );
 
   factory UserDTO.fromFirestore(DocumentSnapshot doc) =>
-      UserDTO.fromJson(doc.data()).copyWith(id: doc.id);
+      UserDTO.fromJson(doc.data() ?? {}).copyWith(id: doc.id);
 
   factory UserDTO.fromJson(Map<String, dynamic> json) => _$UserDTOFromJson(json);
 }

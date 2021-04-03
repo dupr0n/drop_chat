@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'chat_form_bloc.dart';
 
@@ -9,40 +9,38 @@ part of 'chat_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ChatFormEventTearOff {
   const _$ChatFormEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Option<Either<ChatType, Chat>> initialChatOption) {
     return _Initialized(
       initialChatOption,
     );
   }
 
-// ignore: unused_element
   _IsArchivedChanged isArchivedChanged() {
     return const _IsArchivedChanged();
   }
 
-// ignore: unused_element
   _IsMutedChanged isMutedChanged() {
     return const _IsMutedChanged();
   }
 
-// ignore: unused_element
   _CanSendChanged canSendChanged() {
     return const _CanSendChanged();
   }
 
-// ignore: unused_element
   _ChatPropertiesChanged chatPropertiesChanged(
-      {KtList<User> users,
-      bool isAdmin,
-      bool canReceive,
-      String groupName,
-      String groupDescription,
-      User receiver}) {
+      {KtList<User>? users,
+      bool? isAdmin,
+      bool? canReceive,
+      String? groupName,
+      String? groupDescription,
+      User? receiver}) {
     return _ChatPropertiesChanged(
       users: users,
       isAdmin: isAdmin,
@@ -53,70 +51,70 @@ class _$ChatFormEventTearOff {
     );
   }
 
-// ignore: unused_element
   _Saved saved() {
     return const _Saved();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ChatFormEvent = _$ChatFormEventTearOff();
 
 /// @nodoc
 mixin _$ChatFormEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    @required TResult isArchivedChanged(),
-    @required TResult isMutedChanged(),
-    @required TResult canSendChanged(),
-    @required
-        TResult chatPropertiesChanged(
-            KtList<User> users,
-            bool isAdmin,
-            bool canReceive,
-            String groupName,
-            String groupDescription,
-            User receiver),
-    @required TResult saved(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Either<ChatType, Chat>> initialChatOption)
+        initialized,
+    required TResult Function() isArchivedChanged,
+    required TResult Function() isMutedChanged,
+    required TResult Function() canSendChanged,
+    required TResult Function(
+            KtList<User>? users,
+            bool? isAdmin,
+            bool? canReceive,
+            String? groupName,
+            String? groupDescription,
+            User? receiver)
+        chatPropertiesChanged,
+    required TResult Function() saved,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    TResult isArchivedChanged(),
-    TResult isMutedChanged(),
-    TResult canSendChanged(),
-    TResult chatPropertiesChanged(
-        KtList<User> users,
-        bool isAdmin,
-        bool canReceive,
-        String groupName,
-        String groupDescription,
-        User receiver),
-    TResult saved(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Either<ChatType, Chat>> initialChatOption)?
+        initialized,
+    TResult Function()? isArchivedChanged,
+    TResult Function()? isMutedChanged,
+    TResult Function()? canSendChanged,
+    TResult Function(KtList<User>? users, bool? isAdmin, bool? canReceive,
+            String? groupName, String? groupDescription, User? receiver)?
+        chatPropertiesChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult isArchivedChanged(_IsArchivedChanged value),
-    @required TResult isMutedChanged(_IsMutedChanged value),
-    @required TResult canSendChanged(_CanSendChanged value),
-    @required TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    @required TResult saved(_Saved value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_IsArchivedChanged value) isArchivedChanged,
+    required TResult Function(_IsMutedChanged value) isMutedChanged,
+    required TResult Function(_CanSendChanged value) canSendChanged,
+    required TResult Function(_ChatPropertiesChanged value)
+        chatPropertiesChanged,
+    required TResult Function(_Saved value) saved,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult isArchivedChanged(_IsArchivedChanged value),
-    TResult isMutedChanged(_IsMutedChanged value),
-    TResult canSendChanged(_CanSendChanged value),
-    TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_IsArchivedChanged value)? isArchivedChanged,
+    TResult Function(_IsMutedChanged value)? isMutedChanged,
+    TResult Function(_CanSendChanged value)? canSendChanged,
+    TResult Function(_ChatPropertiesChanged value)? chatPropertiesChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -156,20 +154,20 @@ class __$InitializedCopyWithImpl<$Res> extends _$ChatFormEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object initialChatOption = freezed,
+    Object? initialChatOption = freezed,
   }) {
     return _then(_Initialized(
       initialChatOption == freezed
           ? _value.initialChatOption
-          : initialChatOption as Option<Either<ChatType, Chat>>,
+          : initialChatOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ChatType, Chat>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
-  const _$_Initialized(this.initialChatOption)
-      : assert(initialChatOption != null);
+  const _$_Initialized(this.initialChatOption);
 
   @override
   final Option<Either<ChatType, Chat>> initialChatOption;
@@ -208,49 +206,39 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    @required TResult isArchivedChanged(),
-    @required TResult isMutedChanged(),
-    @required TResult canSendChanged(),
-    @required
-        TResult chatPropertiesChanged(
-            KtList<User> users,
-            bool isAdmin,
-            bool canReceive,
-            String groupName,
-            String groupDescription,
-            User receiver),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Either<ChatType, Chat>> initialChatOption)
+        initialized,
+    required TResult Function() isArchivedChanged,
+    required TResult Function() isMutedChanged,
+    required TResult Function() canSendChanged,
+    required TResult Function(
+            KtList<User>? users,
+            bool? isAdmin,
+            bool? canReceive,
+            String? groupName,
+            String? groupDescription,
+            User? receiver)
+        chatPropertiesChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(isArchivedChanged != null);
-    assert(isMutedChanged != null);
-    assert(canSendChanged != null);
-    assert(chatPropertiesChanged != null);
-    assert(saved != null);
     return initialized(initialChatOption);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    TResult isArchivedChanged(),
-    TResult isMutedChanged(),
-    TResult canSendChanged(),
-    TResult chatPropertiesChanged(
-        KtList<User> users,
-        bool isAdmin,
-        bool canReceive,
-        String groupName,
-        String groupDescription,
-        User receiver),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Either<ChatType, Chat>> initialChatOption)?
+        initialized,
+    TResult Function()? isArchivedChanged,
+    TResult Function()? isMutedChanged,
+    TResult Function()? canSendChanged,
+    TResult Function(KtList<User>? users, bool? isAdmin, bool? canReceive,
+            String? groupName, String? groupDescription, User? receiver)?
+        chatPropertiesChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(initialChatOption);
     }
@@ -259,35 +247,29 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult isArchivedChanged(_IsArchivedChanged value),
-    @required TResult isMutedChanged(_IsMutedChanged value),
-    @required TResult canSendChanged(_CanSendChanged value),
-    @required TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_IsArchivedChanged value) isArchivedChanged,
+    required TResult Function(_IsMutedChanged value) isMutedChanged,
+    required TResult Function(_CanSendChanged value) canSendChanged,
+    required TResult Function(_ChatPropertiesChanged value)
+        chatPropertiesChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(isArchivedChanged != null);
-    assert(isMutedChanged != null);
-    assert(canSendChanged != null);
-    assert(chatPropertiesChanged != null);
-    assert(saved != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult isArchivedChanged(_IsArchivedChanged value),
-    TResult isMutedChanged(_IsMutedChanged value),
-    TResult canSendChanged(_CanSendChanged value),
-    TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_IsArchivedChanged value)? isArchivedChanged,
+    TResult Function(_IsMutedChanged value)? isMutedChanged,
+    TResult Function(_CanSendChanged value)? canSendChanged,
+    TResult Function(_ChatPropertiesChanged value)? chatPropertiesChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -299,9 +281,11 @@ abstract class _Initialized implements ChatFormEvent {
   const factory _Initialized(Option<Either<ChatType, Chat>> initialChatOption) =
       _$_Initialized;
 
-  Option<Either<ChatType, Chat>> get initialChatOption;
+  Option<Either<ChatType, Chat>> get initialChatOption =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -351,49 +335,39 @@ class _$_IsArchivedChanged
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    @required TResult isArchivedChanged(),
-    @required TResult isMutedChanged(),
-    @required TResult canSendChanged(),
-    @required
-        TResult chatPropertiesChanged(
-            KtList<User> users,
-            bool isAdmin,
-            bool canReceive,
-            String groupName,
-            String groupDescription,
-            User receiver),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Either<ChatType, Chat>> initialChatOption)
+        initialized,
+    required TResult Function() isArchivedChanged,
+    required TResult Function() isMutedChanged,
+    required TResult Function() canSendChanged,
+    required TResult Function(
+            KtList<User>? users,
+            bool? isAdmin,
+            bool? canReceive,
+            String? groupName,
+            String? groupDescription,
+            User? receiver)
+        chatPropertiesChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(isArchivedChanged != null);
-    assert(isMutedChanged != null);
-    assert(canSendChanged != null);
-    assert(chatPropertiesChanged != null);
-    assert(saved != null);
     return isArchivedChanged();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    TResult isArchivedChanged(),
-    TResult isMutedChanged(),
-    TResult canSendChanged(),
-    TResult chatPropertiesChanged(
-        KtList<User> users,
-        bool isAdmin,
-        bool canReceive,
-        String groupName,
-        String groupDescription,
-        User receiver),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Either<ChatType, Chat>> initialChatOption)?
+        initialized,
+    TResult Function()? isArchivedChanged,
+    TResult Function()? isMutedChanged,
+    TResult Function()? canSendChanged,
+    TResult Function(KtList<User>? users, bool? isAdmin, bool? canReceive,
+            String? groupName, String? groupDescription, User? receiver)?
+        chatPropertiesChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (isArchivedChanged != null) {
       return isArchivedChanged();
     }
@@ -402,35 +376,29 @@ class _$_IsArchivedChanged
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult isArchivedChanged(_IsArchivedChanged value),
-    @required TResult isMutedChanged(_IsMutedChanged value),
-    @required TResult canSendChanged(_CanSendChanged value),
-    @required TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_IsArchivedChanged value) isArchivedChanged,
+    required TResult Function(_IsMutedChanged value) isMutedChanged,
+    required TResult Function(_CanSendChanged value) canSendChanged,
+    required TResult Function(_ChatPropertiesChanged value)
+        chatPropertiesChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(isArchivedChanged != null);
-    assert(isMutedChanged != null);
-    assert(canSendChanged != null);
-    assert(chatPropertiesChanged != null);
-    assert(saved != null);
     return isArchivedChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult isArchivedChanged(_IsArchivedChanged value),
-    TResult isMutedChanged(_IsMutedChanged value),
-    TResult canSendChanged(_CanSendChanged value),
-    TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_IsArchivedChanged value)? isArchivedChanged,
+    TResult Function(_IsMutedChanged value)? isMutedChanged,
+    TResult Function(_CanSendChanged value)? canSendChanged,
+    TResult Function(_ChatPropertiesChanged value)? chatPropertiesChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (isArchivedChanged != null) {
       return isArchivedChanged(this);
     }
@@ -489,49 +457,39 @@ class _$_IsMutedChanged
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    @required TResult isArchivedChanged(),
-    @required TResult isMutedChanged(),
-    @required TResult canSendChanged(),
-    @required
-        TResult chatPropertiesChanged(
-            KtList<User> users,
-            bool isAdmin,
-            bool canReceive,
-            String groupName,
-            String groupDescription,
-            User receiver),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Either<ChatType, Chat>> initialChatOption)
+        initialized,
+    required TResult Function() isArchivedChanged,
+    required TResult Function() isMutedChanged,
+    required TResult Function() canSendChanged,
+    required TResult Function(
+            KtList<User>? users,
+            bool? isAdmin,
+            bool? canReceive,
+            String? groupName,
+            String? groupDescription,
+            User? receiver)
+        chatPropertiesChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(isArchivedChanged != null);
-    assert(isMutedChanged != null);
-    assert(canSendChanged != null);
-    assert(chatPropertiesChanged != null);
-    assert(saved != null);
     return isMutedChanged();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    TResult isArchivedChanged(),
-    TResult isMutedChanged(),
-    TResult canSendChanged(),
-    TResult chatPropertiesChanged(
-        KtList<User> users,
-        bool isAdmin,
-        bool canReceive,
-        String groupName,
-        String groupDescription,
-        User receiver),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Either<ChatType, Chat>> initialChatOption)?
+        initialized,
+    TResult Function()? isArchivedChanged,
+    TResult Function()? isMutedChanged,
+    TResult Function()? canSendChanged,
+    TResult Function(KtList<User>? users, bool? isAdmin, bool? canReceive,
+            String? groupName, String? groupDescription, User? receiver)?
+        chatPropertiesChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (isMutedChanged != null) {
       return isMutedChanged();
     }
@@ -540,35 +498,29 @@ class _$_IsMutedChanged
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult isArchivedChanged(_IsArchivedChanged value),
-    @required TResult isMutedChanged(_IsMutedChanged value),
-    @required TResult canSendChanged(_CanSendChanged value),
-    @required TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_IsArchivedChanged value) isArchivedChanged,
+    required TResult Function(_IsMutedChanged value) isMutedChanged,
+    required TResult Function(_CanSendChanged value) canSendChanged,
+    required TResult Function(_ChatPropertiesChanged value)
+        chatPropertiesChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(isArchivedChanged != null);
-    assert(isMutedChanged != null);
-    assert(canSendChanged != null);
-    assert(chatPropertiesChanged != null);
-    assert(saved != null);
     return isMutedChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult isArchivedChanged(_IsArchivedChanged value),
-    TResult isMutedChanged(_IsMutedChanged value),
-    TResult canSendChanged(_CanSendChanged value),
-    TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_IsArchivedChanged value)? isArchivedChanged,
+    TResult Function(_IsMutedChanged value)? isMutedChanged,
+    TResult Function(_CanSendChanged value)? canSendChanged,
+    TResult Function(_ChatPropertiesChanged value)? chatPropertiesChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (isMutedChanged != null) {
       return isMutedChanged(this);
     }
@@ -627,49 +579,39 @@ class _$_CanSendChanged
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    @required TResult isArchivedChanged(),
-    @required TResult isMutedChanged(),
-    @required TResult canSendChanged(),
-    @required
-        TResult chatPropertiesChanged(
-            KtList<User> users,
-            bool isAdmin,
-            bool canReceive,
-            String groupName,
-            String groupDescription,
-            User receiver),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Either<ChatType, Chat>> initialChatOption)
+        initialized,
+    required TResult Function() isArchivedChanged,
+    required TResult Function() isMutedChanged,
+    required TResult Function() canSendChanged,
+    required TResult Function(
+            KtList<User>? users,
+            bool? isAdmin,
+            bool? canReceive,
+            String? groupName,
+            String? groupDescription,
+            User? receiver)
+        chatPropertiesChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(isArchivedChanged != null);
-    assert(isMutedChanged != null);
-    assert(canSendChanged != null);
-    assert(chatPropertiesChanged != null);
-    assert(saved != null);
     return canSendChanged();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    TResult isArchivedChanged(),
-    TResult isMutedChanged(),
-    TResult canSendChanged(),
-    TResult chatPropertiesChanged(
-        KtList<User> users,
-        bool isAdmin,
-        bool canReceive,
-        String groupName,
-        String groupDescription,
-        User receiver),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Either<ChatType, Chat>> initialChatOption)?
+        initialized,
+    TResult Function()? isArchivedChanged,
+    TResult Function()? isMutedChanged,
+    TResult Function()? canSendChanged,
+    TResult Function(KtList<User>? users, bool? isAdmin, bool? canReceive,
+            String? groupName, String? groupDescription, User? receiver)?
+        chatPropertiesChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (canSendChanged != null) {
       return canSendChanged();
     }
@@ -678,35 +620,29 @@ class _$_CanSendChanged
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult isArchivedChanged(_IsArchivedChanged value),
-    @required TResult isMutedChanged(_IsMutedChanged value),
-    @required TResult canSendChanged(_CanSendChanged value),
-    @required TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_IsArchivedChanged value) isArchivedChanged,
+    required TResult Function(_IsMutedChanged value) isMutedChanged,
+    required TResult Function(_CanSendChanged value) canSendChanged,
+    required TResult Function(_ChatPropertiesChanged value)
+        chatPropertiesChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(isArchivedChanged != null);
-    assert(isMutedChanged != null);
-    assert(canSendChanged != null);
-    assert(chatPropertiesChanged != null);
-    assert(saved != null);
     return canSendChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult isArchivedChanged(_IsArchivedChanged value),
-    TResult isMutedChanged(_IsMutedChanged value),
-    TResult canSendChanged(_CanSendChanged value),
-    TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_IsArchivedChanged value)? isArchivedChanged,
+    TResult Function(_IsMutedChanged value)? isMutedChanged,
+    TResult Function(_CanSendChanged value)? canSendChanged,
+    TResult Function(_ChatPropertiesChanged value)? chatPropertiesChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (canSendChanged != null) {
       return canSendChanged(this);
     }
@@ -724,14 +660,14 @@ abstract class _$ChatPropertiesChangedCopyWith<$Res> {
           $Res Function(_ChatPropertiesChanged) then) =
       __$ChatPropertiesChangedCopyWithImpl<$Res>;
   $Res call(
-      {KtList<User> users,
-      bool isAdmin,
-      bool canReceive,
-      String groupName,
-      String groupDescription,
-      User receiver});
+      {KtList<User>? users,
+      bool? isAdmin,
+      bool? canReceive,
+      String? groupName,
+      String? groupDescription,
+      User? receiver});
 
-  $UserCopyWith<$Res> get receiver;
+  $UserCopyWith<$Res>? get receiver;
 }
 
 /// @nodoc
@@ -747,32 +683,48 @@ class __$ChatPropertiesChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object users = freezed,
-    Object isAdmin = freezed,
-    Object canReceive = freezed,
-    Object groupName = freezed,
-    Object groupDescription = freezed,
-    Object receiver = freezed,
+    Object? users = freezed,
+    Object? isAdmin = freezed,
+    Object? canReceive = freezed,
+    Object? groupName = freezed,
+    Object? groupDescription = freezed,
+    Object? receiver = freezed,
   }) {
     return _then(_ChatPropertiesChanged(
-      users: users == freezed ? _value.users : users as KtList<User>,
-      isAdmin: isAdmin == freezed ? _value.isAdmin : isAdmin as bool,
-      canReceive:
-          canReceive == freezed ? _value.canReceive : canReceive as bool,
-      groupName: groupName == freezed ? _value.groupName : groupName as String,
+      users: users == freezed
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as KtList<User>?,
+      isAdmin: isAdmin == freezed
+          ? _value.isAdmin
+          : isAdmin // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canReceive: canReceive == freezed
+          ? _value.canReceive
+          : canReceive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      groupName: groupName == freezed
+          ? _value.groupName
+          : groupName // ignore: cast_nullable_to_non_nullable
+              as String?,
       groupDescription: groupDescription == freezed
           ? _value.groupDescription
-          : groupDescription as String,
-      receiver: receiver == freezed ? _value.receiver : receiver as User,
+          : groupDescription // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receiver: receiver == freezed
+          ? _value.receiver
+          : receiver // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
   }
 
   @override
-  $UserCopyWith<$Res> get receiver {
+  $UserCopyWith<$Res>? get receiver {
     if (_value.receiver == null) {
       return null;
     }
-    return $UserCopyWith<$Res>(_value.receiver, (value) {
+
+    return $UserCopyWith<$Res>(_value.receiver!, (value) {
       return _then(_value.copyWith(receiver: value));
     });
   }
@@ -791,17 +743,17 @@ class _$_ChatPropertiesChanged
       this.receiver});
 
   @override
-  final KtList<User> users;
+  final KtList<User>? users;
   @override
-  final bool isAdmin;
+  final bool? isAdmin;
   @override
-  final bool canReceive;
+  final bool? canReceive;
   @override
-  final String groupName;
+  final String? groupName;
   @override
-  final String groupDescription;
+  final String? groupDescription;
   @override
-  final User receiver;
+  final User? receiver;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -862,50 +814,40 @@ class _$_ChatPropertiesChanged
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    @required TResult isArchivedChanged(),
-    @required TResult isMutedChanged(),
-    @required TResult canSendChanged(),
-    @required
-        TResult chatPropertiesChanged(
-            KtList<User> users,
-            bool isAdmin,
-            bool canReceive,
-            String groupName,
-            String groupDescription,
-            User receiver),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Either<ChatType, Chat>> initialChatOption)
+        initialized,
+    required TResult Function() isArchivedChanged,
+    required TResult Function() isMutedChanged,
+    required TResult Function() canSendChanged,
+    required TResult Function(
+            KtList<User>? users,
+            bool? isAdmin,
+            bool? canReceive,
+            String? groupName,
+            String? groupDescription,
+            User? receiver)
+        chatPropertiesChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(isArchivedChanged != null);
-    assert(isMutedChanged != null);
-    assert(canSendChanged != null);
-    assert(chatPropertiesChanged != null);
-    assert(saved != null);
     return chatPropertiesChanged(
         users, isAdmin, canReceive, groupName, groupDescription, receiver);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    TResult isArchivedChanged(),
-    TResult isMutedChanged(),
-    TResult canSendChanged(),
-    TResult chatPropertiesChanged(
-        KtList<User> users,
-        bool isAdmin,
-        bool canReceive,
-        String groupName,
-        String groupDescription,
-        User receiver),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Either<ChatType, Chat>> initialChatOption)?
+        initialized,
+    TResult Function()? isArchivedChanged,
+    TResult Function()? isMutedChanged,
+    TResult Function()? canSendChanged,
+    TResult Function(KtList<User>? users, bool? isAdmin, bool? canReceive,
+            String? groupName, String? groupDescription, User? receiver)?
+        chatPropertiesChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (chatPropertiesChanged != null) {
       return chatPropertiesChanged(
           users, isAdmin, canReceive, groupName, groupDescription, receiver);
@@ -915,35 +857,29 @@ class _$_ChatPropertiesChanged
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult isArchivedChanged(_IsArchivedChanged value),
-    @required TResult isMutedChanged(_IsMutedChanged value),
-    @required TResult canSendChanged(_CanSendChanged value),
-    @required TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_IsArchivedChanged value) isArchivedChanged,
+    required TResult Function(_IsMutedChanged value) isMutedChanged,
+    required TResult Function(_CanSendChanged value) canSendChanged,
+    required TResult Function(_ChatPropertiesChanged value)
+        chatPropertiesChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(isArchivedChanged != null);
-    assert(isMutedChanged != null);
-    assert(canSendChanged != null);
-    assert(chatPropertiesChanged != null);
-    assert(saved != null);
     return chatPropertiesChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult isArchivedChanged(_IsArchivedChanged value),
-    TResult isMutedChanged(_IsMutedChanged value),
-    TResult canSendChanged(_CanSendChanged value),
-    TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_IsArchivedChanged value)? isArchivedChanged,
+    TResult Function(_IsMutedChanged value)? isMutedChanged,
+    TResult Function(_CanSendChanged value)? canSendChanged,
+    TResult Function(_ChatPropertiesChanged value)? chatPropertiesChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (chatPropertiesChanged != null) {
       return chatPropertiesChanged(this);
     }
@@ -953,21 +889,22 @@ class _$_ChatPropertiesChanged
 
 abstract class _ChatPropertiesChanged implements ChatFormEvent {
   const factory _ChatPropertiesChanged(
-      {KtList<User> users,
-      bool isAdmin,
-      bool canReceive,
-      String groupName,
-      String groupDescription,
-      User receiver}) = _$_ChatPropertiesChanged;
+      {KtList<User>? users,
+      bool? isAdmin,
+      bool? canReceive,
+      String? groupName,
+      String? groupDescription,
+      User? receiver}) = _$_ChatPropertiesChanged;
 
-  KtList<User> get users;
-  bool get isAdmin;
-  bool get canReceive;
-  String get groupName;
-  String get groupDescription;
-  User get receiver;
+  KtList<User>? get users => throw _privateConstructorUsedError;
+  bool? get isAdmin => throw _privateConstructorUsedError;
+  bool? get canReceive => throw _privateConstructorUsedError;
+  String? get groupName => throw _privateConstructorUsedError;
+  String? get groupDescription => throw _privateConstructorUsedError;
+  User? get receiver => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ChatPropertiesChangedCopyWith<_ChatPropertiesChanged> get copyWith;
+  _$ChatPropertiesChangedCopyWith<_ChatPropertiesChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1011,49 +948,39 @@ class _$_Saved with DiagnosticableTreeMixin implements _Saved {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    @required TResult isArchivedChanged(),
-    @required TResult isMutedChanged(),
-    @required TResult canSendChanged(),
-    @required
-        TResult chatPropertiesChanged(
-            KtList<User> users,
-            bool isAdmin,
-            bool canReceive,
-            String groupName,
-            String groupDescription,
-            User receiver),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Either<ChatType, Chat>> initialChatOption)
+        initialized,
+    required TResult Function() isArchivedChanged,
+    required TResult Function() isMutedChanged,
+    required TResult Function() canSendChanged,
+    required TResult Function(
+            KtList<User>? users,
+            bool? isAdmin,
+            bool? canReceive,
+            String? groupName,
+            String? groupDescription,
+            User? receiver)
+        chatPropertiesChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(isArchivedChanged != null);
-    assert(isMutedChanged != null);
-    assert(canSendChanged != null);
-    assert(chatPropertiesChanged != null);
-    assert(saved != null);
     return saved();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Either<ChatType, Chat>> initialChatOption),
-    TResult isArchivedChanged(),
-    TResult isMutedChanged(),
-    TResult canSendChanged(),
-    TResult chatPropertiesChanged(
-        KtList<User> users,
-        bool isAdmin,
-        bool canReceive,
-        String groupName,
-        String groupDescription,
-        User receiver),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Either<ChatType, Chat>> initialChatOption)?
+        initialized,
+    TResult Function()? isArchivedChanged,
+    TResult Function()? isMutedChanged,
+    TResult Function()? canSendChanged,
+    TResult Function(KtList<User>? users, bool? isAdmin, bool? canReceive,
+            String? groupName, String? groupDescription, User? receiver)?
+        chatPropertiesChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (saved != null) {
       return saved();
     }
@@ -1062,35 +989,29 @@ class _$_Saved with DiagnosticableTreeMixin implements _Saved {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult isArchivedChanged(_IsArchivedChanged value),
-    @required TResult isMutedChanged(_IsMutedChanged value),
-    @required TResult canSendChanged(_CanSendChanged value),
-    @required TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_IsArchivedChanged value) isArchivedChanged,
+    required TResult Function(_IsMutedChanged value) isMutedChanged,
+    required TResult Function(_CanSendChanged value) canSendChanged,
+    required TResult Function(_ChatPropertiesChanged value)
+        chatPropertiesChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(isArchivedChanged != null);
-    assert(isMutedChanged != null);
-    assert(canSendChanged != null);
-    assert(chatPropertiesChanged != null);
-    assert(saved != null);
     return saved(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult isArchivedChanged(_IsArchivedChanged value),
-    TResult isMutedChanged(_IsMutedChanged value),
-    TResult canSendChanged(_CanSendChanged value),
-    TResult chatPropertiesChanged(_ChatPropertiesChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_IsArchivedChanged value)? isArchivedChanged,
+    TResult Function(_IsMutedChanged value)? isMutedChanged,
+    TResult Function(_CanSendChanged value)? canSendChanged,
+    TResult Function(_ChatPropertiesChanged value)? chatPropertiesChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (saved != null) {
       return saved(this);
     }
@@ -1106,13 +1027,12 @@ abstract class _Saved implements ChatFormEvent {
 class _$ChatFormStateTearOff {
   const _$ChatFormStateTearOff();
 
-// ignore: unused_element
   _ChatFormState call(
-      {@required Chat<dynamic> chat,
-      @required bool isSaving,
-      @required bool isEditing,
-      @required bool showErrorMessages,
-      @required Option<Either<ChatFailure, Unit>> saveFailureOrSuccessOption}) {
+      {required Chat<dynamic> chat,
+      required bool isSaving,
+      required bool isEditing,
+      required bool showErrorMessages,
+      required Option<Either<ChatFailure, Unit>> saveFailureOrSuccessOption}) {
     return _ChatFormState(
       chat: chat,
       isSaving: isSaving,
@@ -1124,19 +1044,20 @@ class _$ChatFormStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ChatFormState = _$ChatFormStateTearOff();
 
 /// @nodoc
 mixin _$ChatFormState {
-  Chat<dynamic> get chat;
-  bool get isSaving;
-  bool get isEditing;
-  bool get showErrorMessages;
-  Option<Either<ChatFailure, Unit>> get saveFailureOrSuccessOption;
+  Chat<dynamic> get chat => throw _privateConstructorUsedError;
+  bool get isSaving => throw _privateConstructorUsedError;
+  bool get isEditing => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  Option<Either<ChatFailure, Unit>> get saveFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ChatFormStateCopyWith<ChatFormState> get copyWith;
+  $ChatFormStateCopyWith<ChatFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1163,22 +1084,33 @@ class _$ChatFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object chat = freezed,
-    Object isSaving = freezed,
-    Object isEditing = freezed,
-    Object showErrorMessages = freezed,
-    Object saveFailureOrSuccessOption = freezed,
+    Object? chat = freezed,
+    Object? isSaving = freezed,
+    Object? isEditing = freezed,
+    Object? showErrorMessages = freezed,
+    Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      chat: chat == freezed ? _value.chat : chat as Chat<dynamic>,
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
+      chat: chat == freezed
+          ? _value.chat
+          : chat // ignore: cast_nullable_to_non_nullable
+              as Chat<dynamic>,
+      isSaving: isSaving == freezed
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<ChatFailure, Unit>>,
+          : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ChatFailure, Unit>>,
     ));
   }
 }
@@ -1211,22 +1143,33 @@ class __$ChatFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object chat = freezed,
-    Object isSaving = freezed,
-    Object isEditing = freezed,
-    Object showErrorMessages = freezed,
-    Object saveFailureOrSuccessOption = freezed,
+    Object? chat = freezed,
+    Object? isSaving = freezed,
+    Object? isEditing = freezed,
+    Object? showErrorMessages = freezed,
+    Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_ChatFormState(
-      chat: chat == freezed ? _value.chat : chat as Chat<dynamic>,
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
+      chat: chat == freezed
+          ? _value.chat
+          : chat // ignore: cast_nullable_to_non_nullable
+              as Chat<dynamic>,
+      isSaving: isSaving == freezed
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<ChatFailure, Unit>>,
+          : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ChatFailure, Unit>>,
     ));
   }
 }
@@ -1234,16 +1177,11 @@ class __$ChatFormStateCopyWithImpl<$Res>
 /// @nodoc
 class _$_ChatFormState with DiagnosticableTreeMixin implements _ChatFormState {
   const _$_ChatFormState(
-      {@required this.chat,
-      @required this.isSaving,
-      @required this.isEditing,
-      @required this.showErrorMessages,
-      @required this.saveFailureOrSuccessOption})
-      : assert(chat != null),
-        assert(isSaving != null),
-        assert(isEditing != null),
-        assert(showErrorMessages != null),
-        assert(saveFailureOrSuccessOption != null);
+      {required this.chat,
+      required this.isSaving,
+      required this.isEditing,
+      required this.showErrorMessages,
+      required this.saveFailureOrSuccessOption});
 
   @override
   final Chat<dynamic> chat;
@@ -1313,29 +1251,26 @@ class _$_ChatFormState with DiagnosticableTreeMixin implements _ChatFormState {
 
 abstract class _ChatFormState implements ChatFormState {
   const factory _ChatFormState(
-          {@required
-              Chat<dynamic> chat,
-          @required
-              bool isSaving,
-          @required
-              bool isEditing,
-          @required
-              bool showErrorMessages,
-          @required
-              Option<Either<ChatFailure, Unit>> saveFailureOrSuccessOption}) =
-      _$_ChatFormState;
+      {required Chat<dynamic> chat,
+      required bool isSaving,
+      required bool isEditing,
+      required bool showErrorMessages,
+      required Option<Either<ChatFailure, Unit>>
+          saveFailureOrSuccessOption}) = _$_ChatFormState;
 
   @override
-  Chat<dynamic> get chat;
+  Chat<dynamic> get chat => throw _privateConstructorUsedError;
   @override
-  bool get isSaving;
+  bool get isSaving => throw _privateConstructorUsedError;
   @override
-  bool get isEditing;
+  bool get isEditing => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  Option<Either<ChatFailure, Unit>> get saveFailureOrSuccessOption;
+  Option<Either<ChatFailure, Unit>> get saveFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ChatFormStateCopyWith<_ChatFormState> get copyWith;
+  _$ChatFormStateCopyWith<_ChatFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

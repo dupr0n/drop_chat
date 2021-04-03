@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'user_dtos.dart';
 
@@ -8,6 +8,10 @@ part of 'user_dtos.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 UserDTO _$UserDTOFromJson(Map<String, dynamic> json) {
   return _UserDTO.fromJson(json);
 }
@@ -16,12 +20,11 @@ UserDTO _$UserDTOFromJson(Map<String, dynamic> json) {
 class _$UserDTOTearOff {
   const _$UserDTOTearOff();
 
-// ignore: unused_element
   _UserDTO call(
-      {@required @HiveField(0) String id,
-      @required @HiveField(1) String displayName,
-      @required @HiveField(2) String phoneNumber,
-      @required @HiveField(3) bool isOnline}) {
+      {@HiveField(0) required String id,
+      @HiveField(1) required String displayName,
+      @HiveField(2) required String phoneNumber,
+      @HiveField(3) required bool isOnline}) {
     return _UserDTO(
       id: id,
       displayName: displayName,
@@ -30,30 +33,28 @@ class _$UserDTOTearOff {
     );
   }
 
-// ignore: unused_element
   UserDTO fromJson(Map<String, Object> json) {
     return UserDTO.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $UserDTO = _$UserDTOTearOff();
 
 /// @nodoc
 mixin _$UserDTO {
   @HiveField(0)
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @HiveField(1)
-  String get displayName;
+  String get displayName => throw _privateConstructorUsedError;
   @HiveField(2)
-  String get phoneNumber;
+  String get phoneNumber => throw _privateConstructorUsedError;
   @HiveField(3)
-  bool get isOnline;
+  bool get isOnline => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserDTOCopyWith<UserDTO> get copyWith;
+  $UserDTOCopyWith<UserDTO> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -77,18 +78,28 @@ class _$UserDTOCopyWithImpl<$Res> implements $UserDTOCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object displayName = freezed,
-    Object phoneNumber = freezed,
-    Object isOnline = freezed,
+    Object? id = freezed,
+    Object? displayName = freezed,
+    Object? phoneNumber = freezed,
+    Object? isOnline = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      displayName:
-          displayName == freezed ? _value.displayName : displayName as String,
-      phoneNumber:
-          phoneNumber == freezed ? _value.phoneNumber : phoneNumber as String,
-      isOnline: isOnline == freezed ? _value.isOnline : isOnline as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      displayName: displayName == freezed
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      isOnline: isOnline == freezed
+          ? _value.isOnline
+          : isOnline // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -116,18 +127,28 @@ class __$UserDTOCopyWithImpl<$Res> extends _$UserDTOCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object displayName = freezed,
-    Object phoneNumber = freezed,
-    Object isOnline = freezed,
+    Object? id = freezed,
+    Object? displayName = freezed,
+    Object? phoneNumber = freezed,
+    Object? isOnline = freezed,
   }) {
     return _then(_UserDTO(
-      id: id == freezed ? _value.id : id as String,
-      displayName:
-          displayName == freezed ? _value.displayName : displayName as String,
-      phoneNumber:
-          phoneNumber == freezed ? _value.phoneNumber : phoneNumber as String,
-      isOnline: isOnline == freezed ? _value.isOnline : isOnline as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      displayName: displayName == freezed
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      isOnline: isOnline == freezed
+          ? _value.isOnline
+          : isOnline // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -137,15 +158,11 @@ class __$UserDTOCopyWithImpl<$Res> extends _$UserDTOCopyWithImpl<$Res>
 /// @nodoc
 class _$_UserDTO extends _UserDTO {
   const _$_UserDTO(
-      {@required @HiveField(0) this.id,
-      @required @HiveField(1) this.displayName,
-      @required @HiveField(2) this.phoneNumber,
-      @required @HiveField(3) this.isOnline})
-      : assert(id != null),
-        assert(displayName != null),
-        assert(phoneNumber != null),
-        assert(isOnline != null),
-        super._();
+      {@HiveField(0) required this.id,
+      @HiveField(1) required this.displayName,
+      @HiveField(2) required this.phoneNumber,
+      @HiveField(3) required this.isOnline})
+      : super._();
 
   factory _$_UserDTO.fromJson(Map<String, dynamic> json) =>
       _$_$_UserDTOFromJson(json);
@@ -205,28 +222,29 @@ class _$_UserDTO extends _UserDTO {
 }
 
 abstract class _UserDTO extends UserDTO {
-  const _UserDTO._() : super._();
   const factory _UserDTO(
-      {@required @HiveField(0) String id,
-      @required @HiveField(1) String displayName,
-      @required @HiveField(2) String phoneNumber,
-      @required @HiveField(3) bool isOnline}) = _$_UserDTO;
+      {@HiveField(0) required String id,
+      @HiveField(1) required String displayName,
+      @HiveField(2) required String phoneNumber,
+      @HiveField(3) required bool isOnline}) = _$_UserDTO;
+  const _UserDTO._() : super._();
 
   factory _UserDTO.fromJson(Map<String, dynamic> json) = _$_UserDTO.fromJson;
 
   @override
   @HiveField(0)
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
   @HiveField(1)
-  String get displayName;
+  String get displayName => throw _privateConstructorUsedError;
   @override
   @HiveField(2)
-  String get phoneNumber;
+  String get phoneNumber => throw _privateConstructorUsedError;
   @override
   @HiveField(3)
-  bool get isOnline;
+  bool get isOnline => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UserDTOCopyWith<_UserDTO> get copyWith;
+  _$UserDTOCopyWith<_UserDTO> get copyWith =>
+      throw _privateConstructorUsedError;
 }

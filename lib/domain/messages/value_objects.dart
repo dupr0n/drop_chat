@@ -13,7 +13,6 @@ class MessageText extends ValueObject<String> {
   static const maxLength = 1000;
 
   factory MessageText(String input) {
-    assert(input != null);
     return MessageText._(validateMaxStringLength(input, maxLength).flatMap(validateStringNotEmpty));
   }
 }
